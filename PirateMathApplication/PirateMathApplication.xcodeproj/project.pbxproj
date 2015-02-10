@@ -17,6 +17,7 @@
 		20D062B51A89A5970079F641 /* pirate.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D062B31A89A5970079F641 /* pirate.png */; };
 		20D062B61A89A5970079F641 /* sailor_s_piccolo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20D062B41A89A5970079F641 /* sailor_s_piccolo.mp3 */; };
 		20D062B81A89A6840079F641 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D062B71A89A6830079F641 /* AVFoundation.framework */; };
+		A27ED6D61A8AA5DE005D22C5 /* calcView.m in Sources */ = {isa = PBXBuildFile; fileRef = A27ED6D51A8AA5DE005D22C5 /* calcView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		20D062B31A89A5970079F641 /* pirate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pirate.png; path = Assets/pirate.png; sourceTree = SOURCE_ROOT; };
 		20D062B41A89A5970079F641 /* sailor_s_piccolo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sailor_s_piccolo.mp3; path = Assets/sailor_s_piccolo.mp3; sourceTree = SOURCE_ROOT; };
 		20D062B71A89A6830079F641 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A27ED6D41A8AA5BF005D22C5 /* calcView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calcView.h; sourceTree = "<group>"; };
+		A27ED6D51A8AA5DE005D22C5 /* calcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calcView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				20D062911A89A57D0079F641 /* FirstViewController.h */,
 				20D062921A89A57D0079F641 /* FirstViewController.m */,
 				20D062971A89A57D0079F641 /* Main.storyboard */,
+				A27ED6D41A8AA5BF005D22C5 /* calcView.h */,
+				A27ED6D51A8AA5DE005D22C5 /* calcView.m */,
 				20D0629A1A89A57D0079F641 /* Images.xcassets */,
 				20D0629C1A89A57D0079F641 /* LaunchScreen.xib */,
 				20D0628A1A89A57D0079F641 /* Supporting Files */,
@@ -234,6 +239,7 @@
 				20D062901A89A57D0079F641 /* AppDelegate.m in Sources */,
 				20D062931A89A57D0079F641 /* FirstViewController.m in Sources */,
 				20D0628D1A89A57D0079F641 /* main.m in Sources */,
+				A27ED6D61A8AA5DE005D22C5 /* calcView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +432,7 @@
 				20D062AF1A89A57D0079F641 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20D062B01A89A57D0079F641 /* Build configuration list for PBXNativeTarget "PirateMathApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +441,7 @@
 				20D062B21A89A57D0079F641 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
