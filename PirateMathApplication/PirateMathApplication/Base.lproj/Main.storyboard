@@ -7,7 +7,7 @@
         <!--Calculator-->
         <scene sceneID="Lrv-7e-9aQ">
             <objects>
-                <viewController title="Calculator" id="sTk-yx-qif" sceneMemberID="viewController">
+                <viewController title="Calculator" id="sTk-yx-qif" customClass="Calculator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="He0-pP-jBs"/>
                         <viewControllerLayoutGuide type="bottom" id="il0-DE-GKI"/>
@@ -31,12 +31,18 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculate" destination="sTk-yx-qif" eventType="touchUpInside" id="yUP-35-6uc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnv-ff-c7v">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clear" destination="sTk-yx-qif" eventType="touchUpInside" id="4je-cp-tbf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFF-eN-93v">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,6 +76,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="DlJ-aM-5Ea" id="hXN-40-nZC"/>
+                        <outlet property="textFeild1" destination="HwL-Fs-V5k" id="zhc-Of-Iq3"/>
+                        <outlet property="textFeild2" destination="wTV-Uv-uRk" id="2PN-1v-Ux8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9p-xF-G7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJg-2x-rbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="195"/>
+            <point key="canvasLocation" x="-101" y="287"/>
         </scene>
     </scenes>
     <resources>
