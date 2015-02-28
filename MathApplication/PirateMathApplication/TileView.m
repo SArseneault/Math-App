@@ -1,60 +1,34 @@
 //
-//  FirstViewController.m
+//  TileView.m
 //  PirateMathApplication
 //
-//  Created by Samuel Arseneault on 2/9/15.
+//  Created by John Luu on 2/26/15.
 //  Copyright (c) 2015 Samuel Arseneault. All rights reserved.
 //
 
-#import "FirstViewController.h"
-#import <AVFoundation/AVFoundation.h>
+#import <Foundation/Foundation.h>
+#import "TileView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface FirstViewController ()
-{
-    AVAudioPlayer *_audioPlayer;
-    bool playSwitch;
-}
+@interface TileView ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *zeroTileView;
-@property (nonatomic, weak) UIView *TileReset;
+// Views the user can move.
+@property (nonatomic, weak) IBOutlet UIImageView *zeroTile;
+
+
+@property (nonatomic, weak) UIView *tileForReset;
 
 @end
 
-@implementation FirstViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    // Contrsut URL to sound file
-    NSString *path = [NSString stringWithFormat:@"%@/sailor_s_piccolo.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    //Create audio player object and initalize with URL to sound
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-}
+@implementation TileView
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (IBAction)toggleSound:(id)sender {
-    
-    // Play sound when button is clicked
-    if(!playSwitch){
-        [_audioPlayer play];
-        playSwitch = true;
-    }
-    else{
-        [_audioPlayer stop];
-        playSwitch = false;
-    }
-}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+#pragma mark - Utility methods
+
+/**
+ Scale and rotation transforms are applied relative to the layer's anchor point this method moves a gesture recognizer's view's anchor point between the user's fingers.
+ */
 - (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
@@ -67,13 +41,17 @@
     }
 }
 
+
+/**
+ Display a menu with a single item to allow the piece's transform to be reset.
+ */
 -(IBAction
    )showResetMenu:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         
         [self becomeFirstResponder];
-        self.TileReset = [gestureRecognizer view];
+        self.tileForReset = [gestureRecognizer view];
         
         /*
          Set up the reset menu.
@@ -93,21 +71,26 @@
 }
 
 
+/**
+ Animate back to the default anchor point and transform.
+ */
 - (void)resetPiece:(UIMenuController *)controller
 {
-    UIView *TileReset = self.TileReset;
+    UIView *tileForReset = self.tileForReset;
     
-    CGPoint centerPoint = CGPointMake(CGRectGetMidX(TileReset.bounds), CGRectGetMidY(TileReset.bounds));
-    CGPoint locationInSuperview = [TileReset convertPoint:centerPoint toView:[TileReset superview]];
+    CGPoint centerPoint = CGPointMake(CGRectGetMidX(tileForReset.bounds), CGRectGetMidY(tileForReset.bounds));
+    CGPoint locationInSuperview = [tileForReset convertPoint:centerPoint toView:[tileForReset superview]];
     
-    [[TileReset layer] setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [TileReset setCenter:locationInSuperview];
+    [[tileForReset layer] setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [tileForReset setCenter:locationInSuperview];
     
     [UIView beginAnimations:nil context:nil];
-    [TileReset setTransform:CGAffineTransformIdentity];
+    [tileForReset setTransform:CGAffineTransformIdentity];
     [UIView commitAnimations];
 }
 
+
+// UIMenuController requires that we can become first responder or it won't display
 - (BOOL)canBecomeFirstResponder
 {
     return YES;
@@ -116,6 +99,10 @@
 
 #pragma mark - Touch handling
 
+/**
+ Shift the piece's center by the pan amount.
+ Reset the gesture recognizer's translation to {0, 0} after applying so the next callback is a delta from the current position.
+ */
 - (IBAction)panPiece:(UIPanGestureRecognizer *)gestureRecognizer
 {
     UIView *piece = [gestureRecognizer view];
@@ -132,26 +119,29 @@
 
 
 
-=======
-
--(IBAction)calculate{
+/**
+ Ensure that the pinch, pan and rotate gesture recognizers on a particular view can all recognize simultaneously.
+ Prevent other gesture recognizers from recognizing simultaneously.
+ */
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    // If the gesture recognizers's view isn't one of our pieces, don't allow simultaneous recognition.
+    if (gestureRecognizer.view != self.zeroTile) {
+        return NO;
+    }
     
-    float x = ([textFeild1.text floatValue]);
-    float c = x+([textFeild2.text floatValue]);
+    // If the gesture recognizers are on different views, don't allow simultaneous recognition.
+    if (gestureRecognizer.view != otherGestureRecognizer.view) {
+        return NO;
+    }
     
-    label.text = [[NSString alloc] initWithFormat:@"%2.f",c];
+    // If either of the gesture recognizers is the long press, don't allow simultaneous recognition.
+    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]] || [otherGestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
+        return NO;
+    }
     
-    
+    return YES;
 }
 
--(IBAction)clear{
-    
-    textFeild1.text =@"";
-    textFeild2.text =@"";
-    label.text = @"";
-    
-}
->>>>>>> 78fe2a3d71237b088338a1b061c4026cfbe971c7
->>>>>>> 4277288ef70dd93654f321cab87ea2f4f09e8858
+
 @end
-

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UIGestureRecognizerDelegate>
+
 {
     
     IBOutlet UITextField *textFeild1;
@@ -17,8 +18,10 @@
 }
 
 //Declare functions to calculate and clear, IBAction means clear
+
 -(IBAction) calculate;
 -(IBAction) clear;
+
 
 
 @end
