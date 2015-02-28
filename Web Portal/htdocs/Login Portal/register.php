@@ -39,16 +39,16 @@
 
 					try{
 						$user->create(array(
-							'name' => Input::get('name'),
 							'username' => Input::get('username'),
 							'password' => Hash::make(Input::get('password'), $salt),
+							'name' => Input::get('name'),
 							'salt' => $salt,
 							'joined' => date('Y-m-d H:i:s')
 						));
 
-						//Flash message and redirect
+						//Flash message and go to index
 						Session::flash('success', 'You have been registered and can now login');
-						//Redirect::to("index.php");
+						header('Location: index.php');
 
 					} catch(Exception $e) {
 						die($e->getMessage()); //Eventaully redirect user to a error page
@@ -73,17 +73,17 @@
 	<!-- Each field in a div wrapper -->
 	<div class="field">
 		<label for="username">Username</Label>
-		<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>">
+		<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
 	</div>
 
 	<div class="password">
 		<label for="password">Choose a password</label>
-		<input type="password" name="password" id="password" autocomplete="off">
+		<input type="password" name="password" id="password">
 	</div>
 
 	<div class="field">
 		<label for="password_again">Re-enter your password</label>
-		<input type="password" name="password_again" id="password_again" autocomplete="off">
+		<input type="password" name="password_again" id="password_again">
 	</div>
 
 	<div class="field">

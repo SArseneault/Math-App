@@ -14,12 +14,12 @@
 		private function __construct() {
 			//echo "Trying...</br>";
 			try {
-				$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
-				/*$this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';'.
+				//$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
+				$this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';'.
                             'dbname='.Config::get('mysql/db'), 
                             Config::get('mysql/username'), 
                             Config::get('mysql/password')
-				);*/
+				);
 				//echo "Connected :)";
 			} catch (PDOException $e) { //Catching the PDO error
 				echo "Not Connected :/";
@@ -63,26 +63,27 @@
 		}
 
 		//Action will be used to build the get and delete functions for querying the DB
-		public function action($action, $table, $where = array()) {
-			if(count($where) === 3) {
-				$operators = array('=', '>', '<', '>=', '<=');
+		//EXAMPLE:			   SELECT *     teachers    [username, =, ALex]
+		public function action($action, $table, $where = array() ){
+			if(count($where) === 3){ //3 because Field, Operator, and Value will be passed in
+					$operators = array('=', '>', '<', '>=', '<=');
 
-				$field 		= $where[0];
-				$operator 	= $where[1];
-				$value 		= $where[2];
+					$field 		= $where[0];
+					$operator 	= $where[1];
+					$value 		= $where[2];
 
-				if(in_array($operator, $operators)) {
-					$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
+					if(in_array($operator, $operators)) {
+					  //EXAMPLE:
+					  //$sql = "SELECT * FROM teacher WHERE username = 'Alex"
+						$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
 
-					if(!$this->query($sql, array($value))->error()){
-						return $this;
+						if( !$this->query($sql, array($value)) ) {//Perform the query
+							return $this;
+						}
 					}
-				}
 			}
 			return false;
 		}
-			
-		
 
 		//Grabbing from table in database. EX: teachers [username, =, ALex]
 		public function get($table, $where) {
@@ -153,7 +154,6 @@
 		//Returning the first result of the query
 		public function first() {
 			return $this->results()[0];
-
 		}
 
 
