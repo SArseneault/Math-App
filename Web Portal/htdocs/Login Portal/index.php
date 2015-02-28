@@ -4,6 +4,7 @@
 	if(Session::exists('success')) {
 		echo '<p>' . Session::flash('success') . '</p>';
 	}
+
 	//echo Config::get('mysql/host'); //127.0.0.1
 
 
@@ -58,9 +59,9 @@
 	*/
 
 	////////////////////////////////////////////    How to update data base    ////////////////////////////////////////////
-	$userInsert = DB::getInstance()->update('teacher', 21, array(
+	/*$userInsert = DB::getInstance()->update('teacher', 21, array(
 		'password' => 'newPass',
 		'name' => 'Mike V'
-	));
+	));*/
 
 ?>
