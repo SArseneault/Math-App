@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20CB7F4C1AA24E970063AD6C /* carHorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20CB7F4A1AA24E970063AD6C /* carHorn.mp3 */; };
+		20CB7F4D1AA24E970063AD6C /* raceCarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20CB7F4B1AA24E970063AD6C /* raceCarButton.png */; };
 		20D0628D1A89A57D0079F641 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0628C1A89A57D0079F641 /* main.m */; };
 		20D062901A89A57D0079F641 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0628F1A89A57D0079F641 /* AppDelegate.m */; };
 		20D062931A89A57D0079F641 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D062921A89A57D0079F641 /* FirstViewController.m */; };
@@ -14,17 +16,8 @@
 		20D0629B1A89A57D0079F641 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D0629A1A89A57D0079F641 /* Images.xcassets */; };
 		20D0629E1A89A57D0079F641 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20D0629C1A89A57D0079F641 /* LaunchScreen.xib */; };
 		20D062AA1A89A57D0079F641 /* PirateMathApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D062A91A89A57D0079F641 /* PirateMathApplicationTests.m */; };
-		20D062B51A89A5970079F641 /* pirate.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D062B31A89A5970079F641 /* pirate.png */; };
-		20D062B61A89A5970079F641 /* sailor_s_piccolo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20D062B41A89A5970079F641 /* sailor_s_piccolo.mp3 */; };
 		20D062B81A89A6840079F641 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D062B71A89A6830079F641 /* AVFoundation.framework */; };
 		A27ED6D61A8AA5DE005D22C5 /* calcView.m in Sources */ = {isa = PBXBuildFile; fileRef = A27ED6D51A8AA5DE005D22C5 /* calcView.m */; };
-		B222E5D61A978C6B00A60FF1 /* Num0.png in Resources */ = {isa = PBXBuildFile; fileRef = B222E5CC1A978C6B00A60FF1 /* Num0.png */; };
-		B261DF051A9C2306003B687B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261DF041A9C2306003B687B /* Foundation.framework */; };
-		B261DF071A9C231E003B687B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261DF061A9C231E003B687B /* QuartzCore.framework */; };
-		B261DF091A9C2323003B687B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261DF081A9C2323003B687B /* UIKit.framework */; };
-		B261DF0B1A9C233F003B687B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261DF0A1A9C233F003B687B /* CoreGraphics.framework */; };
-		B261DF2D1A9CCCF2003B687B /* RaceCar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B261DF2C1A9CCCF2003B687B /* RaceCar.jpg */; };
-		B261DF301AA0263D003B687B /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = B261DF2F1AA0263D003B687B /* TileView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20CB7F4A1AA24E970063AD6C /* carHorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = carHorn.mp3; path = Assets/carHorn.mp3; sourceTree = SOURCE_ROOT; };
+		20CB7F4B1AA24E970063AD6C /* raceCarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = raceCarButton.png; path = Assets/raceCarButton.png; sourceTree = SOURCE_ROOT; };
 		20D062871A89A57D0079F641 /* PirateMathApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateMathApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D0628B1A89A57D0079F641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20D0628C1A89A57D0079F641 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,20 +46,9 @@
 		20D062A31A89A57D0079F641 /* PirateMathApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PirateMathApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D062A81A89A57D0079F641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20D062A91A89A57D0079F641 /* PirateMathApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PirateMathApplicationTests.m; sourceTree = "<group>"; };
-		20D062B31A89A5970079F641 /* pirate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pirate.png; path = Assets/pirate.png; sourceTree = SOURCE_ROOT; };
-		20D062B41A89A5970079F641 /* sailor_s_piccolo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sailor_s_piccolo.mp3; path = Assets/sailor_s_piccolo.mp3; sourceTree = SOURCE_ROOT; };
 		20D062B71A89A6830079F641 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A27ED6D41A8AA5BF005D22C5 /* calcView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calcView.h; sourceTree = "<group>"; };
 		A27ED6D51A8AA5DE005D22C5 /* calcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calcView.m; sourceTree = "<group>"; };
-		B222E5CC1A978C6B00A60FF1 /* Num0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Num0.png; sourceTree = "<group>"; };
-		B261DF021A9C22E3003B687B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		B261DF041A9C2306003B687B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B261DF061A9C231E003B687B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B261DF081A9C2323003B687B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B261DF0A1A9C233F003B687B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B261DF2C1A9CCCF2003B687B /* RaceCar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = RaceCar.jpg; path = ../../../Desktop/TileTest/RaceCar.jpg; sourceTree = "<group>"; };
-		B261DF2E1AA024B3003B687B /* TileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
-		B261DF2F1AA0263D003B687B /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B261DF0B1A9C233F003B687B /* CoreGraphics.framework in Frameworks */,
-				B261DF091A9C2323003B687B /* UIKit.framework in Frameworks */,
-				B261DF071A9C231E003B687B /* QuartzCore.framework in Frameworks */,
-				B261DF051A9C2306003B687B /* Foundation.framework in Frameworks */,
 				20D062B81A89A6840079F641 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,11 +73,6 @@
 		20D0627E1A89A57D0079F641 = {
 			isa = PBXGroup;
 			children = (
-				B261DF0A1A9C233F003B687B /* CoreGraphics.framework */,
-				B261DF081A9C2323003B687B /* UIKit.framework */,
-				B261DF061A9C231E003B687B /* QuartzCore.framework */,
-				B261DF041A9C2306003B687B /* Foundation.framework */,
-				B261DF021A9C22E3003B687B /* CoreFoundation.framework */,
 				20D062B71A89A6830079F641 /* AVFoundation.framework */,
 				20D062891A89A57D0079F641 /* PirateMathApplication */,
 				20D062A61A89A57D0079F641 /* PirateMathApplicationTests */,
@@ -117,8 +92,6 @@
 		20D062891A89A57D0079F641 /* PirateMathApplication */ = {
 			isa = PBXGroup;
 			children = (
-				B261DF2F1AA0263D003B687B /* TileView.m */,
-				B261DF2E1AA024B3003B687B /* TileView.h */,
 				20D0628E1A89A57D0079F641 /* AppDelegate.h */,
 				20D0628F1A89A57D0079F641 /* AppDelegate.m */,
 				20D062911A89A57D0079F641 /* FirstViewController.h */,
@@ -127,7 +100,6 @@
 				A27ED6D41A8AA5BF005D22C5 /* calcView.h */,
 				A27ED6D51A8AA5DE005D22C5 /* calcView.m */,
 				20D0629A1A89A57D0079F641 /* Images.xcassets */,
-				B222E5CB1A978C6B00A60FF1 /* App Images */,
 				20D0629C1A89A57D0079F641 /* LaunchScreen.xib */,
 				20D0628A1A89A57D0079F641 /* Supporting Files */,
 			);
@@ -137,9 +109,8 @@
 		20D0628A1A89A57D0079F641 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B261DF2C1A9CCCF2003B687B /* RaceCar.jpg */,
-				20D062B31A89A5970079F641 /* pirate.png */,
-				20D062B41A89A5970079F641 /* sailor_s_piccolo.mp3 */,
+				20CB7F4A1AA24E970063AD6C /* carHorn.mp3 */,
+				20CB7F4B1AA24E970063AD6C /* raceCarButton.png */,
 				20D0628B1A89A57D0079F641 /* Info.plist */,
 				20D0628C1A89A57D0079F641 /* main.m */,
 			);
@@ -161,15 +132,6 @@
 				20D062A81A89A57D0079F641 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B222E5CB1A978C6B00A60FF1 /* App Images */ = {
-			isa = PBXGroup;
-			children = (
-				B222E5CC1A978C6B00A60FF1 /* Num0.png */,
-			);
-			name = "App Images";
-			path = "../../../Desktop/App Images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,12 +214,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CB7F4D1AA24E970063AD6C /* raceCarButton.png in Resources */,
 				20D062991A89A57D0079F641 /* Main.storyboard in Resources */,
 				20D0629E1A89A57D0079F641 /* LaunchScreen.xib in Resources */,
-				20D062B61A89A5970079F641 /* sailor_s_piccolo.mp3 in Resources */,
-				B222E5D61A978C6B00A60FF1 /* Num0.png in Resources */,
-				B261DF2D1A9CCCF2003B687B /* RaceCar.jpg in Resources */,
-				20D062B51A89A5970079F641 /* pirate.png in Resources */,
+				20CB7F4C1AA24E970063AD6C /* carHorn.mp3 in Resources */,
 				20D0629B1A89A57D0079F641 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +238,6 @@
 			files = (
 				20D062901A89A57D0079F641 /* AppDelegate.m in Sources */,
 				20D062931A89A57D0079F641 /* FirstViewController.m in Sources */,
-				B261DF301AA0263D003B687B /* TileView.m in Sources */,
 				20D0628D1A89A57D0079F641 /* main.m in Sources */,
 				A27ED6D61A8AA5DE005D22C5 /* calcView.m in Sources */,
 			);
