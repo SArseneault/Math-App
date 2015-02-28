@@ -24,6 +24,7 @@
 		B261DF091A9C2323003B687B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261DF081A9C2323003B687B /* UIKit.framework */; };
 		B261DF0B1A9C233F003B687B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261DF0A1A9C233F003B687B /* CoreGraphics.framework */; };
 		B261DF2D1A9CCCF2003B687B /* RaceCar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B261DF2C1A9CCCF2003B687B /* RaceCar.jpg */; };
+		B261DF301AA0263D003B687B /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = B261DF2F1AA0263D003B687B /* TileView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		B261DF081A9C2323003B687B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B261DF0A1A9C233F003B687B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B261DF2C1A9CCCF2003B687B /* RaceCar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = RaceCar.jpg; path = ../../../Desktop/TileTest/RaceCar.jpg; sourceTree = "<group>"; };
+		B261DF2E1AA024B3003B687B /* TileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
+		B261DF2F1AA0263D003B687B /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 		20D062891A89A57D0079F641 /* PirateMathApplication */ = {
 			isa = PBXGroup;
 			children = (
+				B261DF2F1AA0263D003B687B /* TileView.m */,
+				B261DF2E1AA024B3003B687B /* TileView.h */,
 				20D0628E1A89A57D0079F641 /* AppDelegate.h */,
 				20D0628F1A89A57D0079F641 /* AppDelegate.m */,
 				20D062911A89A57D0079F641 /* FirstViewController.h */,
@@ -273,6 +278,7 @@
 			files = (
 				20D062901A89A57D0079F641 /* AppDelegate.m in Sources */,
 				20D062931A89A57D0079F641 /* FirstViewController.m in Sources */,
+				B261DF301AA0263D003B687B /* TileView.m in Sources */,
 				20D0628D1A89A57D0079F641 /* main.m in Sources */,
 				A27ED6D61A8AA5DE005D22C5 /* calcView.m in Sources */,
 			);

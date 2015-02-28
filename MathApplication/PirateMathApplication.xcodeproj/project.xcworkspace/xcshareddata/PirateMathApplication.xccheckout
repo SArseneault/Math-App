@@ -14,7 +14,7 @@
 		<string>https://github.com/SArseneault/Math-App.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PirateMathApplication/PirateMathApplication.xcodeproj</string>
+	<string>MathApplication/PirateMathApplication.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D8E2290542E6A80D17B00DDF963694DE810A457</key>

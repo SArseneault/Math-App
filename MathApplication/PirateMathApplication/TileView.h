@@ -11,3 +11,9 @@
 
 
 #endif
+
+#import <UIKit/UIKit.h>
+
+@interface TileView : UIViewController <UIGestureRecognizerDelegate>
+
+@end
