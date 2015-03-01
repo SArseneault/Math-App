@@ -33,7 +33,6 @@
 
 			if($validation->passed()) {
 					$user = new User();
-
 					$salt = Hash::salt(32);
 
 
@@ -48,7 +47,7 @@
 
 						//Flash message and redirect
 						Session::flash('success', 'You have been registered and can now login');
-						//Redirect::to("index.php");
+						Redirect::to("index.php");
 
 					} catch(Exception $e) {
 						die($e->getMessage()); //Eventaully redirect user to a error page

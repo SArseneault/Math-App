@@ -14,13 +14,14 @@
 		private function __construct() {
 			//echo "Trying...</br>";
 			try {
-				$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
-				/*$this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';'.
-                            'dbname='.Config::get('mysql/db'), 
-                            Config::get('mysql/username'), 
-                            Config::get('mysql/password')
-				);*/
-				//echo "Connected :)";
+				//$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
+				$this->_pdo = new PDO(
+					'mysql:host=' . Config::get('mysql/host') . ';
+					dbname=' . Config::get('mysql/db') . ';
+					charset=latin1',
+					Config::get('mysql/username'),
+					Config::get('mysql/password')
+				);
 			} catch (PDOException $e) { //Catching the PDO error
 				echo "Not Connected :/";
 				die($e->getMessage());

@@ -14,11 +14,10 @@
 				$login = $user->login(Input::get('username'), Input::get('password'));
 				
 				if($login) {
-					echo 'success';
+					echo 'You have successfully logged in!';
 				} else {
 					echo '<p>Sorry, logging in failed.</p>';
 				}
-
 
 
 			} else {

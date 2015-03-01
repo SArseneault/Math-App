@@ -1,11 +1,12 @@
 <?php
 	class User {
-		private $_db;
+		private $_db,
+				$_data,
+				$_sessionName;
 
-		//Default constructor conencts to database
+		//Default constructor connects to database
 		public function __construct($user = null) {
 			$this->_db = DB::getInstance();
-
 			$this->_sessionName = Config::get('session/session_name');
 		}
 
@@ -32,17 +33,22 @@
 
 		//Ability to login to data base
 		public function login($username = null, $password = null) {
+
+			//$user == 1 if $username is found in the database
 			$user = $this->find($username);
 			
 			//If the user exists
 			if($user) {
-
-
+				
 				//If the password matches the hashed/salted password
-				if($this->data()->password === Hash::make($password, $this->data()->salt)) {
+				$trimHash = Hash::make($password, $this->data()->salt);
+				$trimHash = substr ($trimHash ,0,-14);
+				if($this->data()->password === $trimHash){
+				
 					Session::put($this->_sessionName, $this->data()->id);
 					return true;
 				}
+				//if($this->data()->password === Hash::make($password, $this->data()->salt)) 
 			}
 
 			return false;
