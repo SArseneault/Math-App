@@ -37,7 +37,7 @@
 {
     
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
-    NSString *strURL = [NSString stringWithFormat:@"http://192.168.0.114/LoginPortal/test.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/test.php?userName=%@&password=%@", usernameField.text, passwordField.text];
     
     NSLog(@"%@",strURL);
     

@@ -274,7 +274,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="172" y="1125"/>
+            <point key="canvasLocation" x="189" y="1443"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="Tup-oE-3V8">
@@ -412,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqx-c7-FB4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="1205"/>
+            <point key="canvasLocation" x="1109" y="1443"/>
         </scene>
         <!--Home View-->
         <scene sceneID="wJ9-e6-h3y">
@@ -513,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sih-Wt-6WF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-439" y="1039"/>
+            <point key="canvasLocation" x="-549" y="1257"/>
         </scene>
     </scenes>
     <resources>
@@ -530,7 +530,7 @@
         <image name="zeroTile.png" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LrK-8x-AS6"/>
         <segue reference="XyL-bb-h10"/>
-        <segue reference="5Nu-3H-MBE"/>
     </inferredMetricsTieBreakers>
 </document>
