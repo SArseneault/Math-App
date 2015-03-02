@@ -48,21 +48,4 @@
 }
 
 
--(IBAction)calculate{
-    
-    float x = ([textFeild1.text floatValue]);
-    float c = x+([textFeild2.text floatValue]);
-    
-    label.text = [[NSString alloc] initWithFormat:@"%2.f",c];
-    
-    
-}
-
--(IBAction)clear{
-    
-    textFeild1.text =@"";
-    textFeild2.text =@"";
-    label.text = @"";
-    
-}
 @end

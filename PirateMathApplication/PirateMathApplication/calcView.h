@@ -8,18 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Calculator : UIViewController
+@interface Calculator : UIViewController <UIAlertViewDelegate>
 {
     //IBOutlet refers to an empty varaible and method in interface builder
+    IBOutlet UILabel *firstNumber; //label first number generated
+    IBOutlet UILabel *secondNumber; //label second number generated
+    IBOutlet UITextField *userInput; //textbox store user input
+    IBOutlet UILabel *labelForTimer; //label for timer
+    
+    NSInteger valueOne; //int for first number
+    NSInteger valueTwo; //int for second number
+    NSInteger correctAnswer; //int for correct answer
+    NSInteger userAnswer;   //int for the users input
+    NSInteger questionCount; //keeps track of the number of questions answered
+    
+    NSTimer *timer; //timer object
+    
 
-    IBOutlet UITextField *textFeild1;
-    IBOutlet UITextField *textFeild2;
-    IBOutlet UILabel *label;
     
 }
 
-//Declare functions to calculate and clear, IBAction means clear
--(IBAction) calculate;
--(IBAction) clear;
+//action to generate numbers
+-(IBAction) generateNumber;
 
+//action to check users input
+-(IBAction) submitAnswer;
+
+//method called to set up leve once screen is loaded
+-(void) setUpLevel;
 @end
