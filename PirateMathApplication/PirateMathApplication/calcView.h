@@ -21,19 +21,22 @@
     NSInteger correctAnswer; //int for correct answer
     NSInteger userAnswer;   //int for the users input
     NSInteger questionCount; //keeps track of the number of questions answered
+    NSInteger totalQuestionsCorrect; //number of questions answered correctly
+    NSInteger seconds; //variable to store seconds used by timer object
     
     NSTimer *timer; //timer object
     
-
     
 }
 
-//action to generate numbers
--(IBAction) generateNumber;
+//method called to set up leve once screen is loaded
+-(void) setUpLevel;
+
+//method to generate numbers
+-(void) generateNumber;
 
 //action to check users input
 -(IBAction) submitAnswer;
 
-//method called to set up leve once screen is loaded
--(void) setUpLevel;
+
 @end

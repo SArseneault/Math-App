@@ -16,7 +16,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     //call to setUpLevel
     [self setUpLevel];
@@ -35,13 +34,39 @@
     //set question asked to 0
     questionCount = 0;
     
-    //set timer to 0, THIS WILL CHANGE IF IT IS A TEST
+    //set questions correct to 0
+    totalQuestionsCorrect = 0;
     
+    //create timer object, call to method increasTime to increase and display current time spent on level
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0F target:self selector:@selector(increaseTime) userInfo: nil repeats:YES];
+    
+    //call to generate random number method to start game
+    [self generateNumber];
 
 }
 
--(IBAction) generateNumber
+-(void) generateNumber
 {
+    
+
+    //CHECK IF QUESTION COUNT IS AT 15, P
+    if(questionCount ==5)
+    {
+        //stop timer
+        [timer invalidate];
+        
+        //alert to show that the practice section is over
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of 15 questions correct\n Total Time: %ld seconds", totalQuestionsCorrect,seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
+        
+        [alert show];
+        
+    }
+    
+    //increment question counter
+    questionCount++;
+
+    
+    
     //generates random number between 0 and 10
     valueOne =arc4random()%10;
     valueTwo=arc4random()%10;
@@ -51,6 +76,9 @@
     secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
     
     
+    //clear user input textbox
+    userInput.text = @"";
+
 }
 
 -(IBAction)submitAnswer
@@ -65,6 +93,9 @@
     //compare to values and display true or false
     if(correctAnswer == userAnswer)
     {
+        //increase questions answered correctly
+        totalQuestionsCorrect++;
+        
         //alert to show that the user was correct
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:[NSString stringWithFormat:@"%ld + %ld = %ld",valueOne,valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
         [alert show];
@@ -77,8 +108,22 @@
         [alert show];
     }
     
+    //call generate Number method to create new question
+    [self generateNumber];
+}
+
+//timer method to increase time, fired every second
+-(void) increaseTime
+{
+    //increment seconds
+    seconds++;
+    
+    //update timmer label
+    labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
+    
     
 }
+
 
 
 @end
