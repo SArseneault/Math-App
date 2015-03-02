@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9pv-A4-QxB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Calculator-->
+        <scene sceneID="Lrv-7e-9aQ">
+            <objects>
+                <viewController title="Calculator" id="sTk-yx-qif" customClass="Calculator" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="He0-pP-jBs"/>
+                        <viewControllerLayoutGuide type="bottom" id="il0-DE-GKI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NQU-Zf-abd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FirstNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOV-0a-uUy">
+                                <rect key="frame" x="263" y="47" width="75" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3gG-U4-7ZZ">
+                                <rect key="frame" x="252" y="175" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timmer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-pY-7Eg">
+                                <rect key="frame" x="44" y="20" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grv-bB-q0O">
+                                <rect key="frame" x="254" y="322" width="95" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitAnswer" destination="sTk-yx-qif" eventType="touchUpInside" id="P7s-0b-xIE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l30-fx-4to">
+                                <rect key="frame" x="264" y="266" width="74" height="30"/>
+                                <state key="normal" title="Generate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateNumber" destination="sTk-yx-qif" eventType="touchUpInside" id="FE0-OU-yj6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOQ-9J-cGy">
+                                <rect key="frame" x="279" y="87" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itL-kf-cH0">
+                                <rect key="frame" x="277" y="145" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SecondNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Py-Ka-S7I">
+                                <rect key="frame" x="249" y="108" width="96" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="firstNumber" destination="gOV-0a-uUy" id="ePx-4r-TKc"/>
+                        <outlet property="labelForTimer" destination="c7S-pY-7Eg" id="EIz-33-agp"/>
+                        <outlet property="oneTile" destination="tWJ-Ri-m78" id="Fcx-c2-Ch9"/>
+                        <outlet property="secondNumber" destination="2Py-Ka-S7I" id="iu8-ft-r1i"/>
+                        <outlet property="twoTile" destination="kra-cl-9Mo" id="h43-6v-cZu"/>
+                        <outlet property="userInput" destination="3gG-U4-7ZZ" id="Lg8-JI-v8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9p-xF-G7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="5nZ-61-ma1" userLabel="zeroTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="sTk-yx-qif" id="1aH-YJ-f8x"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="phl-4a-8KW" userLabel="oneTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="sTk-yx-qif" id="7N6-6o-pFF"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tYm-e6-h58" userLabel="twoTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="sTk-yx-qif" id="GLR-Wi-WJr"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="VgG-rp-VsG" userLabel="zeroTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="sTk-yx-qif" id="ND8-0o-Osb"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Y3h-NO-ZJe" userLabel="oneTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="sTk-yx-qif" id="kMI-BU-aqh"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6nM-aT-GUZ" userLabel="twoTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="sTk-yx-qif" id="ZhM-pY-N7J"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="587" y="-489"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController title="First" id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome To Pirate Math!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quJ-X8-qdg">
+                                <rect key="frame" x="120" y="163" width="346" height="21"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNu-Ii-LWr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xA1-Lg-xKV">
+                                        <rect key="frame" x="141" y="126" width="318" height="311"/>
+                                        <color key="backgroundColor" red="0.90404040399999996" green="0.3230182975" blue="0.39499560970000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome To Math Racer!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-aG-Fu6">
+                                        <rect key="frame" x="150" y="149" width="301" height="29"/>
+                                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="26"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-Xw-0sT">
+                                        <rect key="frame" x="158" y="383" width="87" height="30"/>
+                                        <state key="normal" title="Calculator">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="sTk-yx-qif" kind="show" id="bQO-dn-QhC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsT-b1-D0G">
+                                        <rect key="frame" x="380" y="383" width="42" height="30"/>
+                                        <state key="normal" title="Team">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="6OR-Nh-MSo" kind="show" id="kix-KL-bKZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncI-Qg-0xf">
+                                        <rect key="frame" x="167" y="178" width="255" height="156"/>
+                                        <state key="normal" title="SoundPirate" image="raceCarButton.png"/>
+                                        <connections>
+                                            <action selector="toggleSound:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cCF-GM-Xfc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEL-tj-dWN">
+                                        <rect key="frame" x="278" y="389" width="32" height="30"/>
+                                        <state key="normal" title="Tiles">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Jfw-id-2MQ" kind="show" id="clf-cO-D5b"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-315" y="-489"/>
+        </scene>
+        <!--About Us-->
+        <scene sceneID="WMR-Ll-1Fi">
+            <objects>
+                <viewController storyboardIdentifier="About Us" title="About Us" id="6OR-Nh-MSo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1YS-x4-KFz"/>
+                        <viewControllerLayoutGuide type="bottom" id="1A6-aL-n8l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tdm-IS-zN2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Kelly" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-KH-3Jh">
+                                <rect key="frame" x="252" y="167" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sam" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-Xp-WUx">
+                                <rect key="frame" x="252" y="205" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMU-cU-CLe">
+                                <rect key="frame" x="252" y="243" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-Bw-WWJ">
+                                <rect key="frame" x="277" y="518" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="About Us" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeI-zs-bL6">
+                                <rect key="frame" x="252" y="71" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJg-2x-rbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="287"/>
+        </scene>
+        <!--Tile View-->
+        <scene sceneID="HDp-t5-STa">
+            <objects>
+                <viewController id="Jfw-id-2MQ" customClass="TileView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ugy-zA-vun"/>
+                        <viewControllerLayoutGuide type="bottom" id="MsJ-kv-60D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nOo-kj-s4u">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zeroTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="p6n-BU-fY4" userLabel="zeroTile">
+                                <rect key="frame" x="23" y="244" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6bI-qK-jGy" appends="YES" id="iXf-pP-a2B"/>
+                                    <outletCollection property="gestureRecognizers" destination="tqv-cg-bRg" appends="YES" id="i4O-9r-qUS"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oneTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="tWJ-Ri-m78" userLabel="oneTile">
+                                <rect key="frame" x="143" y="244" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Y3h-NO-ZJe" appends="YES" id="isc-GH-nXb"/>
+                                    <outletCollection property="gestureRecognizers" destination="phl-4a-8KW" appends="YES" id="ybf-j2-j0U"/>
+                                    <outletCollection property="gestureRecognizers" destination="fcN-iZ-iFe" appends="YES" id="XNG-tZ-PQX"/>
+                                    <outletCollection property="gestureRecognizers" destination="9af-lh-BgK" appends="YES" id="0MV-iV-IqD"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twoTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="kra-cl-9Mo" userLabel="twoTIle">
+                                <rect key="frame" x="258" y="244" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tYm-e6-h58" appends="YES" id="tnp-km-Rj0"/>
+                                    <outletCollection property="gestureRecognizers" destination="6nM-aT-GUZ" appends="YES" id="7uK-uJ-gzh"/>
+                                    <outletCollection property="gestureRecognizers" destination="zRU-aN-AGu" appends="YES" id="lpc-MD-XPB"/>
+                                    <outletCollection property="gestureRecognizers" destination="Dfk-x0-kcg" appends="YES" id="Wg3-k1-khc"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fiveTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1X-s0-hjV" userLabel="fiveTile">
+                                <rect key="frame" x="23" y="375" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uIE-r2-fee" appends="YES" id="wEY-aM-Otq"/>
+                                    <outletCollection property="gestureRecognizers" destination="Q8e-jA-MPL" appends="YES" id="ATe-Rv-h7V"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sevenTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-pE-nFz" userLabel="sevenTIle">
+                                <rect key="frame" x="258" y="375" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="frX-Gv-p5V" appends="YES" id="Glr-Eu-NrX"/>
+                                    <outletCollection property="gestureRecognizers" destination="UnM-HU-bf3" appends="YES" id="X9y-JZ-cjv"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="threeTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="fn7-Q5-xEb" userLabel="threeTile">
+                                <rect key="frame" x="377" y="244" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d2b-jt-hxu" appends="YES" id="s5n-Gv-g6E"/>
+                                    <outletCollection property="gestureRecognizers" destination="6wL-KJ-QCh" appends="YES" id="eyo-mN-IfO"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fourTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="023-ak-Pf1" userLabel="fourTIle">
+                                <rect key="frame" x="491" y="244" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kxJ-zK-uZX" appends="YES" id="MYJ-kW-1eH"/>
+                                    <outletCollection property="gestureRecognizers" destination="38T-zP-A1D" appends="YES" id="pHa-yo-obB"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eightTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-s0-Usb" userLabel="eightTile">
+                                <rect key="frame" x="377" y="375" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WIu-rF-ker" appends="YES" id="WBV-6R-LL0"/>
+                                    <outletCollection property="gestureRecognizers" destination="eyg-te-y85" appends="YES" id="03L-V7-5qf"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nineTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="ROj-Fw-6uG" userLabel="nineTIle">
+                                <rect key="frame" x="491" y="375" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="b9G-aL-gce" appends="YES" id="en5-Iv-pTl"/>
+                                    <outletCollection property="gestureRecognizers" destination="bYv-qg-2Cl" appends="YES" id="krm-J4-fKy"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sixTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="eVM-xk-Kp5" userLabel="sixTile">
+                                <rect key="frame" x="143" y="375" width="85" height="85"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wma-3D-8Pr" appends="YES" id="Ax6-UX-U0K"/>
+                                    <outletCollection property="gestureRecognizers" destination="dgp-VK-PEa" appends="YES" id="95z-iA-Of0"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LB3-La-8d4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="zRU-aN-AGu" userLabel="twoTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="ehW-3E-j5u"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6bI-qK-jGy" userLabel="zeroTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="CKE-dX-sli"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tqv-cg-bRg" userLabel="zeroTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="Vrk-im-LUr"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="bYv-qg-2Cl" userLabel="nineTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="QIo-UB-uEg"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="eyg-te-y85" userLabel="eightTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="tVz-aD-YCg"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="dgp-VK-PEa" userLabel="sixTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="9Wz-Tc-afA"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="UnM-HU-bf3" userLabel="sevenTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="8hV-PB-8lR"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="fcN-iZ-iFe" userLabel="oneTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="YA1-dY-60f"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Dfk-x0-kcg" userLabel="twoTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="JvO-5d-K6h"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6wL-KJ-QCh" userLabel="threeTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="cJL-iF-I83"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="38T-zP-A1D" userLabel="fourTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="hHN-96-VNm"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Q8e-jA-MPL" userLabel="fiveTile Long Press Gesture">
+                    <connections>
+                        <action selector="showResetMenu:" destination="Jfw-id-2MQ" id="UoG-N1-36O"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="9af-lh-BgK" userLabel="oneTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="PGL-BV-c4l"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="d2b-jt-hxu" userLabel="threeTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="tim-Vo-orO"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="kxJ-zK-uZX" userLabel="fourTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="mgy-Zm-PN3"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uIE-r2-fee" userLabel="fiveTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="ieG-on-FG2"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Wma-3D-8Pr" userLabel="sixTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="9Ua-se-BZN"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="frX-Gv-p5V" userLabel="sevenTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="bXf-Kc-rSp"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="WIu-rF-ker" userLabel="eightTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="ZRp-mS-niS"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="b9G-aL-gce" userLabel="nineTile Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panPiece:" destination="Jfw-id-2MQ" id="1qS-kw-pu9"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="532" y="261"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="eightTile.png" width="110" height="110"/>
+        <image name="first" width="30" height="30"/>
+        <image name="fiveTile.png" width="110" height="110"/>
+        <image name="fourTile.png" width="110" height="110"/>
+        <image name="nineTile.png" width="110" height="110"/>
+        <image name="oneTile.png" width="110" height="110"/>
+        <image name="raceCarButton.png" width="600" height="337"/>
+        <image name="sevenTile.png" width="110" height="110"/>
+        <image name="sixTile.png" width="110" height="110"/>
+        <image name="threeTile.png" width="110" height="110"/>
+        <image name="twoTile.png" width="110" height="110"/>
+        <image name="zeroTile.png" width="110" height="110"/>
+    </resources>
+</document>
