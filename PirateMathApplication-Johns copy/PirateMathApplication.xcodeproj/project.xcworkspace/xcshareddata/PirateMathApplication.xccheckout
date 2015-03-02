@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D8E2290542E6A80D17B00DDF963694DE810A457</key>
-		<string>https://github.com/SArseneault/Math-App.git</string>
+		<string>https://github.com/SArseneault/Math-App</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PirateMathApplication/PirateMathApplication.xcodeproj</string>
+	<string>PirateMathApplication-Johns copy/PirateMathApplication.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D8E2290542E6A80D17B00DDF963694DE810A457</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/SArseneault/Math-App.git</string>
+	<string>https://github.com/SArseneault/Math-App</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
