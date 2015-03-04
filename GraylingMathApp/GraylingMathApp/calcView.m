@@ -104,7 +104,7 @@
 -(void) isEndCheck
 {
     //CHECK IF QUESTION COUNT IS AT 5(FOR TESTING ONLY)
-    if(questionCount == 5)
+    if(questionCount == 10)
     {
         //call method to display end results
         [self endResult];
@@ -126,7 +126,7 @@
     [timer invalidate];
     
     //alert to show that the practice section is over
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of 15 questions correct\n Total Time: %ld seconds", totalQuestionsCorrect,seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of 10 questions correct\n Total Time: %ld seconds", totalQuestionsCorrect,seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
     
     //set alert tag to endTag
     [alert setTag:1];

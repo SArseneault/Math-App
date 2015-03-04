@@ -35,6 +35,9 @@
 		200B08541AA4F397000E404A /* calcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08531AA4F397000E404A /* calcView.m */; };
 		200B08571AA4F48A000E404A /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08561AA4F48A000E404A /* HomeView.m */; };
 		20407B6E1AA5031000E536AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20407B6C1AA5031000E536AB /* Main.storyboard */; };
+		B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */; };
+		B28C2DFE1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */; };
+		B28C2DFF1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		200B08551AA4F48A000E404A /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
 		200B08561AA4F48A000E404A /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		20407B6D1AA5031000E536AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0001(rough 2).jpg"; path = "Assets/Scan0001(rough 2).jpg"; sourceTree = SOURCE_ROOT; };
+		B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0002(rough2).jpg"; path = "Assets/Scan0002(rough2).jpg"; sourceTree = SOURCE_ROOT; };
+		B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0003(rough2).jpg"; path = "Assets/Scan0003(rough2).jpg"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,9 @@
 		200B08011AA4E52A000E404A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */,
+				B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */,
+				B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */,
 				200B08271AA4E63A000E404A /* carHorn.mp3 */,
 				200B08281AA4E63A000E404A /* eightTile.png */,
 				200B08291AA4E63A000E404A /* fiveTile.png */,
@@ -277,6 +286,7 @@
 			files = (
 				200B08361AA4E63A000E404A /* fourTile.png in Resources */,
 				200B083A1AA4E63A000E404A /* sevenTile.png in Resources */,
+				B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */,
 				200B083E1AA4E63A000E404A /* zeroTile.png in Resources */,
 				200B08391AA4E63A000E404A /* raceCarButton.png in Resources */,
 				200B08381AA4E63A000E404A /* oneTile.png in Resources */,
@@ -285,9 +295,11 @@
 				200B083D1AA4E63A000E404A /* twoTile.png in Resources */,
 				200B08121AA4E52A000E404A /* LaunchScreen.xib in Resources */,
 				200B08331AA4E63A000E404A /* carHorn.mp3 in Resources */,
+				B28C2DFE1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg in Resources */,
 				200B080F1AA4E52A000E404A /* Images.xcassets in Resources */,
 				200B083B1AA4E63A000E404A /* sixTile.png in Resources */,
 				200B08341AA4E63A000E404A /* eightTile.png in Resources */,
+				B28C2DFF1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg in Resources */,
 				200B08351AA4E63A000E404A /* fiveTile.png in Resources */,
 				200B08371AA4E63A000E404A /* nineTile.png in Resources */,
 			);

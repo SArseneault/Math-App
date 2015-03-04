@@ -12,12 +12,13 @@
 
 @interface TileView()
 
-// Views the user can move.
+// Views the user can move. Currently has no value and is is movable images
+
 @property (nonatomic, weak) IBOutlet UIImageView *zeroTile;
 @property (weak, nonatomic) IBOutlet UIImageView *oneTile;
 @property (weak, nonatomic) IBOutlet UIImageView *twoTile;
 
-
+//not quite implemented to reset yet
 @property (nonatomic, weak) UIView *tileForReset;
 
 @end
@@ -29,7 +30,8 @@
 #pragma mark - Utility methods
 
 /**
- Scale and rotation transforms are applied relative to the layer's anchor point this method moves a gesture recognizer's view's anchor point between the user's fingers.
+ Scale and rotation transforms are applied relative to the layer's anchor point this method moves a gesture recognizer's view's anchor point between the user's fingers. 
+ This anchor point has not been implemented yet. It is suppose create an anchor point for the tiles to reset to
  */
 - (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 {
@@ -45,10 +47,9 @@
 
 
 /**
- Display a menu with a single item to allow the piece's transform to be reset.
+ A gesture recognizer that enables the application to recognize a finger pressing down on an object
  */
--(IBAction
-   )showResetMenu:(UILongPressGestureRecognizer *)gestureRecognizer
+-(IBAction)showResetMenu:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         
@@ -102,8 +103,7 @@
 #pragma mark - Touch handling
 
 /**
- Shift the piece's center by the pan amount.
- Reset the gesture recognizer's translation to {0, 0} after applying so the next callback is a delta from the current position.
+ This Gesture recognizer allows the the user to "drag" the object pieces around 
  */
 - (IBAction)panPiece:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -123,7 +123,7 @@
 
 /**
  Ensure that the pinch, pan and rotate gesture recognizers on a particular view can all recognize simultaneously.
- Prevent other gesture recognizers from recognizing simultaneously.
+ Prevent other gesture recognizers from recognizing simultaneously.This is suppose to be able to recognize if multiple objects are being touched and how to handle it
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
