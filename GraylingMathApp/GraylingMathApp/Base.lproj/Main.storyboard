@@ -89,79 +89,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Scan0003(rough2).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0XL-af-b6f">
-                                <rect key="frame" x="-11" y="0.0" width="611" height="640"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zeroTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="3O8-8M-Q5H" userLabel="zeroTile">
-                                <rect key="frame" x="108" y="482" width="77" height="61"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="O7A-6D-27H" appends="YES" id="jIP-Ty-EfJ"/>
-                                    <outletCollection property="gestureRecognizers" destination="5ay-di-0BS" appends="YES" id="mnY-e3-tTd"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oneTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="NIt-WI-Rm3" userLabel="oneTile">
-                                <rect key="frame" x="184" y="482" width="85" height="61"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="wiW-k1-lQp" appends="YES" id="o2s-ve-X2N"/>
-                                    <outletCollection property="gestureRecognizers" destination="xhc-5I-XrV" appends="YES" id="eYR-X9-Ygk"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twoTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7U-du-EbD" userLabel="twoTIle">
-                                <rect key="frame" x="265" y="482" width="85" height="61"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="cHc-Jp-jbJ" appends="YES" id="k27-sH-O5J"/>
-                                    <outletCollection property="gestureRecognizers" destination="9Q4-qI-ACB" appends="YES" id="zY1-4Q-E2h"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="threeTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="jc9-gs-7xO" userLabel="threeTile">
-                                <rect key="frame" x="350" y="482" width="85" height="61"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="w1V-Lc-M1X" appends="YES" id="Z3b-WL-Yqs"/>
-                                    <outletCollection property="gestureRecognizers" destination="G9z-JL-bzd" appends="YES" id="Mhz-4a-V1L"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fourTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="f64-gb-VGn" userLabel="fourTIle">
-                                <rect key="frame" x="435" y="482" width="85" height="61"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="QU8-93-3b1" appends="YES" id="CVB-zO-XPq"/>
-                                    <outletCollection property="gestureRecognizers" destination="Se0-HP-96S" appends="YES" id="MWc-by-dUn"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fiveTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="C1L-j1-WrQ" userLabel="fiveTile">
-                                <rect key="frame" x="108" y="540" width="77" height="60"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="aUC-JF-kej" appends="YES" id="QnZ-PW-AEQ"/>
-                                    <outletCollection property="gestureRecognizers" destination="S2E-dH-bp9" appends="YES" id="hW5-4I-IoK"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sixTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="w34-aK-Ih8" userLabel="sixTile">
-                                <rect key="frame" x="184" y="540" width="85" height="60"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="JoB-a9-EUJ" appends="YES" id="7fe-ts-SLS"/>
-                                    <outletCollection property="gestureRecognizers" destination="NwM-OB-v7k" appends="YES" id="QpO-9S-isl"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sevenTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-Hm-fDe" userLabel="sevenTIle">
-                                <rect key="frame" x="265" y="540" width="85" height="60"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="3vn-7K-Z2p" appends="YES" id="sJ7-Ps-XH9"/>
-                                    <outletCollection property="gestureRecognizers" destination="Pib-kP-l2I" appends="YES" id="czY-ii-IP0"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eightTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="1tV-aG-jeu" userLabel="eightTile">
-                                <rect key="frame" x="350" y="540" width="85" height="60"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="hl3-eW-Bnj" appends="YES" id="ioy-pe-t97"/>
-                                    <outletCollection property="gestureRecognizers" destination="4kh-Wu-dxB" appends="YES" id="SPh-3a-8px"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nineTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-RC-DDU" userLabel="nineTIle">
-                                <rect key="frame" x="435" y="540" width="85" height="60"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="E1X-hD-7w7" appends="YES" id="q5Y-xM-AMc"/>
-                                    <outletCollection property="gestureRecognizers" destination="MGS-mP-QFY" appends="YES" id="5mM-Ow-aPF"/>
-                                </connections>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzT-bu-10E">
                                 <rect key="frame" x="16" y="13" width="41" height="30"/>
                                 <state key="normal" title="Home">
@@ -171,6 +98,76 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" id="vEv-B3-j7b"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zeroTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="3O8-8M-Q5H" userLabel="zeroTile">
+                                <rect key="frame" x="84" y="292" width="77" height="61"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="O7A-6D-27H" appends="YES" id="jIP-Ty-EfJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="5ay-di-0BS" appends="YES" id="mnY-e3-tTd"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oneTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="NIt-WI-Rm3" userLabel="oneTile">
+                                <rect key="frame" x="160" y="292" width="85" height="61"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wiW-k1-lQp" appends="YES" id="o2s-ve-X2N"/>
+                                    <outletCollection property="gestureRecognizers" destination="xhc-5I-XrV" appends="YES" id="eYR-X9-Ygk"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twoTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7U-du-EbD" userLabel="twoTIle">
+                                <rect key="frame" x="241" y="292" width="85" height="61"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cHc-Jp-jbJ" appends="YES" id="k27-sH-O5J"/>
+                                    <outletCollection property="gestureRecognizers" destination="9Q4-qI-ACB" appends="YES" id="zY1-4Q-E2h"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="threeTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="jc9-gs-7xO" userLabel="threeTile">
+                                <rect key="frame" x="326" y="292" width="85" height="61"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="w1V-Lc-M1X" appends="YES" id="Z3b-WL-Yqs"/>
+                                    <outletCollection property="gestureRecognizers" destination="G9z-JL-bzd" appends="YES" id="Mhz-4a-V1L"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fourTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="f64-gb-VGn" userLabel="fourTIle">
+                                <rect key="frame" x="411" y="292" width="85" height="61"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QU8-93-3b1" appends="YES" id="CVB-zO-XPq"/>
+                                    <outletCollection property="gestureRecognizers" destination="Se0-HP-96S" appends="YES" id="MWc-by-dUn"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fiveTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="C1L-j1-WrQ" userLabel="fiveTile">
+                                <rect key="frame" x="84" y="350" width="77" height="60"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aUC-JF-kej" appends="YES" id="QnZ-PW-AEQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="S2E-dH-bp9" appends="YES" id="hW5-4I-IoK"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sixTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="w34-aK-Ih8" userLabel="sixTile">
+                                <rect key="frame" x="160" y="350" width="85" height="60"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JoB-a9-EUJ" appends="YES" id="7fe-ts-SLS"/>
+                                    <outletCollection property="gestureRecognizers" destination="NwM-OB-v7k" appends="YES" id="QpO-9S-isl"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sevenTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-Hm-fDe" userLabel="sevenTIle">
+                                <rect key="frame" x="241" y="350" width="85" height="60"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3vn-7K-Z2p" appends="YES" id="sJ7-Ps-XH9"/>
+                                    <outletCollection property="gestureRecognizers" destination="Pib-kP-l2I" appends="YES" id="czY-ii-IP0"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eightTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="1tV-aG-jeu" userLabel="eightTile">
+                                <rect key="frame" x="326" y="350" width="85" height="60"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hl3-eW-Bnj" appends="YES" id="ioy-pe-t97"/>
+                                    <outletCollection property="gestureRecognizers" destination="4kh-Wu-dxB" appends="YES" id="SPh-3a-8px"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nineTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-RC-DDU" userLabel="nineTIle">
+                                <rect key="frame" x="411" y="350" width="85" height="60"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="E1X-hD-7w7" appends="YES" id="q5Y-xM-AMc"/>
+                                    <outletCollection property="gestureRecognizers" destination="MGS-mP-QFY" appends="YES" id="5mM-Ow-aPF"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.20568207770375987" green="0.60503472222222221" blue="0.201239456950778" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -291,9 +288,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Scan0001(rough 2).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-p2-RnO">
-                                <rect key="frame" x="-21" y="-99" width="733" height="719"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-jC-GhP">
                                 <rect key="frame" x="322" y="67" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -347,6 +341,146 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6s-ha-RmL" userLabel="oneButton">
+                                <rect key="frame" x="209" y="350" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPH-1B-UA1" userLabel="twoButton">
+                                <rect key="frame" x="247" y="350" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jv-SD-iR9" userLabel="threeButton">
+                                <rect key="frame" x="285" y="350" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYT-L3-AxV" userLabel="fourButton">
+                                <rect key="frame" x="327" y="350" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQu-tp-jK8" userLabel="sixButton">
+                                <rect key="frame" x="209" y="402" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="6">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT9-xv-QAK" userLabel="sevenButton">
+                                <rect key="frame" x="247" y="402" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="7">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-Gy-1QI" userLabel="eightButton">
+                                <rect key="frame" x="285" y="402" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="8">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMn-wu-GNm" userLabel="nineButton">
+                                <rect key="frame" x="327" y="402" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="9">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX9-8h-Yoi" userLabel="zeroButton">
+                                <rect key="frame" x="171" y="350" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-yF-xLI" userLabel="fiveButton">
+                                <rect key="frame" x="171" y="402" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <state key="normal" title="5">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -354,7 +488,7 @@
                         <outlet property="firstNumber" destination="32H-sz-Uv6" id="But-Fv-2cm"/>
                         <outlet property="labelForTimer" destination="OS6-WI-nhX" id="Vfd-bF-YuQ"/>
                         <outlet property="secondNumber" destination="rUt-U0-aJd" id="2ZQ-HK-Yij"/>
-                        <outlet property="userInput" destination="HBH-Xs-oVe" id="0Th-Hp-cHh"/>
+                        <outlet property="userInput" destination="HBH-Xs-oVe" id="AjK-Nl-bDX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqE-fc-a5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,9 +507,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Scan0002(rough2).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XIY-fy-ELJ">
-                                <rect key="frame" x="-5" y="-8" width="660" height="600"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPQ-8e-fBV">
                                 <rect key="frame" x="224" y="175" width="153" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -392,6 +523,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YU-j1-oeR">
                                 <rect key="frame" x="281" y="256" width="38" height="30"/>
                                 <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -399,8 +531,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ho-qc-QRT">
-                                <rect key="frame" x="281" y="421" width="41" height="30"/>
+                                <rect key="frame" x="280" y="418" width="41" height="30"/>
                                 <state key="normal" title="Home">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -414,7 +547,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.69422447639999996" green="0.93473250230000005" blue="0.96464646460000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ttV-7e-Kpf"/>
                     <connections>
@@ -467,7 +600,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.69422447639999996" green="0.93473250230000005" blue="0.96464646460000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="usernameLabel" destination="ZYh-wK-4cK" id="Hdl-Cr-SEX"/>
@@ -491,16 +624,25 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Kelly" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqS-DN-5Rt">
                                 <rect key="frame" x="252" y="167" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sam" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Roq-Jf-sWE">
                                 <rect key="frame" x="252" y="205" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qYH-8s-eEF">
                                 <rect key="frame" x="252" y="243" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -515,6 +657,9 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="About Us" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BKA-Nh-vRC">
                                 <rect key="frame" x="252" y="71" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -529,9 +674,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Scan0001(rough 2).jpg" width="1700" height="2338"/>
-        <image name="Scan0002(rough2).jpg" width="1700" height="2338"/>
-        <image name="Scan0003(rough2).jpg" width="1700" height="2338"/>
         <image name="eightTile.png" width="110" height="110"/>
         <image name="fiveTile.png" width="110" height="110"/>
         <image name="fourTile.png" width="110" height="110"/>
