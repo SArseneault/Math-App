@@ -1,39 +1,21 @@
 <?php
-	class User {
+	class SClass {
 		private $_db,
-				$_data,
-				$_sessionName,
-				$_cookieName,
-				$isLoggedIn,
-				$sclass;
+				$_data;
 
 		//Default constructor connects to database
-		public function __construct($user = null) {
+		public function __construct($teacher = null) {
 			$this->_db = DB::getInstance();
-			$this->_sessionName = Config::get('session/session_name');
-			$this->_cookieName = Config::get('remember/cookie_name');
 
+			//Checking if the teacher exsits
+			if($teacher) {
+			
+				$this->findTeacher($teacher);
 
-			if(!$user) {
-
-				//Checking if there is a user is logged in
-				if(Session::exists($this->_sessionName)) {
-					$user = Session::get($this->_sessionName);
-				}
-
-				//checking if the user exsits
-				if($this->find($user)) {
-					$this->_isLoggedIn = true;
-				} else {
-					$this->_isLoggedIn = false;
-					// process logout
-				}
-
-			}else {
-				$this->find($user);
 			}
 
 		}
+	
 
 		//Update user table
 		public function update($fields = array(), $id = null) {
@@ -49,19 +31,19 @@
 			}
 		}
 
-		//Ability to create a user
+		//Ability to create a class
 		public function create($fields = array()) {
-			if(!$this->_db->insert('teacher', $fields)) {
-				throw new Exception('There was a problem creating an account.');
+			if(!$this->_db->insert('class', $fields)) {
+				throw new Exception('There was a problem creating a class.');
 
 			}
 		}
 
-		//Find user by its id
-		public function find($user = null) {
-			if($user) {
-				$field = (is_numeric($user)) ? 'id' : 'username';
-				$data = $this->_db->get('teacher', array($field, '=', $user));
+		//Find teacher by their id
+		public function findTeacher($teacher = null) {
+			if($teacher) {
+				$field = (is_numeric($teacher)) ? 'class_id' : 'class_name';
+				$data = $this->_db->get('class', array($field, '=', $teacher));
 
 				if($data->count()) {
 					$this->_data = $data->first();
@@ -71,16 +53,10 @@
 		}
 
 		//Ability to login to data base
-		public function login($username = null, $password = null, $remember = false) {
+		public function login($classname= null, $password = null) {
 
-			//Check if a username and password hasn't been defined
-			if(!$username && $password && $this->exists()) {
-				//C
-				Session::put($this->_sessionName, $this->data()->id);
-			} else {
-
-				//$user == 1 if $username is found in the database
-				$user = $this->find($username);
+				//$sclass== 1 if $classname is found in the database
+				$sclass = $this->find($classname);
 			
 
 
@@ -118,26 +94,12 @@
 					}
 					//if($this->data()->password === Hash::make($password, $this->data()->salt)) 
 				}
-
-			}
 			return false;
+
+
 		}
 
-		//Checking if a user is in a certian group
-		public function hasPermission($key) {
-			$group = $this->_db->get('groups', array('id', '=', $this->data()->group));
-
-			if($group->count()) {
-				//Converting JSOSN to array
-				$permissions = json_decode($group->first()->permissions, true);
-	
-
-				if($permissions[$key] === 1) {
-						return true;
-				}
-			}
-			return false;
-		}
+		
 
 		public function exists(){
 			return (!empty($this->_data)) ? true : false;

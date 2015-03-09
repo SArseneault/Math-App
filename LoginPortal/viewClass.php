@@ -7,6 +7,75 @@
   if(!$user->isLoggedIn()) {
       Redirect::to("includes/errors/loginError.php");
   }
+
+
+  if(Input::exists()) {
+    if(Token::check(Input::get('token'))) {
+
+    //Validate fields
+    $validate = new Validate();
+
+      
+    $validation = $validate->check($_POST, array(
+      'teacher_name' => array(
+        'required' => true,
+        'min' => 2,
+        'max' => 30
+        ),
+      'class_name' => array(
+        'required' => true,
+        'min' => 2,
+        'max' => 30
+        ),
+        'class_password' => array(
+            'required' => true,
+            'min' => 6
+         ),
+        'class_password_again' => array(
+            'required' => true,
+            'min' => 6,
+            'matches' => 'class_password'
+          )
+
+      ));
+    
+
+    if($validation->passed()) {
+
+      try {
+         
+          //Creating a new class and salt
+          $sclass = new SClass();
+          $salt = Hash::salt(32);
+
+          //Inserting the new class into the database
+          $sclass->create(array(
+            'class_name' => Input::get('class_name'),
+            'teacher_name' => Input::get('teacher_name'),
+            'class_password' => Hash::make(Input::get('class_password'), $salt),
+            'teacher_id' => $user->data()->id,
+            'salt' => $salt
+            ));
+
+          //Flash message
+          //Session::flash('success', 'Name has been updated.');
+          //Redirect::to("account.php");
+
+          //Refresh the page to show the update
+         header("Refresh:0");
+      } catch(Execption $e) {
+        die($e->getMessage());
+      }
+
+    } else {
+      foreach($validation->errors() as $error) {
+        echo $error, '<br>';
+      }
+    }
+  }
+}
+
+
 ?>
 
 
@@ -110,30 +179,32 @@
       <div class="modal-body">
 
         <!--forms for input -->
-        <form>
+        <form action="" method="post">
           <div class ="form-group">
             <label for "labelForTeacherName">Teacher Name</label>
-              <input type ="text" class"form-control" id ="labelForTeacherName" placeholder="Teacher Name">
+              <input type ="text" class"form-control" name="teacher_name" id ="labelForTeacherName" placeholder="Teacher Name">
           </div>
           <div class ="form-group">
             <label for "labelForClassName">Class Name</label>
-              <input type ="text" class"form-control" id ="labelForClassName" placeholder="Class Name">
+              <input type ="text" class"form-control" name="class_name" id ="labelForClassName" placeholder="Class Name">
           </div>
           <div class ="form-group">
             <label for "labelForClassPassword">Class Password</label>
-              <input type ="password" class"form-control" id ="labelForClassPassword" placeholder="Class Password">
+              <input type ="password" class"form-control" name="class_password" id ="labelForClassPassword" placeholder="Class Password">
           </div>
           <div class ="form-group">
             <label for "labelForConfirmClassPassword">Confirm Class Password</label>
-              <input type ="password" class"form-control" id ="labelForConfirmClassPassword" placeholder="Confirm Password">
+              <input type ="password" class"form-control" name="class_password_again" id ="labelForConfirmClassPassword" placeholder="Confirm Password">
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
+        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" name="ChangeName" class="btn btn-primary">Create</button>
+            <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+          </div>
+        </div>
+      </form>
   </div>
 </div>
 
@@ -171,9 +242,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 
 <!-- Bootstrap js plugins -->
