@@ -50,9 +50,9 @@
       }
     }
   } elseif(isset($_POST['ChangePass'])) {/////////////////////////////////////
-      echo "NOT IMPLEMENTED YET";
+     
       if(Token::check(Input::get('token'))) {
-
+   
       //Validate fields
       $validate = new Validate();
       $validation = $validate->check($_POST, array(
@@ -75,9 +75,13 @@
       if($validation->passed()) {
 
         try {
-
-            if(Hash::make(Input::get('password_current'), $user->data()->salt) !== $user->data()->password){
-              echo "Need to trim 14";
+          
+            //trim the hash before check
+            $trimHash = Hash::make(Input::get('password_current'), $user->data()->salt);
+            $trimHash = substr ($trimHash ,0,-14);
+      
+            if($trimHash !== $user->data()->password){
+              echo "Current password is wrong";
             }else {
               $salt = Hash::salt(32);
               $user->update(array(
@@ -90,7 +94,7 @@
             //Session::flash('success', 'password has been changed.');
             //Redirect::to("account.php");
             //Refresh the page to show the update
-           header("Refresh:0");
+           //header("Refresh:0");
         } catch(Execption $e) {
           die($e->getMessage());
         }
@@ -215,7 +219,7 @@
               <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
             </div>
           </div>
-      </form>
+      <!--</form>-->
 
   </div>
 </div>
@@ -232,7 +236,7 @@
       <div class="modal-body">
 
          <!--forms for input -->
-        <form action="" method="post">
+       <!-- <form action="" method="post">-->
           <div class ="field">
             <label for="password_current">Current Password</label>
               <input type="password" name="password_current" id="password_current">

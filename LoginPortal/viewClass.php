@@ -2,81 +2,155 @@
   require_once 'core/init.php';
 
   $user = new User();//Picking current user details
-
+  $student = new Student(); //Creating a student object
   //Redirect the user if they are not logged in.
   if(!$user->isLoggedIn()) {
       Redirect::to("includes/errors/loginError.php");
   }
 
+  //Creating and setting the classInfo and students variables
+  if($user->classExist()){
+    $classInfo = $user->getClass();
+  
+    $students = $student->getStudents($classInfo['class_id']);
+  } else {
+    $classInfo = null;
+  }
+
+ 
 
   if(Input::exists()) {
-    if(Token::check(Input::get('token'))) {
+    if (isset($_POST['createClass'])) {
+      if(Token::check(Input::get('token'))) {
 
-    //Validate fields
-    $validate = new Validate();
+      //Validate fields
+      $validate = new Validate();
 
-      
-    $validation = $validate->check($_POST, array(
-      'teacher_name' => array(
-        'required' => true,
-        'min' => 2,
-        'max' => 30
-        ),
-      'class_name' => array(
-        'required' => true,
-        'min' => 2,
-        'max' => 30
-        ),
+        
+      $validation = $validate->check($_POST, array(
+        'teacher_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 30
+          ),
+        'class_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 30
+          ),
         'class_password' => array(
+              'required' => true,
+              'min' => 6
+           ),
+        'class_password_again' => array(
+              'required' => true,
+              'min' => 6,
+              'matches' => 'class_password'
+            )
+
+        ));
+      
+
+      if($validation->passed()) {
+
+        try {
+           
+            //Creating a new class and salt
+            $sclass = new SClass();
+            $salt = Hash::salt(32);
+
+            //Inserting the new class into the database
+            $sclass->create(array(
+              'class_name' => Input::get('class_name'),
+              'teacher_name' => Input::get('teacher_name'),
+              'class_password' => Hash::make(Input::get('class_password'), $salt),
+              'teacher_id' => $user->data()->id,
+              'salt' => $salt
+              ));
+
+            //Setting the class info
+            $classInfo = $user->getClass();
+
+            //Updating the teacher's class ID
+
+            //Refresh the page to show the update
+            header("Refresh:0");
+        } catch(Execption $e) {
+          die($e->getMessage());
+          }
+
+      } else {
+          foreach($validation->errors() as $error) {
+            echo $error, '<br>';
+          }
+        }
+    }
+  } elseif (isset($_POST['addStudent'])) {
+      if(Token::check(Input::get('token'))) {
+
+      //Validate fields
+      $validate = new Validate();
+
+      $validation = $validate->check($_POST, array(
+        'first_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 50
+          ),
+        'last_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 50
+          ),
+        'password' => array(
             'required' => true,
             'min' => 6
-         ),
-        'class_password_again' => array(
+           ),
+        'password_again' => array(
             'required' => true,
             'min' => 6,
-            'matches' => 'class_password'
-          )
+            'matches' => 'password'
+            )
 
-      ));
-    
+        ));
+      
 
-    if($validation->passed()) {
+      if($validation->passed()) {
 
-      try {
-         
-          //Creating a new class and salt
-          $sclass = new SClass();
-          $salt = Hash::salt(32);
+        try {
+           
 
-          //Inserting the new class into the database
-          $sclass->create(array(
-            'class_name' => Input::get('class_name'),
-            'teacher_name' => Input::get('teacher_name'),
-            'class_password' => Hash::make(Input::get('class_password'), $salt),
-            'teacher_id' => $user->data()->id,
-            'salt' => $salt
-            ));
+            //Creating a new student
+            $student = new Student();
+            $salt = Hash::salt(32);
+            //Inserting the new student into the database
+            $student->create(array(
+              'first_name' => Input::get('first_name'),
+              'last_name' => Input::get('last_name'),
+              'username' => Input::get('username'),
+              'password' => Hash::make(Input::get('password'), $salt),
+              'class_id' => $classInfo['class_id'],
+              'joined' => date('Y-m-d H:i:s'),
+              'salt' => $salt
+              ));
 
-          //Flash message
-          //Session::flash('success', 'Name has been updated.');
-          //Redirect::to("account.php");
 
-          //Refresh the page to show the update
-         header("Refresh:0");
-      } catch(Execption $e) {
-        die($e->getMessage());
-      }
+            //Refresh the page to show the update
+            header("Refresh:0");
+        } catch(Execption $e) {
+          die($e->getMessage());
+          }
 
-    } else {
-      foreach($validation->errors() as $error) {
-        echo $error, '<br>';
-      }
+      } else {
+          foreach($validation->errors() as $error) {
+            echo $error, '<br>';
+          }
+        }
     }
+
   }
-}
 
-
-?>
+} ?>
 
 
 <!DOCTYPE html>
@@ -123,10 +197,14 @@
   </div>
 </div>
 
+
 <!--table -->
+<?php 
+// If the class exists then display the table and grab the info
+if($user->classExist()){  ?>
 <div class ="container">
-  <h2> Class Name </h2>
-  <h4> Teacher Name </h4>
+  <h2> <?php print_r($classInfo['class_name']);?> </h2>
+  <h4> <?php print_r($classInfo['teacher_name']);?>  </h4>
   <div class = "table-responsive">
     <table class = "table">
       <thread>
@@ -136,30 +214,32 @@
         </tr>
       </thred>
       <tbody>
-        <tr>
-          <td>Kelly</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Sam</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>10</td>
-        </tr>
+         <?php foreach($students as $student){
+                //Convert the std object to an array
+                $student = get_object_vars($student);
+
+                ?><tr><td><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></td>
+                      <td><?php print_r($student['username']);?></td>
+                </tr><?php
+
+        } ?>
+
+      
       </tbody>
   </table>
 </div>
-</div>
+</div> 
+<?php } ?>
 
 
 <!--buttons -->
 <div class ="container">
   <div class="row">
+    
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createClassModal">Create Class</a>
     </div>
+
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addStudentModal">Add Student</a>
     </div>
@@ -167,6 +247,7 @@
 </div>
 
 <!--modal for buttons -->
+
 
 <!--modal for create Class -->
 <div class="modal fade" id="createClassModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -200,13 +281,13 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" name="ChangeName" class="btn btn-primary">Create</button>
+            <button type="submit" name="createClass" class="btn btn-primary">Create</button>
             <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
           </div>
         </div>
-      </form>
+      
   </div>
-</div>
+</div> 
 
 <!--modal for add student -->
 <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -217,29 +298,35 @@
         <h4 class="modal-title" id="myModalLabel">Add Student</h4>
       </div>
       <div class="modal-body">
-        <form>
+       
           <div class ="form-group">
-            <label for "labelForStudentName">Student Name</lable>
-              <input type ="text" class"form-control" id ="labelForStudentName" placeholder="Student Name">
+            <label for "labelForStudentName">First Name</label>
+              <input type ="text" class"form-control" name="first_name" id ="labelForStudentName" placeholder="First Name">
           </div>
           <div class ="form-group">
-            <label for "labelForStudentUserName">Student Username</lable>
-              <input type ="text" class"form-control" id ="labelForStudentUserName" placeholder="Student Username">
+            <label for "labelForStudentName">Last Name</label>
+              <input type ="text" class"form-control" name="last_name" id ="labelForStudentName" placeholder="Last Name">
           </div>
           <div class ="form-group">
-            <label for "labelForStudentPassword">Student Password</lable>
-              <input type ="password" class"form-control" id ="labelForStudentPassword" placeholder="Student Password">
+            <label for "labelForStudentUserName">Username</label>
+              <input type ="text" class"form-control" name="username" id ="labelForStudentUserName" placeholder="Username">
           </div>
           <div class ="form-group">
-            <label for "labelForConfirmStudentPassword">Confirm Student Password</lable>
-              <input type ="password" class"form-control" id ="labelForConfirmStudentPassword" placeholder="Confirm Password">
+            <label for "labelForStudentPassword">Password</label>
+              <input type ="password" class"form-control" name="password" id ="labelForStudentPassword" placeholder="Password">
+          </div>
+          <div class ="form-group">
+            <label for "labelForConfirmStudentPassword">Confirm Student Password</label>
+              <input type ="password" class"form-control" name="password_again"id ="labelForConfirmStudentPassword" placeholder="Confirm Password">
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="submit" name="addStudent" class="btn btn-primary">Add Student</button>
+        
       </div>
     </div>
+  </form>
   </div>
 </div>
 

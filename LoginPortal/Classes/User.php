@@ -4,8 +4,7 @@
 				$_data,
 				$_sessionName,
 				$_cookieName,
-				$isLoggedIn,
-				$sclass;
+				$isLoggedIn;
 
 		//Default constructor connects to database
 		public function __construct($user = null) {
@@ -34,6 +33,53 @@
 			}
 
 		}
+
+		
+		//Checking if the class exists
+		public function classExist() {
+		    
+		    //Grabbing the current teacher id
+		    $id = null;
+			if(isset( $this->data()->id))
+				$id =$this->data()->id;
+
+
+			//Grabbing the class data
+			$data = $this->_db->get('class', array('teacher_id', '=', $id));
+			
+			if($data->count()) {
+				return true;
+			}
+			else
+				return false;
+			
+			
+		}
+
+		//Returning an array containing the class information
+		public function getClass(){
+			
+		    
+		    //Grabbing the current teacher id
+		    $id = null;
+			if(isset( $this->data()->id))
+				$id =$this->data()->id;
+
+
+			//Grabbing the class data
+			$data = $this->_db->get('class', array('teacher_id', '=', $id));
+			
+			//Set to first 
+			$data = $data->first();
+	
+			//Convert the std object to an array
+			$data = get_object_vars($data);
+			
+			return $data;
+			
+		}
+
+		
 
 		//Update user table
 		public function update($fields = array(), $id = null) {
@@ -87,7 +133,7 @@
 			//If the user exists
 			if($user) {
 				
-					//If the password matches the hashed/salted password
+					//Trim the hash by 14 before checking
 					$trimHash = Hash::make($password, $this->data()->salt);
 					$trimHash = substr ($trimHash ,0,-14);
 					if($this->data()->password === $trimHash){
