@@ -143,18 +143,11 @@
 		200B08001AA4E52A000E404A /* GraylingMathApp */ = {
 			isa = PBXGroup;
 			children = (
-				200B08551AA4F48A000E404A /* HomeView.h */,
-				200B08561AA4F48A000E404A /* HomeView.m */,
-				200B08521AA4F397000E404A /* calcView.h */,
-				200B08531AA4F397000E404A /* calcView.m */,
-				200B08411AA4E6AB000E404A /* FirstViewController.h */,
-				200B08421AA4E6AB000E404A /* FirstViewController.m */,
-				200B08431AA4E6AB000E404A /* TileView.h */,
-				200B08441AA4E6AB000E404A /* TileView.m */,
+				A20095521AB07D1A004DECFB /* Tile View */,
+				A20095501AB07CEF004DECFB /* Calc View */,
+				A200954F1AB07CCD004DECFB /* Main Screen */,
 				200B08051AA4E52A000E404A /* AppDelegate.h */,
 				200B08061AA4E52A000E404A /* AppDelegate.m */,
-				200B08081AA4E52A000E404A /* ViewController.h */,
-				200B08091AA4E52A000E404A /* ViewController.m */,
 				20407B6C1AA5031000E536AB /* Main.storyboard */,
 				200B080E1AA4E52A000E404A /* Images.xcassets */,
 				200B08101AA4E52A000E404A /* LaunchScreen.xib */,
@@ -202,6 +195,37 @@
 				200B081C1AA4E52A000E404A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A200954F1AB07CCD004DECFB /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				200B08081AA4E52A000E404A /* ViewController.h */,
+				200B08091AA4E52A000E404A /* ViewController.m */,
+				200B08411AA4E6AB000E404A /* FirstViewController.h */,
+				200B08421AA4E6AB000E404A /* FirstViewController.m */,
+				200B08551AA4F48A000E404A /* HomeView.h */,
+				200B08561AA4F48A000E404A /* HomeView.m */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		A20095501AB07CEF004DECFB /* Calc View */ = {
+			isa = PBXGroup;
+			children = (
+				200B08521AA4F397000E404A /* calcView.h */,
+				200B08531AA4F397000E404A /* calcView.m */,
+			);
+			name = "Calc View";
+			sourceTree = "<group>";
+		};
+		A20095521AB07D1A004DECFB /* Tile View */ = {
+			isa = PBXGroup;
+			children = (
+				200B08431AA4E6AB000E404A /* TileView.h */,
+				200B08441AA4E6AB000E404A /* TileView.m */,
+			);
+			name = "Tile View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
