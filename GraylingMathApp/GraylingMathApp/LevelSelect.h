@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface LevelSelect : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 //Picker wheel for selecting level
 @property (weak, nonatomic) IBOutlet UIPickerView *levelPicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segementSwitchPorT;
+
+-(IBAction) segmentedControlIndex;
+
 
 @end

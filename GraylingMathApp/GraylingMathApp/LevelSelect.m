@@ -16,7 +16,11 @@
 
 @end
 
+
+
 @implementation LevelSelect
+
+@synthesize segementSwitchPorT;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +63,20 @@
 {
     //Method is triggered whenever user cahnges the level picker selection, example changes the picker from level 1 to level 2
     //Parameter named row and component is what was selected
+    
+    
+}
+
+-(IBAction) segmentedControlIndex
+{
+    switch (self.segementSwitchPorT.selectedSegmentIndex) {
+        case 0://this would be for the practice section
+            break;
+        case 1: //this would be for the test section
+            break;
+        default:
+            break;
+    }
     
     
 }
