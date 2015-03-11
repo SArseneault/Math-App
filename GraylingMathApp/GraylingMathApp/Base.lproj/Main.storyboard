@@ -416,6 +416,16 @@
                                     <segue destination="fdR-Of-HNk" kind="presentation" id="lL9-2i-Tzj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1m-9C-gWU">
+                                <rect key="frame" x="237" y="506" width="126" height="30"/>
+                                <state key="normal" title="Select Level Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pz9-3e-SeJ" kind="show" id="95W-I8-ub7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -428,6 +438,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqx-c7-FB4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1109" y="1443"/>
+        </scene>
+        <!--Level Select-->
+        <scene sceneID="B2t-db-5CN">
+            <objects>
+                <viewController id="Pz9-3e-SeJ" customClass="LevelSelect" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pqq-Pv-dZG"/>
+                        <viewControllerLayoutGuide type="bottom" id="eZB-PM-bkd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFj-UN-ynG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E47-9v-TOj">
+                                <rect key="frame" x="253" y="62" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vp8-JG-qGk">
+                                <rect key="frame" x="0.0" y="228" width="600" height="162"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-Eg-f99">
+                                <rect key="frame" x="277" y="503" width="49" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EfZ-2X-fFs" kind="show" id="c0O-rM-GJz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="levelPicker" destination="vp8-JG-qGk" id="MMM-tG-wiI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCe-u1-ZYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="1380"/>
+        </scene>
+        <!--Practice Or Test-->
+        <scene sceneID="jWj-BG-WXx">
+            <objects>
+                <viewController id="EfZ-2X-fFs" customClass="practiceOrTest" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DV5-bi-w1B"/>
+                        <viewControllerLayoutGuide type="bottom" id="tI7-K4-02f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Co2-Vk-F3G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Practice or Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQw-yR-KcL">
+                                <rect key="frame" x="240" y="39" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leS-0M-Ysn">
+                                <rect key="frame" x="272" y="193" width="57" height="30"/>
+                                <state key="normal" title="Practice">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUA-qe-po1">
+                                <rect key="frame" x="285" y="256" width="30" height="30"/>
+                                <state key="normal" title="Test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="practiceButton" destination="leS-0M-Ysn" id="amH-nH-xoA"/>
+                        <outlet property="testButton" destination="MUA-qe-po1" id="GbB-sY-N15"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb9-fZ-4qt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="2106"/>
         </scene>
         <!--Home View-->
         <scene sceneID="wJ9-e6-h3y">
@@ -477,6 +570,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="fdR-Of-HNk" kind="presentation" id="T0G-YC-YTe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4q-Mv-Kfj">
+                                <rect key="frame" x="251" y="460" width="84" height="30"/>
+                                <state key="normal" title="Select Level">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pz9-3e-SeJ" kind="show" id="uXK-dA-ouy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -567,8 +670,9 @@
         <image name="zeroTile.png" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LrK-8x-AS6"/>
         <segue reference="1A4-08-TZ4"/>
+        <segue reference="uXK-dA-ouy"/>
         <segue reference="T0G-YC-YTe"/>
+        <segue reference="LrK-8x-AS6"/>
     </inferredMetricsTieBreakers>
 </document>

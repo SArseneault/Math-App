@@ -35,6 +35,8 @@
 		200B08541AA4F397000E404A /* calcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08531AA4F397000E404A /* calcView.m */; };
 		200B08571AA4F48A000E404A /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08561AA4F48A000E404A /* HomeView.m */; };
 		20407B6E1AA5031000E536AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20407B6C1AA5031000E536AB /* Main.storyboard */; };
+		A20095561AB07E20004DECFB /* LevelSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = A20095551AB07E20004DECFB /* LevelSelect.m */; };
+		A200955B1AB08544004DECFB /* practiceOrTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A200955A1AB08544004DECFB /* practiceOrTest.m */; };
 		B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */; };
 		B28C2DFE1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */; };
 		B28C2DFF1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */; };
@@ -89,6 +91,10 @@
 		200B08551AA4F48A000E404A /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
 		200B08561AA4F48A000E404A /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		20407B6D1AA5031000E536AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A20095541AB07E20004DECFB /* LevelSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelect.h; sourceTree = "<group>"; };
+		A20095551AB07E20004DECFB /* LevelSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelect.m; sourceTree = "<group>"; };
+		A20095591AB08544004DECFB /* practiceOrTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = practiceOrTest.h; sourceTree = "<group>"; };
+		A200955A1AB08544004DECFB /* practiceOrTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = practiceOrTest.m; sourceTree = "<group>"; };
 		B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0001(rough 2).jpg"; path = "Assets/Scan0001(rough 2).jpg"; sourceTree = SOURCE_ROOT; };
 		B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0002(rough2).jpg"; path = "Assets/Scan0002(rough2).jpg"; sourceTree = SOURCE_ROOT; };
 		B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0003(rough2).jpg"; path = "Assets/Scan0003(rough2).jpg"; sourceTree = SOURCE_ROOT; };
@@ -143,12 +149,14 @@
 		200B08001AA4E52A000E404A /* GraylingMathApp */ = {
 			isa = PBXGroup;
 			children = (
+				A20095581AB0851A004DECFB /* Test/Practice Select */,
+				A20095571AB07E54004DECFB /* Storyboard */,
+				A20095531AB07DF2004DECFB /* Level Select */,
 				A20095521AB07D1A004DECFB /* Tile View */,
 				A20095501AB07CEF004DECFB /* Calc View */,
 				A200954F1AB07CCD004DECFB /* Main Screen */,
 				200B08051AA4E52A000E404A /* AppDelegate.h */,
 				200B08061AA4E52A000E404A /* AppDelegate.m */,
-				20407B6C1AA5031000E536AB /* Main.storyboard */,
 				200B080E1AA4E52A000E404A /* Images.xcassets */,
 				200B08101AA4E52A000E404A /* LaunchScreen.xib */,
 				200B08011AA4E52A000E404A /* Supporting Files */,
@@ -226,6 +234,32 @@
 				200B08441AA4E6AB000E404A /* TileView.m */,
 			);
 			name = "Tile View";
+			sourceTree = "<group>";
+		};
+		A20095531AB07DF2004DECFB /* Level Select */ = {
+			isa = PBXGroup;
+			children = (
+				A20095541AB07E20004DECFB /* LevelSelect.h */,
+				A20095551AB07E20004DECFB /* LevelSelect.m */,
+			);
+			name = "Level Select";
+			sourceTree = "<group>";
+		};
+		A20095571AB07E54004DECFB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				20407B6C1AA5031000E536AB /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		A20095581AB0851A004DECFB /* Test/Practice Select */ = {
+			isa = PBXGroup;
+			children = (
+				A20095591AB08544004DECFB /* practiceOrTest.h */,
+				A200955A1AB08544004DECFB /* practiceOrTest.m */,
+			);
+			name = "Test/Practice Select";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20095561AB07E20004DECFB /* LevelSelect.m in Sources */,
 				200B080A1AA4E52A000E404A /* ViewController.m in Sources */,
 				200B08071AA4E52A000E404A /* AppDelegate.m in Sources */,
 				200B08471AA4E6AB000E404A /* TileView.m in Sources */,
@@ -350,6 +385,7 @@
 				200B08541AA4F397000E404A /* calcView.m in Sources */,
 				200B08461AA4E6AB000E404A /* FirstViewController.m in Sources */,
 				200B08041AA4E52A000E404A /* main.m in Sources */,
+				A200955B1AB08544004DECFB /* practiceOrTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
