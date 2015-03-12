@@ -2,12 +2,22 @@
   require_once 'core/init.php';
 
   $user = new User();//Picking current user details
+  $student = new Student(); //Creating a student object
 
   //Redirect the user if they are not logged in.
   if(!$user->isLoggedIn()) {
       Redirect::to("includes/errors/loginError.php");
   }
 
+  //Creating and setting the classInfo and students variables
+  if($user->classExist()){
+    $classInfo = $user->getClass();
+    $students = $student->getStudents($classInfo['class_id']);
+
+    $levelInfo = null;
+  } else {
+    $classInfo = null;
+  }
 
 if(Input::exists()) {
     if (isset($_POST['createLevel'])) {
@@ -25,10 +35,9 @@ if(Input::exists()) {
           ),
         'time_limit' => array(
           'required' => true,
-          'min' => 2,
           'max' => 11
           ),
-        'lDescirption' => array(
+        'lDescription' => array(
               'required' => false,
               'min' => 6,
               'max' => 100
@@ -40,23 +49,16 @@ if(Input::exists()) {
 
         try {
            
-            //Creating a new class and salt
-            $sclass = new SClass();
-            $salt = Hash::salt(32);
 
-            //Inserting the new class into the database
-            $sclass->create(array(
-              'class_name' => Input::get('class_name'),
-              'teacher_name' => Input::get('teacher_name'),
-              'class_password' => Hash::make(Input::get('class_password'), $salt),
-              'teacher_id' => $user->data()->id,
-              'salt' => $salt
+            //Inserting the new levelinto the database
+            $user->addLevel(array(
+              'name' => Input::get('level_name'),
+              'description' => Input::get('lDescription'),
+              'time_limit' => Input::get('time_limit'),
+              'class_id' => $classInfo['class_id']
               ));
 
-            //Setting the class info
-            $classInfo = $user->getClass();
-
-            //Updating the teacher's class ID
+            
 
             //Refresh the page to show the update
             header("Refresh:0");
@@ -188,13 +190,17 @@ if(Input::exists()) {
   </div>
 </div>
 
+
 <!-- Table used to display levels -->
+<?php 
+// If the class exists then display the table and grab the info
+if($user->classExist()){  ?>
 <div class ="container">
   <div class = "table-responsive">
     <table class = "table">
       <thread>
         <tr>
-          <th>Level Number</th>
+          <th>Level</th>
           <th>Practice Questions</th>
           <th>Test Questions</th>
           <th>Students on level</th>
@@ -224,7 +230,7 @@ if(Input::exists()) {
 </div>
 </div>
 
-
+<!-- Create level buton-->
 <div class ="container">
   <div class="row">
     <div class ="col-md-2">
@@ -232,14 +238,19 @@ if(Input::exists()) {
     </div>
  
 </div>
+<?php } else { //Display this message if the class doesn't exsits?>
+  <h3><p>You have not created a class yet!</p></h3>
+  <p>Please created a class to the unlock level editor mode</p>
+  
+<?php } ?>
 
-<!--modal for create level -->
+<!--modal for create Class -->
 <div class="modal fade" id="createLevelModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Create Level</h4>
+        <h4 class="modal-title" id="myModalLabel">Create Class</h4>
       </div>
       <div class="modal-body">
 
@@ -249,36 +260,31 @@ if(Input::exists()) {
             <label for "labelForLevelName">Name</label>
               <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
           </div>
-
           <div class ="form-group">
             <label for "labelForLevelDescription">Description</label>
               <input type ="text" class"form-control" name="lDescription" id ="labelForLevelName" placeholder="Description">
           </div>
-
           <div class ="form-group">
             <label for "labelForLevelTime">Time Limit</label>
               <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
           </div>
+  
 
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="createLevel" class="btn btn-primary">Create Level</button>
-         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-      </div>
-
-      <!-- Add Question Button -->
-      <div class ="container">
-      <div class="row">
-      <div class ="col-md-2">
-        <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
-      </div>
-
-</div>
-    </div>
+        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" name="createLevel" class="btn btn-primary">Create Level</button>
+            <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+          </div>
+        </div>
+      
   </div>
-</div>
+</div> 
+
+
+
+
 
 <!--modal for add question -->
 <div class="modal fade" id="addQuestionModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">

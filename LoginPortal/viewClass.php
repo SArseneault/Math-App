@@ -257,14 +257,14 @@ if($user->classExist()){  ?>
                       <td><a href="">Not Completed</a></td>
                 </tr><?php
 
-         } ?>
+        } } ?>
 
       
       </tbody>
   </table>
 </div>
 </div> 
-<?php } } ?>
+<?php } ?>
 
 
 <!--buttons -->

@@ -79,6 +79,13 @@
 			
 		}
 
+		//Adding a level to a class
+		public function addLevel($fields = array()){
+			if(!$this->_db->insert('level', $fields)) {
+				throw new Exception('There was a problem creating a level.');
+			}
+		}
+
 		
 
 		//Update user table
