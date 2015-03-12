@@ -43,7 +43,7 @@
 			if(isset( $this->data()->id))
 				$id =$this->data()->id;
 
-
+		
 			//Grabbing the class data
 			$data = $this->_db->get('class', array('teacher_id', '=', $id));
 			

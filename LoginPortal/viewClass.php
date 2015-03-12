@@ -231,7 +231,8 @@ if($user->classExist()){  ?>
         </tr>
       </thred>
       <tbody>
-         <?php foreach($students as $student){
+         <?php if($students){
+         foreach($students as $student){
                 //Convert the std object to an array
                 $student = get_object_vars($student);
 
@@ -256,14 +257,14 @@ if($user->classExist()){  ?>
                       <td><a href="">Not Completed</a></td>
                 </tr><?php
 
-        } ?>
+         } ?>
 
       
       </tbody>
   </table>
 </div>
 </div> 
-<?php } ?>
+<?php } } ?>
 
 
 <!--buttons -->

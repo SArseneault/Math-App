@@ -22,14 +22,18 @@
 
 		//Grabs the list of students by their class id
 		public function getStudents($classID){
+			
+			
 
 			if($classID){
 			 $data = $this->_db->get('student', array('class_id', '=', $classID));
-
+					
 				if($data->count()) {
+
 					//Getting array of stf objects
 					$data = $data->results();
 
+				
 
 					return $data;
 				}
