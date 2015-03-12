@@ -210,7 +210,24 @@ if($user->classExist()){  ?>
       <thread>
         <tr>
           <th>Name</th>
-          <th>Progress</th>
+          <th>level 1</th>
+          <th>level 2</th>
+          <th>level 3</th>
+          <th>level 4</th>
+          <th>level 5</th>
+          <th>level 6</th>
+          <th>level 7</th>
+          <th>level 8</th>
+          <th>level 9</th>
+          <th>level 10</th>
+          <th>level 11</th>
+          <th>level 12</th>
+          <th>level 13</th>
+          <th>level 14</th>
+          <th>level 15</th>
+          <th>level 16</th>
+          <th>level 17</th>
+          <th>level 18</th>
         </tr>
       </thred>
       <tbody>
@@ -220,6 +237,23 @@ if($user->classExist()){  ?>
 
                 ?><tr><td><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></td>
                       <td><?php print_r($student['username']);?></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
+                      <td><a href="">Not Completed</a></td>
                 </tr><?php
 
         } ?>

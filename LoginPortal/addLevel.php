@@ -7,6 +7,136 @@
   if(!$user->isLoggedIn()) {
       Redirect::to("includes/errors/loginError.php");
   }
+
+
+if(Input::exists()) {
+    if (isset($_POST['createLevel'])) {
+      if(Token::check(Input::get('token'))) {
+
+      //Validate fields
+      $validate = new Validate();
+
+        
+      $validation = $validate->check($_POST, array(
+        'level_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 50
+          ),
+        'time_limit' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 11
+          ),
+        'lDescirption' => array(
+              'required' => false,
+              'min' => 6,
+              'max' => 100
+           ),
+        ));
+      
+
+      if($validation->passed()) {
+
+        try {
+           
+            //Creating a new class and salt
+            $sclass = new SClass();
+            $salt = Hash::salt(32);
+
+            //Inserting the new class into the database
+            $sclass->create(array(
+              'class_name' => Input::get('class_name'),
+              'teacher_name' => Input::get('teacher_name'),
+              'class_password' => Hash::make(Input::get('class_password'), $salt),
+              'teacher_id' => $user->data()->id,
+              'salt' => $salt
+              ));
+
+            //Setting the class info
+            $classInfo = $user->getClass();
+
+            //Updating the teacher's class ID
+
+            //Refresh the page to show the update
+            header("Refresh:0");
+        } catch(Execption $e) {
+          die($e->getMessage());
+          }
+
+      } else {
+          foreach($validation->errors() as $error) {
+            echo $error, '<br>';
+          }
+        }
+    }
+  } elseif (isset($_POST['addQuestion'])) {
+      if(Token::check(Input::get('token'))) {
+
+      //Validate fields
+      $validate = new Validate();
+
+      $validation = $validate->check($_POST, array(
+        'first_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 50
+          ),
+        'last_name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 50
+          ),
+        'password' => array(
+            'required' => true,
+            'min' => 6
+           ),
+        'password_again' => array(
+            'required' => true,
+            'min' => 6,
+            'matches' => 'password'
+            )
+
+        ));
+      
+
+      if($validation->passed()) {
+
+        try {
+           
+
+            //Creating a new student
+            $student = new Student();
+            $salt = Hash::salt(32);
+            //Inserting the new student into the database
+            $student->create(array(
+              'first_name' => Input::get('first_name'),
+              'last_name' => Input::get('last_name'),
+              'username' => Input::get('username'),
+              'password' => Hash::make(Input::get('password'), $salt),
+              'class_id' => $classInfo['class_id'],
+              'joined' => date('Y-m-d H:i:s'),
+              'salt' => $salt
+              ));
+
+
+            //Refresh the page to show the update
+            header("Refresh:0");
+        } catch(Execption $e) {
+          die($e->getMessage());
+          }
+
+      } else {
+          foreach($validation->errors() as $error) {
+            echo $error, '<br>';
+          }
+        }
+    }
+
+  }
+
+} 
+
 ?>
 
 <!DOCTYPE html>
@@ -100,10 +230,7 @@
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createLevelModal">Create Level</a>
     </div>
-    <div class ="col-md-2">
-      <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
-    </div>
-  </div>
+ 
 </div>
 
 <!--modal for create level -->
@@ -117,28 +244,38 @@
       <div class="modal-body">
 
         <!--forms for input -->
-        <form>
+        <form action="" method="post">
           <div class ="form-group">
-            <label for "labelForLevelName">Level Name</lable>
-              <input type ="text" class"form-control" id ="labelForLevelName" placeholder="Level Name">
+            <label for "labelForLevelName">Name</label>
+              <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
           </div>
 
           <div class ="form-group">
-            <label for "labelForLevelDescription">Description</lable>
-              <input type ="text" class"form-control" id ="labelForLevelName" placeholder="Description">
+            <label for "labelForLevelDescription">Description</label>
+              <input type ="text" class"form-control" name="lDescription" id ="labelForLevelName" placeholder="Description">
           </div>
 
           <div class ="form-group">
-            <label for "labelForLevelTime">Level Time</lable>
-              <input type ="text" class"form-control" id ="labelForLevelTime" placeholder="Level Time">
+            <label for "labelForLevelTime">Time Limit</label>
+              <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
           </div>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Level</button>
+        <button type="submit" name="createLevel" class="btn btn-primary">Create Level</button>
+         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
       </div>
+
+      <!-- Add Question Button -->
+      <div class ="container">
+      <div class="row">
+      <div class ="col-md-2">
+        <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
+      </div>
+
+</div>
     </div>
   </div>
 </div>
@@ -154,21 +291,20 @@
       <div class="modal-body">
 
         <!--forms for input -->
-        <form>
           <div class ="form-group">
-            <label for "labelForQuestionName">Question Name</lable>
-              <input type ="text" class"form-control" id ="labelForQuestionName" placeholder="Question Name">
+            <label for "labelForQuestionName">Name</lable>
+              <input type ="text" class"form-control" name="question_name" id ="labelForQuestionName" placeholder="Question Name">
           </div>
 
           <div class ="form-group">
             <label for "labelForQuestionDescription">Description</lable>
-              <input type ="text" class"form-control" id ="labelForQuestionDescription" placeholder="Question Name">
+              <input type ="text" class"form-control" name="qDescription" id ="labelForQuestionDescription" placeholder="Question Name">
           </div>
 
           <!-- need to change input type -->
           <div class ="form-group">
             <label for "labelForQuestionFreq">Question Frequency</lable>
-              <input type ="number" class"form-control" id ="labelForQuestionFreq" placeholder="Question Frequency">
+              <input type ="number" class"form-control" name="qfrequency" id ="labelForQuestionFreq" placeholder="Question Frequency">
           </div>
 
           <!--check box for practice/test question -->
@@ -202,17 +338,20 @@
               <input type ="number" class"form-control" id ="labelForQuestionAnswer" placeholder="Answer">
           </div>
 
-
-        </form>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Question</button>
+        <button type="submit" name="addQuestion" class="btn btn-primary">Add Question</button>
+       
       </div>
     </div>
+  </form>
   </div>
 </div>
+
+
+
+
 
 
 
