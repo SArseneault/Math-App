@@ -232,30 +232,33 @@ if($user->classExist()){  ?>
       </thred>
       <tbody>
          <?php if($students){
+          $i = 0;
+
          foreach($students as $student){
                 //Convert the std object to an array
                 $student = get_object_vars($student);
 
-                ?><tr><td><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></td>
-                      <td><?php print_r($student['username']);?></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                      <td><a href="">Not Completed</a></td>
-                </tr><?php
+                    ?><form action="" method="post">
+                      <tr> 
+                      <td class="text-center"><button type="submit" class="btn btn-link" name="student<?php print_r($i);?>"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></button></td>
+                      <td class="vert-align"><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
+                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
+                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
+                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
+                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      <td>Not Completed</a></td>
+                      </tr></form><?php
 
         } } ?>
 
@@ -278,6 +281,7 @@ if($user->classExist()){  ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addStudentModal">Add Student</a>
     </div>
+
   </div>
 </div>
 
