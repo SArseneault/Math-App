@@ -81,12 +81,76 @@
 
 		//Adding a level to a class
 		public function addLevel($fields = array()){
+
 			if(!$this->_db->insert('level', $fields)) {
 				throw new Exception('There was a problem creating a level.');
 			}
 		}
 
-		
+		//Removing a level to a class
+		public function removeLevel($fields = array()){
+
+			if(!$this->_db->delete('level', $fields)) {
+				throw new Exception('There was a problem deleting a level.');
+			}
+		}
+
+		//Returns the union of the level and the 
+		public function getLevels($classID = null){
+
+			//If the class id exists then use it to find the levels
+			if(!$classID){
+				//Setting the class id to the current teacher's class
+				$classID = $this->getClass()['class_id'];
+			}
+
+
+			//Grabbing the level data
+			$data = $this->_db->get('level', array('class_id', '=', $classID));
+			
+			//Getting array of stf objects
+			$data = $data->results();
+	
+			
+
+			return $data;
+		}
+
+		//Attemps to insert a question into the database
+		public function addQuestion($fields = array()){
+			print_r($fields);
+			if(!$this->_db->insert('question', $fields)) {
+				throw new Exception('There was a problem creating this question.');
+			}
+		}
+
+		//Returns all of the questions in a certain level
+		public function getQuestions($levelID = null){
+
+			//Grabbing the question
+			$data = $this->_db->get('question', array('level_id', '=', $levelID));
+			
+			//Getting array of stf objects
+			$data = $data->results();
+
+			//Creating a question array
+			$questions = array();
+
+			
+			//Appending each data result to the array
+			foreach($data as $question){
+
+				//Convert the std object to an array of question info
+                $question = get_object_vars($question);
+         		
+         		//Pushing the question array to the array of questions
+                array_push($questions, $question);	
+			}
+			
+
+			return $questions;
+		}
+
 
 		//Update user table
 		public function update($fields = array(), $id = null) {

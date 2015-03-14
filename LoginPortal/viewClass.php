@@ -238,14 +238,15 @@ if($user->classExist()){  ?>
                 //Convert the std object to an array
                 $student = get_object_vars($student);
 
-                    ?><form action="" method="post">
+                    ?>
                       <tr> 
-                      <td class="text-center"><button type="submit" class="btn btn-link" name="student<?php print_r($i);?>"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></button></td>
-                      <td class="vert-align"><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
-                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
-                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
-                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
-                      <td><button type="submit" class="btn btn-link" name="level<?php print_r($i);?>">Completed</button></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="student<?php print_r($i);?>">Completed</a></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="student<?php print_r($i);?>"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
+                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
                       <td>Not Completed</a></td>
                       <td>Not Completed</a></td>
                       <td>Not Completed</a></td>
@@ -258,9 +259,9 @@ if($user->classExist()){  ?>
                       <td>Not Completed</a></td>
                       <td>Not Completed</a></td>
                       <td>Not Completed</a></td>
-                      </tr></form><?php
+                      </tr><?php
 
-        } } ?>
+        } $i=$i+1; } ?>
 
       
       </tbody>

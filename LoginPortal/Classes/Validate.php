@@ -43,8 +43,8 @@
 								if($check->count()) {
 									$this->addError("{$item} already exists");
 								}
-
 							break;
+							
 						}
 
 					}

@@ -14,9 +14,12 @@
     $classInfo = $user->getClass();
     $students = $student->getStudents($classInfo['class_id']);
 
-    $levelInfo = null;
+    $levels = $user->getLevels();
+
   } else {
     $classInfo = null;
+    $levels = null;
+    
   }
 
 if(Input::exists()) {
@@ -61,7 +64,7 @@ if(Input::exists()) {
             
 
             //Refresh the page to show the update
-            header("Refresh:0");
+           header("Refresh:0");
         } catch(Execption $e) {
           die($e->getMessage());
           }
@@ -78,47 +81,59 @@ if(Input::exists()) {
       //Validate fields
       $validate = new Validate();
 
+
       $validation = $validate->check($_POST, array(
-        'first_name' => array(
+        'level_id' => array(
+          'required' => true
+          ),
+        'question_name' => array(
           'required' => true,
           'min' => 2,
           'max' => 50
           ),
-        'last_name' => array(
-          'required' => true,
+        'qDescription' => array(
           'min' => 2,
-          'max' => 50
+          'max' => 100
           ),
-        'password' => array(
-            'required' => true,
-            'min' => 6
+        'qfrequency' => array(
+            'required' => true
            ),
-        'password_again' => array(
-            'required' => true,
-            'min' => 6,
-            'matches' => 'password'
+        'operand1' => array(
+            'required' => true
+            ),
+        'operand2' => array(
+            'required' => true
+            ),
+        'qAnswer' => array(
+            'required' => true
             )
 
         ));
       
+      $qtype = -1;
+      if (isset($_POST['practiceRadio'])) {
+        $qtype = 0;
+      } elseif(isset($_POST['testRadio'])) {
+         $qtype = 1;
+      }
+
 
       if($validation->passed()) {
 
         try {
            
 
-            //Creating a new student
-            $student = new Student();
-            $salt = Hash::salt(32);
-            //Inserting the new student into the database
-            $student->create(array(
-              'first_name' => Input::get('first_name'),
-              'last_name' => Input::get('last_name'),
-              'username' => Input::get('username'),
-              'password' => Hash::make(Input::get('password'), $salt),
-              'class_id' => $classInfo['class_id'],
-              'joined' => date('Y-m-d H:i:s'),
-              'salt' => $salt
+          
+            //Inserting the new question into the database
+            $user->addQuestion(array(
+              'name' => Input::get('question_name'),
+              'description' => Input::get('qDescription'),
+              'freq' => Input::get('qfrequency'),
+              'question_type' => $qtype,
+              'operator' => Input::get('operator'),
+              'operand1' => Input::get('operand1'),
+              'operand2' => Input::get('operand2'),
+              'level_id' => Input::get('level_id')
               ));
 
 
@@ -198,34 +213,53 @@ if($user->classExist()){  ?>
 <div class ="container">
   <div class = "table-responsive">
     <table class = "table">
+      <?php if($levels){ ?>
       <thread>
         <tr>
           <th>Level</th>
+          <th>Time Limit</th>
           <th>Practice Questions</th>
           <th>Test Questions</th>
           <th>Students on level</th>
         </tr>
       </thred>
       <tbody>
+        
+        <?php
+          $i = 0;
+          foreach($levels as $level){
+           
+
+            //Convert the std object to an array
+            $level = get_object_vars($level); 
+
+            //Grabbing the questons for this level
+            $questions = $user->getQuestions($level['level_id']);
+
+            //Grabbing the question and test count
+            $practiceCount = 0;
+            $testCount = 0;
+            foreach($questions as $question) {
+
+
+              if($question['question_type'] == 0)
+                $practiceCount++;
+              elseif($question['question_type'] == 1)
+                $testCount++;
+            }
+            
+            ?>
         <tr>
-          <td>Level 1</td>
-          <td>5</td>
-          <td>15</td>
-          <td>2<td>
+          <td><a href="#" data-toggle="modal" data-target="#editLevelModal" value="<?php print_r($level['level_id']); ?>"><?php print_r($level['name']); ?></a></tdv>
+          <td><?php print_r($level['time_limit']); ?></td>
+          <td><?php print_r($practiceCount); ?></td>
+          <td><?php print_r($testCount); ?></td>
+          <td></td>
         </tr>
-        <tr>
-          <td>Level 2</td>
-          <td>6</td>
-          <td>10</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>Level 3</td>
-          <td>7</td>
-          <td>9</td>
-          <td>1</td>
-        </tr>
+
+        <?php $i = $i + 1; } ?>
       </tbody>
+      <?php } ?>
   </table>
 </div>
 </div>
@@ -236,7 +270,11 @@ if($user->classExist()){  ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createLevelModal">Create Level</a>
     </div>
- 
+
+    <div class ="col-md-2">
+      <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
+    </div>
+
 </div>
 <?php } else { //Display this message if the class doesn't exsits?>
   <h3><p>You have not created a class yet!</p></h3>
@@ -278,7 +316,7 @@ if($user->classExist()){  ?>
             <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
           </div>
         </div>
-      
+
   </div>
 </div> 
 
@@ -286,7 +324,7 @@ if($user->classExist()){  ?>
 
 
 
-<!--modal for add question -->
+<!--modal for add Question -->
 <div class="modal fade" id="addQuestionModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -296,43 +334,58 @@ if($user->classExist()){  ?>
       </div>
       <div class="modal-body">
 
-        <!--forms for input -->
+ <!--forms for input -->
+
+          <!-- need to fix input operation (-/+) size is all messed up -->
           <div class ="form-group">
-            <label for "labelForQuestionName">Name</lable>
+            <label for "labelForLevelid">LevelName</label>
+            <select class ="form-control" name="level_id" id="level_id">
+              <?php foreach($levels as $level){
+                //Convert the std object to an array
+                $level = get_object_vars($level); ?>
+              <option value="<?php print_r($level['level_id']); ?>"><?php print_r($level['name']); ?></option>
+              <?php } ?>
+            </select>
+          </div>
+
+          
+
+          <div class ="form-group">
+            <label for "labelForQuestionName">Name</label>
               <input type ="text" class"form-control" name="question_name" id ="labelForQuestionName" placeholder="Question Name">
           </div>
 
           <div class ="form-group">
-            <label for "labelForQuestionDescription">Description</lable>
+            <label for "labelForQuestionDescription">Description</label>
               <input type ="text" class"form-control" name="qDescription" id ="labelForQuestionDescription" placeholder="Question Name">
           </div>
 
           <!-- need to change input type -->
           <div class ="form-group">
-            <label for "labelForQuestionFreq">Question Frequency</lable>
+            <label for "labelForQuestionFreq">Question Frequency</label>
               <input type ="number" class"form-control" name="qfrequency" id ="labelForQuestionFreq" placeholder="Question Frequency">
           </div>
 
           <!--check box for practice/test question -->
           <div class ="form-group">
             <h4>Question Type</h4>
-            <form role ="form">
+            
               <label class ="radio-inline">
                 <input type="radio" name="practiceRadio">Practice
               </label>
               <label class ="radio-inline">
                 <input type="radio" name="testRadio">Test
               </label>
-            </form>
+          
           </div>
 
 
           <!-- need to fix input operation (-/+) size is all messed up -->
           <div class ="form-group">
-            <label for "labelForQuestionEntry">Question</lable>
-            <input type ="number" class"form-control" id ="labelOperatorOne" placeholder="Operator 1">
-            <input type ="number" class"form-control" id ="labelOperatorTwo" placeholder="Operator 2">
-            <select class ="form-control" id="operator">
+            <label for "labelForQuestionEntry">Question</label>
+            <input type ="number" class"form-control" name="operand1" id ="labelOperandrOne" placeholder="Operand 1">
+            <input type ="number" class"form-control" name="operand2" id ="labelOperandTwo" placeholder="Operand 2">
+            <select class ="form-control" name="operator" id="operator">
               <option>+</option>
               <option>-</option>
             </select>
@@ -341,7 +394,7 @@ if($user->classExist()){  ?>
 
           <div class ="form-group">
             <label for "labelForQuestionAnswer">Answer</lable>
-              <input type ="number" class"form-control" id ="labelForQuestionAnswer" placeholder="Answer">
+              <input type ="number" class"form-control" name="qAnswer" id ="labelForQuestionAnswer" placeholder="Answer">
           </div>
 
       </div>
@@ -351,10 +404,49 @@ if($user->classExist()){  ?>
        
       </div>
     </div>
-  </form>
-  </div>
-</div>
 
+  
+  
+  </div>
+</div> 
+
+<!--modal for removing a level -->
+<div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Level Editor</h4>
+      </div>
+      <div class="modal-body">
+
+        <!--forms for input -->
+       
+          <div class ="form-group">
+            <label for "labelForLevelName">Name</label>
+              <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
+          </div>
+          <div class ="form-group">
+            <label for "labelForLevelDescription">Description</label>
+              <input type ="text" class"form-control" name="lDescription" id ="labelForLevelName" placeholder="Description">
+          </div>
+          <div class ="form-group">
+            <label for "labelForLevelTime">Time Limit</label>
+              <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
+          </div>
+  
+
+        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" name="createLevel" class="btn btn-primary">Create Level</button>
+            <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+          </div>
+        </div>
+      </form>
+  </div>
+</div> 
 
 
 
