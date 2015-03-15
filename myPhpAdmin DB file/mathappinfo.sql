@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2015 at 06:43 AM
+-- Generation Time: Mar 15, 2015 at 08:47 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -50,25 +50,6 @@ INSERT INTO `class` (`class_id`, `class_name`, `teacher_name`, `salt`, `class_pa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `group`
---
-
-CREATE TABLE IF NOT EXISTS `group` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `permissions` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `group`
---
-
-INSERT INTO `group` (`id`, `name`, `permissions`) VALUES
-(1, 'Administrator', '{"admin":1}');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `groups`
 --
 
@@ -98,31 +79,58 @@ CREATE TABLE IF NOT EXISTS `level` (
   `description` varchar(100) NOT NULL,
   `time_limit` int(11) NOT NULL,
   `class_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `level`
 --
 
 INSERT INTO `level` (`level_id`, `name`, `description`, `time_limit`, `class_id`) VALUES
-(10, 'Level1', 'Zero Rule', 5, 11),
-(11, 'Level 2', 'One rule', 7, 11);
+(29, 'Level1', 'L1', 4, 11),
+(30, 'Level2', 'L2', 5, 11),
+(31, 'Level3', 'L3', 4, 11),
+(32, 'Level4', 'L4', 7, 11),
+(33, 'Level5', 'L5', 6, 11),
+(34, 'Level 6', 'L6', 3, 11);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `progress`
+-- Table structure for table `level_progress`
 --
 
-CREATE TABLE IF NOT EXISTS `progress` (
-`id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `level_progress` (
+`levelprog_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `elapsed_time` int(11) NOT NULL,
-  `attemps` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `elapsed_time` time NOT NULL,
+  `attempts` int(2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `level_progress`
+--
+
+INSERT INTO `level_progress` (`levelprog_id`, `student_id`, `level_id`, `status`, `elapsed_time`, `attempts`) VALUES
+(5, 8, 29, 0, '00:00:00', 0),
+(6, 11, 29, 1, '00:00:00', 0),
+(7, 8, 30, 0, '00:00:00', 0),
+(8, 11, 30, 1, '00:00:00', 0),
+(9, 8, 31, 0, '00:00:00', 0),
+(10, 11, 31, 1, '00:00:00', 0),
+(11, 8, 32, 0, '00:00:00', 0),
+(12, 11, 32, 0, '00:00:00', 0),
+(13, 8, 33, 0, '00:00:00', 0),
+(14, 11, 33, 0, '00:00:00', 0),
+(15, 8, 34, 0, '00:00:00', 0),
+(16, 11, 34, 0, '00:00:00', 0),
+(23, 22, 29, 0, '00:00:00', 0),
+(24, 22, 30, 0, '00:00:00', 0),
+(25, 22, 31, 0, '00:00:00', 0),
+(26, 22, 32, 0, '00:00:00', 0),
+(27, 22, 33, 0, '00:00:00', 0),
+(28, 22, 34, 0, '00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -139,20 +147,36 @@ CREATE TABLE IF NOT EXISTS `question` (
   `operand2` int(11) NOT NULL,
   `operator` varchar(2) NOT NULL,
   `question_type` tinyint(1) NOT NULL,
-  `freq` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `freq` int(11) NOT NULL,
+  `answer` int(2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`, `answer`) VALUES
+(7, 'Q1L1', 12, 'Question1L1', 1, 1, '+', 0, 3, 0),
+(8, 'Q2L2', 12, 'Q2L2', 2, 2, '+', 1, 5, 0),
+(10, 'Q4', 12, 'Q1L14', 3, 3, '+', 0, 4, 0),
+(11, 'Q4', 12, 'Q4L1', 4, 4, '+', 1, 3, 8);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `snapshot`
+-- Table structure for table `question_progress`
 --
 
-CREATE TABLE IF NOT EXISTS `snapshot` (
-`id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `image` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='This table will allow the system to store snapshots of the student''s level';
+CREATE TABLE IF NOT EXISTS `question_progress` (
+`questionprog_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `levelprog_id` int(11) NOT NULL,
+  `level_id` int(11) NOT NULL,
+  `operand1` int(2) NOT NULL,
+  `operand2` int(2) NOT NULL,
+  `operator` varchar(2) NOT NULL,
+  `answer` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -169,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `joined` datetime NOT NULL,
   `class_id` int(11) NOT NULL,
   `salt` varchar(32) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
@@ -185,7 +209,8 @@ INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `username`, `pas
 (8, 'Ken', 'Piker', 'KPiker', 'a1cb0d4903ac2b280956b713eeccfc42a601214a252dd16911', '2015-03-12 03:16:42', 11, '~ø&D6GS¥Ã1²¡D±ŽWÊ›xÞW‡Œ‡¼´Â×²'),
 (9, 'Mike', 'Valley', 'MValley', 'd8ea2c17f2f51da9abdcb48b6f59d2b68a559a5ed11a9d8eba', '2015-03-12 03:59:52', 13, 'w;½<usVDY¹„ôÂ»–o9É¢y‚ÔR©4Ï öá•'),
 (10, 'Sam', 'macro', 'Smarco', 'cc8735f7d64ddf8aa040c5f9084fddbec3846197ab941a5d51', '2015-03-13 18:10:51', 13, '=ýæýÃè¶¯:XNÏÅ‡±L S9äÌµ¢"@’-'),
-(11, 'Jake', 'Jumper', 'JJumper', '6d1d731c038a30f52280844222e8f3d2480e6080e739442dbc', '2015-03-15 06:41:21', 11, '™ëMA\\p4µä™­r¼ñ´—¾Üª¿mÎÚ•®ÿÉOw');
+(11, 'Jake', 'Jumper', 'JJumper', '6d1d731c038a30f52280844222e8f3d2480e6080e739442dbc', '2015-03-15 06:41:21', 11, '™ëMA\\p4µä™­r¼ñ´—¾Üª¿mÎÚ•®ÿÉOw'),
+(22, 'Ben', 'Marco', 'BMarco', '1eeed6bea540e0bf3b5c2b842b1c62ff2dc5de18d98784a215', '2015-03-15 20:46:41', 11, 'Bo ;IläÕ;å#bPªu;jþ¡¯ñÉyŒõL8Ê');
 
 -- --------------------------------------------------------
 
@@ -249,22 +274,16 @@ ALTER TABLE `class`
  ADD PRIMARY KEY (`class_id`);
 
 --
--- Indexes for table `group`
---
-ALTER TABLE `group`
- ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `level`
 --
 ALTER TABLE `level`
  ADD PRIMARY KEY (`level_id`);
 
 --
--- Indexes for table `progress`
+-- Indexes for table `level_progress`
 --
-ALTER TABLE `progress`
- ADD PRIMARY KEY (`id`);
+ALTER TABLE `level_progress`
+ ADD PRIMARY KEY (`levelprog_id`);
 
 --
 -- Indexes for table `question`
@@ -273,10 +292,10 @@ ALTER TABLE `question`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `snapshot`
+-- Indexes for table `question_progress`
 --
-ALTER TABLE `snapshot`
- ADD PRIMARY KEY (`id`);
+ALTER TABLE `question_progress`
+ ADD PRIMARY KEY (`questionprog_id`);
 
 --
 -- Indexes for table `student`
@@ -309,27 +328,27 @@ MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
-MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
--- AUTO_INCREMENT for table `progress`
+-- AUTO_INCREMENT for table `level_progress`
 --
-ALTER TABLE `progress`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `level_progress`
+MODIFY `levelprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT for table `snapshot`
+-- AUTO_INCREMENT for table `question_progress`
 --
-ALTER TABLE `snapshot`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `question_progress`
+MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `teacher`
 --

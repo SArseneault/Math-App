@@ -2,7 +2,7 @@
   require_once 'core/init.php';
 
   $user = new User();//Picking current user details
-  $student = new Student(); //Creating a student object
+  $studentOBJ = new Student(); //Creating a student object
   //Redirect the user if they are not logged in.
   if(!$user->isLoggedIn()) {
       Redirect::to("includes/errors/loginError.php");
@@ -12,11 +12,14 @@
   if($user->classExist()){
     $classInfo = $user->getClass();
   
-    $students = $student->getStudents($classInfo['class_id']);
-  } else {
-    $classInfo = null;
-  }
+    $students = $studentOBJ->getStudents($classInfo['class_id']);
+    $levels = $user->getLevels();
 
+  } else {
+
+    $classInfo = null;
+    $levels = null;
+}
  
 
   if(Input::exists()) {
@@ -120,11 +123,11 @@
         try {
            
 
-            //Creating a new student
-            $student = new Student();
+            //Creating a new salt
             $salt = Hash::salt(32);
+
             //Inserting the new student into the database
-            $student->create(array(
+            $studentOBJ->create(array(
               'first_name' => Input::get('first_name'),
               'last_name' => Input::get('last_name'),
               'username' => Input::get('username'),
@@ -215,28 +218,24 @@ if($user->classExist()){  ?>
     <table class = "table">
       <thread>
         <tr>
-          <th>Name</th>
-          <th>level 1</th>
-          <th>level 2</th>
-          <th>level 3</th>
-          <th>level 4</th>
-          <th>level 5</th>
-          <th>level 6</th>
-          <th>level 7</th>
-          <th>level 8</th>
-          <th>level 9</th>
-          <th>level 10</th>
-          <th>level 11</th>
-          <th>level 12</th>
-          <th>level 13</th>
-          <th>level 14</th>
-          <th>level 15</th>
-          <th>level 16</th>
-          <th>level 17</th>
-          <th>level 18</th>
-        </tr>
+        <th>Name</th>
+           <?php
+
+          foreach($levels as $level){
+
+            //Convert the std object to an array
+            $level = get_object_vars($level); 
+            ?>
+         
+          <th><?php print_r($level['name']); ?></th>
+          
+           <?php } ?>
+          </tr>
+
+        
       </thred>
       <tbody>
+
          <?php if($students){
           $i = 0;
 
@@ -245,26 +244,29 @@ if($user->classExist()){  ?>
                 $student = get_object_vars($student);
 
                     ?>
-                      <tr> 
+                      <tr>
                       <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
-                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
-                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
-                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
-                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
-                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      <td>Not Completed</a></td>
-                      </tr><?php
+                      
+                      <?php
+                      $studentProg = $studentOBJ->getLevelProgress($student['student_id']);
+
+                      if($studentProg){
+                      foreach($studentProg as $currProg) {
+
+                        $currProg = get_object_vars($currProg);
+                       
+                        ///If the progress has been completed then display the link
+                        if($currProg['status'] == 1){ ?>
+                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo()">Completed</a></td> 
+                      <?php
+                      //Else display not completed
+                       } else { ?>
+                          <td>Not Completed</td> 
+                       <?php }//End else
+                             }}//End loop?>
+
+                      </tr>
+                      <?php
 
         } $i=$i+1; } ?>
 
@@ -389,15 +391,14 @@ if($user->classExist()){  ?>
         <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
       
         <h1 id="student_ID"></h1>
+      </div>
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" id="removeStudent"class="btn btn-danger" name="removeLevel">Remove student</button>
       </div>
     </div>
-  
   </div>
 </div>
-
 
 <!--Script to grab level info for editstudentmodal-->
 <script>
@@ -430,36 +431,44 @@ if($user->classExist()){  ?>
 
 
 
-<!--Model for viewing a level-->
-<div class="modal fade" id="viewLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Model for editing a student-->
+<div class="modal fade"  id="viewLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
 
-         
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Student level</h4>
-      
-        <h1 id="student_ID"></h1>
+        <h4 class="modal-title" id="myModalLabel">Level View</h4>
+    
+         
+        <div id="graph"></div>
+
+
+      </div>
+
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="removeStudent"class="btn btn-danger" name="removeLevel">Remove student</button>
       </div>
+
+
     </div>
-  
   </div>
 </div>
 
 
-<!--Script to grab level info for editstudentmodal-->
+
+  
+<!--Script to grab level info for the viewlevelmodal-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="TableBarChart.js"></script>
+<link rel="stylesheet" href="../TableBarChart.css">
 <script>
 
-  //Variable to store the student's  id 
-  var SID = 0;
-  function setStudentID(studentID){
+
+  function setLevelInfo(){
+   // alert("Welcome");
+
  
-    SID = studentID;
-    
   }
 
 

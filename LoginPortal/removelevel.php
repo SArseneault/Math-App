@@ -9,6 +9,6 @@
 
 	
 	//Returning result to javascript
-	echo 'Level ',$_POST['levelid'],' has been removed';
+	echo 'Level has been removed';
 
 ?>

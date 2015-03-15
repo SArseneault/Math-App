@@ -81,13 +81,66 @@
 
 		//Adding a level to a class
 		public function addLevel($fields = array()){
+
+			//Attempt to create the new level
 			if(!$this->_db->insert('level', $fields)) {
 				throw new Exception('There was a problem creating a level.');
 			}
+
+			//Grabbing the newly created level data
+			$leveldata = $this->_db->get('level', array('name', '=', $fields['name']));
+
+			//Grabbing std object
+			$leveldata = $leveldata->first();
+
+			//Convert the std object to an array
+	        $leveldata = get_object_vars($leveldata);
+
+		
+			//Creating a student helper object
+			$studentOBJ = new Student();
+
+			//Gabbing all the students inside of this class
+			$students = $studentOBJ->getStudents($this->getClass()['class_id']);
+
+			
+			//For each student update the level progress to a default value
+			foreach($students as $student){
+
+	            //Convert the std object to an array
+	            $student = get_object_vars($student);
+
+
+
+            	//Creating a default progress level
+				$defaultProgress = array(
+	            	'student_id' => $student['student_id'],
+	            	'level_id' => $leveldata['level_id'],
+	            	'status' => 0,
+	            	'elapsed_time' => '00:00:00',
+	            	'attempts' => 0 
+	            );
+
+	       
+
+				//Attempt to insert default data for the progress level
+				if(!$this->_db->insert('level_progress', $defaultProgress)) {
+					throw new Exception('There was a problem inserting default progress for one of the students');
+				}
+
+           }
+
+			
 		}
 
 		//Removing a level to a class
 		public function removeLevel($levelID){
+
+			//Deleting all the student progress tables
+			if(!$this->_db->delete('level_progress', array('level_id', '=', $levelID))){
+				throw new Exception('There was a problem deleting the level progress.');
+			}
+
 
 			//Deleting all questions associated with the level
 			if(!$this->_db->delete('question', array('level_id', '=', $levelID))){
@@ -123,7 +176,6 @@
 
 		//Attemps to insert a question into the database
 		public function addQuestion($fields = array()){
-			print_r($fields);
 			if(!$this->_db->insert('question', $fields)) {
 				throw new Exception('There was a problem creating this question.');
 			}
