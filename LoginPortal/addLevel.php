@@ -122,7 +122,6 @@ if(Input::exists()) {
 
         try {
            
-
           
             //Inserting the new question into the database
             $user->addQuestion(array(
@@ -134,7 +133,8 @@ if(Input::exists()) {
               'operand1' => Input::get('operand1'),
               'operand2' => Input::get('operand2'),
               'answer' => Input::get('qAnswer'),
-              'level_id' => Input::get('level_id')
+              'level_id' => Input::get('level_id'),
+              'class_id' => $classInfo['class_id']
               ));
 
 

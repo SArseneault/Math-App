@@ -63,7 +63,35 @@
 
 			}
 
+
+			//Grabbing the question data
+			$questiondata = $this->_db->get('question', array('class_id', '=', $fields['class_id']));
 			
+			//Getting array of std objects
+			$questiondata = $questiondata->results();
+
+			//Looping through each question
+			foreach($questiondata as $question){
+
+				//Convert the std object to an array
+	            $question = get_object_vars($question);
+
+				//Creating a default progress level
+					$defaultProgress = array(
+		            	'question_id' =>  $question['question_id'],
+		            	'level_id' => $question['level_id'],
+		            	'answer' => -1,
+		            	'student_id' => $studentID,
+		            	'attemps' => 0
+		            );
+
+		       
+					 //Attempting to insert question progress information into the database for each student.
+					if(!$this->_db->insert('question_progress', $defaultProgress)) {
+						throw new Exception('There was a problem inserting default progress for one of the students');
+					}
+
+			}
 
 
 		}

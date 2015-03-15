@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2015 at 08:47 PM
+-- Generation Time: Mar 15, 2015 at 10:08 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -33,19 +33,14 @@ CREATE TABLE IF NOT EXISTS `class` (
   `salt` varchar(32) NOT NULL,
   `class_password` varchar(30) NOT NULL,
   `teacher_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `class`
 --
 
 INSERT INTO `class` (`class_id`, `class_name`, `teacher_name`, `salt`, `class_password`, `teacher_id`) VALUES
-(1, 'RachelClass1', 'Rachel', '·¾»ÃÒ¦—iÏ¥p›ÅŒú¤ºŽ+dBÔŒÕiwºÐæU', 'b87d75fb8a977778fc87f6b8b3c670', 51),
-(3, 'class1', 'Teacher1', '¾ã=7ðÞ×})2D®3ø½f®3ÿ\rïï=ÏxÈâ', '01b7c2251b4559b514fba325caf150', 54),
-(10, 'KClass101', 'Kelly''s Class', '[X#·¬U·¢Kç†ÐtµÖ"]¥¬ç{ºˆ:0|e', '89f1bdbe36fd8ad87c746a40fc6765', 53),
-(11, 'Rachels'' Class', 'Rachel', 'QÃ…,›¾õhk÷T¨:™™3ÛAŽ±b"U7~A£{Bæ', '1d78a20fb877e73c1b7e454e38604a', 55),
-(12, '', '', 'S\rX=¡®Û)ÐžG/ÈCUAÕvµµY±Ü:UžŽ', 'c5bee484ff762bef05fabfff9977be', 55),
-(13, 'TestClass', 'TestTeacher', '`ÐÚ§ˆž«âçUÙcùª8B®äéLôu`­yz”', 'e6604094e4d8c43215e3d66c561661', 56);
+(14, 'Mr. Sam''s Class', 'Mr. Sam', 'îaàcúõÚ%A­¹ù\nZY¨v¸EŒh7)ñú''', '9bb693ffb92be4679dbaa32a4d57bb', 57);
 
 -- --------------------------------------------------------
 
@@ -79,19 +74,17 @@ CREATE TABLE IF NOT EXISTS `level` (
   `description` varchar(100) NOT NULL,
   `time_limit` int(11) NOT NULL,
   `class_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `level`
 --
 
 INSERT INTO `level` (`level_id`, `name`, `description`, `time_limit`, `class_id`) VALUES
-(29, 'Level1', 'L1', 4, 11),
-(30, 'Level2', 'L2', 5, 11),
-(31, 'Level3', 'L3', 4, 11),
-(32, 'Level4', 'L4', 7, 11),
-(33, 'Level5', 'L5', 6, 11),
-(34, 'Level 6', 'L6', 3, 11);
+(37, 'Level 1', 'Zero Rule', 5, 14),
+(38, 'Level 2', 'One Rule', 6, 14),
+(39, 'Level 3', '2 plus 2', 5, 14),
+(40, 'Level 4', '2 plus 3', 3, 14);
 
 -- --------------------------------------------------------
 
@@ -106,31 +99,25 @@ CREATE TABLE IF NOT EXISTS `level_progress` (
   `status` tinyint(1) NOT NULL,
   `elapsed_time` time NOT NULL,
   `attempts` int(2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `level_progress`
 --
 
 INSERT INTO `level_progress` (`levelprog_id`, `student_id`, `level_id`, `status`, `elapsed_time`, `attempts`) VALUES
-(5, 8, 29, 0, '00:00:00', 0),
-(6, 11, 29, 1, '00:00:00', 0),
-(7, 8, 30, 0, '00:00:00', 0),
-(8, 11, 30, 1, '00:00:00', 0),
-(9, 8, 31, 0, '00:00:00', 0),
-(10, 11, 31, 1, '00:00:00', 0),
-(11, 8, 32, 0, '00:00:00', 0),
-(12, 11, 32, 0, '00:00:00', 0),
-(13, 8, 33, 0, '00:00:00', 0),
-(14, 11, 33, 0, '00:00:00', 0),
-(15, 8, 34, 0, '00:00:00', 0),
-(16, 11, 34, 0, '00:00:00', 0),
-(23, 22, 29, 0, '00:00:00', 0),
-(24, 22, 30, 0, '00:00:00', 0),
-(25, 22, 31, 0, '00:00:00', 0),
-(26, 22, 32, 0, '00:00:00', 0),
-(27, 22, 33, 0, '00:00:00', 0),
-(28, 22, 34, 0, '00:00:00', 0);
+(35, 23, 37, 1, '00:00:00', 0),
+(36, 23, 38, 1, '00:00:00', 0),
+(37, 23, 39, 1, '00:00:00', 0),
+(38, 23, 40, 0, '00:00:00', 0),
+(39, 24, 37, 0, '00:00:00', 0),
+(40, 24, 38, 0, '00:00:00', 0),
+(41, 24, 39, 0, '00:00:00', 0),
+(42, 24, 40, 0, '00:00:00', 0),
+(47, 26, 37, 0, '00:00:00', 0),
+(48, 26, 38, 0, '00:00:00', 0),
+(49, 26, 39, 0, '00:00:00', 0),
+(50, 26, 40, 0, '00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +126,7 @@ INSERT INTO `level_progress` (`levelprog_id`, `student_id`, `level_id`, `status`
 --
 
 CREATE TABLE IF NOT EXISTS `question` (
-`id` int(11) NOT NULL,
+`question_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `level_id` int(11) NOT NULL,
   `description` varchar(100) NOT NULL,
@@ -148,18 +135,19 @@ CREATE TABLE IF NOT EXISTS `question` (
   `operator` varchar(2) NOT NULL,
   `question_type` tinyint(1) NOT NULL,
   `freq` int(11) NOT NULL,
-  `answer` int(2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+  `answer` int(2) NOT NULL,
+  `class_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
 --
 
-INSERT INTO `question` (`id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`, `answer`) VALUES
-(7, 'Q1L1', 12, 'Question1L1', 1, 1, '+', 0, 3, 0),
-(8, 'Q2L2', 12, 'Q2L2', 2, 2, '+', 1, 5, 0),
-(10, 'Q4', 12, 'Q1L14', 3, 3, '+', 0, 4, 0),
-(11, 'Q4', 12, 'Q4L1', 4, 4, '+', 1, 3, 8);
+INSERT INTO `question` (`question_id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`, `answer`, `class_id`) VALUES
+(14, 'L1Q1', 37, 'Level1Q1', 2, 2, '+', 0, 2, 4, 14),
+(15, 'L1Q2', 37, 'Level1Q2', 4, 3, '+', 1, 3, 6, 14),
+(16, 'Q2L1', 38, 'Q2L1', 5, 6, '+', 1, 4, 11, 14),
+(17, 'Q45', 37, 'Q4', 5, 5, '+', 0, 4, 10, 14);
 
 -- --------------------------------------------------------
 
@@ -170,13 +158,25 @@ INSERT INTO `question` (`id`, `name`, `level_id`, `description`, `operand1`, `op
 CREATE TABLE IF NOT EXISTS `question_progress` (
 `questionprog_id` int(11) NOT NULL,
   `question_id` int(11) NOT NULL,
-  `levelprog_id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
-  `operand1` int(2) NOT NULL,
-  `operand2` int(2) NOT NULL,
-  `operator` varchar(2) NOT NULL,
-  `answer` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `answer` int(2) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `attemps` int(2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `question_progress`
+--
+
+INSERT INTO `question_progress` (`questionprog_id`, `question_id`, `level_id`, `answer`, `student_id`, `attemps`) VALUES
+(7, 14, 37, -1, 23, 0),
+(8, 15, 37, -1, 23, 0),
+(9, 16, 38, -1, 23, 0),
+(10, 17, 37, -1, 23, 0),
+(11, 14, 37, -1, 26, 0),
+(12, 15, 37, -1, 26, 0),
+(13, 16, 38, -1, 26, 0),
+(14, 17, 37, -1, 26, 0);
 
 -- --------------------------------------------------------
 
@@ -193,24 +193,16 @@ CREATE TABLE IF NOT EXISTS `student` (
   `joined` datetime NOT NULL,
   `class_id` int(11) NOT NULL,
   `salt` varchar(32) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
 INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `username`, `password`, `joined`, `class_id`, `salt`) VALUES
-(1, 'Ken', 'Ben', 'KenBen', '5f4a736becf5b4b54dca6c7db2b4659cc033f7e2c0dedbcdd0', '0000-00-00 00:00:00', 1, 'U?H³â`%ÓY+%`]=KHHÖš¦Z“æt¬Õ<'),
-(2, 'Beck', 'Lap', 'blap', 'f2f093bbfb8968d749cc1842c51b7263811ff29e98b9809627', '2015-03-11 20:42:31', 1, 'Xr!Zy½?¬ƒ¯Ær†šÁÇÉ‰óº0}ÿGÐ	ì'),
-(3, 'Kelly''s Student', 'Kelly''s Student', 'KStudent', '48992beba92452df8d916a12c3bed19de31f6d13e28b6857a0', '2015-03-11 21:28:02', 10, 'ÿ¢''6f®¨’ÝZf}iÙü¿¹½x\\x\n·æŠ<¿A'),
-(4, 'Keith', 'Hamburger', 'Kham', '52c6d94dc55bc6ecf7ef2cbf6d2e9332ca4b14ad7b90bfca01', '2015-03-11 21:35:08', 1, '´MúV\Z$É“ƒGŽj•­±A‡ƒËAÜ¸J©Lº„EÐ{'),
-(5, 'John', 'Brown', 'Jbrown', '5d3479e60be5362656cdf3d5bf3cb7cf4fc506001ea7b456f2', '2015-03-11 21:54:06', 1, 'çÕ>¦ÌHY^Š8#y2b¸£¹ð¹ÚCø€ºâÜñª'),
-(6, 'Jane', 'Doe', 'JDoe', '56ad866e11ac3c4731085c0f85878b12a13e84f5e72746533f', '2015-03-11 22:01:08', 1, 'Ôõ”\Z‰~ÉðÐ¡µP¬«³&"ÀÉ4Ýj°Õëeì'),
-(8, 'Ken', 'Piker', 'KPiker', 'a1cb0d4903ac2b280956b713eeccfc42a601214a252dd16911', '2015-03-12 03:16:42', 11, '~ø&D6GS¥Ã1²¡D±ŽWÊ›xÞW‡Œ‡¼´Â×²'),
-(9, 'Mike', 'Valley', 'MValley', 'd8ea2c17f2f51da9abdcb48b6f59d2b68a559a5ed11a9d8eba', '2015-03-12 03:59:52', 13, 'w;½<usVDY¹„ôÂ»–o9É¢y‚ÔR©4Ï öá•'),
-(10, 'Sam', 'macro', 'Smarco', 'cc8735f7d64ddf8aa040c5f9084fddbec3846197ab941a5d51', '2015-03-13 18:10:51', 13, '=ýæýÃè¶¯:XNÏÅ‡±L S9äÌµ¢"@’-'),
-(11, 'Jake', 'Jumper', 'JJumper', '6d1d731c038a30f52280844222e8f3d2480e6080e739442dbc', '2015-03-15 06:41:21', 11, '™ëMA\\p4µä™­r¼ñ´—¾Üª¿mÎÚ•®ÿÉOw'),
-(22, 'Ben', 'Marco', 'BMarco', '1eeed6bea540e0bf3b5c2b842b1c62ff2dc5de18d98784a215', '2015-03-15 20:46:41', 11, 'Bo ;IläÕ;å#bPªu;jþ¡¯ñÉyŒõL8Ê');
+(23, 'Ken', 'Ben', 'KBen', '470210c9f9353208cab042767979354a2bff7000b846dd6d29', '2015-03-15 21:59:17', 14, 'É-™²g™,íHx*‚h¤·ž@M;¤wü¨?¿Ã±9^'),
+(24, 'Ben', 'Marco', 'BMarco', '8661a0c1cee70bbbe91e8ae63f81a4b324bf2025cbab87c2bd', '2015-03-15 22:03:51', 14, 'Q†BÊEÙ|íÜúN¢«L2ö¦$3Ûà\\(,õ³'),
+(26, 'Pen', 'Marker', 'PMarker', '7d55e06cd76e7411d23dbea1d541711b19e2d6818eea4365d2', '2015-03-15 22:08:01', 14, 'Å&ìŠMÈ¥ÓŠ\n+öÖ—Rûˆ”•/*µGŸHþò');
 
 -- --------------------------------------------------------
 
@@ -226,20 +218,14 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `salt` varchar(32) NOT NULL,
   `joined` datetime NOT NULL,
   `group` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `teacher`
 --
 
 INSERT INTO `teacher` (`id`, `name`, `username`, `password`, `salt`, `joined`, `group`) VALUES
-(50, 'nick d', 'nick', '5ac52cefb3f758bd337263804c5a8c0c2f58010ae8c109be71', '/’—†ÛJ==gu#S}{¥\r:ùàÀ(îm‹šÀÃ7', '2015-02-28 23:09:24', 0),
-(51, 'Sam Arseneault', 'Sam', 'e45de85f49f5041ddbc0c10dea2066c73af079fd20ebf71c47', '&rîËðêY™sŒ''ßyÛ)ˆƒáIðïªÝ=úëbã', '2015-02-28 23:15:29', 1),
-(52, 'pep', 'pepper', 'c937e82f4263c3b270d3750ca81a578039e4d3e8ddf76ed78a', 'nåá¡é€YÚ»_Ç	´;å?øäQv1©Õÿ¤¡ú»', '2015-02-28 23:20:14', 0),
-(53, 'Kelly', 'kelly', '6f442ec1afe920e874f4f42b9fec285f30f1bc9b4117449d62', 'tdx†” dªÿjŽJ4ýËÓ¯¬Ñ*j¤¦¾¡?·¢', '2015-03-11 01:21:02', 0),
-(54, 'Sam', 'Sam2', 'af2a4bd6ecd01262def93c68e74fd6985fc3fdaef52c81fcc4', 'ñŽ ë,Øâ¿KÄ™-Aj”7°QÔ‚çÄ´', '2015-03-11 02:01:30', 0),
-(55, 'Samuel Arseneault', 'SamA', 'cf57edf35717728a202d49687f79520ad3b5be975d32e08c57', 'éW¶j·P\r‰ÙU¯õÿ›ƒpÈV§Ü© +ÂÃÐð™­', '2015-03-12 03:14:15', 0),
-(56, 'Tester', 'Tester', 'e93b25f581094edd223093b77e2c1d745c1a52c1485a78bd5c', '±-ð>Ì4iÍ÷’M€n´ÑÔ~µëÒAÁ•(vŠÏ', '2015-03-12 03:58:02', 0);
+(57, 'Sam Arseneault', 'Sam', 'cc88d7b4127c56b6cf1582210f9414b64f40f992b5a93eb885', '¾—ÏniAv9Óo*¦¶6a\0 Âb·;0£«ÈÀød', '2015-03-15 21:54:29', 0);
 
 -- --------------------------------------------------------
 
@@ -251,17 +237,14 @@ CREATE TABLE IF NOT EXISTS `teacher_session` (
 `id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL,
   `hash` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `teacher_session`
 --
 
 INSERT INTO `teacher_session` (`id`, `teacher_id`, `hash`) VALUES
-(1, 51, '523613be259b8b01c01a9481d11420aaa1c75563efb8d50d87'),
-(2, 53, '9e6f9382755ccb455cdb4ce271785438fb2c48e1b27dcc8e30'),
-(3, 54, '86b912c908ef9fb7edda13025bc911f862e46150e4dadc32bc'),
-(5, 55, '0a4e006c6ea09ebecf07296133f0a49b7bb9ed1ca9425a1f2b');
+(6, 57, '8d9b5bbe19ac4a63685719499f93e39aca2dc46e72f709a3ad');
 
 --
 -- Indexes for dumped tables
@@ -289,7 +272,7 @@ ALTER TABLE `level_progress`
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`question_id`);
 
 --
 -- Indexes for table `question_progress`
@@ -323,42 +306,42 @@ ALTER TABLE `teacher_session`
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
-MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
+MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `level_progress`
 --
 ALTER TABLE `level_progress`
-MODIFY `levelprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+MODIFY `levelprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `question_progress`
 --
 ALTER TABLE `question_progress`
-MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `teacher_session`
 --
 ALTER TABLE `teacher_session`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

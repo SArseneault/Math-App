@@ -217,6 +217,9 @@ if($user->classExist()){  ?>
   <div class = "table-responsive">
     <table class = "table">
       <thread>
+        <?php if(!$students) { ?>
+        <p></br>Please add students to view the table</p>
+         <?php } else {?>
         <tr>
         <th>Name</th>
            <?php
@@ -236,7 +239,7 @@ if($user->classExist()){  ?>
       </thred>
       <tbody>
 
-         <?php if($students){
+         <?php 
           $i = 0;
 
          foreach($students as $student){
@@ -285,10 +288,11 @@ if($user->classExist()){  ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createClassModal">Create Class</a>
     </div>
-
+    <?php if($classInfo) { ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addStudentModal">Add Student</a>
     </div>
+    <?php } ?>
 
   </div>
 </div>
@@ -391,6 +395,7 @@ if($user->classExist()){  ?>
         <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
       
         <h1 id="student_ID"></h1>
+
       </div>
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -446,6 +451,7 @@ if($user->classExist()){  ?>
 
       </div>
 
+
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
@@ -457,11 +463,9 @@ if($user->classExist()){  ?>
 
 
 
+
   
 <!--Script to grab level info for the viewlevelmodal-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="TableBarChart.js"></script>
-<link rel="stylesheet" href="../TableBarChart.css">
 <script>
 
 
