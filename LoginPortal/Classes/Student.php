@@ -23,8 +23,6 @@
 		//Grabs the list of students by their class id
 		public function getStudents($classID){
 			
-			
-
 			if($classID){
 			 $data = $this->_db->get('student', array('class_id', '=', $classID));
 					
@@ -45,6 +43,14 @@
 			}
 		}
 
+		//Removing a student by id
+		public function removeStudent($studentID) {
+
+			//Deleting the student
+			if(!$this->_db->delete('student', array('student_id', '=', $studentID))){
+				throw new Exception('There was a problem deleting this student.');
+			}
+		}
 		
 
 	}//End of class

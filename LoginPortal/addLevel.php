@@ -42,7 +42,7 @@ if(Input::exists()) {
           ),
         'lDescription' => array(
               'required' => false,
-              'min' => 6,
+              'min' => 2,
               'max' => 100
            ),
         ));
@@ -152,6 +152,10 @@ if(Input::exists()) {
 
   }
 
+
+
+
+
 } 
 
 ?>
@@ -164,6 +168,8 @@ if(Input::exists()) {
   <link href="includes/css/bootstrap.min.css" rel="stylesheet">
   <Title> Grayling Math Racer</title>
   </head>
+
+
 
   <!-- Bootstrap js plugins -->
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -227,6 +233,7 @@ if($user->classExist()){  ?>
         
         <?php
           $i = 0;
+
           foreach($levels as $level){
            
 
@@ -241,16 +248,20 @@ if($user->classExist()){  ?>
             $testCount = 0;
             foreach($questions as $question) {
 
+              
 
               if($question['question_type'] == 0)
                 $practiceCount++;
               elseif($question['question_type'] == 1)
                 $testCount++;
             }
+          
             
+
             ?>
+
         <tr>
-          <td><a href="#" data-toggle="modal" data-target="#editLevelModal" value="<?php print_r($level['level_id']); ?>"><?php print_r($level['name']); ?></a></tdv>
+          <td><a data-toggle="modal" data-target="#editLevelModal" onclick="setLevelID('<?php print_r($level['level_id']); ?>', ''  )"><?php print_r($level['name']); ?></a></td>
           <td><?php print_r($level['time_limit']); ?></td>
           <td><?php print_r($practiceCount); ?></td>
           <td><?php print_r($testCount); ?></td>
@@ -410,51 +421,72 @@ if($user->classExist()){  ?>
   </div>
 </div> 
 
-<!--modal for removing a level -->
-<div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+
+
+
+
+
+
+
+<!--Model for editing a level-->
+<div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Level Editor</h4>
-      </div>
-      <div class="modal-body">
-
-        <!--forms for input -->
-       
-          <div class ="form-group">
-            <label for "labelForLevelName">Name</label>
-              <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
-          </div>
-          <div class ="form-group">
-            <label for "labelForLevelDescription">Description</label>
-              <input type ="text" class"form-control" name="lDescription" id ="labelForLevelName" placeholder="Description">
-          </div>
-          <div class ="form-group">
-            <label for "labelForLevelTime">Time Limit</label>
-              <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
-          </div>
-  
 
         
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" name="createLevel" class="btn btn-primary">Create Level</button>
-            <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-          </div>
-        </div>
-      </form>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
+    
+      <div class="modal-body">
+
+        <h2 id="level_ID"></h2>
+
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="removelevel"class="btn btn-danger" name="removeLevel">Remove level</button>
+        <button type="button"  class="btn btn-primary">Update level</button>
+      </div>
+    </div>
+  
   </div>
-</div> 
+</div>
+<!--Script to grab level info for editlevelmodal-->
+<script>
+
+  //Variable to store level id info
+  var LID = 0;
+  function setLevelID(levelID, questions){
+  
+    document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
+    LID = levelID;
+    //questions = JSON.parse(questions);
+    
+  }
 
 
 
+  $('#removelevel').on('click', function (e) {
+
+    $.post('removelevel.php',{levelid:LID},
+    function(data)
+    {
+      document.getElementById('level_ID').innerHTML=data;
+    });
+  })
 
 
+  $('#refreshpage').on('click', function (e) {
+    location.reload();
+  })
+
+</script>
 
 
   </body>
-
 
 </html>

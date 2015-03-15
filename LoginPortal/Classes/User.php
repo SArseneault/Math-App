@@ -81,16 +81,21 @@
 
 		//Adding a level to a class
 		public function addLevel($fields = array()){
-
 			if(!$this->_db->insert('level', $fields)) {
 				throw new Exception('There was a problem creating a level.');
 			}
 		}
 
 		//Removing a level to a class
-		public function removeLevel($fields = array()){
+		public function removeLevel($levelID){
 
-			if(!$this->_db->delete('level', $fields)) {
+			//Deleting all questions associated with the level
+			if(!$this->_db->delete('question', array('level_id', '=', $levelID))){
+				throw new Exception('There was a problem deleting the questions.');
+			}
+
+			//Deleting actual level
+			if(!$this->_db->delete('level', array('level_id', '=', $levelID))){
 				throw new Exception('There was a problem deleting a level.');
 			}
 		}
@@ -108,7 +113,7 @@
 			//Grabbing the level data
 			$data = $this->_db->get('level', array('class_id', '=', $classID));
 			
-			//Getting array of stf objects
+			//Getting array of std objects
 			$data = $data->results();
 	
 			
@@ -263,7 +268,10 @@
 		public function logout() {
 
 			//Delete current login id
-			$this->_db->delete('teacher_session', array('teacher_id', '=', $this->data()->id));
+			if(!$this->_db->delete('teacher_session', array('teacher_id', '=', $this->data()->id))){
+				Redirect::to("includes/errors/logoutError.php");
+
+			}
 
 			//Delete session and cookie
 			Session::delete($this->_sessionName);

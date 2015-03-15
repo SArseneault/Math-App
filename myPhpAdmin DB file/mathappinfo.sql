@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2015 at 12:14 AM
+-- Generation Time: Mar 15, 2015 at 06:43 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -98,19 +98,15 @@ CREATE TABLE IF NOT EXISTS `level` (
   `description` varchar(100) NOT NULL,
   `time_limit` int(11) NOT NULL,
   `class_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `level`
 --
 
 INSERT INTO `level` (`level_id`, `name`, `description`, `time_limit`, `class_id`) VALUES
-(1, 'Level', 'Zero Rule', 5, 11),
-(2, 'Level 2', 'One rule', 10, 11),
-(3, 'Level 3', '2 plus 2', 5, 11),
-(4, 'Level 4', '3 plus 3', 6, 11),
-(5, 'level 5', '3plus3', 7, 11),
-(6, 'Level 6', 'level6', 5, 11);
+(10, 'Level1', 'Zero Rule', 5, 11),
+(11, 'Level 2', 'One rule', 7, 11);
 
 -- --------------------------------------------------------
 
@@ -124,7 +120,8 @@ CREATE TABLE IF NOT EXISTS `progress` (
   `question_id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `elapsed_time` int(11) NOT NULL,
-  `attemps` int(11) NOT NULL
+  `attemps` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -143,16 +140,7 @@ CREATE TABLE IF NOT EXISTS `question` (
   `operator` varchar(2) NOT NULL,
   `question_type` tinyint(1) NOT NULL,
   `freq` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `question`
---
-
-INSERT INTO `question` (`id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`) VALUES
-(1, 'Question1L1', 4, 'Q1L1', 5, 7, '+', 0, 4),
-(2, 'Question2L4', 4, 'Q2L4', 1, 2, '+', 0, 3),
-(3, 'Question3L4', 4, 'Q3L4', 5, 5, '+', 1, 5);
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -181,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `joined` datetime NOT NULL,
   `class_id` int(11) NOT NULL,
   `salt` varchar(32) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
@@ -194,10 +182,10 @@ INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `username`, `pas
 (4, 'Keith', 'Hamburger', 'Kham', '52c6d94dc55bc6ecf7ef2cbf6d2e9332ca4b14ad7b90bfca01', '2015-03-11 21:35:08', 1, '´MúV\Z$É“ƒGŽj•­±A‡ƒËAÜ¸J©Lº„EÐ{'),
 (5, 'John', 'Brown', 'Jbrown', '5d3479e60be5362656cdf3d5bf3cb7cf4fc506001ea7b456f2', '2015-03-11 21:54:06', 1, 'çÕ>¦ÌHY^Š8#y2b¸£¹ð¹ÚCø€ºâÜñª'),
 (6, 'Jane', 'Doe', 'JDoe', '56ad866e11ac3c4731085c0f85878b12a13e84f5e72746533f', '2015-03-11 22:01:08', 1, 'Ôõ”\Z‰~ÉðÐ¡µP¬«³&"ÀÉ4Ýj°Õëeì'),
-(7, 'John', 'Michaels', 'JMike', '3c75ba62dd21465d92e526946283243a76ba1ba9c5af8b9d9e', '2015-03-12 03:16:17', 11, '³xÃFNÄ¯WDC°ŸŽ¼Añ·*ži³¬i ëm'),
 (8, 'Ken', 'Piker', 'KPiker', 'a1cb0d4903ac2b280956b713eeccfc42a601214a252dd16911', '2015-03-12 03:16:42', 11, '~ø&D6GS¥Ã1²¡D±ŽWÊ›xÞW‡Œ‡¼´Â×²'),
 (9, 'Mike', 'Valley', 'MValley', 'd8ea2c17f2f51da9abdcb48b6f59d2b68a559a5ed11a9d8eba', '2015-03-12 03:59:52', 13, 'w;½<usVDY¹„ôÂ»–o9É¢y‚ÔR©4Ï öá•'),
-(10, 'Sam', 'macro', 'Smarco', 'cc8735f7d64ddf8aa040c5f9084fddbec3846197ab941a5d51', '2015-03-13 18:10:51', 13, '=ýæýÃè¶¯:XNÏÅ‡±L S9äÌµ¢"@’-');
+(10, 'Sam', 'macro', 'Smarco', 'cc8735f7d64ddf8aa040c5f9084fddbec3846197ab941a5d51', '2015-03-13 18:10:51', 13, '=ýæýÃè¶¯:XNÏÅ‡±L S9äÌµ¢"@’-'),
+(11, 'Jake', 'Jumper', 'JJumper', '6d1d731c038a30f52280844222e8f3d2480e6080e739442dbc', '2015-03-15 06:41:21', 11, '™ëMA\\p4µä™­r¼ñ´—¾Üª¿mÎÚ•®ÿÉOw');
 
 -- --------------------------------------------------------
 
@@ -238,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `teacher_session` (
 `id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL,
   `hash` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `teacher_session`
@@ -248,7 +236,7 @@ INSERT INTO `teacher_session` (`id`, `teacher_id`, `hash`) VALUES
 (1, 51, '523613be259b8b01c01a9481d11420aaa1c75563efb8d50d87'),
 (2, 53, '9e6f9382755ccb455cdb4ce271785438fb2c48e1b27dcc8e30'),
 (3, 54, '86b912c908ef9fb7edda13025bc911f862e46150e4dadc32bc'),
-(4, 55, '84ea47fa5228bdee56a47ebca17f5e1efe811243b15a4225fb');
+(5, 55, '0a4e006c6ea09ebecf07296133f0a49b7bb9ed1ca9425a1f2b');
 
 --
 -- Indexes for dumped tables
@@ -321,7 +309,7 @@ MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
-MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `progress`
 --
@@ -331,7 +319,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `snapshot`
 --
@@ -341,7 +329,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `teacher`
 --
@@ -351,7 +339,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
 -- AUTO_INCREMENT for table `teacher_session`
 --
 ALTER TABLE `teacher_session`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

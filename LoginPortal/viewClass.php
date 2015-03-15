@@ -161,6 +161,12 @@
   <link href="includes/css/bootstrap.min.css" rel="stylesheet">
   <Title> Grayling Math Racer</title>
   </head>
+
+
+    <!-- Bootstrap js plugins -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- include all compiled plugins -->
+  <script src="includes/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -240,13 +246,12 @@ if($user->classExist()){  ?>
 
                     ?>
                       <tr> 
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="student<?php print_r($i);?>">Completed</a></td>
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="student<?php print_r($i);?>"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
-                      <td><a href="#" data-toggle="modal" data-target="#createLevelModal" name="level<?php print_r($i);?>">Completed</a></td>
+                      <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
+                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
+                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
+                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
+                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
+                      <td><a data-toggle="modal" data-target="#viewLevelModal" >Completed</a></td>
                       <td>Not Completed</a></td>
                       <td>Not Completed</a></td>
                       <td>Not Completed</a></td>
@@ -371,12 +376,134 @@ if($user->classExist()){  ?>
 </div>
 
 
+
+
+<!--Model for editing a student-->
+<div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+         
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
+      
+        <h1 id="student_ID"></h1>
+        <div class="modal-footer">
+        <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="removeStudent"class="btn btn-danger" name="removeLevel">Remove student</button>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+<!--Script to grab level info for editstudentmodal-->
+<script>
+
+  //Variable to store the student's  id 
+  var SID = 0;
+  function setStudentID(studentID){
+ 
+    SID = studentID;
+    
+  }
+
+
+  $('#removeStudent').on('click', function (e) {
+   
+    $.post('removeStudent.php',{studentid:SID},
+    function(data)
+    {
+      document.getElementById('student_ID').innerHTML=data;
+    });
+  })
+
+
+  $('#refreshpage').on('click', function (e) {
+    location.reload();
+  })
+
+</script>
+
+
+
+
+<!--Model for viewing a level-->
+<div class="modal fade" id="viewLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+         
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Student level</h4>
+      
+        <h1 id="student_ID"></h1>
+        <div class="modal-footer">
+        <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="removeStudent"class="btn btn-danger" name="removeLevel">Remove student</button>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+<!--Script to grab level info for editstudentmodal-->
+<script>
+
+  //Variable to store the student's  id 
+  var SID = 0;
+  function setStudentID(studentID){
+ 
+    SID = studentID;
+    
+  }
+
+
+  $('#removeStudent').on('click', function (e) {
+   
+    $.post('removeStudent.php',{studentid:SID},
+    function(data)
+    {
+      document.getElementById('student_ID').innerHTML=data;
+    });
+  })
+
+
+  $('#refreshpage').on('click', function (e) {
+    location.reload();
+  })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Bootstrap js plugins -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- include all compiled plugins -->
 <script src="includes/js/bootstrap.min.js"></script>
 
 </body>
-
-
 </html>
