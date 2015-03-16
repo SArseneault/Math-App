@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     
+    
+    
     //Setting the label text to passed username value
     usernameLabel.text = username;
     

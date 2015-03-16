@@ -33,7 +33,25 @@
 
 
 	//Printing the encoded json dictionary
-	echo json_encode($json);
+	//echo json_encode($json);
 
 
 ?>
+{
+    "kmark21":[
+               {
+               "levelName":"Level1",
+               "timelimit": "5",
+               "practicequestionCount":"15",
+               "testquestionCount":"20"
+               },
+               {
+               "levelName":"Level2",
+               "timelimit": "5",
+               "practicequestionCount":"15",
+               "testquestionCount":"20"
+               
+               }
+               
+     ]
+}

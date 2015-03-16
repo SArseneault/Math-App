@@ -8,8 +8,13 @@
 
 #import "HomeView.h"
 
-@implementation HomeView
 
+@implementation HomeView
+{
+    
+
+    
+}
 
 //Synthesizing the label names from the header file
 @synthesize usernameLabel;
@@ -28,6 +33,35 @@
     
 }
 
+//Method that is called to grab json data
+- (IBAction)getData
+{
+    
+    
+    //Creating and starting the spinning wheel
+    UIApplication *app = [UIApplication sharedApplication];
+    app.networkActivityIndicatorVisible = YES;
+
+    
+    //Creating a string contains url address for php file
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php"];
+    NSURL *myURL = [NSURL URLWithString:strURL];
+    
+    //Calling the php file
+    NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    //Stopping the spinnging wheel
+    app.networkActivityIndicatorVisible = NO;
+
+    
+    //Displaying the string
+    NSLog(@"%@", phpResponse);
+    
+   
+    
+
+}
 
 
 @end

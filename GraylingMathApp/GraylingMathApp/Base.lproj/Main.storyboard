@@ -981,6 +981,15 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIj-cN-1rG">
+                                <rect key="frame" x="74" y="285" width="89" height="30"/>
+                                <state key="normal" title="GET LEVELS">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getData" destination="eb0-BK-cpT" eventType="touchUpInside" id="qKI-Qq-LaF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -990,7 +999,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXf-xc-39N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="2486"/>
+            <point key="canvasLocation" x="243" y="2274"/>
         </scene>
         <!--About Us-->
         <scene sceneID="UVB-J8-px8">
@@ -1302,8 +1311,8 @@
         <image name="zeroTile.png" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="72W-NI-nk7"/>
         <segue reference="LrK-8x-AS6"/>
         <segue reference="T0G-YC-YTe"/>
+        <segue reference="uXK-dA-ouy"/>
     </inferredMetricsTieBreakers>
 </document>
