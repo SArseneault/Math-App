@@ -96,6 +96,52 @@
 
 		}
 
+
+		//Ability to login to a class
+		public function login($username = null, $password = null) {
+
+			//$student == 1 if $username is found in the database
+			$student = $this->find($username);
+			
+
+			//If the user exists
+			if($student) {
+
+				
+					//If the passwords match return true
+					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
+ 
+						return true;
+					}
+					
+				}
+
+			return false;
+		}
+
+
+		//Find student by their username or id
+		public function find($student = null) {
+
+			if($student) {
+				$field = (is_numeric($student)) ? 'student_id' : 'username';
+				$data = $this->_db->get('student', array($field, '=', $student));
+
+
+
+				if($data->count()) {
+					$this->_data = $data->first();
+
+					return true;
+				}
+			}
+		}
+
+		public function data() {
+			return $this->_data;
+		}
+
+
 		//Grabs the list of students by their class id
 		public function getStudents($classID){
 			

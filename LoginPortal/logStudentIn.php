@@ -6,9 +6,9 @@
 	$username = $_GET["userName"];
 	$password = $_GET["password"];
 
-	//Creating a user object and calling the login function
-	$user = new User();
-	$login = $user->login($username, $password);
+	//Creating a student object and calling the login function
+	$Student = new Student();
+	$login = $Student->login($username, $password);
 	
 	//If the login was successful return 1			
 	if($login) {

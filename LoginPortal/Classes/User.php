@@ -277,7 +277,7 @@
 			}
 		}
 
-		//Find user by its id
+		//Find user by its username or id
 		public function find($user = null) {
 			if($user) {
 				$field = (is_numeric($user)) ? 'id' : 'username';
@@ -307,10 +307,8 @@
 			//If the user exists
 			if($user) {
 				
-					//Trim the hash by 14 before checking
-					$trimHash = Hash::make($password, $this->data()->salt);
-					$trimHash = substr ($trimHash ,0,-14);
-					if($this->data()->password === $trimHash){
+					
+					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
 					
 						Session::put($this->_sessionName, $this->data()->id);
 

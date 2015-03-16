@@ -1,21 +1,27 @@
 //
-//  ViewController.m
+//  StudentLogin.m
 //  GraylingMathApp
 //
 //  Created by Samuel Arseneault on 3/2/15.
 //  Copyright (c) 2015 Samuel Arseneault. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "StudentLogin.h"
 #import "AppDelegate.h"
 #import "HomeView.h"
 
-@interface ViewController ()
+@interface StudentLogin ()
 
 @end
 
-@implementation ViewController
+@implementation StudentLogin
 
+
+//Synthesizing the label names from the header file
+@synthesize usernameLabel;
+
+//Synthesizing the username
+@synthesize username;
 
 
 //Automatically called after screenload
@@ -23,7 +29,11 @@
 {
     [super viewDidLoad];
     
+    //Setting the label text to passed username value
+    usernameLabel.text = username;
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,7 +47,7 @@
 {
     
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/test.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logStudentIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
     
     NSLog(@"%@",strURL);
     

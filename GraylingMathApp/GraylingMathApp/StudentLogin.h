@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StudentLogin.h
 //  GraylingMathApp
 //
 //  Created by Samuel Arseneault on 3/2/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface StudentLogin : UIViewController
 {
     
     //Creating outlets for both the username and password fields
@@ -18,6 +18,12 @@
     //Dictionary to store retreived passwords
     NSDictionary *credentialsDictionary;
 }
+
+//Creating properties for the labels
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+
+//Creating property for the strings which store username and password
+@property (strong, nonatomic) NSString *username;
 
 
 //Methods
