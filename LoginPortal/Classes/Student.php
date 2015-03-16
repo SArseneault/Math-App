@@ -148,6 +148,12 @@
 			}
 
 
+			//Removing the students question progress
+			if(!$this->_db->delete('question_progress', array('student_id', '=', $studentID))){
+				throw new Exception('There was a problem deleting the question progress for this student.');
+			}
+
+
 		}
 		
 

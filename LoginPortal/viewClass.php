@@ -19,6 +19,7 @@
 
     $classInfo = null;
     $levels = null;
+    $students = null;
 }
  
 
