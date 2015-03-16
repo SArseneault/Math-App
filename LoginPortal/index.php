@@ -126,7 +126,8 @@
 </div>
 
 <div class="container">
-  <h2> Home </h2>
+  <h2>Home</h2>
+  <p>Welcome to the grayling math racer web portal. Here you will find the ability to add classes, students, questions, and levels. If you need help with these tasks, please seek the help tab.</p>
 </div>
 
   </body>

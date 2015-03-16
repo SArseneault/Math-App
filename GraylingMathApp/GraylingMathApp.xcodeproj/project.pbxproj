@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		200B08041AA4E52A000E404A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08031AA4E52A000E404A /* main.m */; };
 		200B08071AA4E52A000E404A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08061AA4E52A000E404A /* AppDelegate.m */; };
-		200B080A1AA4E52A000E404A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08091AA4E52A000E404A /* ViewController.m */; };
 		200B080F1AA4E52A000E404A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200B080E1AA4E52A000E404A /* Images.xcassets */; };
 		200B08121AA4E52A000E404A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200B08101AA4E52A000E404A /* LaunchScreen.xib */; };
 		200B081E1AA4E52A000E404A /* GraylingMathAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B081D1AA4E52A000E404A /* GraylingMathAppTests.m */; };
@@ -35,6 +34,8 @@
 		200B08541AA4F397000E404A /* calcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08531AA4F397000E404A /* calcView.m */; };
 		200B08571AA4F48A000E404A /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08561AA4F48A000E404A /* HomeView.m */; };
 		20407B6E1AA5031000E536AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20407B6C1AA5031000E536AB /* Main.storyboard */; };
+		2074BC211AB6769200D49D86 /* ClassLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074BC201AB6769200D49D86 /* ClassLogin.m */; };
+		2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074BC221AB6790900D49D86 /* StudentLogin.m */; };
 		A20095561AB07E20004DECFB /* LevelSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = A20095551AB07E20004DECFB /* LevelSelect.m */; };
 		A223A7711AB0C72A00CE61B9 /* userData.m in Sources */ = {isa = PBXBuildFile; fileRef = A223A7701AB0C72A00CE61B9 /* userData.m */; };
 		B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */; };
@@ -58,8 +59,6 @@
 		200B08031AA4E52A000E404A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		200B08051AA4E52A000E404A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		200B08061AA4E52A000E404A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		200B08081AA4E52A000E404A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		200B08091AA4E52A000E404A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		200B080E1AA4E52A000E404A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		200B08111AA4E52A000E404A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		200B08171AA4E52A000E404A /* GraylingMathAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraylingMathAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +90,10 @@
 		200B08551AA4F48A000E404A /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
 		200B08561AA4F48A000E404A /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		20407B6D1AA5031000E536AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2074BC1F1AB6769200D49D86 /* ClassLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLogin.h; sourceTree = "<group>"; };
+		2074BC201AB6769200D49D86 /* ClassLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassLogin.m; sourceTree = "<group>"; };
+		2074BC221AB6790900D49D86 /* StudentLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentLogin.m; sourceTree = "<group>"; };
+		2074BC231AB6790900D49D86 /* StudentLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentLogin.h; sourceTree = "<group>"; };
 		A20095541AB07E20004DECFB /* LevelSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelect.h; sourceTree = "<group>"; };
 		A20095551AB07E20004DECFB /* LevelSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelect.m; sourceTree = "<group>"; };
 		A223A76F1AB0C72A00CE61B9 /* userData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userData.h; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		200B08001AA4E52A000E404A /* GraylingMathApp */ = {
 			isa = PBXGroup;
 			children = (
+				2074BC1E1AB6764700D49D86 /* Login Screens */,
 				A223A76E1AB0C6C100CE61B9 /* Data Models */,
 				A20095571AB07E54004DECFB /* Storyboard */,
 				A20095531AB07DF2004DECFB /* Level Select */,
@@ -205,11 +209,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2074BC1E1AB6764700D49D86 /* Login Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2074BC231AB6790900D49D86 /* StudentLogin.h */,
+				2074BC221AB6790900D49D86 /* StudentLogin.m */,
+				2074BC1F1AB6769200D49D86 /* ClassLogin.h */,
+				2074BC201AB6769200D49D86 /* ClassLogin.m */,
+			);
+			name = "Login Screens";
+			sourceTree = "<group>";
+		};
 		A200954F1AB07CCD004DECFB /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
-				200B08081AA4E52A000E404A /* ViewController.h */,
-				200B08091AA4E52A000E404A /* ViewController.m */,
 				200B08411AA4E6AB000E404A /* FirstViewController.h */,
 				200B08421AA4E6AB000E404A /* FirstViewController.m */,
 				200B08551AA4F48A000E404A /* HomeView.h */,
@@ -379,11 +392,12 @@
 			files = (
 				A223A7711AB0C72A00CE61B9 /* userData.m in Sources */,
 				A20095561AB07E20004DECFB /* LevelSelect.m in Sources */,
-				200B080A1AA4E52A000E404A /* ViewController.m in Sources */,
 				200B08071AA4E52A000E404A /* AppDelegate.m in Sources */,
 				200B08471AA4E6AB000E404A /* TileView.m in Sources */,
 				200B08571AA4F48A000E404A /* HomeView.m in Sources */,
+				2074BC211AB6769200D49D86 /* ClassLogin.m in Sources */,
 				200B08541AA4F397000E404A /* calcView.m in Sources */,
+				2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */,
 				200B08461AA4E6AB000E404A /* FirstViewController.m in Sources */,
 				200B08041AA4E52A000E404A /* main.m in Sources */,
 			);

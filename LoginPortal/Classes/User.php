@@ -81,13 +81,64 @@
 
 		//Adding a level to a class
 		public function addLevel($fields = array()){
+
+			//Attempt to create the new level
 			if(!$this->_db->insert('level', $fields)) {
 				throw new Exception('There was a problem creating a level.');
 			}
+
+			//Grabbing the newly created level data
+			$leveldata = $this->_db->get('level', array('name', '=', $fields['name']));
+
+			//Grabbing std object
+			$leveldata = $leveldata->first();
+
+			//Convert the std object to an array
+	        $leveldata = get_object_vars($leveldata);
+
+		
+			//Creating a student helper object
+			$studentOBJ = new Student();
+
+			//Gabbing all the students inside of this class
+			$students = $studentOBJ->getStudents($this->getClass()['class_id']);
+
+			
+			//For each student update the level progress to a default value
+			foreach($students as $student){
+
+	            //Convert the std object to an array
+	            $student = get_object_vars($student);
+
+
+
+            	//Creating a default progress level
+				$defaultProgress = array(
+	            	'student_id' => $student['student_id'],
+	            	'level_id' => $leveldata['level_id'],
+	            	'status' => 0,
+	            	'elapsed_time' => '00:00:00',
+	            	'attempts' => 0 
+	            );
+
+	       
+
+				//Attempt to insert default data for the progress level
+				if(!$this->_db->insert('level_progress', $defaultProgress)) {
+					throw new Exception('There was a problem inserting default progress for one of the students');
+				}
+           }
+			
 		}
 
 		//Removing a level to a class
 		public function removeLevel($levelID){
+
+			//Deleting all the student progress tables
+			if(!$this->_db->delete('level_progress', array('level_id', '=', $levelID))){
+				throw new Exception('There was a problem deleting the level progress.');
+			}
+
 
 			//Deleting all questions associated with the level
 			if(!$this->_db->delete('question', array('level_id', '=', $levelID))){
@@ -123,10 +174,57 @@
 
 		//Attemps to insert a question into the database
 		public function addQuestion($fields = array()){
-			print_r($fields);
+
+			//Attemping to insert the question into the data base.
 			if(!$this->_db->insert('question', $fields)) {
 				throw new Exception('There was a problem creating this question.');
 			}
+
+			//Grabbing the question id
+			$questionID = $this->_db->query('SELECT * FROM question WHERE name = ? AND description = ? AND question_type = ? AND level_id = ?', array(
+				$fields['name'],
+				$fields['description'],
+				$fields['question_type'],
+				$fields['level_id']
+				));
+
+			//Getting std object
+			$questionID = $questionID->first();
+
+			//Convert the std object to an array
+	       $questionID = get_object_vars($questionID)['question_id'];
+
+
+            //Creating a student helper object
+			$studentOBJ = new Student();
+
+			//Gabbing all the students inside of this class
+			$students = $studentOBJ->getStudents($this->getClass()['class_id']);
+
+			
+			//For each student update the question progress to a default value
+			foreach($students as $student){
+
+	            //Convert the std object to an array
+	            $student = get_object_vars($student);
+
+
+            	//Creating a default progress level
+				$defaultProgress = array(
+	            	'question_id' =>  $questionID,
+	            	'level_id' => $fields['level_id'],
+	            	'answer' => -1,
+	            	'student_id' => $student['student_id'],
+	            	'attemps' => 0
+	            );
+
+	       
+				 //Attempting to insert question progress information into the database for each student.
+				if(!$this->_db->insert('question_progress', $defaultProgress)) {
+					throw new Exception('There was a problem inserting default progress for one of the students');
+				}
+			}
+
 		}
 
 		//Returns all of the questions in a certain level
@@ -179,7 +277,7 @@
 			}
 		}
 
-		//Find user by its id
+		//Find user by its username or id
 		public function find($user = null) {
 			if($user) {
 				$field = (is_numeric($user)) ? 'id' : 'username';
@@ -209,10 +307,8 @@
 			//If the user exists
 			if($user) {
 				
-					//Trim the hash by 14 before checking
-					$trimHash = Hash::make($password, $this->data()->salt);
-					$trimHash = substr ($trimHash ,0,-14);
-					if($this->data()->password === $trimHash){
+					
+					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
 					
 						Session::put($this->_sessionName, $this->data()->id);
 

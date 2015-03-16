@@ -122,7 +122,6 @@ if(Input::exists()) {
 
         try {
            
-
           
             //Inserting the new question into the database
             $user->addQuestion(array(
@@ -133,7 +132,9 @@ if(Input::exists()) {
               'operator' => Input::get('operator'),
               'operand1' => Input::get('operand1'),
               'operand2' => Input::get('operand2'),
-              'level_id' => Input::get('level_id')
+              'answer' => Input::get('qAnswer'),
+              'level_id' => Input::get('level_id'),
+              'class_id' => $classInfo['class_id']
               ));
 
 
@@ -281,10 +282,11 @@ if($user->classExist()){  ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createLevelModal">Create Level</a>
     </div>
-
+    <?php if($levels){ ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
     </div>
+    <?php } ?>
 
 </div>
 <?php } else { //Display this message if the class doesn't exsits?>
@@ -449,7 +451,6 @@ if($user->classExist()){  ?>
       <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" id="removelevel"class="btn btn-danger" name="removeLevel">Remove level</button>
-        <button type="button"  class="btn btn-primary">Update level</button>
       </div>
     </div>
   
@@ -462,7 +463,7 @@ if($user->classExist()){  ?>
   var LID = 0;
   function setLevelID(levelID, questions){
   
-    document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
+    //document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
     LID = levelID;
     //questions = JSON.parse(questions);
     
