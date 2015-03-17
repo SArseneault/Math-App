@@ -42,7 +42,7 @@
 			//Looping through each level
 			foreach($leveldata as $level){
 
-				 //Convert the std object to an array
+				//Convert the std object to an array
 	            $level = get_object_vars($level);
 
             	//Creating a default progress level
