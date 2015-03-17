@@ -22,6 +22,8 @@
 //Synthesizing the username
 @synthesize username;
 
+//Synthesizing the username
+@synthesize classname;
 
 //Automatically called after screenload
 - (void)viewDidLoad
@@ -44,7 +46,8 @@
 
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php"];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php?username=%@&classname=%@", username, classname];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSURL *myURL = [NSURL URLWithString:strURL];
     
     //Calling the php file
@@ -59,10 +62,46 @@
     NSLog(@"%@", phpResponse);
     
    
+}
+
+- (IBAction)sendData:(id)sender {
+    
+    
+    //Mock up progress info
+    NSString *level = [NSString stringWithFormat:@"Level 1"];
+    
+    NSString *status = [NSString stringWithFormat:@"1"];
+    NSString *elapsed_time = [NSString stringWithFormat:@"00:04:18"];
+    NSString *attempts = [NSString stringWithFormat:@"3"];
+    
+
+    
+    
+    //Displaying the string
+    NSLog(@"%@", username );
+    NSLog(@"%@", classname );
+
+
+    
+    //Creating a string contains url address for php file
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?username=%@&class=%@&level=%@&status=%@&elapsed_time=%@&attempts=%@", username, classname, level, status, elapsed_time, attempts];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
+    NSURL *myURL = [NSURL URLWithString:strURL];
+    
+    NSLog(@"%@", myURL );
+    //Calling the php file
+    NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
+    
+        
+    
+    //Displaying the string
+    NSLog(@"%@", phpResponse);
+    
+    
     
 
 }
-
 
 @end
 

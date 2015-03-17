@@ -23,6 +23,8 @@
 //Synthesizing the username
 @synthesize username;
 
+//Synthesizing the classname
+@synthesize classname;
 
 //Automatically called after screenload
 - (void)viewDidLoad
@@ -50,6 +52,7 @@
     
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
     NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logStudentIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@",strURL);
     
@@ -77,12 +80,13 @@
         [alert show];
         
         
-        //Setting homeview controller object
+        //Creating a homeview object
         HomeView *HV = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeView"];
         
-        //Set the username string
+        //Setting the fields inside of the homeview object
         HV.usernameLabel.text = usernameField.text;
         HV.username = usernameField.text;
+        HV.classname = classname;
         
         //Present the view controller
         [self presentViewController:HV animated:YES completion:nil];

@@ -39,6 +39,7 @@
     
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
     NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logClassIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@",strURL);
     
@@ -65,13 +66,12 @@
         [alert show];
         
     
-        
         //Creating a student controller object
         StudentLogin *SL = [self.storyboard instantiateViewControllerWithIdentifier:@"StudentLogin"];
         
-        //Set the username string
-        SL.usernameLabel.text = usernameField.text;
-        SL.username = usernameField.text;
+        
+        //Set the classname string
+        SL.classname = usernameField.text;
         
         //Present the view controller
         [self presentViewController:SL animated:YES completion:nil];

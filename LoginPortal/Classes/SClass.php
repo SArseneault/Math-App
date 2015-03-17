@@ -40,6 +40,9 @@
 			return false;
 		}
 
+		
+		
+
 
 		//Find class by its classname or id
 		public function find($sclass = null) {

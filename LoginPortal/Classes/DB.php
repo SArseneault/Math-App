@@ -124,7 +124,7 @@
 		}
 
 		//Updating the database
-		public function update($table, $id, $fields){
+		public function update($table, $id, $idName, $fields){
 			$set = '';
 			$x = 1;
 
@@ -136,7 +136,7 @@
 				$x++;
 			}
 			//$sql = "UPDATE teacher SET password = 'newpass' WHERE id = 3";
-			$sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
+			$sql = "UPDATE {$table} SET {$set} WHERE $idName = {$id}";
 			
 			//echo $sql; //display the query
 

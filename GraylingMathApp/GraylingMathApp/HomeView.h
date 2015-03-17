@@ -15,6 +15,7 @@
 
 //Creating property for the strings which store username and password
 @property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *classname;
 
 
 //Creating method to grab json data

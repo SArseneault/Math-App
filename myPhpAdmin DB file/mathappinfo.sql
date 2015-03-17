@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 16, 2015 at 08:59 PM
+-- Generation Time: Mar 17, 2015 at 08:45 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `class` (
 --
 
 INSERT INTO `class` (`class_id`, `class_name`, `teacher_name`, `salt`, `class_password`, `teacher_id`) VALUES
-(1, 'Sam''sClass', 'Sam', '`IÏX…¾ºÒ3¥©rî Ž¹ÊšŠJÇ)VgóR«Þ', 'b83e3b482aabcd1b442f0dc9ab9e24acc00ff02d8488098ececaf51e1901b52c', 1);
+(1, 'Sam''s Class', 'Sam', '`IÏX…¾ºÒ3¥©rî Ž¹ÊšŠJÇ)VgóR«Þ', 'b83e3b482aabcd1b442f0dc9ab9e24acc00ff02d8488098ececaf51e1901b52c', 1);
 
 -- --------------------------------------------------------
 
@@ -105,8 +105,8 @@ CREATE TABLE IF NOT EXISTS `level_progress` (
 --
 
 INSERT INTO `level_progress` (`levelprog_id`, `student_id`, `level_id`, `status`, `elapsed_time`, `attempts`) VALUES
-(1, 1, 1, 0, '00:00:00', 0),
-(2, 2, 1, 0, '00:00:00', 0),
+(1, 1, 1, 1, '00:04:18', 3),
+(2, 2, 1, 1, '00:04:18', 3),
 (3, 1, 2, 0, '00:00:00', 0),
 (4, 2, 2, 0, '00:00:00', 0),
 (5, 1, 3, 0, '00:00:00', 0),
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `question` (
   `freq` int(11) NOT NULL,
   `answer` int(2) NOT NULL,
   `class_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
@@ -138,7 +138,8 @@ CREATE TABLE IF NOT EXISTS `question` (
 
 INSERT INTO `question` (`question_id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`, `answer`, `class_id`) VALUES
 (1, 'Q1L1', 1, 'Question1L1', 1, 1, '+', 1, 5, 2, 1),
-(2, 'Q2L1', 1, 'Question2L1', 1, 1, '+', 0, 3, 2, 1);
+(2, 'Q2L1', 1, 'Question2L1', 1, 1, '+', 0, 3, 2, 1),
+(3, 'Q1L2', 2, 'Question1L2', 3, 3, '+', 0, 4, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `question_progress` (
   `answer` int(2) NOT NULL,
   `student_id` int(11) NOT NULL,
   `attemps` int(2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question_progress`
@@ -163,7 +164,9 @@ INSERT INTO `question_progress` (`questionprog_id`, `question_id`, `level_id`, `
 (1, 1, 1, -1, 1, 0),
 (2, 1, 1, -1, 2, 0),
 (3, 2, 1, -1, 1, 0),
-(4, 2, 1, -1, 2, 0);
+(4, 2, 1, -1, 2, 0),
+(5, 3, 2, -1, 1, 0),
+(6, 3, 2, -1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -211,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `teacher` (
 --
 
 INSERT INTO `teacher` (`id`, `name`, `username`, `password`, `salt`, `joined`, `group`) VALUES
-(1, 'Sam Arseneault', 'Sam', '3b4ca4c4d472881ba083d37a932de5082d9895114e9066354fca77070f405944', 'Ý0äØÁ[ÈÙÎ¼ì[íºB]yÏØ_ÉÀ6WV', '2015-03-16 20:50:24', 0);
+(1, 'Samuel Arseneault', 'Sam', '3b4ca4c4d472881ba083d37a932de5082d9895114e9066354fca77070f405944', 'Ý0äØÁ[ÈÙÎ¼ì[íºB]yÏØ_ÉÀ6WV', '2015-03-16 20:50:24', 0);
 
 -- --------------------------------------------------------
 
@@ -307,12 +310,12 @@ MODIFY `levelprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `question_progress`
 --
 ALTER TABLE `question_progress`
-MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `student`
 --

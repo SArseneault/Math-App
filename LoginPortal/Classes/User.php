@@ -264,7 +264,7 @@
 			}
 
 
-			if(!$this->_db->update('teacher',$id, $fields)) {
+			if(!$this->_db->update('teacher', $id, 'id', $fields)) {
 				throw new exception('There was a problem updating.');
 			}
 		}

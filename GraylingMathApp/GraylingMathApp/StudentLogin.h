@@ -22,9 +22,11 @@
 //Creating properties for the labels
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
-//Creating property for the strings which store username and password
+//Creating property for the strings which stores student's username
 @property (strong, nonatomic) NSString *username;
 
+//Creating property for the strings which stores the classname
+@property (strong, nonatomic) NSString *classname;
 
 //Methods
 - (IBAction)Login;

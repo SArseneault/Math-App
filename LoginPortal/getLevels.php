@@ -6,16 +6,14 @@
 	//Ensure we are outputting a text javascript page
 	header('Content-type: text/javascript');
 
-
-
 			
 	//Creating a database object
 	$db = DB::getInstance();
 	
 
-	//POST variables from iOS app
-	$username = "LRabe";
-	$classname = "Sam'sClass";
+	//Grabbing Variables from the link
+	$username = $_GET["username"];
+	$classname =  $_GET["classname"];
 
 	//Creating a jason array
 	$json = array(
@@ -86,9 +84,5 @@
 	
 	//Printing the encoded json dictionary
 	echo json_encode($json);
-
-
-
-
 
 ?>
