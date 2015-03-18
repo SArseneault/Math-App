@@ -25,6 +25,9 @@
 //Synthesizing the username
 @synthesize classname;
 
+//Synthesizing the json array
+@synthesize json;
+
 //Automatically called after screenload
 - (void)viewDidLoad
 {
@@ -51,19 +54,25 @@
     //Creating a string contains url address for php file
     NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php?username=%@&classname=%@", username, classname];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
+    //Creating acutal url
     NSURL *myURL = [NSURL URLWithString:strURL];
     
+    //Calling and storing the json data
+    NSData * data = [NSData dataWithContentsOfURL:myURL];
+    
     //Calling the php file
-    NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
-
+    //NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
+    
+    //Converting the data to json format
+    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
 
     
-    //Displaying the string
-    NSLog(@"%@", phpResponse);
-    
+    //Displaying the json array
+    NSLog(@"%@", json);
     
 
 

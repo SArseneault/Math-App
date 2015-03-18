@@ -17,6 +17,9 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *classname;
 
+//Creating a propertie for the json array
+@property (nonatomic, strong) NSMutableArray * json;
+
 
 //Creating method to grab json data
 - (IBAction)getData;

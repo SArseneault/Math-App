@@ -17,7 +17,6 @@
 
 	//Creating a jason array
 	$json = array(
-			"username" => $username
 		
 		);
 
@@ -38,8 +37,8 @@
 	$leveldata = $leveldata->results();
 
 	//Creating a loop counter variable
-	$i = 0;
-
+	$i = 1;
+	$json[0]["username"] =  $username;
 	//Looping through each level
 	foreach($leveldata as $level)
 	{
@@ -48,8 +47,8 @@
 		$level = get_object_vars($level);
 
 		//Pushing the level name and time onto the array
-		$json[$i]["levelName" . $i] = $level['name'];
-		$json[$i]["timeLimit". $i] = $level['time_limit'];
+		$json[$i]["levelName"] = $level['name'];
+		$json[$i]["timeLimit"] = $level['time_limit'];
 
 		//Grabbing the question data where the questions = the level id
 		$questiondata = $db->get('question', array('level_id', '=', $level['level_id']));
@@ -74,8 +73,8 @@
 
 		}
 
-		$json[$i]["practicequestionCount" . $i] = $practiceCount;
-		$json[$i]["testquestionCount". $i] = $testCount;
+		$json[$i]["practicequestionCount"] = $practiceCount;
+		$json[$i]["testquestionCount"] = $testCount;
 
 		$i++;
 		//print_r($questiondata);
