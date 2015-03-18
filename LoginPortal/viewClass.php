@@ -247,12 +247,16 @@ if($user->classExist()){  ?>
                 //Convert the std object to an array
                 $student = get_object_vars($student);
 
+
                     ?>
                       <tr>
                       <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
                       
                       <?php
+
                       $studentProg = $studentOBJ->getLevelProgress($student['student_id']);
+
+                      
 
                       if($studentProg){
                       foreach($studentProg as $currProg) {
@@ -261,7 +265,7 @@ if($user->classExist()){  ?>
                        
                         ///If the progress has been completed then display the link
                         if($currProg['status'] == 1){ ?>
-                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo()">Completed</a></td> 
+                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['elapsed_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_attempts'])?>')">Completed</a></td> 
                       <?php
                       //Else display not completed
                        } else { ?>
@@ -447,8 +451,9 @@ if($user->classExist()){  ?>
         <h4 class="modal-title" id="myModalLabel">Level View</h4>
     
          
-        <div id="graph"></div>
-
+        Test Time:<div id="test_time_ID"></div>        
+        Test Attempts:<div id="test_attempts_ID"></div>
+        Practice Attempts:<div id="practice_attempts_ID"></div>
 
       </div>
 
@@ -469,11 +474,20 @@ if($user->classExist()){  ?>
 <!--Script to grab level info for the viewlevelmodal-->
 <script>
 
+  var test_time = 0;
+  var test_attempts = 0;
+  var practice_attemps = 0;
+  function setLevelInfo(TTime, TAttempts, PAttempts){
 
-  function setLevelInfo(){
-   // alert("Welcome");
 
- 
+    test_time = TTime;
+    test_attempts = TAttempts;
+    practice_attemps = PAttempts;
+  
+    document.getElementById('test_time_ID').innerHTML = test_time;
+    document.getElementById('test_attempts_ID').innerHTML = test_attempts;
+    document.getElementById('practice_attempts_ID').innerHTML = practice_attemps;
+
   }
 
 

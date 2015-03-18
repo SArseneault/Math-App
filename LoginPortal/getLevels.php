@@ -17,8 +17,12 @@
 
 	//Creating a jason array
 	$json = array(
-		"username" => $username
+			"username" => $username
+		
 		);
+
+
+
 
 
 	//Creating class object
@@ -44,10 +48,8 @@
 		$level = get_object_vars($level);
 
 		//Pushing the level name and time onto the array
-
-
-		$json["levelName" . $i] = $level['name'];
-		$json["timeLimit". $i] = $level['time_limit'];
+		$json[$i]["levelName" . $i] = $level['name'];
+		$json[$i]["timeLimit". $i] = $level['time_limit'];
 
 		//Grabbing the question data where the questions = the level id
 		$questiondata = $db->get('question', array('level_id', '=', $level['level_id']));
@@ -72,8 +74,8 @@
 
 		}
 
-		$json["practicequestionCount" . $i] = $practiceCount;
-		$json["testquestionCount". $i] = $testCount;
+		$json[$i]["practicequestionCount" . $i] = $practiceCount;
+		$json[$i]["testquestionCount". $i] = $testCount;
 
 		$i++;
 		//print_r($questiondata);
@@ -84,5 +86,6 @@
 	
 	//Printing the encoded json dictionary
 	echo json_encode($json);
+
 
 ?>

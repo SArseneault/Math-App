@@ -257,12 +257,14 @@ if($user->classExist()){  ?>
                 $testCount++;
             }
           
-            
+          
 
             ?>
 
+    
+
         <tr>
-          <td><a data-toggle="modal" data-target="#editLevelModal" onclick="setLevelID('<?php print_r($level['level_id']); ?>', ''  )"><?php print_r($level['name']); ?></a></td>
+          <td><a data-toggle="modal" data-target="#editLevelModal" onclick="setLevelID('<?php print_r($level['level_id']); ?>', '')"><?php print_r($level['name']); ?></a></td>
           <td><?php print_r($level['time_limit']); ?></td>
           <td><?php print_r($practiceCount); ?></td>
           <td><?php print_r($testCount); ?></td>

@@ -30,6 +30,9 @@
 {
     [super viewDidLoad];
     
+    
+    
+    
     //Setting the label text to passed username value
     usernameLabel.text = username;
     
@@ -52,7 +55,7 @@
     
     //Calling the php file
     NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
-    
+
     
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
@@ -61,47 +64,54 @@
     //Displaying the string
     NSLog(@"%@", phpResponse);
     
+    
+
+
+    
    
 }
+
+
 
 - (IBAction)sendData:(id)sender {
     
     
     //Mock up progress info
     NSString *level = [NSString stringWithFormat:@"Level 1"];
-    
     NSString *status = [NSString stringWithFormat:@"1"];
     NSString *elapsed_time = [NSString stringWithFormat:@"00:04:18"];
-    NSString *attempts = [NSString stringWithFormat:@"3"];
-    
+    NSString *test_attempts = [NSString stringWithFormat:@"3"];
+    NSString *practice_attempts = [NSString stringWithFormat:@"5"];
 
     
-    
-    //Displaying the string
-    NSLog(@"%@", username );
-    NSLog(@"%@", classname );
-
 
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?username=%@&class=%@&level=%@&status=%@&elapsed_time=%@&attempts=%@", username, classname, level, status, elapsed_time, attempts];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?username=%@&class=%@&level=%@&status=%@&elapsed_time=%@&test_attempts=%@&practice_attempts=%@", username, classname, level, status, elapsed_time, test_attempts, practice_attempts];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSURL *myURL = [NSURL URLWithString:strURL];
     
-    NSLog(@"%@", myURL );
+    
     //Calling the php file
     NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
     
-        
-    
+
     //Displaying the string
     NSLog(@"%@", phpResponse);
     
     
-    
-
 }
+
+
+
+
+
+
+
+
+
+
 
 @end
 

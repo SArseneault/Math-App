@@ -12,8 +12,8 @@
 	$level = $_GET["level"];
 	$status = $_GET["status"];
 	$elapsed_time = $_GET["elapsed_time"];
-	$attempts = $_GET["attempts"];
-
+	$test_attempts = $_GET["test_attempts"];
+	$practice_attempts = $_GET["practice_attempts"];
 
 
 	//Grabbing the class data
@@ -55,7 +55,8 @@
 	$fields = array(
 		'status' =>  $status,
 		'elapsed_time' => $elapsed_time,
-		'attempts' => $attempts
+		'test_attempts' => $test_attempts,
+		'practice_attempts' => $practice_attempts
 		);
 
 
