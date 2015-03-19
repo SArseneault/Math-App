@@ -83,7 +83,7 @@
 		            	'level_id' => $question['level_id'],
 		            	'answer' => -1,
 		            	'student_id' => $studentID,
-		            	'attemps' => 0
+		            	'attempts' => 0
 		            );
 
 		       

@@ -25,7 +25,7 @@
 	$leveldata = $leveldata->results();
 
 	//Creating a loop counter variable
-	$i = 1;
+	$i = 0;
 	//Looping through each level
 	foreach($leveldata as $level)
 	{

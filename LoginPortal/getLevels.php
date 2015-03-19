@@ -27,8 +27,8 @@
 	$leveldata = $leveldata->results();
 
 	//Creating a loop counter variable
-	$i = 1;
-	$json[0]["username"] =  $username;
+	$i = 0;
+
 	//Looping through each level
 	foreach($leveldata as $level)
 	{

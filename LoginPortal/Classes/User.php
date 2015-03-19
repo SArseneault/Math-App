@@ -135,7 +135,12 @@
 		//Removing a level to a class
 		public function removeLevel($levelID){
 
-			//Deleting all the student progress tables
+			//Deleting actual level
+			if(!$this->_db->delete('level', array('level_id', '=', $levelID))){
+				throw new Exception('There was a problem deleting a level.');
+			}
+
+			//Deleting all the student progress tables associted with the level
 			if(!$this->_db->delete('level_progress', array('level_id', '=', $levelID))){
 				throw new Exception('There was a problem deleting the level progress.');
 			}
@@ -146,10 +151,22 @@
 				throw new Exception('There was a problem deleting the questions.');
 			}
 
-			//Deleting actual level
-			if(!$this->_db->delete('level', array('level_id', '=', $levelID))){
-				throw new Exception('There was a problem deleting a level.');
-			}
+			
+		}
+
+		public function removeQuestion($questionID) {
+
+		//Deleting the actual question
+		if(!$this->_db->delete('question', array('question_id', '=', $questionID))){
+			throw new Exception('There was a problem deleting the question.');
+		}
+
+
+		//Deleting all the student progress associated with the question_id
+		if(!$this->_db->delete('question_progress', array('question_id', '=', $questionID))){
+			throw new Exception('There was a problem deleting the question in the question progress table.');
+		}
+
 		}
 
 		//Returns the union of the level and the 

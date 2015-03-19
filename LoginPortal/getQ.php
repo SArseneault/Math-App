@@ -46,6 +46,7 @@
 		$json[$i]["operator"] = $question['operator'];
 		$json[$i]["frequency"] = $question['freq'];
 		$json[$i]["questiontype"] = $question['question_type'];
+		$json[$i]["questionid"] = $question['question_id'];
 		$i++;
 	}
 

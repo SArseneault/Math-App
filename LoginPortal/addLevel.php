@@ -449,31 +449,12 @@ if($user->classExist()){  ?>
 
       createTable();
      
-      document.getElementById("levelI").innerHTML=data;
+     
     }); 
 
   
 
   }
-
-
-
-
-
-  $('#removelevel').on('click', function (e) {
-
-    $.post('removelevel.php',{levelid:LID},
-    function(data)
-    {
-      document.getElementById('level_ID').innerHTML=data;
-    });
-  })
-
-
-  $('#refreshpage').on('click', function (e) {
-  
-    location.reload();
-  })
 
 </script>
 
@@ -492,9 +473,9 @@ if($user->classExist()){  ?>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
     
-
+        <h2 id="level_ID"></h2>
         <div class = "table-responsive" >
-          <table class = "table" max-width="150px">
+          <table id="qtable" class = "table" max-width="150px">
             <thread>
               <tr>
                 <th>Question</th>
@@ -504,100 +485,101 @@ if($user->classExist()){  ?>
                 <th>Operator</th>
                 <th>Question_Type</th>
                 <th>Question_Frequency</th>
+                <th>Remove_Question</th>
               </tr>
             </thred>
-            <tbody id="tbody">
-                  <tr id="trow" align="center">
-                  
-                 
-                      
-         </tr>
-              </tbody>
-
+           
                     <script type="text/javascript">
                        //document.getElementById("level_ID").innerHTML=QArrLength;
 
 
-                       function createTable2(){
+                       function createTable(){
 
+                         //Linking to the table
+                        var table = document.getElementById("qtable");
+
+                        //Creating a new body and adding it to the table
+                        var body = document.createElement("tbody");
+                        table.appendChild(body);
+
+                          //Loop through each element of the array 
                           for (var i = 0; i < QArrLength; i++) {
 
-                            //Question name
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['questionName']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn); 
+                            //Create a new row
+                            var newRow = document.createElement("tr");
+                            newRow.align = "center";
+                            body.appendChild(newRow);
+
+                            //Adding new column to question name
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['questionName']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
 
                             // Description
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['description']));       
-                            btn.appendChild(t);
-                            document.getElementById('trow').appendChild(btn); 
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['description']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
 
                             //Operand1
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['operand1']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn); 
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['operand1']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn);  
 
                             //Operand2
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['operand2']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn); 
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['operand2']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
 
                             //Operator
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['operator']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn); 
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['operator']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn);  
 
                             //Question type
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['questiontype']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn); 
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['questiontype']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
 
                             //Question freq
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[i]['frequency']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn); 
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['frequency']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
 
-                           
-                             //Question freq
-                            var btn = document.createElement("TD"); 
-                            var t = document.createTextNode(JSON.stringify(Qarr[1]['frequency']));       
-                            btn.appendChild(t); 
-                            document.getElementById('trow').appendChild(btn);
+                            //Remove question button
+                            var newColumn = document.createElement("TD"); 
+                            var removebtn = document.createElement("Button")
+                            removebtn.innerHTML = "Remove";
+                            removebtn.onclick = function() {
+
+                              $.post('removequestion.php',{questionid:removebtn.value},
+                              function(data)
+                              {
+                                document.getElementById('level_ID').innerHTML=data;
+                              });
+                            }
+                            removebtn.id = "1";
+                            removebtn.value = Qarr[i]['questionid'];
+                            newColumn.appendChild(removebtn);
+                            newRow.appendChild(newColumn); 
 
                           }
                           
                         }
 
 
-
-                 
-
-
-
-
-
-
-
-
                      
                       </script>
                          
-                        
-                      
-                    
-               
+
           </table>
         </div>
-
-      
-
 
       <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -607,6 +589,34 @@ if($user->classExist()){  ?>
   
   </div>
 </div>
+<script type="text/javascript" src="./jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+  $('#removelevel').on('click', function (e) {
+
+    $.post('removelevel.php',{levelid:LID},
+    function(data)
+    {
+      document.getElementById('level_ID').innerHTML=data;
+    });
+
+  })
+
+
+  $('#refreshpage').on('click', function (e) {
+  
+    location.reload();
+  })
+
+
+ 
+
+</script>
+
+
+
+
+
 
 
   </body>
