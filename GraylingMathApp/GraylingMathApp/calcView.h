@@ -16,7 +16,16 @@
     IBOutlet UITextField *userInput; //textbox store user input
     IBOutlet UILabel *labelForTimer; //label for timer
     
-
+    IBOutlet UIButton *button0;
+    IBOutlet UIButton *button1;
+    IBOutlet UIButton *button2;
+    IBOutlet UIButton *button3;
+    IBOutlet UIButton *button4;
+    IBOutlet UIButton *button5;
+    IBOutlet UIButton *button6;
+    IBOutlet UIButton *button7;
+    IBOutlet UIButton *button8;
+    IBOutlet UIButton *button9;
     
     NSInteger valueOne; //int for first number
     NSInteger valueTwo; //int for second number
