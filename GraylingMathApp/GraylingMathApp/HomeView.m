@@ -7,6 +7,11 @@
 //
 
 #import "HomeView.h"
+#import "userData.h"
+#import "userDataPraser.h"
+#import "allLevels.h"
+#import "levelPraser.h"
+
 
 
 @implementation HomeView
@@ -33,7 +38,14 @@
 {
     [super viewDidLoad];
     
+    userData *currentUserData =[userDataPraser loadData];
     
+    allLevels *curentClassLevel=[levelPraser loadLevels];
+    
+    //print out current username
+    NSLog(@"Current username %@", currentUserData.userName);
+    
+    NSLog(@"Levels avilable %ld", (long)currentUserData.maxLevelsForUser);
     //Setting the label text to passed username value
     usernameLabel.text = username;
     

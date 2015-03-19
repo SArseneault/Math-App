@@ -10,9 +10,28 @@
 
 @implementation userData
 
-@synthesize userName;
-@synthesize levelUserSelc;
-@synthesize pracOrTestUserSelc;
+@synthesize userName = _userName;
+@synthesize maxLevelsForUser=_maxLevelsForUser;
+//@synthesize levelUserSelc=_levelUserSelc;
+//@synthesize pracOrTestUserSelc=_pracOrTestUserSelc;
+
+-(id)initWithUserName:(NSString*)currentUserName
+     maxLevelsForUser:(NSInteger) maxLevels{
+    
+    if((self = [super init])){
+        self.userName =currentUserName;
+        self.maxLevelsForUser=maxLevels;
+        
+        
+    }
+    
+    return self;
+    
+}
+
+
+
+
 
 
 

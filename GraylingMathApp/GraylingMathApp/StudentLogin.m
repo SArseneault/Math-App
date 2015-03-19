@@ -9,6 +9,9 @@
 #import "StudentLogin.h"
 #import "AppDelegate.h"
 #import "HomeView.h"
+#import "userData.h"
+#import "userDataPraser.h"
+
 
 @interface StudentLogin ()
 
@@ -34,6 +37,7 @@
 {
     [super viewDidLoad];
     
+
     
     
     //Setting the label text to passed username value

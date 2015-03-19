@@ -428,7 +428,8 @@ if($user->classExist()){  ?>
   //Variable to store level id info
   var LID = 0;
   var CID = 0;
-  QArrLength = 3;
+  QArrLength = -1;
+  var Qarr; 
   function setLevelID(classID, levelID){
   
     //document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
@@ -442,29 +443,16 @@ if($user->classExist()){  ?>
     $.post('getQ.php',{classid:CID, levelid:LID},function(data){ 
       
       //alert(data);
-      var arr = JSON.parse(data);
+      Qarr = JSON.parse(data);
 
+      QArrLength = Qarr.length;
 
-      alert(JSON.stringify(arr[0]['questionName']));
-      QArrLength = arr.length;
-
+      createTable();
      
-      //document.getElementById("level_ID").innerHTML=QArrLength;
-      for (var i = 0; i < QArrLength; i++) {
-          document.getElementById("level_ID1").innerHTML=QArrLength;
-          document.getElementById("level_ID2").innerHTML=QArrLength;
-          document.getElementById("level_ID3").innerHTML=QArrLength;
-      }
-      //document.getElementById("level_ID").innerHTML=data;
+      document.getElementById("levelI").innerHTML=data;
     }); 
 
-   
-
-      
   
-
-
-
 
   }
 
@@ -483,10 +471,16 @@ if($user->classExist()){  ?>
 
 
   $('#refreshpage').on('click', function (e) {
+  
     location.reload();
   })
 
 </script>
+
+    
+
+
+
 
 <!--Model for editing a level-->
 <div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -498,32 +492,111 @@ if($user->classExist()){  ?>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
     
-      <div class ="container">
-        <div class = "table-responsive">
-          <table class = "table">
-            
+
+        <div class = "table-responsive" >
+          <table class = "table" max-width="150px">
             <thread>
               <tr>
                 <th>Question</th>
                 <th>Description</th>
-                <th>Operand 1</th>
-                <th>Operand 2</th>
-                <th>Frequency</th>
-                <th>Question Type</th>
+                <th>Operand_1</th>
+                <th>Operand_2</th>
+                <th>Operator</th>
+                <th>Question_Type</th>
+                <th>Question_Frequency</th>
               </tr>
             </thred>
-            <tbody>
-                  <tr>
-                      <td>Q1</td>
-                      <td>QD</td>
-                      <td>QD</td>
-
-                  </tr>
+            <tbody id="tbody">
+                  <tr id="trow" align="center">
+                  
+                 
+                      
+         </tr>
               </tbody>
+
+                    <script type="text/javascript">
+                       //document.getElementById("level_ID").innerHTML=QArrLength;
+
+
+                       function createTable2(){
+
+                          for (var i = 0; i < QArrLength; i++) {
+
+                            //Question name
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['questionName']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn); 
+
+                            // Description
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['description']));       
+                            btn.appendChild(t);
+                            document.getElementById('trow').appendChild(btn); 
+
+                            //Operand1
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['operand1']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn); 
+
+                            //Operand2
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['operand2']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn); 
+
+                            //Operator
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['operator']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn); 
+
+                            //Question type
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['questiontype']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn); 
+
+                            //Question freq
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[i]['frequency']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn); 
+
+                           
+                             //Question freq
+                            var btn = document.createElement("TD"); 
+                            var t = document.createTextNode(JSON.stringify(Qarr[1]['frequency']));       
+                            btn.appendChild(t); 
+                            document.getElementById('trow').appendChild(btn);
+
+                          }
+                          
+                        }
+
+
+
+                 
+
+
+
+
+
+
+
+
+                     
+                      </script>
+                         
+                        
+                      
+                    
+               
           </table>
         </div>
 
-      </div>
+      
 
 
       <div class="modal-footer">

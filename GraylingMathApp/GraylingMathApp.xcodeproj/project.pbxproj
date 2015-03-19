@@ -37,6 +37,10 @@
 		2074BC211AB6769200D49D86 /* ClassLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074BC201AB6769200D49D86 /* ClassLogin.m */; };
 		2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074BC221AB6790900D49D86 /* StudentLogin.m */; };
 		A20095561AB07E20004DECFB /* LevelSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = A20095551AB07E20004DECFB /* LevelSelect.m */; };
+		A2166F371ABB1865000FC44B /* levelData.m in Sources */ = {isa = PBXBuildFile; fileRef = A2166F361ABB1865000FC44B /* levelData.m */; };
+		A2166F3A1ABB1B7F000FC44B /* allLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = A2166F391ABB1B7F000FC44B /* allLevels.m */; };
+		A2166F3D1ABB1E90000FC44B /* levelPraser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2166F3C1ABB1E90000FC44B /* levelPraser.m */; };
+		A2166F401ABB2C5B000FC44B /* userDataPraser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2166F3F1ABB2C5B000FC44B /* userDataPraser.m */; };
 		A223A7711AB0C72A00CE61B9 /* userData.m in Sources */ = {isa = PBXBuildFile; fileRef = A223A7701AB0C72A00CE61B9 /* userData.m */; };
 		B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */; };
 		B28C2DFE1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */; };
@@ -96,6 +100,14 @@
 		2074BC231AB6790900D49D86 /* StudentLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentLogin.h; sourceTree = "<group>"; };
 		A20095541AB07E20004DECFB /* LevelSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelect.h; sourceTree = "<group>"; };
 		A20095551AB07E20004DECFB /* LevelSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelect.m; sourceTree = "<group>"; };
+		A2166F351ABB1865000FC44B /* levelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = levelData.h; sourceTree = "<group>"; };
+		A2166F361ABB1865000FC44B /* levelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = levelData.m; sourceTree = "<group>"; };
+		A2166F381ABB1B7F000FC44B /* allLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allLevels.h; sourceTree = "<group>"; };
+		A2166F391ABB1B7F000FC44B /* allLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = allLevels.m; sourceTree = "<group>"; };
+		A2166F3B1ABB1E90000FC44B /* levelPraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = levelPraser.h; sourceTree = "<group>"; };
+		A2166F3C1ABB1E90000FC44B /* levelPraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = levelPraser.m; sourceTree = "<group>"; };
+		A2166F3E1ABB2C5B000FC44B /* userDataPraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDataPraser.h; sourceTree = "<group>"; };
+		A2166F3F1ABB2C5B000FC44B /* userDataPraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDataPraser.m; sourceTree = "<group>"; };
 		A223A76F1AB0C72A00CE61B9 /* userData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userData.h; sourceTree = "<group>"; };
 		A223A7701AB0C72A00CE61B9 /* userData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userData.m; sourceTree = "<group>"; };
 		B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0001(rough 2).jpg"; path = "Assets/Scan0001(rough 2).jpg"; sourceTree = SOURCE_ROOT; };
@@ -266,11 +278,35 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
-		A223A76E1AB0C6C100CE61B9 /* Data Models */ = {
+		A2166F411ABB517B000FC44B /* User Data */ = {
 			isa = PBXGroup;
 			children = (
 				A223A76F1AB0C72A00CE61B9 /* userData.h */,
 				A223A7701AB0C72A00CE61B9 /* userData.m */,
+				A2166F3E1ABB2C5B000FC44B /* userDataPraser.h */,
+				A2166F3F1ABB2C5B000FC44B /* userDataPraser.m */,
+			);
+			name = "User Data";
+			sourceTree = "<group>";
+		};
+		A2166F421ABB52B0000FC44B /* Level Data */ = {
+			isa = PBXGroup;
+			children = (
+				A2166F351ABB1865000FC44B /* levelData.h */,
+				A2166F361ABB1865000FC44B /* levelData.m */,
+				A2166F381ABB1B7F000FC44B /* allLevels.h */,
+				A2166F391ABB1B7F000FC44B /* allLevels.m */,
+				A2166F3B1ABB1E90000FC44B /* levelPraser.h */,
+				A2166F3C1ABB1E90000FC44B /* levelPraser.m */,
+			);
+			name = "Level Data";
+			sourceTree = "<group>";
+		};
+		A223A76E1AB0C6C100CE61B9 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2166F421ABB52B0000FC44B /* Level Data */,
+				A2166F411ABB517B000FC44B /* User Data */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -392,10 +428,14 @@
 			files = (
 				A223A7711AB0C72A00CE61B9 /* userData.m in Sources */,
 				A20095561AB07E20004DECFB /* LevelSelect.m in Sources */,
+				A2166F3D1ABB1E90000FC44B /* levelPraser.m in Sources */,
+				A2166F3A1ABB1B7F000FC44B /* allLevels.m in Sources */,
 				200B08071AA4E52A000E404A /* AppDelegate.m in Sources */,
+				A2166F401ABB2C5B000FC44B /* userDataPraser.m in Sources */,
 				200B08471AA4E6AB000E404A /* TileView.m in Sources */,
 				200B08571AA4F48A000E404A /* HomeView.m in Sources */,
 				2074BC211AB6769200D49D86 /* ClassLogin.m in Sources */,
+				A2166F371ABB1865000FC44B /* levelData.m in Sources */,
 				200B08541AA4F397000E404A /* calcView.m in Sources */,
 				2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */,
 				200B08461AA4E6AB000E404A /* FirstViewController.m in Sources */,

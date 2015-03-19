@@ -9,10 +9,36 @@
 #import <Foundation/Foundation.h>
 
 @interface userData : NSObject
+{
+    NSString *_userName;
+    NSInteger _maxLevelsForUser;
+    //NSInteger _levelUserSelc;
+    //NSInteger _pracOrTestUserSelc;
 
+    
+}
+
+//username of student
 @property (nonatomic, strong) NSString *userName;
-@property (nonatomic, assign) NSInteger *levelUserSelc;
-@property (nonatomic, assign) NSInteger *pracOrTestUserSelc;
+
+//Max level completed
+@property (nonatomic, assign) NSInteger maxLevelsForUser;
+
+-(id)initWithUserName:(NSString*)currentUserName
+     maxLevelsForUser:(NSInteger) maxLevels;
+
+//level user selects
+//@property (nonatomic, assign) NSInteger levelUserSelc;
+
+//Practice or test
+//@property (nonatomic, assign) NSInteger pracOrTestUserSelc;
+
+
+
+//-(id)initWithLevelUserSelc:(NSInteger)levelSelc
+        //pracOrTestUserSelc:(NSInteger)pracOrTest
+         // maxLevelsForUser:(NSInteger)maxLevel
+                 // userName:(NSString*)name;
 
 
 

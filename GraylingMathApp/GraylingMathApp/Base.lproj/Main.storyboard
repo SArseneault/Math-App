@@ -1498,8 +1498,8 @@
         <image name="zeroTile.png" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T0G-YC-YTe"/>
-        <segue reference="uXK-dA-ouy"/>
         <segue reference="zU6-Cq-sf7"/>
+        <segue reference="yo4-Eb-Wvn"/>
+        <segue reference="uXK-dA-ouy"/>
     </inferredMetricsTieBreakers>
 </document>
