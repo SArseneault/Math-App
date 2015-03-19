@@ -13,22 +13,12 @@
 
 	//Grabbing Variables from the link
 	$username = $_GET["username"];
-	$classname =  $_GET["classname"];
+	$studentID = $_GET["studentid"];
+	$classID =  $_GET["classid"];
 
 	//Creating a jason array
-	$json = array(
-		
-		);
+	$json = array();
 
-
-
-
-
-	//Creating class object
-	$sclass = new SClass();
-
-	//Getting the classid from the class name
-	$classID = $sclass->find($classname);
 
 	//Grabbing the level data
 	$leveldata = $db->get('level', array('class_id', '=', $classID));

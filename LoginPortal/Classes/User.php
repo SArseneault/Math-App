@@ -215,7 +215,7 @@
 	            	'level_id' => $fields['level_id'],
 	            	'answer' => -1,
 	            	'student_id' => $student['student_id'],
-	            	'attemps' => 0
+	            	'attempts' => 0
 	            );
 
 	       

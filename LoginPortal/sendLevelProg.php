@@ -7,8 +7,9 @@
 
 
 	//Grabbing Variables from the link
-	$username = $_GET["username"];
-	$classname =  $_GET["class"];
+
+	$studentID = $_GET["studentid"];
+	$classID =  $_GET["classid"];
 	$level = $_GET["level"];
 	$status = $_GET["status"];
 	$elapsed_time = $_GET["elapsed_time"];
@@ -16,21 +17,6 @@
 	$practice_attempts = $_GET["practice_attempts"];
 
 
-	//Grabbing the class data
-	$classData = $db->get('class', array("class_name", '=', $classname));
-	$classData = $classData->first();
-	$classData = get_object_vars($classData);
-	$classID = $classData['class_id']; //Setting the class id
-
-	//Grabbing the student data
-	$studentData = $db->query('SELECT * FROM student WHERE class_id = ? AND username = ?', array(
-				$classID,
-				$username
-				));
-	$studentData = $studentData->first();
-	$studentData = get_object_vars($studentData);
-	$studentID = $studentData['student_id']; //Setting the student id	
-	
 	//Grabbing the level data
 	$levelData = $db->query('SELECT * FROM level WHERE class_id = ? AND name = ?', array(
 				$classID,

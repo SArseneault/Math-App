@@ -21,9 +21,6 @@
 @property (nonatomic, strong) NSMutableArray * json;
 
 
-//Creating method to grab json data
-- (IBAction)getData;
-
 
 @end
 

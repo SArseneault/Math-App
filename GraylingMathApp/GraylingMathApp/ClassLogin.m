@@ -20,6 +20,7 @@
 
 @synthesize strURL;
 
+
 //Automatically called after screenload
 - (void)viewDidLoad
 {
@@ -84,7 +85,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"className"];
         [[NSUserDefaults standardUserDefaults] setObject:passwordField.text forKey:@"classPassword"];
     
-
         
         
         //Present the view controller

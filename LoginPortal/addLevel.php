@@ -103,11 +103,7 @@ if(Input::exists()) {
             ),
         'operand2' => array(
             'required' => true
-            ),
-        'qAnswer' => array(
-            'required' => true
             )
-
         ));
       
       $qtype = -1;
@@ -132,7 +128,6 @@ if(Input::exists()) {
               'operator' => Input::get('operator'),
               'operand1' => Input::get('operand1'),
               'operand2' => Input::get('operand2'),
-              'answer' => Input::get('qAnswer'),
               'level_id' => Input::get('level_id'),
               'class_id' => $classInfo['class_id']
               ));
@@ -407,10 +402,6 @@ if($user->classExist()){  ?>
           </div>
 
 
-          <div class ="form-group">
-            <label for "labelForQuestionAnswer">Answer</lable>
-              <input type ="number" class"form-control" name="qAnswer" id ="labelForQuestionAnswer" placeholder="Answer">
-          </div>
 
       </div>
       <div class="modal-footer">

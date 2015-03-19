@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) NSString *strURL;
 
+
+
 //Methods
 - (IBAction)Login;
 

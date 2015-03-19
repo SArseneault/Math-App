@@ -28,6 +28,9 @@
 //Creating property for the strings which stores the classname
 @property (strong, nonatomic) NSString *classname;
 
+//Creating a propertie for the json array
+@property (nonatomic, strong) NSMutableArray * json;
+
 //Methods
 - (IBAction)Login;
 

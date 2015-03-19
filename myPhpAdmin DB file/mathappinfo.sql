@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2015 at 10:47 PM
+-- Generation Time: Mar 19, 2015 at 06:42 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `level_progress` (
 --
 
 INSERT INTO `level_progress` (`levelprog_id`, `student_id`, `level_id`, `status`, `elapsed_time`, `test_attempts`, `practice_attempts`) VALUES
-(2, 2, 1, 1, '00:04:18', 3, 5),
+(2, 2, 1, 1, '00:04:18', 8, 19),
 (4, 2, 2, 0, '00:00:00', 0, 0),
 (6, 2, 3, 0, '00:00:00', 0, 0),
 (7, 3, 4, 0, '00:00:00', 0, 0),
@@ -133,20 +133,22 @@ CREATE TABLE IF NOT EXISTS `question` (
   `operator` varchar(2) NOT NULL,
   `question_type` tinyint(1) NOT NULL,
   `freq` int(11) NOT NULL,
-  `answer` int(2) NOT NULL,
   `class_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
 --
 
-INSERT INTO `question` (`question_id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`, `answer`, `class_id`) VALUES
-(1, 'Q1L1', 1, 'Question1L1', 1, 1, '+', 1, 5, 2, 1),
-(2, 'Q2L1', 1, 'Question2L1', 1, 1, '+', 0, 3, 2, 1),
-(3, 'Q1L2', 2, 'Question1L2', 3, 3, '+', 0, 4, 6, 1),
-(4, 'L1Q1', 4, 'L2Q1', 1, 1, '+', 0, 5, 2, 2),
-(5, 'Q1L2', 5, 'Q1L2', 1, 1, '+', 1, 2, 2, 2);
+INSERT INTO `question` (`question_id`, `name`, `level_id`, `description`, `operand1`, `operand2`, `operator`, `question_type`, `freq`, `class_id`) VALUES
+(1, 'Q1L1', 1, 'Question1L1', 1, 1, '+', 1, 5, 1),
+(2, 'Q2L1', 1, 'Question2L1', 1, 1, '+', 0, 3, 1),
+(3, 'Q1L2', 2, 'Question1L2', 3, 3, '+', 0, 4, 1),
+(4, 'L1Q1', 4, 'L2Q1', 1, 1, '+', 0, 5, 2),
+(5, 'Q1L2', 5, 'Q1L2', 1, 1, '+', 1, 2, 2),
+(6, 'Question for l1', 1, 'QFl1', 4, 4, '+', 1, 5, 1),
+(7, 'QQQQ', 1, 'QQQQ', 1, 1, '+', 0, 6, 1),
+(8, 'pppp', 1, 'ppp', 6, 6, '+', 0, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -160,21 +162,23 @@ CREATE TABLE IF NOT EXISTS `question_progress` (
   `level_id` int(11) NOT NULL,
   `answer` int(2) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `attemps` int(2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `attempts` int(2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question_progress`
 --
 
-INSERT INTO `question_progress` (`questionprog_id`, `question_id`, `level_id`, `answer`, `student_id`, `attemps`) VALUES
+INSERT INTO `question_progress` (`questionprog_id`, `question_id`, `level_id`, `answer`, `student_id`, `attempts`) VALUES
 (2, 1, 1, -1, 2, 0),
-(4, 2, 1, -1, 2, 0),
+(4, 2, 1, 8, 2, 19),
 (6, 3, 2, -1, 2, 0),
 (7, 4, 4, -1, 3, 0),
 (8, 4, 4, -1, 4, 0),
 (9, 5, 5, -1, 3, 0),
-(10, 5, 5, -1, 4, 0);
+(10, 5, 5, -1, 4, 0),
+(11, 7, 1, -1, 2, 0),
+(12, 8, 1, -1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -236,7 +240,14 @@ CREATE TABLE IF NOT EXISTS `teacher_session` (
 `id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL,
   `hash` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `teacher_session`
+--
+
+INSERT INTO `teacher_session` (`id`, `teacher_id`, `hash`) VALUES
+(1, 1, '9b857ce21e7f9dcd9fccb4b962d358cabf855e371a3e06249c');
 
 --
 -- Indexes for dumped tables
@@ -313,12 +324,12 @@ MODIFY `levelprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `question_progress`
 --
 ALTER TABLE `question_progress`
-MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `questionprog_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `student`
 --
@@ -333,7 +344,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `teacher_session`
 --
 ALTER TABLE `teacher_session`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
