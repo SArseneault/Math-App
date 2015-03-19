@@ -207,7 +207,6 @@ if(Input::exists()) {
   </div>
 </div>
 
-
 <!-- Table used to display levels -->
 <?php 
 // If the class exists then display the table and grab the info
@@ -259,7 +258,7 @@ if($user->classExist()){  ?>
     
 
         <tr>
-          <td><a data-toggle="modal" data-target="#editLevelModal" onclick="setLevelID('<?php print_r($level['level_id']); ?>', '')"><?php print_r($level['name']); ?></a></td>
+          <td><a data-toggle="modal" data-target="#editLevelModal" id="levelview" onclick="setLevelID( '<?php print_r($classInfo['class_id']); ?>' , '<?php print_r($level['level_id']); ?>' ) "><?php print_r($level['name']); ?></a></td>
           <td><?php print_r($level['time_limit']); ?></td>
           <td><?php print_r($practiceCount); ?></td>
           <td><?php print_r($testCount); ?></td>
@@ -422,45 +421,54 @@ if($user->classExist()){  ?>
 
 
 
-
-<!--Model for editing a level-->
-<div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-
-        
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
-    
-      <div class="modal-body">
-
-        <h2 id="level_ID"></h2>
-
-
-      </div>
-
-
-      <div class="modal-footer">
-        <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="removelevel"class="btn btn-danger" name="removeLevel">Remove level</button>
-      </div>
-    </div>
-  
-  </div>
-</div>
 <!--Script to grab level info for editlevelmodal-->
-<script>
+<script type="text/javascript" src="./jquery-1.4.2.js"></script>
+<script type="text/javascript">
 
   //Variable to store level id info
   var LID = 0;
-  function setLevelID(levelID, questions){
+  var CID = 0;
+  QArrLength = 3;
+  function setLevelID(classID, levelID){
   
     //document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
+    CID = classID;
     LID = levelID;
-    //questions = JSON.parse(questions);
     
+    //questions = JSON.parse(questions);
+
+
+
+    $.post('getQ.php',{classid:CID, levelid:LID},function(data){ 
+      
+      //alert(data);
+      var arr = JSON.parse(data);
+
+
+      alert(JSON.stringify(arr[0]['questionName']));
+      QArrLength = arr.length;
+
+     
+      //document.getElementById("level_ID").innerHTML=QArrLength;
+      for (var i = 0; i < QArrLength; i++) {
+          document.getElementById("level_ID1").innerHTML=QArrLength;
+          document.getElementById("level_ID2").innerHTML=QArrLength;
+          document.getElementById("level_ID3").innerHTML=QArrLength;
+      }
+      //document.getElementById("level_ID").innerHTML=data;
+    }); 
+
+   
+
+      
+  
+
+
+
+
   }
+
+
 
 
 
@@ -479,6 +487,53 @@ if($user->classExist()){  ?>
   })
 
 </script>
+
+<!--Model for editing a level-->
+<div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
+    
+      <div class ="container">
+        <div class = "table-responsive">
+          <table class = "table">
+            
+            <thread>
+              <tr>
+                <th>Question</th>
+                <th>Description</th>
+                <th>Operand 1</th>
+                <th>Operand 2</th>
+                <th>Frequency</th>
+                <th>Question Type</th>
+              </tr>
+            </thred>
+            <tbody>
+                  <tr>
+                      <td>Q1</td>
+                      <td>QD</td>
+                      <td>QD</td>
+
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="removelevel"class="btn btn-danger" name="removeLevel">Remove level</button>
+      </div>
+    </div>
+  
+  </div>
+</div>
 
 
   </body>
