@@ -17,8 +17,10 @@
     
     //Dictionary to store retreived passwords
     NSDictionary *credentialsDictionary;
+    NSString *strURL;
 }
 
+@property (nonatomic, strong) NSString *strURL;
 
 //Methods
 - (IBAction)Login;

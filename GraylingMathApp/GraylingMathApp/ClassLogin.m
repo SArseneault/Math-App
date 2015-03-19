@@ -18,13 +18,17 @@
 @implementation ClassLogin
 
 
+@synthesize strURL;
 
 //Automatically called after screenload
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
 
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,11 +41,17 @@
 - (IBAction)Login
 {
     
+    //Displaying the username
+    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
+    NSString *className = [define stringForKey:@"className"];
+    NSLog(@"%@", className);
+   
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logClassIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logClassIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
     NSLog(@"%@",strURL);
+    
+
     
     // to execute php code
     NSData *dataURL = [NSData dataWithContentsOfURL:[NSURL URLWithString:strURL]];
@@ -55,8 +65,6 @@
     NSLog(@"Results:");
     NSLog(@"%@", strResult);
     
-    //Storing results into dictionary
-    credentialsDictionary = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"password", passwordField.text, nil] forKeys:[NSArray arrayWithObjects:@"username",usernameField.text, nil]];
     
     
 
@@ -69,17 +77,26 @@
         //Creating a student controller object
         StudentLogin *SL = [self.storyboard instantiateViewControllerWithIdentifier:@"StudentLogin"];
         
-        
         //Set the classname string
         SL.classname = usernameField.text;
+        
+        //Storing the class credentials
+        [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"className"];
+        [[NSUserDefaults standardUserDefaults] setObject:passwordField.text forKey:@"classPassword"];
+    
+
+        
         
         //Present the view controller
         [self presentViewController:SL animated:YES completion:nil];
         
     }
     else {
+        [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"isClassLoggedIn"];
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"The password is incorrect or the class doesn't exist." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [alert show];
+        
     }
     
     
