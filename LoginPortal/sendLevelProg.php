@@ -27,11 +27,13 @@
 	$levelData = get_object_vars($levelData);
 	$levelID = $levelData['level_id']; //Setting the level id
 
+
 	//Grabbing the level progress data
 	$levelProgData = $db->query('SELECT * FROM level_progress WHERE student_id = ? AND level_id = ?', array(
 				$studentID,
 				$levelID
 				));
+	
 	$levelProgData = $levelProgData->first();
 	$levelProgData = get_object_vars($levelProgData);
 	$levelProgID = $levelProgData['levelprog_id']; //Setting the level progress id

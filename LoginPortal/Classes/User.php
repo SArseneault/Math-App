@@ -118,7 +118,8 @@
 	            	'level_id' => $leveldata['level_id'],
 	            	'status' => 0,
 	            	'elapsed_time' => '00:00:00',
-	            	'attempts' => 0 
+	            	'test_attempts' => 0 ,
+	            	'practice_attempts' => 0 
 	            );
 
 	       
