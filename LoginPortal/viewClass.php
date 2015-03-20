@@ -42,7 +42,8 @@
         'class_name' => array(
           'required' => true,
           'min' => 2,
-          'max' => 30
+          'max' => 30,
+          'unique' => 'class'
           ),
         'class_password' => array(
               'required' => true,
