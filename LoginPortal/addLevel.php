@@ -190,8 +190,9 @@ if(Input::exists()) {
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li><a href="viewClass.php">Class</a></li>
-        <li class="active"><a href="addLevel.php">Add Level</a></li>
+        <li><a href="viewClass.php">Class Editor</a></li>
+        <li class="active"><a href="addLevel.php">Level Editor</a></li>
+        <li><a href="importExport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
 
       </ul>
@@ -283,13 +284,18 @@ if($user->classExist()){  ?>
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
     </div>
     <?php } ?>
-
+    </div>
 </div>
 <?php } else { //Display this message if the class doesn't exsits?>
   <h3><p>You have not created a class yet!</p></h3>
   <p>Please created a class to the unlock level editor mode</p>
   
 <?php } ?>
+
+
+
+
+
 
 <!--modal for create Class -->
 <div class="modal fade" id="createLevelModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -456,6 +462,9 @@ if($user->classExist()){  ?>
 
   }
 
+
+
+
 </script>
 
     
@@ -470,7 +479,7 @@ if($user->classExist()){  ?>
       <div class="modal-header">
 
         
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" id="refreshpage2" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
     
         <h2 id="level_ID"></h2>
@@ -542,7 +551,14 @@ if($user->classExist()){  ?>
 
                             //Question type
                             var newColumn = document.createElement("TD"); 
-                            var t = document.createTextNode(Qarr[i]['questiontype']);       
+                            var type = -1;
+                            if(Qarr[i]['questiontype'] ==0)
+                              type = "Practice";
+                            else
+                              type = "Test";
+
+                            var t = document.createTextNode(type); 
+
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn); 
 
@@ -604,6 +620,10 @@ if($user->classExist()){  ?>
 
 
   $('#refreshpage').on('click', function (e) {
+  
+    location.reload();
+  })
+ $('#refreshpage2').on('click', function (e) {
   
     location.reload();
   })

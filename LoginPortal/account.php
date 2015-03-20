@@ -144,13 +144,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Grayling Math Racer</a>
+      <a class="navbar-brand" href="index.php">Grayling Math Racer</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li><a href="viewClass.php">Class</a></li>
-        <li><a href="addLevel.php">Add Level</a></li>
+        <li><a href="viewClass.php">Class Editor</a></li>
+        <li><a href="addLevel.php">Level Editor</a></li>
+        <li><a href="importExport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
 
       </ul>

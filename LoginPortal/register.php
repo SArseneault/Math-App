@@ -35,19 +35,24 @@
 					$user = new User();
 					$salt = Hash::salt(32);
 
-
+					$username = Input::get('username');
+					$password = Hash::make(Input::get('password'), $salt);
+					
 					try{
 						$user->create(array(
 							'name' => Input::get('name'),
-							'username' => Input::get('username'),
-							'password' => Hash::make(Input::get('password'), $salt),
+							'username' => $username,
+							'password' => $password,
 							'salt' => $salt,
 							'joined' => date('Y-m-d H:i:s')
 						));
 
-						//Flash message and redirect
-						Session::flash('success', 'You have been registered and can now login');
-						Redirect::to("login.php");
+
+						$login = $user->login($username, $password, true);
+						Redirect::to("index.php");
+					
+						
+						
 
 					} catch(Exception $e) {
 						die($e->getMessage()); //Eventaully redirect user to a error page

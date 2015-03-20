@@ -1,6 +1,8 @@
 <?php 
   require_once 'core/init.php';
 
+
+
   $user = new User();//Picking current user details
   $studentOBJ = new Student(); //Creating a student object
   //Redirect the user if they are not logged in.
@@ -185,13 +187,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Grayling Math Racer</a>
+      <a class="navbar-brand" href="index.php">Grayling Math Racer</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li class="active"><a href="viewClass.php">Class</a></li>
-        <li><a href="addLevel.php">Add Level</a></li>
+        <li class="active"><a href="viewClass.php">Class Editor</a></li>
+        <li><a href="addLevel.php">Level Editor</a></li>
+        <li><a href="importExport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
 
       </ul>
@@ -289,20 +292,52 @@ if($user->classExist()){  ?>
 <!--buttons -->
 <div class ="container">
   <div class="row">
-    
+    <?php if(!$classInfo) { ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createClassModal">Create Class</a>
     </div>
+    <?php } ?>
     <?php if($classInfo) { ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addStudentModal">Add Student</a>
     </div>
+
+    <div class ="col-md-2">
+      <a href="#" class="btn btn-danger" data-toggle="modal" onclick="setClassID('<?php print_r($classInfo['class_id']); ?>')" data-target="#deleteClassModal">Delete Class</a>
+    </div>
+
+
+
     <?php } ?>
 
   </div>
 </div>
 
 <!--modal for buttons -->
+
+
+<!--modal for remove Class -->
+<div class="modal fade" id="deleteClassModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Delete Class</h4>
+      </div>
+      <div class="modal-body">
+          <h3>Are you sure you want to delete this class?</h3>
+          <br>
+          <h1 id="class_ID"></h1>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="refreshpage2" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" id="deleteClass" class="btn btn-primary">Delete Class</button>
+          </div>
+        </div>
+      
+  </div>
+</div>
+
 
 
 <!--modal for create Class -->
@@ -421,6 +456,19 @@ if($user->classExist()){  ?>
     
   }
 
+  var CID = -1;
+  function setClassID(classID) {
+    CID = classID;
+  }
+  $('#deleteClass').on('click', function (e) {
+   
+    $.post('deleteClass.php',{classid:CID},
+    function(data)
+    {
+      document.getElementById('class_ID').innerHTML=data;
+    });
+  })
+
 
   $('#removeStudent').on('click', function (e) {
    
@@ -433,6 +481,10 @@ if($user->classExist()){  ?>
 
 
   $('#refreshpage').on('click', function (e) {
+    location.reload();
+  })
+
+   $('#refreshpage2').on('click', function (e) {
     location.reload();
   })
 
@@ -492,20 +544,6 @@ if($user->classExist()){  ?>
 
   }
 
-
-  $('#removeStudent').on('click', function (e) {
-   
-    $.post('removeStudent.php',{studentid:SID},
-    function(data)
-    {
-      document.getElementById('student_ID').innerHTML=data;
-    });
-  })
-
-
-  $('#refreshpage').on('click', function (e) {
-    location.reload();
-  })
 
 </script>
 

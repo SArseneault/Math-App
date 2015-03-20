@@ -153,7 +153,7 @@
 
 				//Getting array of st objects
 				$data = $data->results();
-
+				
 				return $data;
 			}
 			

@@ -9,6 +9,6 @@
 
 	
 	//Returning result to javascript
-	echo 'This has been successfully removed!';
+	echo 'This student has been successfully removed!';
 
 ?>

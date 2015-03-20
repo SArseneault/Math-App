@@ -109,8 +109,9 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="viewClass.php">Class</a></li>
-        <li><a href="addLevel.php">Add Level</a></li>
+        <li><a href="viewClass.php">Class Editor</a></li>
+        <li><a href="addLevel.php">Level Editor</a></li>
+        <li><a href="importExport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

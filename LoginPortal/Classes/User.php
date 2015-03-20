@@ -102,34 +102,34 @@
 
 			//Gabbing all the students inside of this class
 			$students = $studentOBJ->getStudents($this->getClass()['class_id']);
-
 			
-			//For each student update the level progress to a default value
-			foreach($students as $student){
+			if($students){
+				//For each student update the level progress to a default value
+				foreach($students as $student){
 
-	            //Convert the std object to an array
-	            $student = get_object_vars($student);
+		            //Convert the std object to an array
+		            $student = get_object_vars($student);
 
 
 
-            	//Creating a default progress level
-				$defaultProgress = array(
-	            	'student_id' => $student['student_id'],
-	            	'level_id' => $leveldata['level_id'],
-	            	'status' => 0,
-	            	'elapsed_time' => '00:00:00',
-	            	'test_attempts' => 0 ,
-	            	'practice_attempts' => 0 
-	            );
+	            	//Creating a default progress level
+					$defaultProgress = array(
+		            	'student_id' => $student['student_id'],
+		            	'level_id' => $leveldata['level_id'],
+		            	'status' => 0,
+		            	'elapsed_time' => '00:00:00',
+		            	'test_attempts' => 0 ,
+		            	'practice_attempts' => 0 
+		            );
 
-	       
+		       
 
-				//Attempt to insert default data for the progress level
-				if(!$this->_db->insert('level_progress', $defaultProgress)) {
-					throw new Exception('There was a problem inserting default progress for one of the students');
-				}
-           }
-			
+					//Attempt to insert default data for the progress level
+					if(!$this->_db->insert('level_progress', $defaultProgress)) {
+						throw new Exception('There was a problem inserting default progress for one of the students');
+					}
+	           }
+			}
 		}
 
 		//Removing a level to a class
@@ -219,32 +219,32 @@
 			//Gabbing all the students inside of this class
 			$students = $studentOBJ->getStudents($this->getClass()['class_id']);
 
-			
-			//For each student update the question progress to a default value
-			foreach($students as $student){
+			if( $students ){
+				//For each student update the question progress to a default value
+				foreach($students as $student){
 
-	            //Convert the std object to an array
-	            $student = get_object_vars($student);
+		            //Convert the std object to an array
+		            $student = get_object_vars($student);
 
 
-            	//Creating a default progress level
-				$defaultProgress = array(
-	            	'question_id' =>  $questionID,
-	            	'level_id' => $fields['level_id'],
-	            	'answer' => -1,
-	            	'student_id' => $student['student_id'],
-	            	'attempts' => 0
-	            );
+	            	//Creating a default progress level
+					$defaultProgress = array(
+		            	'question_id' =>  $questionID,
+		            	'level_id' => $fields['level_id'],
+		            	'answer' => -1,
+		            	'student_id' => $student['student_id'],
+		            	'attempts' => 0
+		            );
 
-	       
-				 //Attempting to insert question progress information into the database for each student.
-				if(!$this->_db->insert('question_progress', $defaultProgress)) {
-					throw new Exception('There was a problem inserting default progress for one of the students');
+		       
+					 //Attempting to insert question progress information into the database for each student.
+					if(!$this->_db->insert('question_progress', $defaultProgress)) {
+						throw new Exception('There was a problem inserting default progress for one of the students');
+					}
 				}
 			}
-
 		}
-
+		
 		//Returns all of the questions in a certain level
 		public function getQuestions($levelID = null){
 
