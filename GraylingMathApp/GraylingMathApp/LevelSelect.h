@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *levelPicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segementSwitchPorT;
 
+@property NSArray *pickerArray;
+
 -(IBAction) segmentedControlIndex;
 
 

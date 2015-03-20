@@ -42,6 +42,8 @@
 		A2166F3D1ABB1E90000FC44B /* levelPraser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2166F3C1ABB1E90000FC44B /* levelPraser.m */; };
 		A2166F401ABB2C5B000FC44B /* userDataPraser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2166F3F1ABB2C5B000FC44B /* userDataPraser.m */; };
 		A223A7711AB0C72A00CE61B9 /* userData.m in Sources */ = {isa = PBXBuildFile; fileRef = A223A7701AB0C72A00CE61B9 /* userData.m */; };
+		A2B207D81ABB8A1500676DC4 /* level.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D71ABB8A1500676DC4 /* level.json */; };
+		A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D91ABBB5DB00676DC4 /* studentLevel.json */; };
 		B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */; };
 		B28C2DFE1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */; };
 		B28C2DFF1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */; };
@@ -110,6 +112,8 @@
 		A2166F3F1ABB2C5B000FC44B /* userDataPraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDataPraser.m; sourceTree = "<group>"; };
 		A223A76F1AB0C72A00CE61B9 /* userData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userData.h; sourceTree = "<group>"; };
 		A223A7701AB0C72A00CE61B9 /* userData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userData.m; sourceTree = "<group>"; };
+		A2B207D71ABB8A1500676DC4 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
+		A2B207D91ABBB5DB00676DC4 /* studentLevel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studentLevel.json; sourceTree = "<group>"; };
 		B28C2DFA1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0001(rough 2).jpg"; path = "Assets/Scan0001(rough 2).jpg"; sourceTree = SOURCE_ROOT; };
 		B28C2DFB1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0002(rough2).jpg"; path = "Assets/Scan0002(rough2).jpg"; sourceTree = SOURCE_ROOT; };
 		B28C2DFC1AA5FDAD00AEC7CB /* Scan0003(rough2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Scan0003(rough2).jpg"; path = "Assets/Scan0003(rough2).jpg"; sourceTree = SOURCE_ROOT; };
@@ -164,6 +168,8 @@
 		200B08001AA4E52A000E404A /* GraylingMathApp */ = {
 			isa = PBXGroup;
 			children = (
+				A2B207D91ABBB5DB00676DC4 /* studentLevel.json */,
+				A2B207D71ABB8A1500676DC4 /* level.json */,
 				2074BC1E1AB6764700D49D86 /* Login Screens */,
 				A223A76E1AB0C6C100CE61B9 /* Data Models */,
 				A20095571AB07E54004DECFB /* Storyboard */,
@@ -396,12 +402,14 @@
 				B28C2DFD1AA5FDAD00AEC7CB /* Scan0001(rough 2).jpg in Resources */,
 				200B083E1AA4E63A000E404A /* zeroTile.png in Resources */,
 				200B08391AA4E63A000E404A /* raceCarButton.png in Resources */,
+				A2B207D81ABB8A1500676DC4 /* level.json in Resources */,
 				200B08381AA4E63A000E404A /* oneTile.png in Resources */,
 				200B083C1AA4E63A000E404A /* threeTile.png in Resources */,
 				20407B6E1AA5031000E536AB /* Main.storyboard in Resources */,
 				200B083D1AA4E63A000E404A /* twoTile.png in Resources */,
 				200B08121AA4E52A000E404A /* LaunchScreen.xib in Resources */,
 				200B08331AA4E63A000E404A /* carHorn.mp3 in Resources */,
+				A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */,
 				B28C2DFE1AA5FDAD00AEC7CB /* Scan0002(rough2).jpg in Resources */,
 				200B080F1AA4E52A000E404A /* Images.xcassets in Resources */,
 				200B083B1AA4E63A000E404A /* sixTile.png in Resources */,

@@ -38,14 +38,14 @@
 {
     [super viewDidLoad];
     
-    userData *currentUserData =[userDataPraser loadData];
+    //userData *currentUserData =[userDataPraser loadData];
     
-    allLevels *curentClassLevel=[levelPraser loadLevels];
+   // allLevels *curentClassLevel=[levelPraser loadLevels];
     
     //print out current username
-    NSLog(@"Current username %@", currentUserData.userName);
+    //NSLog(@"Current username %@", currentUserData.userName);
     
-    NSLog(@"Levels avilable %ld", (long)currentUserData.maxLevelsForUser);
+    //NSLog(@"Levels avilable %ld", (long)currentUserData.maxLevelsForUser);
     //Setting the label text to passed username value
     usernameLabel.text = username;
     

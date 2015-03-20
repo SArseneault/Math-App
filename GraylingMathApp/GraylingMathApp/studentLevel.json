@@ -1,0 +1,21 @@
+{
+"levels":[
+    {
+        "levelName" : "Level 1",
+        "practicequestionCount" : 3,
+        "testquestionCount" : 2,
+        "timeLimit" : 5
+    },
+    {
+        "levelName" : "Level 2",
+        "practicequestionCount" : 1,
+        "testquestionCount" : 1,
+        "timeLimit" : 4
+    },
+    {
+        "levelName" : "Level 3",
+        "practicequestionCount" : 0,
+        "testquestionCount" : 0,
+        "timeLimit" : 6
+    }
+          ]}
