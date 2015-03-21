@@ -43,7 +43,6 @@
     NSMutableArray * json;
     
     //Variables to store extracted question info
-    NSString * frequency;
     NSString * operand1;
     NSString * operand2;
     NSString * Qoperator;

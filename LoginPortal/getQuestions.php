@@ -48,15 +48,21 @@
 		//Converting the level std object into an array
 		$question = get_object_vars($question);
 
-		//Pushing the level name and time onto the array
-		$json[$i]["questionID"] = $question['question_id'];
-		$json[$i]["operand1"] = $question['operand1'];
-		$json[$i]["operand2"] = $question['operand2'];
-		$json[$i]["operator"] = $question['operator'];
-		$json[$i]["frequency"] = $question['freq'];
+		for ($j = 0; $j < $question['freq']; $j++) {
+	   		
+			//Pushing the level name and time onto the array
+			$json[$i]["questionID"] = $question['question_id'];
+			$json[$i]["operand1"] = $question['operand1'];
+			$json[$i]["operand2"] = $question['operand2'];
+			$json[$i]["operator"] = $question['operator'];
 
-		$i++;
+			$i++;
+		}
+
 	}
+
+	//Shuffeling the json array
+	shuffle($json);
 
 	//Printing the encoded json dictionary
 	echo json_encode($json);

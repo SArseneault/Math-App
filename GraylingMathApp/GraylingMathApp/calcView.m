@@ -33,7 +33,7 @@
     
     //Mock information from the level select screen
     NSString *level = [NSString stringWithFormat:@"Level 1"];
-    questionType = 0;
+    questionType = @"0";
     
     //Looking up the class and student id's
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
