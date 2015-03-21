@@ -74,7 +74,7 @@
     //Setting the total question count
     questionsInLevel = [json count];
     
-    NSLog(@"%ld",(long)questionsInLevel);
+    NSLog(@"Number of questions: %ld",(long)questionsInLevel);
     
 }
 
@@ -118,10 +118,10 @@
     questionID = [[json objectAtIndex:questionCount] objectForKey:@"questionID"];
     
     
-    NSLog(@"%@",operand1);
-    NSLog(@"%@",operand2);
-    NSLog(@"%@",Qoperator);
-    NSLog(@"%@",questionID);
+    NSLog(@"operand1: %@",operand1);
+    NSLog(@"operand2 :%@",operand2);
+    NSLog(@"operator: %@",Qoperator);
+    NSLog(@"QuestionID: %@",questionID);
     
     //Checking for divide by 0
     if ([Qoperator isEqualToString:@"/"] && [operand2 isEqualToString:@"0"])
@@ -158,9 +158,13 @@
     else if ([Qoperator isEqualToString:@"-"])
         correctAnswer =valueOne - valueTwo;
     else if ([Qoperator isEqualToString:@"*"])
-        correctAnswer =valueOne + valueTwo;
+        correctAnswer =valueOne * valueTwo;
     else if ([Qoperator isEqualToString:@"/"])
         correctAnswer =valueOne / valueTwo;
+    
+    
+   
+    NSLog(@"Answer: %ld",correctAnswer);
     
     //get user input
     userAnswer =([userInput.text integerValue]);
@@ -173,7 +177,7 @@
         totalQuestionsCorrect++;
         
         //alert to show that the user was correct
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:[NSString stringWithFormat:@"%ld + %ld = %ld",valueOne,valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:[NSString stringWithFormat:@"%ld %@ %ld = %ld",valueOne, Qoperator, valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
         [alert setTag:2];
         [alert show];
         

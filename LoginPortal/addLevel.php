@@ -96,10 +96,13 @@ if(Input::exists()) {
           'max' => 100
           ),
         'qfrequency' => array(
-            'required' => true
+            'required2' => true,
+            'minNum' => 0,
+            'maxNum' => 99
            ),
         'operand1' => array(
             'required2' =>true
+            
             ),
         'operand2' => array(
             'required2' => true

@@ -20,6 +20,10 @@
 					//echo $value; //Displays value of each field
 					if($rule == 'required2' && !is_numeric($value))
 						$this->addError("{$item} is required");
+					else if($rule == 'maxNum' && is_numeric($value) && ($value>$rule_value))
+						$this->addError("{$item} should be between 0 and {$rule_value}");
+					else if($rule == 'minNum' && is_numeric($value) && ($value<$rule_value))
+						$this->addError("{$item} should be between 0 and {$rule_value}");
 					else if($rule == 'required' && empty($value)) {
 						$this->addError("{$item} is required");
 					} else if(!empty($value)) {

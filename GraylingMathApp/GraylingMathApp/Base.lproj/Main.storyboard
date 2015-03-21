@@ -343,15 +343,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-jC-GhP">
-                                <rect key="frame" x="280" y="158" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="369" y="297" width="39" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="SecondNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUt-U0-aJd">
                                 <rect key="frame" x="252" y="204" width="96" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -592,6 +583,15 @@
                                     <outletCollection property="gestureRecognizers" destination="Ru2-0A-DpA" appends="YES" id="A0V-fy-hdE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-jC-GhP">
+                                <rect key="frame" x="280" y="158" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="369" y="297" width="39" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8489188762626263" green="0.8489188762626263" blue="0.8489188762626263" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -670,6 +670,7 @@
                     <connections>
                         <outlet property="firstNumber" destination="32H-sz-Uv6" id="But-Fv-2cm"/>
                         <outlet property="labelForTimer" destination="OS6-WI-nhX" id="Vfd-bF-YuQ"/>
+                        <outlet property="operatorLabel" destination="yBQ-jC-GhP" id="5Z5-s7-Oae"/>
                         <outlet property="secondNumber" destination="rUt-U0-aJd" id="2ZQ-HK-Yij"/>
                         <outlet property="userInput" destination="HBH-Xs-oVe" id="AjK-Nl-bDX"/>
                     </connections>
@@ -726,7 +727,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1053.75" y="528"/>
+            <point key="canvasLocation" x="1053" y="528"/>
         </scene>
         <!--Class Login-->
         <scene sceneID="Vb0-k8-ojp">
