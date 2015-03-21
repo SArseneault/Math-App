@@ -49,8 +49,7 @@
 		$question = get_object_vars($question);
 
 		//Pushing the level name and time onto the array
-		$json[$i]["questionName"] = $question['name'];
-		$json[$i]["description"] = $question['description'];
+		$json[$i]["questionID"] = $question['question_id'];
 		$json[$i]["operand1"] = $question['operand1'];
 		$json[$i]["operand2"] = $question['operand2'];
 		$json[$i]["operator"] = $question['operator'];

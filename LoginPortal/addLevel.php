@@ -99,10 +99,10 @@ if(Input::exists()) {
             'required' => true
            ),
         'operand1' => array(
-            'required' => true
+            'required2' =>true
             ),
         'operand2' => array(
-            'required' => true
+            'required2' => true
             )
         ));
       
@@ -403,6 +403,8 @@ if($user->classExist()){  ?>
             <select class ="form-control" name="operator" id="operator">
               <option>+</option>
               <option>-</option>
+              <option>*</option>
+              <option>/</option>
             </select>
           </div>
 

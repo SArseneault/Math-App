@@ -18,8 +18,9 @@
 					$item = escape($item); //Sanitizing each item
 
 					//echo $value; //Displays value of each field
-
-					if($rule == 'required' && empty($value)) {
+					if($rule == 'required2' && !is_numeric($value))
+						$this->addError("{$item} is required");
+					else if($rule == 'required' && empty($value)) {
 						$this->addError("{$item} is required");
 					} else if(!empty($value)) {
 						switch($rule) {
@@ -43,8 +44,6 @@
 								if($check->count()) {
 									$this->addError("{$item} already exists");
 								}
-							break;
-							
 						}
 
 					}

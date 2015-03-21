@@ -15,6 +15,7 @@
     IBOutlet UILabel *secondNumber; //label second number generated
     IBOutlet UITextField *userInput; //textbox store user input
     IBOutlet UILabel *labelForTimer; //label for timer
+    IBOutlet UILabel *operatorLabel;
     
     IBOutlet UIButton *button0;
     IBOutlet UIButton *button1;
@@ -31,13 +32,22 @@
     NSInteger valueTwo; //int for second number
     NSInteger correctAnswer; //int for correct answer
     NSInteger userAnswer;   //int for the users input
+    NSInteger questionsInLevel; //keeps a track of all the questions grabbed from the level
+    NSString *questionType; //Set by the level select view determine whether to grab practice or test questions
     NSInteger questionCount; //keeps track of the number of questions answered
     NSInteger totalQuestionsCorrect; //number of questions answered correctly
     NSInteger seconds; //variable to store seconds used by timer object
     
     NSTimer *timer; //timer object
     
+    NSMutableArray * json;
     
+    //Variables to store extracted question info
+    NSString * frequency;
+    NSString * operand1;
+    NSString * operand2;
+    NSString * Qoperator;
+    NSString * questionID;
 }
 
 //method called to set up leve once screen is loaded
@@ -48,6 +58,9 @@
 
 //action to check users input
 -(IBAction) submitAnswer;
+
+//Creating a property for the json array
+@property (nonatomic, strong) NSMutableArray * json;
 
 
 @end
