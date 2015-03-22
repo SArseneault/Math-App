@@ -157,8 +157,14 @@
     valueOne = [operand1 integerValue];
     valueTwo = [operand2 integerValue];
     
+    //generates random number between 0 and 1
+    questionOrientation =arc4random()%2;
     
-    //displays the random numbers
+    NSLog(@"Question Orientaiton: %d",questionOrientation);
+    
+
+    
+    //displays the random numbersquesti
     firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
     secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];

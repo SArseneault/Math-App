@@ -83,8 +83,9 @@
         
         //Creating the button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        button.frame = CGRectMake(110.0, 360.0, 100.0, 30.0);
+        button.frame = CGRectMake(2210.0, 360.0, 150.0, 60.0);
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];
+        [button.titleLabel setFont:[UIFont fontWithName:@"chalkboard SE" size:13.0]];
         button.backgroundColor = [UIColor blackColor];
         [button setTitle:levelName forState:UIControlStateNormal];
         [button sizeToFit];

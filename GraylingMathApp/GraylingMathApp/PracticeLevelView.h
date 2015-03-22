@@ -37,6 +37,7 @@
     NSInteger questionCount; //keeps track of the number of questions answered
     NSInteger totalQuestionsCorrect; //number of questions answered correctly
     NSInteger seconds; //variable to store seconds used by timer object
+    NSInteger questionOrientation;
     
     NSTimer *timer; //timer object
     
