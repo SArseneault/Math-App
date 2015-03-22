@@ -1,5 +1,5 @@
 //
-//  calcView.h
+//  TestLevelView.h
 //  PirateMathApplication
 //
 //  Created by Kelly Markaity on 2/10/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Calculator : UIViewController <UIAlertViewDelegate>
+@interface TestLevelView : UIViewController <UIAlertViewDelegate>
 {
     //IBOutlet refers to an empty varaible and method in interface builder
     IBOutlet UILabel *firstNumber; //label first number generated
@@ -40,7 +40,11 @@
     
     NSTimer *timer; //timer object
     
+    //Json Array
     NSMutableArray * json;
+    
+    //Time limit varaible
+    NSString * timeLimit;
     
     //Variables to store extracted question info
     NSString * operand1;
@@ -61,5 +65,7 @@
 //Creating a property for the json array
 @property (nonatomic, strong) NSMutableArray * json;
 
+//Creating a property for the time limit
+@property (strong, nonatomic) NSString *timeLimit;
 
 @end

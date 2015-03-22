@@ -1,25 +1,33 @@
 //
-//  calcView.m
-//  PirateMathApplication
+//  PracticeLevelView.m
+//  GraylingMathApp
 //
-//  Created by Kelly Markaity on 2/10/15.
+//  Created by Samuel Arseneault on 3/21/15.
 //  Copyright (c) 2015 Samuel Arseneault. All rights reserved.
 //
 
-#import "calcView.h"
+#import "PracticeLevelView.h"
 
-@interface Calculator()
+@interface PracticeLevelView()
 
 @end
 
-@implementation Calculator
+@implementation PracticeLevelView
+
+//Synth
+@synthesize timeLimit;
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //Setting the question type
+    questionType = @"0";
     
     
-    
+    //Grabbing the questions from the back end
     [self grabQuestions];
     
     
@@ -28,12 +36,13 @@
     
 }
 
+//This function calls the php file which returns a json string of questions
 - (void)grabQuestions
 {
     
     //Mock information from the level select screen
     NSString *level = [NSString stringWithFormat:@"Level 1"];
-    questionType = @"0";
+ 
     
     //Looking up the class and student id's
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
@@ -163,7 +172,7 @@
         correctAnswer =valueOne / valueTwo;
     
     
-   
+    
     NSLog(@"Answer: %ld",correctAnswer);
     
     //get user input
