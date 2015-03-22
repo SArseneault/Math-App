@@ -35,9 +35,10 @@
 	//Creating a json array
 	$json = array();
 
+	//Storing the class id and student name
 	$json[0]["class_id"] = $classID;
 	$json[1]["student_id"] = $studentID;
-	
+	$json[2]["studentName"] = $studentData['first_name'] . " ". $studentData['last_name'];
 
 	//Printing the encoded json dictionary
 	echo json_encode($json);

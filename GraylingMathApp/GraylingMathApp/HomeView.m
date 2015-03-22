@@ -7,17 +7,15 @@
 //
 
 #import "HomeView.h"
-#import "userData.h"
-#import "userDataPraser.h"
-#import "allLevels.h"
-#import "levelPraser.h"
+#import "StudentLogin.h"
+#import "ClassLogin.h"
+#import "FirstViewController.h"
 
 
 
 @implementation HomeView
 {
     
-
     
 }
 
@@ -31,15 +29,24 @@
 {
     [super viewDidLoad];
     
+  
+    
+    
     //Looking up class and student name
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
     className = [define stringForKey:@"className"];
     studentUsername = [define stringForKey:@"studentUsername"];
     
-    usernameLabel.text = studentUsername;
+    
     
     //Grabbing the session info
     [self getSessionInfo];
+    
+    
+    //Setting the welcome label to the student's name
+    usernameLabel.text = studentName;
+    
+    
     
 }
 
@@ -57,6 +64,8 @@
     //Creating a string contains url address for php file
     strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getSessionInfo.php?username=%@&classname=%@", studentUsername, className];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
+    NSLog(@"%@",strURL);
     
     //Creating acutal url
     NSURL *myURL = [NSURL URLWithString:strURL];
@@ -76,21 +85,43 @@
     NSLog(@"%@", json);
     
     //Extracting the student and class id's
-    NSString * classID= [[json objectAtIndex:0] objectForKey:@"class_id"];
-    NSString * stuID= [[json objectAtIndex:1] objectForKey:@"student_id"];
+    classID = [[json objectAtIndex:0] objectForKey:@"class_id"];
+    studentID = [[json objectAtIndex:1] objectForKey:@"student_id"];
+    studentName = [[json objectAtIndex:2] objectForKey:@"studentName"];
     
-    NSLog(@"%@", classID);
-    NSLog(@"%@", stuID);
-    
+
     //Storing the student and class id's
     [[NSUserDefaults standardUserDefaults] setObject:classID forKey:@"classID"];
-    [[NSUserDefaults standardUserDefaults] setObject:stuID forKey:@"studentID"];
+    [[NSUserDefaults standardUserDefaults] setObject:studentID forKey:@"studentID"];
+    [[NSUserDefaults standardUserDefaults] setObject:studentName forKey:@"studentName"];
     
 }
 
 
 
+- (IBAction)logOutStudent:(id)sender {
+    
+    //Set the student logged in variable to false
+    [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"isStudentLoggedIn"];
+    
+    //Move onto student login screen
+    StudentLogin *SL = [self.storyboard instantiateViewControllerWithIdentifier:@"StudentLogin"];
+    [self presentViewController:SL animated:YES completion:nil];
+    
+    
+}
+- (IBAction)logOutClass:(id)sender {
+    
+    //Set the student and class logged in variable to false
+    [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"isStudentLoggedIn"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"isClassLoggedIn"];
+    
+    //Move to home screen
+    FirstViewController *FVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
+    [self presentViewController:FVC animated:YES completion:nil];
 
+
+}
 
 
 

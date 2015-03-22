@@ -124,7 +124,6 @@
     //Creating a homeview controller object
     HomeView *HV = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeView"];
     
- 
     
     
     //Present the view controller

@@ -12,6 +12,12 @@
 {
     NSString *className;
     NSString *studentUsername;
+    NSString *isClassLoggedIn;
+    NSString *isStudentLoggedIn;
+    NSString *studentName;
+    NSString *classID;
+    NSString *studentID;
+
     
     NSMutableArray * json;
     NSString * strURL;

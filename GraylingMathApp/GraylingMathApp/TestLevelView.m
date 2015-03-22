@@ -211,18 +211,11 @@
         //increase questions answered correctly
         totalQuestionsCorrect++;
         
-        //alert to show that the user was correct
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:[NSString stringWithFormat:@"%ld %@ %ld = %ld",valueOne, Qoperator, valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-        [alert setTag:2];
-        [alert show];
         
     }
     else
     {
-        //alert to show the users input was wrong
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect!" message:[NSString stringWithFormat:@"%ld + %ld = %ld",valueOne,valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-        [alert setTag:3];
-        [alert show];
+        
     }
     
     //call method to check for end of practice section

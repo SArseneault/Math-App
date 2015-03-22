@@ -495,8 +495,8 @@ if($user->classExist()){  ?>
                 <th>Question</th>
                 <th>Description</th>
                 <th>Operand_1</th>
-                <th>Operand_2</th>
                 <th>Operator</th>
+                <th>Operand_2</th>
                 <th>Question_Type</th>
                 <th>Question_Frequency</th>
                 <th>Remove_Question</th>
@@ -542,17 +542,19 @@ if($user->classExist()){  ?>
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn);  
 
+                            //Operator
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['operator']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn)
+
                             //Operand2
                             var newColumn = document.createElement("TD"); 
                             var t = document.createTextNode(Qarr[i]['operand2']);       
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn); 
 
-                            //Operator
-                            var newColumn = document.createElement("TD"); 
-                            var t = document.createTextNode(Qarr[i]['operator']);       
-                            newColumn.appendChild(t); 
-                            newRow.appendChild(newColumn);  
+                            ;  
 
                             //Question type
                             var newColumn = document.createElement("TD"); 

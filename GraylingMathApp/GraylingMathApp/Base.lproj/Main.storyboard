@@ -8,7 +8,7 @@
         <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -956,12 +956,6 @@
                                     <segue destination="6ew-p4-Vey" kind="modal" id="MJH-x2-aSt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-DE-qf1">
-                                <rect key="frame" x="33" y="131" width="51" height="30"/>
-                                <state key="normal" title="LogOut">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwa-7h-a6p">
                                 <rect key="frame" x="244" y="409" width="112" height="30"/>
                                 <state key="normal" title="Old Select Level">
@@ -970,6 +964,24 @@
                                 </state>
                                 <connections>
                                     <segue destination="Pz9-3e-SeJ" kind="modal" id="ogr-GI-ZrA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fex-ut-2Vb">
+                                <rect key="frame" x="24" y="164" width="91" height="30"/>
+                                <state key="normal" title="Logout Class">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutClass:" destination="eb0-BK-cpT" eventType="touchUpInside" id="jrp-Lu-B7a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-DE-qf1">
+                                <rect key="frame" x="22" y="131" width="107" height="30"/>
+                                <state key="normal" title="Logout Student">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutStudent:" destination="eb0-BK-cpT" eventType="touchUpInside" id="kR3-1A-udf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1681,8 +1693,8 @@
         <image name="raceCarButton.png" width="600" height="337"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DS6-FN-2hn"/>
-        <segue reference="MJH-x2-aSt"/>
-        <segue reference="IgK-zJ-R3d"/>
+        <segue reference="LrK-8x-AS6"/>
+        <segue reference="XyL-bb-h10"/>
+        <segue reference="IfL-Uf-rs9"/>
     </inferredMetricsTieBreakers>
 </document>
