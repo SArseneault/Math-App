@@ -54,7 +54,7 @@
 //This function calls the php file which returns a json string of questions
 - (void)grabQuestions
 {
-
+    
     
     //Looking up the class and student id's
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
@@ -132,7 +132,11 @@
 
 -(void) generateNumber
 {
-    
+
+    //generates random number between 0 and 1
+    questionOrientation =arc4random()%2;
+    NSLog(@"Question Orientaiton: %d",questionOrientation);
+    [self flipOrientaion];
     
     //Extracting the next question information
     operand1 = [[json objectAtIndex:questionCount] objectForKey:@"operand1"];
@@ -157,17 +161,18 @@
     valueOne = [operand1 integerValue];
     valueTwo = [operand2 integerValue];
     
-    //generates random number between 0 and 1
-    questionOrientation =arc4random()%2;
     
-    NSLog(@"Question Orientaiton: %d",questionOrientation);
     
-
+    
     
     //displays the random numbersquesti
     firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
     secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
+    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
+    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
+    
     
     //clear user input textbox
     userInput.text = @"";
@@ -191,12 +196,14 @@
     else if ([Qoperator isEqualToString:@"/"])
         correctAnswer =valueOne / valueTwo;
     
-    
-    
+    NSLog(@"operator After: %@",Qoperator);
     NSLog(@"Answer: %ld",correctAnswer);
     
     //get user input
-    userAnswer =([userInput.text integerValue]);
+    if(questionOrientation == 0)
+        userAnswer = ([userInput.text integerValue]);
+    else
+        userAnswer = ([userInputHorz.text integerValue]);
     
     
     //compare to values and display true or false
@@ -214,10 +221,15 @@
     else
     {
         //alert to show the users input was wrong
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect!" message:[NSString stringWithFormat:@"%ld + %ld = %ld",valueOne,valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect!" message:[NSString stringWithFormat:@"%ld %@ %ld = %ld",valueOne, Qoperator, valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
         [alert setTag:3];
         [alert show];
     }
+    
+    //Clearing input fields
+    userInput.text = nil;
+    userInputHorz.text = nil;
+    
     
     //call method to check for end of practice section
     [self isEndCheck];
@@ -321,4 +333,51 @@
         [gestureRecognizer setTranslation:CGPointZero inView:[piece superview]];
     }
 }
+
+-(void)flipOrientaion{
+    
+    //Clearing input fields
+    userInput.text = nil;
+    userInputHorz.text = nil;
+    
+    if(questionOrientation == 1)
+    {
+        //Set veritcle labels to hide
+        [firstNumber setHidden:YES];
+        [secondNumber setHidden:YES];
+        [userInput setHidden:YES];
+        [operatorLabel setHidden:YES];
+        [equalVert setHidden:YES];
+        
+        //Set horziontal labels to visible
+        [firstNumberHorz setHidden:NO];
+        [secondNumberHorz setHidden:NO];
+        [userInputHorz setHidden:NO];
+        [operatorLabelHorz setHidden:NO];
+        [equalHorz setHidden:NO];
+        
+        
+        
+     } else {
+        
+         [firstNumberHorz setHidden:YES];
+         [secondNumberHorz setHidden:YES];
+         [userInputHorz setHidden:YES];
+         [operatorLabelHorz setHidden:YES];
+         [equalHorz setHidden:YES];
+         
+         //Set veritcle labels to hide
+         [firstNumber setHidden:NO];
+         [secondNumber setHidden:NO];
+         [userInput setHidden:NO];
+         [operatorLabel setHidden:NO];
+         [equalVert setHidden:NO];
+     }
+     
+    
+   
+}
+
+
+
 @end

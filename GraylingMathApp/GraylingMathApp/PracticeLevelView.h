@@ -16,6 +16,13 @@
     IBOutlet UITextField *userInput; //textbox store user input
     IBOutlet UILabel *labelForTimer; //label for timer
     IBOutlet UILabel *operatorLabel;
+    IBOutlet UILabel *equalVert;
+    
+    //Horizitonal
+    IBOutlet UILabel *firstNumberHorz; //label first number generated
+    IBOutlet UILabel *secondNumberHorz; //label second number generated
+    IBOutlet UITextField *userInputHorz; //textbox store user input
+    IBOutlet UILabel *operatorLabelHorz;
     
     IBOutlet UIButton *button0;
     IBOutlet UIButton *button1;
@@ -27,6 +34,7 @@
     IBOutlet UIButton *button7;
     IBOutlet UIButton *button8;
     IBOutlet UIButton *button9;
+    IBOutlet UILabel *equalHorz;
     
     NSInteger valueOne; //int for first number
     NSInteger valueTwo; //int for second number
