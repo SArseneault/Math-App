@@ -8,8 +8,8 @@
 
 #import "ClassLogin.h"
 #import "AppDelegate.h"
-#import "HomeView.h"
 #import "StudentLogin.h"
+#import "HomeView.h"
 
 @interface ClassLogin ()
 
@@ -18,13 +18,70 @@
 @implementation ClassLogin
 
 
-@synthesize strURL;
-
-
 //Automatically called after screenload
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
+
 {
-    [super viewDidLoad];
+    [super viewDidAppear:(BOOL) animated];
+    
+    
+    
+    
+    //Looking up class login info
+    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
+    className = [define stringForKey:@"className"];
+    classPassword = [define stringForKey:@"classPassword"];
+    loginCheck = [define stringForKey:@"isClassLoggedIn"];
+    
+    NSLog(@"HELLO: %@",loginCheck);
+    
+    
+    //If the class is already logged in then check the credidentals and move to the next screen
+    if ([loginCheck isEqualToString:@"TRUE"]) {
+        
+        strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logClassIn.php?userName=%@&password=%@", className, classPassword];
+        strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+        NSLog(@"%@",strURL);
+        
+        [self executeUrlRequest];
+        
+        
+        
+        if ([strResult isEqualToString:@"1"]) {
+            
+            //Looking up student login info
+            NSString * studentUsername = [define stringForKey:@"studentUsername"];
+            NSString *studentPassword = [define stringForKey:@"studentPassword"];
+            loginCheck = [define stringForKey:@"isStudentLoggedIn"];
+            
+
+            if ([loginCheck isEqualToString:@"TRUE"]) {
+                
+                //Checking if the student login works
+                if ([[define stringForKey:@"isStudentLoggedIn"] isEqualToString:@"TRUE"]) {
+                    
+                    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logStudentIn.php?userName=%@&password=%@", studentUsername, studentPassword];
+                    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                    [self executeUrlRequest];
+                    
+                    if ([strResult isEqualToString:@"1"]) {
+                        //Creating a homview controller object
+                        HomeView *HV = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeView"];
+                        [self presentViewController:HV animated:YES completion:nil];
+                        
+                    }else
+                    {
+                        //Move onto student login screen
+                        StudentLogin *SL = [self.storyboard instantiateViewControllerWithIdentifier:@"StudentLogin"];
+                        [self presentViewController:SL animated:YES completion:nil];
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
   
 
 }
@@ -37,69 +94,72 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-//Method that is called after the login button is selected
-- (IBAction)Login
+- (void) executeUrlRequest
 {
-    
-    //Displaying the username
-    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
-    NSString *className = [define stringForKey:@"className"];
-    NSLog(@"%@", className);
-   
-    // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
-    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logClassIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
-    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    NSLog(@"%@",strURL);
-    
-
-    
     // to execute php code
     NSData *dataURL = [NSData dataWithContentsOfURL:[NSURL URLWithString:strURL]];
     NSLog(@"%@",dataURL);
     
     
     // to receive the returend value
-    NSString *strResult =  [ [NSString alloc] initWithData:dataURL encoding:NSUTF8StringEncoding];
+    strResult =  [ [NSString alloc] initWithData:dataURL encoding:NSUTF8StringEncoding];
     
     //Logging result
     NSLog(@"Results:");
     NSLog(@"%@", strResult);
+}
+
+
+//Method that is called after the login button is selected
+- (IBAction)Login
+{
+    
+    // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
+    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logClassIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSLog(@"%@",strURL);
     
     
+    //Attemp to log the student in
+    [self executeUrlRequest];
+
     
 
     //Prompting user with either success or failed
     if ([strResult isEqualToString:@"1"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Successful" message:@"Welcome" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alert show];
-        
+        [self promptStudent];
     
-        //Creating a student controller object
-        StudentLogin *SL = [self.storyboard instantiateViewControllerWithIdentifier:@"StudentLogin"];
-        
-        //Set the classname string
-        SL.classname = usernameField.text;
-        
-        //Storing the class credentials
-        [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"className"];
-        [[NSUserDefaults standardUserDefaults] setObject:passwordField.text forKey:@"classPassword"];
-    
-        
-        
-        //Present the view controller
-        [self presentViewController:SL animated:YES completion:nil];
-        
     }
     else {
-        [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"isClassLoggedIn"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"TRUE" forKey:@"isClassLoggedIn"];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"The password is incorrect or the class doesn't exist." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [alert show];
-        
     }
     
+}
+
+- (void) promptStudent
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Successful" message:@"Welcome" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [alert show];
     
+    
+    //Creating a student controller object
+    StudentLogin *SL = [self.storyboard instantiateViewControllerWithIdentifier:@"StudentLogin"];
+    
+    //Storing the class credentials
+    [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"className"];
+    [[NSUserDefaults standardUserDefaults] setObject:passwordField.text forKey:@"classPassword"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"TRUE" forKey:@"isClassLoggedIn"];
+    
+    
+    //Present the view controller
+    [self presentViewController:SL animated:YES completion:nil];
+    
+    
+  
+
 }
 
 //Releasing property data

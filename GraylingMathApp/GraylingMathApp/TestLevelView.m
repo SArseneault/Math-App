@@ -7,6 +7,7 @@
 //
 
 #import "TestLevelView.h"
+#import "Map.h"
 
 @interface TestLevelView()
 
@@ -17,23 +18,36 @@
 
 //Synth
 @synthesize timeLimit;
+@synthesize levelName;
 
 
-
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear: (BOOL) animated];
     
     //Setting the question type
     questionType = @"1";
 
     
-    
+    //Grabbing the questions from the back end
     [self grabQuestions];
     
+    if(questionsInLevel <= 0)
+    {
+        //Alert the student
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oh no!" message:@"Please have your teacher create questions for this level!" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+        [alert show];
+        
+        //Switch back to the map
+        Map *map = [self.storyboard instantiateViewControllerWithIdentifier:@"Map"];
+        [self presentViewController:map animated:YES completion:nil];
+        
+    } else
+    {
+        
+        [self setUpLevel];
+    }
     
-    //call to setUpLevel
-    [self setUpLevel];
     
 }
 
@@ -42,8 +56,6 @@
 - (void)grabQuestions
 {
     
-    //Mock information from the level select screen
-    NSString *level = [NSString stringWithFormat:@"Level 1"];
     
     
     //Looking up the class and student id's
@@ -59,7 +71,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getQuestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, level, questionType];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getQuestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelName, questionType];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@", strURL);
@@ -101,6 +113,18 @@
 -(void) setUpLevel
 {
     
+    if(questionsInLevel <= 0)
+    {
+        //Alert the student
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oh no!" message:@"Please have your teacher create questions for this level!" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+        [alert show];
+        
+        //Switch back to the map
+        Map *map = [self.storyboard instantiateViewControllerWithIdentifier:@"Map"];
+        [self presentViewController:map animated:YES completion:nil];
+        
+        
+    }
     //set seconds to 0
     seconds = 0;
     
@@ -239,9 +263,7 @@
     [alert setTag:1];
     [alert show];
     
-    
-    //Regrab the questions
-    [self grabQuestions];
+ 
     
 }
 
@@ -260,8 +282,25 @@
     
     if(alertView.tag ==1)   //end alert view was pressed
     {
-        //calls to reset level
-        [self setUpLevel];
+        //Grabbing the questions from the back end
+        [self grabQuestions];
+        
+        if(questionsInLevel <= 0)
+        {
+            //Alert the student
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oh no!" message:@"Please have your teacher create questions for this level!" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+            [alert show];
+            
+            //Switch back to the map
+            Map *map = [self.storyboard instantiateViewControllerWithIdentifier:@"Map"];
+            [self presentViewController:map animated:YES completion:nil];
+            
+        } else
+        {
+            
+            [self setUpLevel];
+        }
+        
         
     }
     

@@ -24,49 +24,29 @@
 //Synthesizing the label names from the header file
 @synthesize usernameLabel;
 
-//Synthesizing the username
-@synthesize username;
 
-//Synthesizing the username
-@synthesize classname;
-
-//Synthesizing the json array
-@synthesize json;
 
 //Automatically called after screenload
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //userData *currentUserData =[userDataPraser loadData];
+    //Looking up class and student name
+    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
+    className = [define stringForKey:@"className"];
+    studentUsername = [define stringForKey:@"studentUsername"];
     
-   // allLevels *curentClassLevel=[levelPraser loadLevels];
+    usernameLabel.text = studentUsername;
     
-    //print out current username
-    //NSLog(@"Current username %@", currentUserData.userName);
-    
-    //NSLog(@"Levels avilable %ld", (long)currentUserData.maxLevelsForUser);
-    //Setting the label text to passed username value
-    usernameLabel.text = username;
+    //Grabbing the session info
+    [self getSessionInfo];
     
 }
 
 
-//Method that is called to grab json data
-- (IBAction)getQuestionData
+//Grabbing and storing the session info
+- (void)getSessionInfo
 {
-    
-    //Mock information
-    NSString *level = [NSString stringWithFormat:@"Level 1"];
-    //0 for practice 1 for test
-    NSString *questionType = [NSString stringWithFormat:@"0"];
-    
-    
-    //Looking up the class and student id's
-    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
-    NSString *classID = [define stringForKey:@"classID"];
-    NSString *studentID = [define stringForKey:@"studentID"];
-    NSString *userName = [define stringForKey:@"studentUsername"];
     
     
     //Creating and starting the spinning wheel
@@ -75,10 +55,8 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getQuestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, level, questionType];
+    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getSessionInfo.php?username=%@&classname=%@", studentUsername, className];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    NSLog(@"%@", strURL);
     
     //Creating acutal url
     NSURL *myURL = [NSURL URLWithString:strURL];
@@ -97,130 +75,18 @@
     //Displaying the json array
     NSLog(@"%@", json);
     
+    //Extracting the student and class id's
+    NSString * classID= [[json objectAtIndex:0] objectForKey:@"class_id"];
+    NSString * stuID= [[json objectAtIndex:1] objectForKey:@"student_id"];
+    
+    NSLog(@"%@", classID);
+    NSLog(@"%@", stuID);
+    
+    //Storing the student and class id's
+    [[NSUserDefaults standardUserDefaults] setObject:classID forKey:@"classID"];
+    [[NSUserDefaults standardUserDefaults] setObject:stuID forKey:@"studentID"];
     
 }
-
-- (IBAction)sendQuestionProg:(id)sender {
-    
-    //Looking up the class and student id's
-    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
-    NSString *classID = [define stringForKey:@"classID"];
-    NSString *studentID = [define stringForKey:@"studentID"];
-    
-    
-    
-    //Mock up progress info
-    NSString *level = [NSString stringWithFormat:@"Level 1"];
-    NSString *question = [NSString stringWithFormat:@"Q2L1"];
-    NSString *answer = [NSString stringWithFormat:@"8"];
-    NSString *attempts = [NSString stringWithFormat:@"19"];
-    
-    
-    
-    
-    //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendQuestionProg.php?studentid=%@&classid=%@&level=%@&question=%@&answer=%@&attempts=%@", studentID, classID, level, question, answer, attempts];
-    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    NSLog(@"%@", strURL);
-    
-    NSURL *myURL = [NSURL URLWithString:strURL];
-    
-    
-    //Calling the php file
-    NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
-    
-    
-    //Displaying the string
-    NSLog(@"%@", phpResponse);
-    
-    
-}
-
-
-
-//Method that is called to grab json data
-- (IBAction)getLevelData
-{
-    //Looking up the class and student id's
-    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
-    NSString *classID = [define stringForKey:@"classID"];
-    NSString *studentID = [define stringForKey:@"studentID"];
-    NSString *userName = [define stringForKey:@"studentUsername"];
-    
-    
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-
-    
-    //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php?username=%@&studentid=%@&classid=%@", userName, studentID, classID];
-    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    //Creating acutal url
-    NSURL *myURL = [NSURL URLWithString:strURL];
-    
-    //Calling and storing the json data
-    NSData * data = [NSData dataWithContentsOfURL:myURL];
-    
-    //Calling the php file
-    //NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
-    
-    //Converting the data to json format
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
-
-    
-    //Displaying the json array
-    NSLog(@"%@", json);
-    
-   
-   
-}
-
-
-- (IBAction)sendLevelProg:(id)sender {
-    
-    //Looking up the class and student id's
-    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
-    NSString *classID = [define stringForKey:@"classID"];
-    NSString *studentID = [define stringForKey:@"studentID"];
-
-    
-    
-    //Mock up progress info
-    NSString *level = [NSString stringWithFormat:@"Level 1"];
-    NSString *status = [NSString stringWithFormat:@"1"];
-    NSString *elapsed_time = [NSString stringWithFormat:@"00:04:18"];
-    NSString *test_attempts = [NSString stringWithFormat:@"8"];
-    NSString *practice_attempts = [NSString stringWithFormat:@"19"];
-
-    
-
-    
-    //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&elapsed_time=%@&test_attempts=%@&practice_attempts=%@", studentID, classID, level, status, elapsed_time, test_attempts, practice_attempts];
-    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    NSLog(@"%@", strURL);
-    
-    NSURL *myURL = [NSURL URLWithString:strURL];
-    
-    
-    //Calling the php file
-    NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
-    
-
-    //Displaying the string
-    NSLog(@"%@", phpResponse);
-    
-    
-}
-
-
 
 
 

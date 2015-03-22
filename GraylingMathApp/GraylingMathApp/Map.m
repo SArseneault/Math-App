@@ -36,9 +36,13 @@
     //Setting the button
     UIButton *theButton = (UIButton *)button;
     
-    //SEtting the tab
+    //Setting the tab
     int tag = theButton.tag;
     NSLog(@"%d", tag);
+    
+    //Setting the label
+    NSString * levelName = theButton.titleLabel.text;
+    NSLog(@"%@", levelName);
     
     //Grabbing the time limit
     NSString *timeLimit = [[json objectAtIndex:tag] objectForKey:@"timeLimit"];
@@ -48,14 +52,12 @@
     //Creating a homeview object
     TypeSelect *TS = [self.storyboard instantiateViewControllerWithIdentifier:@"TypeSelect"];
     
-    //Passing the timelimit to the storyboard
+    //Passing values to the timelimit to the storyboard
     TS.timeLimit = timeLimit;
+    TS.levelName = levelName;
 
     //Present the view controller
     [self presentViewController:TS animated:YES completion:nil];
-
-    
-    
 
     
     //[theButton removeFromSuperview];

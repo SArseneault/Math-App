@@ -15,13 +15,14 @@
     IBOutlet UITextField *usernameField;
     IBOutlet UITextField *passwordField;
     
-    //Dictionary to store retreived passwords
-    NSDictionary *credentialsDictionary;
+    //Variables to store the class name and login check
+    NSString *loginCheck;
+    NSString *className;
+    NSString *classPassword;
+    NSString *strResult;
     NSString *strURL;
+    
 }
-
-@property (nonatomic, strong) NSString *strURL;
-
 
 
 //Methods

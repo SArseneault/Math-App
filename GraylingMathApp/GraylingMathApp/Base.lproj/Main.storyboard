@@ -545,19 +545,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vf-s6-hfE">
-                                <rect key="frame" x="112" y="183" width="166" height="126"/>
-                                <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Practice">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToPractice:" destination="L4t-Lb-Hsh" eventType="touchUpInside" id="yVf-j3-7Ps"/>
-                                    <segue destination="qcI-Yw-NOk" kind="modal" id="fC5-iC-hhF"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-dw-xaE">
                                 <rect key="frame" x="358" y="183" width="166" height="126"/>
                                 <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
@@ -568,7 +555,18 @@
                                 </state>
                                 <connections>
                                     <action selector="goToTest:" destination="L4t-Lb-Hsh" eventType="touchUpInside" id="wPw-2P-nFW"/>
-                                    <segue destination="fdR-Of-HNk" kind="modal" id="ewM-Mf-EXK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vf-s6-hfE">
+                                <rect key="frame" x="112" y="183" width="166" height="126"/>
+                                <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Practice">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToPractice:" destination="L4t-Lb-Hsh" eventType="touchUpInside" id="yVf-j3-7Ps"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -582,7 +580,7 @@
         <!--Map-->
         <scene sceneID="Z2T-q6-Nz0">
             <objects>
-                <viewController id="6ew-p4-Vey" customClass="Map" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="6ew-p4-Vey" customClass="Map" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P1x-Fy-jGR"/>
                         <viewControllerLayoutGuide type="bottom" id="EwB-2J-hTr"/>

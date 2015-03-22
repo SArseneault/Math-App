@@ -43,8 +43,9 @@
     //Json Array
     NSMutableArray * json;
     
-    //Time limit varaible
+    //Time limit and level name variables from map
     NSString * timeLimit;
+    NSString *levelName;
     
     
     //Variables to store extracted question info
@@ -66,8 +67,8 @@
 //Creating a property for the json array
 @property (nonatomic, strong) NSMutableArray * json;
 
-//Creating a property for the time limit
+//Creating a property for the time limit and level name
 @property (strong, nonatomic) NSString *timeLimit;
-
+@property (strong, nonatomic) NSString *levelName;
 
 @end

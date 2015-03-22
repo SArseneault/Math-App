@@ -15,21 +15,16 @@
     IBOutlet UITextField *usernameField;
     IBOutlet UITextField *passwordField;
     
-    //Dictionary to store retreived passwords
-    NSDictionary *credentialsDictionary;
+
+    //Variables to store the class name and login check
+    NSString *loginCheck;
+    NSString *studentUsername;
+    NSString *studentPassword;
+    NSString *strResult;
+    NSString *strURL;
+    
 }
 
-//Creating properties for the labels
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-
-//Creating property for the strings which stores student's username
-@property (strong, nonatomic) NSString *username;
-
-//Creating property for the strings which stores the classname
-@property (strong, nonatomic) NSString *classname;
-
-//Creating a propertie for the json array
-@property (nonatomic, strong) NSMutableArray * json;
 
 //Methods
 - (IBAction)Login;
