@@ -83,6 +83,9 @@
         
         //Creating the button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.frame = CGRectMake(110.0, 360.0, 100.0, 30.0);
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];
+        button.backgroundColor = [UIColor blackColor];
         [button setTitle:levelName forState:UIControlStateNormal];
         [button sizeToFit];
         [button setTag:i];
