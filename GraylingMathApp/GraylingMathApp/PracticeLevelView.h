@@ -53,8 +53,11 @@
     NSMutableArray * json;
     
     //Time limit and level name variables from map
-    NSString * timeLimit;
     NSString *levelName;
+    NSString * timeLimit;
+    NSInteger timeLimitSeconds;
+    
+
     
     
     //Variables to store extracted question info
@@ -62,6 +65,11 @@
     NSString * operand2;
     NSString * Qoperator;
     NSString * questionID;
+    
+    //Variables to store session info
+    NSString *classID;
+    NSString *studentID;
+    NSString *userName;
 }
 
 //method called to set up leve once screen is loaded

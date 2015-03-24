@@ -25,9 +25,17 @@
 {
     [super viewDidAppear: (BOOL) animated];
     
+    //Looking up the class and student id's
+    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
+    classID = [define stringForKey:@"classID"];
+    studentID = [define stringForKey:@"studentID"];
+    userName = [define stringForKey:@"studentUsername"];
+    
     //Setting the question type
     questionType = @"1";
-
+    
+    //Converting the time limit to an integer in seconds
+    timeLimitSeconds = [timeLimit intValue] * 60;
     
     //Grabbing the questions from the back end
     [self grabQuestions];
@@ -57,12 +65,7 @@
 {
     
     
-    
-    //Looking up the class and student id's
-    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
-    NSString *classID = [define stringForKey:@"classID"];
-    NSString *studentID = [define stringForKey:@"studentID"];
-    NSString *userName = [define stringForKey:@"studentUsername"];
+
     
     
     //Creating and starting the spinning wheel
@@ -161,8 +164,6 @@
     //Checking for divide by 0
     if ([Qoperator isEqualToString:@"/"] && [operand2 isEqualToString:@"0"])
         Qoperator  = @"+";
-    
-    
     
     
     //Converting the string to an integer
@@ -294,6 +295,11 @@
     
     //update timmer label
     labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
+    
+    //Check for timeLimit
+    if(seconds == timeLimitSeconds){
+        [self endResult];
+    }
 }
 
 //method for when UIalert button is pressed, helps diferentiate between which one is pressed
