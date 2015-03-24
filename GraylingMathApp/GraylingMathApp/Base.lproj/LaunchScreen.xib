@@ -16,8 +16,12 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tire-tracks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="P8L-sG-WKC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="tire-tracks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="P8L-sG-WKC">
                     <rect key="frame" x="-39" y="30" width="546" height="381"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="381" id="TdP-p9-y5N"/>
+                        <constraint firstAttribute="width" constant="546" id="x5c-RC-pFE"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

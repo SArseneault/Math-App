@@ -7,14 +7,13 @@
 
 
 	//Grabbing Variables from the link
-
 	$studentID = $_GET["studentid"];
 	$classID =  $_GET["classid"];
 	$level = $_GET["level"];
 	$status = $_GET["status"];
 	$elapsed_time = $_GET["elapsed_time"];
-	$test_attempts = $_GET["test_attempts"];
-	$practice_attempts = $_GET["practice_attempts"];
+	$level_type = $_GET["level_type"];
+	
 
 
 	//Grabbing the level data
@@ -41,11 +40,19 @@
 
 	//Creating a fields array
 	$fields = array(
-		'status' =>  $status,
-		'elapsed_time' => $elapsed_time,
-		'test_attempts' => $test_attempts,
-		'practice_attempts' => $practice_attempts
+		'status' =>  $status
 		);
+
+
+	//Determine whether to increment the prac or the test attempt
+	if($level_type === "0")
+		$fields["practice_attempts"] = $levelProgData['practice_attempts']+1;
+	else if($level_type === "1")
+	{
+		$fields["test_attempts"] = $levelProgData['test_attempts']+1;
+		$fields['elapsed_time'] = $elapsed_time;
+	}
+
 
 
 	//updating the level progress table with the passed info. If it works it echos 1, else it echos 0
@@ -53,7 +60,6 @@
 		echo "1";
 	else
 		echo "0";
-
 
 
 

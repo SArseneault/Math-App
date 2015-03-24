@@ -270,6 +270,33 @@
     [alert show];
     
     
+    //Looking up the class and student id's
+    NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
+    NSString *classID = [define stringForKey:@"classID"];
+    NSString *studentID = [define stringForKey:@"studentID"];
+    
+    
+    //Creating and starting the spinning wheel
+    UIApplication *app = [UIApplication sharedApplication];
+    app.networkActivityIndicatorVisible = YES;
+    
+    
+    //Creating a string contains url address for php file
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&elapsed_time=%@&level_type=%@", studentID, classID, levelName, @"1", [@(seconds) stringValue], questionType];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
+    NSLog(@"%@", strURL);
+    
+    //Creating acutal url
+    NSURL *myURL = [NSURL URLWithString:strURL];
+    
+    //Calling and storing the json data
+    NSData * data = [NSData dataWithContentsOfURL:myURL];
+    
+    //Stopping the spinnging wheel
+    app.networkActivityIndicatorVisible = NO;
+    
+    
     
 }
 
