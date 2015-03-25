@@ -91,7 +91,6 @@
 					if(!$this->_db->insert('question_progress', $defaultProgress)) {
 						throw new Exception('There was a problem inserting default progress for one of the students');
 					}
-
 			}
 
 
@@ -178,6 +177,39 @@
 				}
 
 
+		}
+
+		//Clears the question and level progress of all students
+		public function clearStudentProg($classID){
+			
+
+
+			//Grabbing the level prog data
+			$levelProgData = $this->_db->query('SELECT * FROM level_progress');
+			
+			//Getting array of std objects
+			$levelProgData = $levelProgData->results();
+
+			//Looping through each level
+			foreach($levelProgData as $levelProg){
+
+				//Convert the std object to an array
+	            $levelProg = get_object_vars($levelProg);
+
+            	//Creating a default progress level
+				$defaultProgress = array(
+	            	'status' => 0,
+	            	'test_time' => '00:00:00',
+	            	'test_attempts' => 0 ,
+	            	'practice_attempts' => 0,
+	            	'practice_time' => '00:00:00'
+	            	);
+	            
+				//Attempt to update default data for the progress level
+				if(!$this->_db->update('level_progress', $levelProg['levelprog_id'],'levelprog_id', $defaultProgress)) {
+					throw new Exception('There was a problem inserting default progress for one of the students');
+				}
+			}
 		}
 
 		//Removing a student by id

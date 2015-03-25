@@ -257,6 +257,12 @@
     [alert setTag:1];
     [alert show];
     
+    
+    NSString *status = @"0";
+    //Determine the status
+    if(totalQuestionsCorrect == questionsInLevel)
+        status = @"1";
+    
     //Looking up the class and student id's
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
     NSString *classID = [define stringForKey:@"classID"];
@@ -269,7 +275,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&elapsed_time=%@&level_type=%@", studentID, classID, levelName, @"1", [@(seconds) stringValue], questionType];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelName, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@", strURL);

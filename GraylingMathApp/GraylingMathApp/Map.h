@@ -11,7 +11,7 @@
 
 @interface Map : UIViewController <UIAlertViewDelegate>
 {
-    NSMutableArray * json;
+    NSMutableArray * levelInfoJson;
     NSInteger numberOfLevels;
 }
 

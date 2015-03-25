@@ -39,39 +39,25 @@
 		//Pushing the level name and time onto the array
 		$json[$i]["levelName"] = $level['name'];
 		$json[$i]["timeLimit"] = $level['time_limit'];
+		$json[$i]["levelID"] = $level['level_id'];
 
-		//Grabbing the question data where the questions = the level id
-		$questiondata = $db->get('question', array('level_id', '=', $level['level_id']));
+		//Grabbing the level data
+		$levelProgData = $db->query('SELECT * FROM level_progress WHERE student_id = ? AND level_id = ?', array(
+				$studentID,
+				$level['level_id']
+				));
 
-		//Grabbing std object from database object
-		$questiondata = $questiondata->results();
 
-		//Creating variables to count practice and test
-		$practiceCount = 0;
-		$testCount = 0;
+		//Grabbing std object from database object, then converting it to an array
+		$levelProgData = $levelProgData->first();
+		$levelProgData = get_object_vars($levelProgData);
 
-		//Looping through each question
-		foreach($questiondata as $question)
-		{
-			//Converting the question std object into an array
-			$question = get_object_vars($question);
-
-			if($question['question_type'] == 0)
-				$practiceCount++;
-			elseif($question['question_type'] == 1)
-				$testCount++;
-
-		}
-
-		$json[$i]["practicequestionCount"] = $practiceCount;
-		$json[$i]["testquestionCount"] = $testCount;
+		//Pushing the level status onto the array
+		$json[$i]["levelStatus"] = $levelProgData['status'];
 
 		$i++;
-		//print_r($questiondata);
+		
 	}
-
-	//print_r($leveldata);
-
 	
 	//Printing the encoded json dictionary
 	echo json_encode($json);

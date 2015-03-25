@@ -2,7 +2,7 @@
   require_once 'core/init.php';
 	
 
-	$sclass = new SClass();//Picking current user details
+	$sclass = new SClass();//Creating a class object
 
 	//Calling the delete class
 	$sclass->deleteClass( $_POST['classid'] );

@@ -276,15 +276,18 @@
     [alert setTag:1];
     [alert show];
     
-    
+    //Status will always equal 0 for practice
+    NSString *status = @"0";
+   
     //Creating and starting the spinning wheel
     UIApplication *app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = YES;
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&elapsed_time=%@&level_type=%@", studentID, classID, levelName, @"1", [@(seconds) stringValue], questionType];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelName, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
     
     NSLog(@"%@", strURL);
     

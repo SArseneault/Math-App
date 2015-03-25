@@ -45,7 +45,7 @@
     NSLog(@"%@", levelName);
     
     //Grabbing the time limit
-    NSString *timeLimit = [[json objectAtIndex:tag] objectForKey:@"timeLimit"];
+    NSString *timeLimit = [[levelInfoJson objectAtIndex:tag] objectForKey:@"timeLimit"];
     NSLog(@"timeLimit: %@",timeLimit);
     
     
@@ -63,6 +63,23 @@
     //[theButton removeFromSuperview];
 }
 
+//Action for the buttons
+- (void)buttonPressed2:(UIButton *)button {
+    
+    //Setting the button
+    UIButton *theButton = (UIButton *)button;
+    
+    //alert to show that the level is not selectable
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Level Locked!" message:[NSString stringWithFormat:@"Please complete the previous level with ALL of the questions right to move onto the this level."] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+    
+    
+    //Show the alert
+    [alert show];
+    
+    
+}
+
+
 //Draws a button for each level found
 - (void)drawLevelButtons
 {
@@ -71,15 +88,18 @@
     
     //Creating variables to store level info
     NSString * levelName;
+    NSString * prevlevelStatus;
    
     
     //Loop through each level
     for(int i = 0; i < numberOfLevels; i++) {
         
         //Setting the level info
-        levelName = [[json objectAtIndex:i] objectForKey:@"levelName"];
+        levelName = [[levelInfoJson objectAtIndex:i] objectForKey:@"levelName"];
+        if(i>0)
+            prevlevelStatus = [[levelInfoJson objectAtIndex:i-1] objectForKey:@"levelStatus"];
         
-        
+       
         
         //Creating the button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -92,9 +112,18 @@
         [button setTag:i];
         button.center = CGPointMake(320/2, xPosition);
         
+        
         // Add an action in current code file (i.e. target)
-        [button addTarget:self action:@selector(buttonPressed:)
-         forControlEvents:UIControlEventTouchUpInside];
+       if ( ([prevlevelStatus isEqualToString:@"1"]) || (i == 0))
+       {
+           [button addTarget:self action:@selector(buttonPressed:)
+            forControlEvents:UIControlEventTouchUpInside];
+       } else {
+           [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal ];
+           
+           [button addTarget:self action:@selector(buttonPressed2:)
+            forControlEvents:UIControlEventTouchUpInside];
+       }
         
         //Incrementing the xposition
         xPosition += 60;
@@ -112,8 +141,7 @@
     NSString *classID = [define stringForKey:@"classID"];
     NSString *studentID = [define stringForKey:@"studentID"];
     NSString *userName = [define stringForKey:@"studentUsername"];
-    
-    
+
     //Creating and starting the spinning wheel
     UIApplication *app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = YES;
@@ -122,6 +150,8 @@
     //Creating a string contains url address for php file
     NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php?username=%@&studentid=%@&classid=%@", userName, studentID, classID];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
+    NSLog(@"%@", strURL);
     
     //Creating acutal url
     NSURL *myURL = [NSURL URLWithString:strURL];
@@ -133,17 +163,17 @@
     //NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
     
     //Converting the data to json format
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    levelInfoJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
     
     //Setting the total level count
-    numberOfLevels = [json count];
+    numberOfLevels = [levelInfoJson count];
     
     
     //Displaying the json array
-    NSLog(@"%@", json);
+    NSLog(@"%@", levelInfoJson);
 }
 
 

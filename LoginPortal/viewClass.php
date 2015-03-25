@@ -264,16 +264,15 @@ if($user->classExist()){  ?>
 
                       if($studentProg){
                       foreach($studentProg as $currProg) {
-
                         $currProg = get_object_vars($currProg);
-                       
+                      
                         ///If the progress has been completed then display the link
-                        if($currProg['status'] == 1){ ?>
-                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['elapsed_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_attempts'])?>')">Completed</a></td> 
+                        if( ($currProg['test_attempts'] > 0) or ($currProg['practice_attempts'] > 0) ){ ?>
+                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['test_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_time'])?>','<?php print_r($currProg['practice_attempts'])?>')">Attempted</a></td> 
                       <?php
                       //Else display not completed
                        } else { ?>
-                          <td>Not Completed</td> 
+                          <td>Not Attempted</td> 
                        <?php }//End else
                              }}//End loop?>
 
@@ -294,21 +293,23 @@ if($user->classExist()){  ?>
 <div class ="container">
   <div class="row">
     <?php if(!$classInfo) { ?>
-    <div class ="col-md-2">
-      <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createClassModal">Create Class</a>
-    </div>
+      <div class ="col-md-2">
+        <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createClassModal">Create Class</a>
+      </div>
     <?php } ?>
     <?php if($classInfo) { ?>
-    <div class ="col-md-2">
-      <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addStudentModal">Add Student</a>
-    </div>
+      <div class ="col-md-2">
+        <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addStudentModal">Add Student</a>
+      </div>
+        <?php if($students) { ?>
+          <div class ="col-md-2">
+            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#clearStudentProgModal">Clear Student Progress</a>
+          </div>
+        <?php } ?>
 
-    <div class ="col-md-2">
-      <a href="#" class="btn btn-danger" data-toggle="modal" onclick="setClassID('<?php print_r($classInfo['class_id']); ?>')" data-target="#deleteClassModal">Delete Class</a>
-    </div>
-
-
-
+      <div class ="col-md-2">
+        <a href="#" class="btn btn-danger" data-toggle="modal" onclick="setClassID('<?php print_r($classInfo['class_id']); ?>')" data-target="#deleteClassModal">Delete Class</a>
+      </div>
     <?php } ?>
 
   </div>
@@ -331,13 +332,37 @@ if($user->classExist()){  ?>
           <h1 id="class_ID"></h1>
           </div>
           <div class="modal-footer">
-            <button type="button" id="refreshpage2" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" onclick="refreshPage()" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="submit" id="deleteClass" class="btn btn-primary">Delete Class</button>
           </div>
         </div>
       
   </div>
 </div>
+
+
+<!--modal for clear student progress -->
+<div class="modal fade" id="clearStudentProgModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Clear Progress</h4>
+      </div>
+      <div class="modal-body">
+          <h3>Are you sure you want clear the level progress for all of the students?</h3>
+          <br>
+          <h1 id="clearProgResults"></h1>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="refreshPage()" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" id="clearStudentProgress" class="btn btn-primary">Clear Progress</button>
+          </div>
+        </div>
+      
+  </div>
+</div>
+
 
 
 
@@ -470,6 +495,15 @@ if($user->classExist()){  ?>
     });
   })
 
+    $('#clearStudentProgress').on('click', function (e) {
+   
+    $.post('clearStudentProg.php',{classid:CID},
+    function(data)
+    {
+      document.getElementById('clearProgResults').innerHTML=data;
+    });
+  })
+
 
   $('#removeStudent').on('click', function (e) {
    
@@ -489,6 +523,10 @@ if($user->classExist()){  ?>
     location.reload();
   })
 
+  function refreshPage() {
+    location.reload();
+  }
+
 </script>
 
 
@@ -506,6 +544,7 @@ if($user->classExist()){  ?>
          
         Test Time: <span id="test_time_ID"></span></br>       
         Test Attempts: <span id="test_attempts_ID"></span></br>    
+        Practice Time: <span id="practice_time_ID"></span></br>    
         Practice Attempts: <span id="practice_attempts_ID"></span></br>    
 
 
@@ -532,15 +571,18 @@ if($user->classExist()){  ?>
   var test_time = 0;
   var test_attempts = 0;
   var practice_attemps = 0;
-  function setLevelInfo(TTime, TAttempts, PAttempts){
+  var practice_time = 0;
+  function setLevelInfo(TTime, TAttempts, PTime, PAttempts){
 
 
     test_time = TTime;
     test_attempts = TAttempts;
     practice_attemps = PAttempts;
-  
+    practice_time = PTime;
+
     document.getElementById('test_time_ID').innerHTML = test_time;
     document.getElementById('test_attempts_ID').innerHTML = test_attempts;
+    document.getElementById('practice_time_ID').innerHTML = practice_time;
     document.getElementById('practice_attempts_ID').innerHTML = practice_attemps;
 
   }

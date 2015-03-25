@@ -11,7 +11,8 @@
 	$classID =  $_GET["classid"];
 	$level = $_GET["level"];
 	$status = $_GET["status"];
-	$elapsed_time = $_GET["elapsed_time"];
+	$test_time = $_GET["test_time"];
+	$practice_time = $_GET["practice_time"];
 	$level_type = $_GET["level_type"];
 	
 
@@ -46,11 +47,14 @@
 
 	//Determine whether to increment the prac or the test attempt
 	if($level_type === "0")
+	{
 		$fields["practice_attempts"] = $levelProgData['practice_attempts']+1;
+		$fields['practice_time'] = $practice_time;
+	}
 	else if($level_type === "1")
 	{
 		$fields["test_attempts"] = $levelProgData['test_attempts']+1;
-		$fields['elapsed_time'] = $elapsed_time;
+		$fields['test_time'] = $test_time;
 	}
 
 
