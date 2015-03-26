@@ -5,7 +5,7 @@
 //  Created by Samuel Arseneault on 3/21/15.
 //  Copyright (c) 2015 Samuel Arseneault. All rights reserved.
 //
-
+#import "baseURL.h"
 #import "PracticeLevelView.h"
 #import "Map.h"
 
@@ -76,7 +76,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getQuestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelName, questionType];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getQuestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelName, questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@", strURL);
@@ -285,7 +285,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelName, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendLevelProg.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelName, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     

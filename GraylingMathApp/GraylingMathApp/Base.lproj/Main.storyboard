@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1764,8 +1764,8 @@
         <image name="raceCarButton.png" width="600" height="337"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MJH-x2-aSt"/>
-        <segue reference="DS6-FN-2hn"/>
-        <segue reference="IgK-zJ-R3d"/>
+        <segue reference="IfL-Uf-rs9"/>
+        <segue reference="LrK-8x-AS6"/>
+        <segue reference="XyL-bb-h10"/>
     </inferredMetricsTieBreakers>
 </document>

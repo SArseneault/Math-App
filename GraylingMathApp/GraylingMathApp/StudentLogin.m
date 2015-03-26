@@ -5,7 +5,7 @@
 //  Created by Samuel Arseneault on 3/2/15.
 //  Copyright (c) 2015 Samuel Arseneault. All rights reserved.
 //
-
+#import "baseURL.h"
 #import "StudentLogin.h"
 #import "AppDelegate.h"
 #import "HomeView.h"
@@ -39,7 +39,7 @@
     //If the class is already logged in then check the credidentals and move to the next screen
     if ([loginCheck isEqualToString:@"TRUE"]) {
         
-        strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logStudentIn.php?userName=%@&password=%@", studentUsername, studentPassword];
+        strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logStudentIn.php?userName=%@&password=%@", studentUsername, studentPassword]];
         strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
         NSLog(@"%@",strURL);
         
@@ -87,7 +87,7 @@
 {
     
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
-    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/logStudentIn.php?userName=%@&password=%@", usernameField.text, passwordField.text];
+    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logStudentIn.php?userName=%@&password=%@", usernameField.text, passwordField.text] ];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSLog(@"%@",strURL);
     
