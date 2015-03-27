@@ -63,7 +63,7 @@
 
     
     //Creating a string contains url address for php file
-    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getSessionInfo.php?username=%@&classname=%@", studentUsername, className]];
+    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getsessioninfo.php?username=%@&classname=%@", studentUsername, className]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@",strURL);

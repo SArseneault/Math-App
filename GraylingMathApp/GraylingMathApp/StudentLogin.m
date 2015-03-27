@@ -39,7 +39,7 @@
     //If the class is already logged in then check the credidentals and move to the next screen
     if ([loginCheck isEqualToString:@"TRUE"]) {
         
-        strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logStudentIn.php?userName=%@&password=%@", studentUsername, studentPassword]];
+        strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logdtudentin.php?userName=%@&password=%@", studentUsername, studentPassword]];
         strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
         NSLog(@"%@",strURL);
         
@@ -87,7 +87,7 @@
 {
     
     // create string contains url address for php file, the file name is phpFile.php, it receives parameter :name
-    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logStudentIn.php?userName=%@&password=%@", usernameField.text, passwordField.text] ];
+    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logstudentin.php?userName=%@&password=%@", usernameField.text, passwordField.text] ];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSLog(@"%@",strURL);
     

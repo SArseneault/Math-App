@@ -149,7 +149,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getLevels.php?username=%@&studentid=%@&classid=%@", userName, studentID, classID]];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getlevels.php?username=%@&studentid=%@&classid=%@", userName, studentID, classID]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@", strURL);
