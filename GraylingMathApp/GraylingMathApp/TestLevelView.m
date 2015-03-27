@@ -338,22 +338,5 @@
     
 }
 
-//ui button methods
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *myTouch = [[event allTouches] anyObject];
-    button1.center= [myTouch locationInView:self.view];
-}
-- (IBAction)panPiece:(UIPanGestureRecognizer *)gestureRecognizer
-{
-    UIView *piece = [gestureRecognizer view];
-    
-    //[self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
-    
-    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged) {
-        CGPoint translation = [gestureRecognizer translationInView:[piece superview]];
-        
-        [piece setCenter:CGPointMake([piece center].x + translation.x, [piece center].y + translation.y)];
-        [gestureRecognizer setTranslation:CGPointZero inView:[piece superview]];
-    }
-}
+
 @end

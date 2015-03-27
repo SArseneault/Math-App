@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Map.h"
 #import "TypeSelect.h"
+#import "baseURL.h" 
 
 @interface Map()
 
@@ -148,7 +149,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getLevels.php?username=%@&studentid=%@&classid=%@", userName, studentID, classID];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getLevels.php?username=%@&studentid=%@&classid=%@", userName, studentID, classID]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@", strURL);

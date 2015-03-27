@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Px9-vS-1ee">
-                                <rect key="frame" x="300" y="401" width="56" height="30"/>
+                                <rect key="frame" x="167" y="401" width="56" height="30"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <state key="normal" title="Team">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjO-8q-YBD">
-                                <rect key="frame" x="376" y="401" width="68" height="30"/>
+                                <rect key="frame" x="360" y="401" width="68" height="30"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,25 +71,12 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrR-7l-2gV">
-                                <rect key="frame" x="209" y="401" width="68" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <state key="normal" title="Guest">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6ew-p4-Vey" kind="modal" id="IfL-Uf-rs9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Px9-vS-1ee" secondAttribute="bottom" constant="100" id="8Do-38-Sf2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KrR-7l-2gV" secondAttribute="bottom" constant="100" id="c35-eF-JTC"/>
                             <constraint firstAttribute="centerX" secondItem="mCt-3P-Wul" secondAttribute="centerX" id="eLz-iS-mbx"/>
                             <constraint firstAttribute="centerX" secondItem="JjO-8q-YBD" secondAttribute="centerX" id="u6X-lw-3HE"/>
-                            <constraint firstItem="KrR-7l-2gV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="200" id="vO5-cO-sMV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Px9-vS-1ee" secondAttribute="trailing" constant="723" id="xih-Uo-iaN">
                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                             </constraint>
@@ -103,11 +90,9 @@
                             <mask key="constraints">
                                 <exclude reference="eLz-iS-mbx"/>
                                 <exclude reference="zaO-LY-PoI"/>
-                                <exclude reference="vO5-cO-sMV"/>
                                 <exclude reference="xih-Uo-iaN"/>
                                 <exclude reference="u6X-lw-3HE"/>
                                 <exclude reference="8Do-38-Sf2"/>
-                                <exclude reference="c35-eF-JTC"/>
                                 <exclude reference="yvi-jq-wSF"/>
                             </mask>
                         </variation>
@@ -118,11 +103,9 @@
                             <mask key="constraints">
                                 <include reference="eLz-iS-mbx"/>
                                 <include reference="zaO-LY-PoI"/>
-                                <include reference="vO5-cO-sMV"/>
                                 <include reference="xih-Uo-iaN"/>
                                 <include reference="u6X-lw-3HE"/>
                                 <include reference="8Do-38-Sf2"/>
-                                <include reference="c35-eF-JTC"/>
                                 <include reference="yvi-jq-wSF"/>
                             </mask>
                         </variation>
@@ -695,6 +678,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ho-qc-QRT">
                                 <rect key="frame" x="224" y="256" width="41" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="gez-fh-HO5"/>
+                                    <constraint firstAttribute="height" constant="30" id="guN-ag-thp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -794,149 +781,10 @@
             </objects>
             <point key="canvasLocation" x="258" y="1571"/>
         </scene>
-        <!--Level Select-->
-        <scene sceneID="B2t-db-5CN">
-            <objects>
-                <viewController id="Pz9-3e-SeJ" customClass="LevelSelect" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Pqq-Pv-dZG"/>
-                        <viewControllerLayoutGuide type="bottom" id="eZB-PM-bkd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rFj-UN-ynG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vp8-JG-qGk">
-                                <rect key="frame" x="0.0" y="228" width="600" height="162"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="240" y="369" width="320" height="162"/>
-                                </variation>
-                            </pickerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SMu-N9-SsQ">
-                                <rect key="frame" x="239" y="427" width="129" height="29"/>
-                                <segments>
-                                    <segment title="Practice"/>
-                                    <segment title="Test"/>
-                                </segments>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="segmentedControlIndex" destination="Pz9-3e-SeJ" eventType="valueChanged" id="Ks4-zw-IK7"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grayling Math Racer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfj-Jf-CdR">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="768" id="26d-xi-pcX"/>
-                                    <constraint firstAttribute="height" constant="100" id="xFg-MN-BFJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="26d-xi-pcX"/>
-                                        <exclude reference="xFg-MN-BFJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="26d-xi-pcX"/>
-                                        <include reference="xFg-MN-BFJ"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNw-0G-hnN">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E47-9v-TOj">
-                                <rect key="frame" x="207" y="63" width="161" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Sjb-vB-IUh"/>
-                                    <constraint firstAttribute="width" constant="161" id="fTz-aR-1hS"/>
-                                    <constraint firstAttribute="height" constant="34" id="hnf-vV-geq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="hnf-vV-geq"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="hnf-vV-geq"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="E47-9v-TOj" firstAttribute="centerX" secondItem="vp8-JG-qGk" secondAttribute="centerX" id="4v8-gA-hze"/>
-                            <constraint firstItem="E47-9v-TOj" firstAttribute="top" secondItem="rFj-UN-ynG" secondAttribute="top" constant="150" id="Evq-rH-Mqm"/>
-                            <constraint firstItem="E47-9v-TOj" firstAttribute="centerX" secondItem="Yfj-Jf-CdR" secondAttribute="centerX" id="IFC-IN-IMd"/>
-                            <constraint firstItem="E47-9v-TOj" firstAttribute="centerX" secondItem="SMu-N9-SsQ" secondAttribute="centerX" id="IvP-FR-myt"/>
-                            <constraint firstItem="SMu-N9-SsQ" firstAttribute="top" secondItem="vp8-JG-qGk" secondAttribute="bottom" constant="45" id="JRK-7S-Aot"/>
-                            <constraint firstItem="vp8-JG-qGk" firstAttribute="top" secondItem="rFj-UN-ynG" secondAttribute="top" constant="376" id="XFO-Gv-UgS"/>
-                            <constraint firstAttribute="centerX" secondItem="XNw-0G-hnN" secondAttribute="centerX" id="anh-Up-GI4"/>
-                            <constraint firstItem="E47-9v-TOj" firstAttribute="centerX" secondItem="rFj-UN-ynG" secondAttribute="centerX" id="cya-bj-BvD"/>
-                            <constraint firstItem="E47-9v-TOj" firstAttribute="top" secondItem="Yfj-Jf-CdR" secondAttribute="bottom" constant="50" id="pWr-tw-6ty"/>
-                            <constraint firstItem="XNw-0G-hnN" firstAttribute="top" secondItem="SMu-N9-SsQ" secondAttribute="bottom" constant="96" id="qet-wX-3E6"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Yfj-Jf-CdR"/>
-                                <exclude reference="XNw-0G-hnN"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="anh-Up-GI4"/>
-                                <exclude reference="qet-wX-3E6"/>
-                                <exclude reference="4v8-gA-hze"/>
-                                <exclude reference="Evq-rH-Mqm"/>
-                                <exclude reference="IFC-IN-IMd"/>
-                                <exclude reference="IvP-FR-myt"/>
-                                <exclude reference="cya-bj-BvD"/>
-                                <exclude reference="pWr-tw-6ty"/>
-                                <exclude reference="XFO-Gv-UgS"/>
-                                <exclude reference="JRK-7S-Aot"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="Yfj-Jf-CdR"/>
-                                <include reference="XNw-0G-hnN"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="anh-Up-GI4"/>
-                                <include reference="qet-wX-3E6"/>
-                                <include reference="4v8-gA-hze"/>
-                                <include reference="Evq-rH-Mqm"/>
-                                <include reference="IFC-IN-IMd"/>
-                                <include reference="IvP-FR-myt"/>
-                                <include reference="cya-bj-BvD"/>
-                                <include reference="pWr-tw-6ty"/>
-                                <include reference="XFO-Gv-UgS"/>
-                                <include reference="JRK-7S-Aot"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="levelPicker" destination="vp8-JG-qGk" id="MMM-tG-wiI"/>
-                        <outlet property="segementSwitchPorT" destination="SMu-N9-SsQ" id="ude-aH-HZN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GCe-u1-ZYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1339" y="1447"/>
-        </scene>
         <!--Home View-->
         <scene sceneID="wJ9-e6-h3y">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXf-xc-39N" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeView" id="eb0-BK-cpT" customClass="HomeView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vTn-9Y-tXc"/>
@@ -991,18 +839,6 @@
                                     <action selector="logOutStudent:" destination="eb0-BK-cpT" eventType="touchUpInside" id="kR3-1A-udf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwa-7h-a6p">
-                                <rect key="frame" x="244" y="409" width="158" height="30"/>
-                                <color key="backgroundColor" red="0.69422447639999996" green="0.93473250230000005" blue="0.96464646460000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <state key="normal" title="Old Select Level">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Pz9-3e-SeJ" kind="modal" id="ogr-GI-ZrA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fex-ut-2Vb">
                                 <rect key="frame" x="32" y="164" width="113" height="30"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
@@ -1021,7 +857,6 @@
                         <outlet property="usernameLabel" destination="ZYh-wK-4cK" id="Hdl-Cr-SEX"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXf-xc-39N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="169" y="2230"/>
         </scene>
@@ -1764,7 +1599,6 @@
         <image name="raceCarButton.png" width="600" height="337"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IfL-Uf-rs9"/>
         <segue reference="LrK-8x-AS6"/>
         <segue reference="XyL-bb-h10"/>
     </inferredMetricsTieBreakers>

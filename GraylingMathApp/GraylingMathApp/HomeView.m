@@ -10,7 +10,7 @@
 #import "StudentLogin.h"
 #import "ClassLogin.h"
 #import "FirstViewController.h"
-
+#import "baseURL.h"
 
 
 @implementation HomeView
@@ -60,9 +60,10 @@
     UIApplication *app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = YES;
     
+
     
     //Creating a string contains url address for php file
-    strURL = [NSString stringWithFormat:@"http://localhost/LoginPortal/getSessionInfo.php?username=%@&classname=%@", studentUsername, className];
+    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getSessionInfo.php?username=%@&classname=%@", studentUsername, className]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@",strURL);
