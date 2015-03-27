@@ -7,7 +7,7 @@
   $studentOBJ = new Student(); //Creating a student object
   //Redirect the user if they are not logged in.
   if(!$user->isLoggedIn()) {
-      Redirect::to("includes/errors/loginError.php");
+      Redirect::to("includes/errors/loginerror.php");
   }
 
   //Creating and setting the classInfo and students variables
@@ -194,8 +194,8 @@
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
         <li class="active"><a href="viewClass.php">Class Editor</a></li>
-        <li><a href="addLevel.php">Level Editor</a></li>
-        <li><a href="importExport.php">Import/Export</a></li>
+        <li><a href="addlevel.php">Level Editor</a></li>
+        <li><a href="importexport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
 
       </ul>
@@ -488,7 +488,7 @@ if($user->classExist()){  ?>
   }
   $('#deleteClass').on('click', function (e) {
    
-    $.post('deleteClass.php',{classid:CID},
+    $.post('deleteclass.php',{classid:CID},
     function(data)
     {
       document.getElementById('class_ID').innerHTML=data;
@@ -497,7 +497,7 @@ if($user->classExist()){  ?>
 
     $('#clearStudentProgress').on('click', function (e) {
    
-    $.post('clearStudentProg.php',{classid:CID},
+    $.post('clearstudentprog.php',{classid:CID},
     function(data)
     {
       document.getElementById('clearProgResults').innerHTML=data;
@@ -507,7 +507,7 @@ if($user->classExist()){  ?>
 
   $('#removeStudent').on('click', function (e) {
    
-    $.post('removeStudent.php',{studentid:SID},
+    $.post('removestudent.php',{studentid:SID},
     function(data)
     {
       document.getElementById('student_ID').innerHTML=data;

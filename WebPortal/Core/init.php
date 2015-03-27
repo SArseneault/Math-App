@@ -1,5 +1,8 @@
 <?php
 
+
+    ini_set('display_errors', 1);
+
 	//Allow people to login
 	session_start();
 

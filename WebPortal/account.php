@@ -5,7 +5,7 @@
 
   //Redirect the user if they are not logged in.
   if(!$user->isLoggedIn()) {
-      Redirect::to("includes/errors/loginError.php");
+      Redirect::to("includes/errors/loginerror.php");
   }
 
   if(Input::exists()) {
@@ -149,9 +149,9 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li><a href="viewClass.php">Class Editor</a></li>
-        <li><a href="addLevel.php">Level Editor</a></li>
-        <li><a href="importExport.php">Import/Export</a></li>
+        <li><a href="viewclass.php">Class Editor</a></li>
+        <li><a href="addlevel.php">Level Editor</a></li>
+        <li><a href="importexport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
 
       </ul>
