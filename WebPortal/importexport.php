@@ -256,13 +256,13 @@
 </div>
 
 
- <form method="post" action="importExport.php" enctype="multipart/form-data">
+ <form method="post" action="importexport.php" enctype="multipart/form-data">
   <div class ="col-md-2" align="center">
     <input type="submit" class="btn btn-info" name="export1" value="Export">
   </div>
 </form>
 
-  <form method="post" action="importExport.php" enctype="multipart/form-data">
+  <form method="post" action="importexport.php" enctype="multipart/form-data">
     <div class ="col-md-2" align="center">
       <input type="submit" class="btn btn-warning" name="import1" value="import">
       <input type="file" name="file"/>
