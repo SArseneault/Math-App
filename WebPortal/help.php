@@ -61,7 +61,7 @@
 
 <div class="container">
   <h2> Help </h2>
-  <p>Here you will seek assitanced with the adding classes, students, levels, and questions.</p>
+  <p>Here you will seek assistance with the adding classes, students, levels, and questions.</p>
 </div>
 
 

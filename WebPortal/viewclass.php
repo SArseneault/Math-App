@@ -193,7 +193,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li class="active"><a href="viewClass.php">Class Editor</a></li>
+        <li class="active"><a href="viewclass.php">Class Editor</a></li>
         <li><a href="addlevel.php">Level Editor</a></li>
         <li><a href="importexport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>

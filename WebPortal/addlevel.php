@@ -194,7 +194,7 @@ if(Input::exists()) {
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="viewclass.php">Class Editor</a></li>
-        <li class="active"><a href="addLevel.php">Level Editor</a></li>
+        <li class="active"><a href="addlevel.php">Level Editor</a></li>
         <li><a href="importexport.php">Import/Export</a></li>
         <li><a href="help.php">Help</a></li>
 
@@ -286,6 +286,9 @@ if($user->classExist()){  ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
     </div>
+     <div class ="col-md-2">
+      <a href="#" class="btn btn-danger" onclick="setClassID('<?php print_r($classInfo['class_id']); ?>')" data-toggle="modal" data-target="#removeLevelsModal">Remove Levels</a>
+    </div>
     <?php } ?>
     </div>
 </div>
@@ -295,6 +298,28 @@ if($user->classExist()){  ?>
   
 <?php } ?>
 
+<!--modal for remove all levels -->
+<div class="modal fade" id="removeLevelsModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Remove All Levels</h4>
+      </div>
+        <div class="modal-body">
+          <h3>Are you sure you want to remove all the levels for this class?</h3>
+          <br>
+          <h1 id="removeLevelsResult"></h1>
+        </div>
+          <div class="modal-footer">
+            <button type="button" onclick="refreshPage();" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="removeLevels();" class="btn btn-primary">Remove All Levels</button>
+    
+          </div>
+        </div>
+
+  </div>
+</div> 
 
 
 
@@ -463,7 +488,6 @@ if($user->classExist()){  ?>
      
     }); 
 
-  
 
   }
 
@@ -585,6 +609,7 @@ if($user->classExist()){  ?>
                               function(data)
                               {
                                 document.getElementById('level_ID').innerHTML=data;
+                                location.reload();
                               });
                             }
                             removebtn.id = "1";
@@ -615,6 +640,7 @@ if($user->classExist()){  ?>
 <script type="text/javascript" src="./jquery-1.4.2.js"></script>
 <script type="text/javascript">
 
+  var CID = 0;
   $('#removelevel').on('click', function (e) {
 
     $.post('removelevel.php',{levelid:LID},
@@ -635,6 +661,25 @@ if($user->classExist()){  ?>
     location.reload();
   })
 
+ function refreshPage() {
+    location.reload();
+  }
+function removeLevels(){
+  
+
+    $.post('removelevelsall.php',{classid:CID},
+    function(data)
+    {
+      document.getElementById('removeLevelsResult').innerHTML=data;
+    });
+  }
+
+
+
+    function setClassID(classID){
+      CID = classID;
+    }
+  
 
  
 

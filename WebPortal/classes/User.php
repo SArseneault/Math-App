@@ -147,10 +147,53 @@
 				throw new Exception('There was a problem deleting the level progress.');
 			}
 
-
 			//Deleting all questions associated with the level
 			if(!$this->_db->delete('question', array('level_id', '=', $levelID))){
 				throw new Exception('There was a problem deleting the questions.');
+			}
+
+			//Deleting all the student progress tables associted with the level
+			if(!$this->_db->delete('question_progress', array('level_id', '=', $levelID))){
+				throw new Exception('There was a problem deleting the question progress.');
+			}
+
+
+			
+		}
+
+		//Removing the levels for the entire
+		public function removeAllLevels($classID){
+
+		
+			//Grabbing the level data
+			$levelData = $this->_db->get('level', array('class_id', '=', $classID));
+			$levelData = $levelData->results();
+
+			foreach($levelData as $level) {
+
+				$level = get_object_vars($level);
+
+				//Deleting all the student progress tables associted with the level
+				if(!$this->_db->delete('level_progress', array('level_id', '=', $level['level_id']))){
+					throw new Exception('There was a problem deleting the level progress.');
+				}
+
+				//Deleting all the student progress tables associted with the level
+				if(!$this->_db->delete('question_progress', array('level_id', '=', $level['level_id']))){
+					throw new Exception('There was a problem deleting the question progress.');
+				}
+
+			}
+			
+
+			//Deleting all questions associated with the level
+			if(!$this->_db->delete('question', array('class_id', '=', $classID))){
+				throw new Exception('There was a problem deleting the questions.');
+			}
+
+				//Deleting actual level
+			if(!$this->_db->delete('level', array('class_id', '=', $classID))){
+				throw new Exception('There was a problem deleting a level.');
 			}
 
 			
