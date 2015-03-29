@@ -110,8 +110,6 @@
 		            //Convert the std object to an array
 		            $student = get_object_vars($student);
 
-
-
 	            	//Creating a default progress level
 					$defaultProgress = array(
 		            	'student_id' => $student['student_id'],

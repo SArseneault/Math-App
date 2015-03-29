@@ -3,6 +3,7 @@
 
   $user = new User();//Picking current user details
   $student = new Student(); //Creating a student object
+  $db = DB::getInstance();
 
   //Redirect the user if they are not logged in.
   if(!$user->isLoggedIn()) {
@@ -26,55 +27,68 @@ if(Input::exists()) {
     if (isset($_POST['createLevel'])) {
       if(Token::check(Input::get('token'))) {
 
-      //Validate fields
-      $validate = new Validate();
+        //Validate fields
+        $validate = new Validate();
 
+          
+        $validation = $validate->check($_POST, array(
+          'level_name' => array(
+            'required' => true,
+            'min' => 2,
+            'max' => 50
+            ),
+          'time_limit' => array(
+            'required' => true,
+            'max' => 11
+            ),
+          'lDescription' => array(
+                'required' => false,
+                'min' => 2,
+                'max' => 100
+             ),
+          ));
         
-      $validation = $validate->check($_POST, array(
-        'level_name' => array(
-          'required' => true,
-          'min' => 2,
-          'max' => 50
-          ),
-        'time_limit' => array(
-          'required' => true,
-          'max' => 11
-          ),
-        'lDescription' => array(
-              'required' => false,
-              'min' => 2,
-              'max' => 100
-           ),
-        ));
-      
+          //Checking if the level name exists in the database already with the same class
+            $check = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
+                $_POST['level_name'],
+                $classInfo['class_id']
+                 ));
+        if($check->count()) {
+            echo ("This level name already exsits in the class");
+        } else {
 
-      if($validation->passed()) {
+             if($validation->passed()) {
 
-        try {
-           
+          try {
+             
 
-            //Inserting the new levelinto the database
-            $user->addLevel(array(
-              'name' => Input::get('level_name'),
-              'description' => Input::get('lDescription'),
-              'time_limit' => Input::get('time_limit'),
-              'class_id' => $classInfo['class_id']
-              ));
+              //Inserting the new levelinto the database
+              $user->addLevel(array(
+                'name' => Input::get('level_name'),
+                'description' => Input::get('lDescription'),
+                'time_limit' => Input::get('time_limit'),
+                'class_id' => $classInfo['class_id']
+                ));
 
-            
+              
 
-            //Refresh the page to show the update
-           header("Refresh:0");
-        } catch(Execption $e) {
-          die($e->getMessage());
-          }
+              //Refresh the page to show the update
+             header("Refresh:0");
+          } catch(Execption $e) {
+            die($e->getMessage());
+            }
 
-      } else {
-          foreach($validation->errors() as $error) {
-            echo $error, '<br>';
-          }
-        }
-    }
+            } else {
+              foreach($validation->errors() as $error) {
+                echo $error, '<br>';
+              }
+            }
+         }
+      }
+
+
+
+   
   } elseif (isset($_POST['addQuestion'])) {
       if(Token::check(Input::get('token'))) {
 

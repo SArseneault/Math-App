@@ -1,343 +1,1 @@
-Zero Rule,Zeroes,5,,,,,,
-One Rule,One Rule,5,,,,,,
-2 + 2,2+2,5,,,,,,
-2 + 3,2+3,5,,,,,,
-2 + 4,2+4,5,,,,,,
-2 + 5,2+5,5,,,,,,
-2 + 6,2+6,5,,,,,,
-2 + 7,2+7,5,,,,,,
-2 + 8 ,2+8,5,,,,,,
-3 + 3,3+3,5,,,,,,
-3 + 4,3+4,5,,,,,,
-3 + 5,3+5,5,,,,,,
-3 + 6,3+6,5,,,,,,
-3 + 7,3+7,5,,,,,,
-4 + 4,4+4,5,,,,,,
-4 + 5,4+5,5,,,,,,
-4 + 6,4+6,5,,,,,,
-5 + 5,5+5,5,,,,,,
-NEXT,NEXT,NEXT,,,,,,
-Zero Rule,Zeroes,Question 1,Zeroes,0,1,+,1,1
-Zero Rule,Zeroes,Question 2,Zeroes,0,2,+,1,1
-Zero Rule,Zeroes,Question 3,Zeroes,0,3,+,1,1
-Zero Rule,Zeroes,Question 4,Zeroes,0,4,+,1,1
-Zero Rule,Zeroes,Question 5,Zeroes,0,5,+,1,1
-Zero Rule,Zeroes,Question 6,Zeroes,0,6,+,1,1
-Zero Rule,Zeroes,Question 7,Zeroes,0,7,+,1,1
-Zero Rule,Zeroes,Question 8,Zeroes,0,8,+,1,1
-Zero Rule,Zeroes,Question 9,Zeroes,0,9,+,1,1
-Zero Rule,Zeroes,Question 10,Zeroes,1,0,+,1,1
-Zero Rule,Zeroes,Question 11,Zeroes,2,0,+,1,1
-Zero Rule,Zeroes,Question 12,Zeroes,3,0,+,1,1
-Zero Rule,Zeroes,Question 13,Zeroes,4,0,+,1,1
-Zero Rule,Zeroes,Question 14,Zeroes,5,0,+,1,1
-Zero Rule,Zeroes,Question 15,Zeroes,6,0,+,1,1
-Zero Rule,Zeroes,Question 16,Zeroes,7,0,+,1,1
-Zero Rule,Zeroes,Question 17,Zeroes,8,0,+,1,1
-Zero Rule,Zeroes,Question 18,Zeroes,9,0,+,1,1
-One Rule,One Rule,Question 1,Ones,1,1,+,1,1
-One Rule,One Rule,Question 2,Ones,1,2,+,1,1
-One Rule,One Rule,Question 3,Ones,1,3,+,1,1
-One Rule,One Rule,Question 4,Ones,1,4,+,1,1
-One Rule,One Rule,Question 5,Ones,1,5,+,1,1
-One Rule,One Rule,Question 6,Ones,1,6,+,1,1
-One Rule,One Rule,Question 7,Ones,1,7,+,1,1
-One Rule,One Rule,Question 8,Ones,1,8,+,1,1
-One Rule,One Rule,Question 9,Ones,1,9,+,1,1
-One Rule,One Rule,Question 10,Ones,9,1,+,1,1
-One Rule,One Rule,Question 11,Ones,8,1,+,1,1
-One Rule,One Rule,Question 12,Ones,7,1,+,1,1
-One Rule,One Rule,Question 13,Ones,6,1,+,1,1
-One Rule,One Rule,Question 14,Ones,5,1,+,1,1
-One Rule,One Rule,Question 15,Ones,4,1,+,1,1
-One Rule,One Rule,Question 16,Ones,3,1,+,1,1
-One Rule,One Rule,Question 17,Ones,2,1,+,1,1
-One Rule,One Rule,Question 18,Ones,1,0,+,1,1
-2 + 2,2+2,Question 1,2+2,2,2,+,1,1
-2 + 2,2+2,Question 2,2+2,1,0,+,1,1
-2 + 2,2+2,Question 3,2+2,2,2,+,1,1
-2 + 2,2+2,Question 4,2+2,1,1,+,1,1
-2 + 2,2+2,Question 5,2+2,2,2,+,1,1
-2 + 2,2+2,Question 6,2+2,3,1,+,1,1
-2 + 2,2+2,Question 7,2+2,2,2,+,1,1
-2 + 2,2+2,Question 8,2+2,0,9,+,1,1
-2 + 2,2+2,Question 9,2+2,2,2,+,1,1
-2 + 2,2+2,Question 10,2+2,8,0,+,1,1
-2 + 2,2+2,Question 11,2+2,2,2,+,1,1
-2 + 2,2+2,Question 12,2+2,0,7,+,1,1
-2 + 2,2+2,Question 13,2+2,2,2,+,1,1
-2 + 2,2+2,Question 14,2+2,0,6,+,1,1
-2 + 2,2+2,Question 15,2+2,5,0,+,1,1
-2 + 2,2+2,Question 16,2+2,0,4,+,1,1
-2 + 2,2+2,Question 17,2+2,3,0,+,1,1
-2 + 2,2+2,Question 18,2+2,0,2,+,1,1
-2 + 3,2+3,Question 1,2+3,2,3,+,1,1
-2 + 3,2+3,Question 2,2+3,2,2,+,1,1
-2 + 3,2+3,Question 3,2+3,3,2,+,1,1
-2 + 3,2+3,Question 4,2+3,2,2,+,1,1
-2 + 3,2+3,Question 5,2+3,2,3,+,1,1
-2 + 3,2+3,Question 6,2+3,2,2,+,1,1
-2 + 3,2+3,Question 7,2+3,3,2,+,1,1
-2 + 3,2+3,Question 8,2+3,1,4,+,1,1
-2 + 3,2+3,Question 9,2+3,2,3,+,1,1
-2 + 3,2+3,Question 10,2+3,5,1,+,1,1
-2 + 3,2+3,Question 11,2+3,3,2,+,1,1
-2 + 3,2+3,Question 12,2+3,1,6,+,1,1
-2 + 3,2+3,Question 13,2+3,2,3,+,1,1
-2 + 3,2+3,Question 14,2+3,1,7,+,1,1
-2 + 3,2+3,Question 15,2+3,1,0,+,1,1
-2 + 3,2+3,Question 16,2+3,0,2,+,1,1
-2 + 3,2+3,Question 17,2+3,3,0,+,1,1
-2 + 3,2+3,Question 18,2+3,0,4,+,1,1
-2 + 4,2+4,Question 1,2+4,2,4,+,1,1
-2 + 4,2+4,Question 2,2+4,2,3,+,1,1
-2 + 4,2+4,Question 3,2+4,4,2,+,1,1
-2 + 4,2+4,Question 4,2+4,3,2,+,1,1
-2 + 4,2+4,Question 5,2+4,2,4,+,1,1
-2 + 4,2+4,Question 6,2+4,2,3,+,1,1
-2 + 4,2+4,Question 7,2+4,4,2,+,1,1
-2 + 4,2+4,Question 8,2+4,1,8,+,1,1
-2 + 4,2+4,Question 9,2+4,2,4,+,1,1
-2 + 4,2+4,Question 10,2+4,9,1,+,1,1
-2 + 4,2+4,Question 11,2+4,4,2,+,1,1
-2 + 4,2+4,Question 12,2+4,1,7,+,1,1
-2 + 4,2+4,Question 13,2+4,2,4,+,1,1
-2 + 4,2+4,Question 14,2+4,2,2,+,1,1
-2 + 4,2+4,Question 15,2+4,8,0,+,1,1
-2 + 4,2+4,Question 16,2+4,0,7,+,1,1
-2 + 4,2+4,Question 17,2+4,6,0,+,1,1
-2 + 4,2+4,Question 18,2+4,0,5,+,1,1
-2 + 5,2+5,Question 1,2+5,2,5,+,1,1
-2 + 5,2+5,Question 2,2+5,2,4,+,1,1
-2 + 5,2+5,Question 3,2+5,5,2,+,1,1
-2 + 5,2+5,Question 4,2+5,4,2,+,1,1
-2 + 5,2+5,Question 5,2+5,2,5,+,1,1
-2 + 5,2+5,Question 6,2+5,2,4,+,1,1
-2 + 5,2+5,Question 7,2+5,5,2,+,1,1
-2 + 5,2+5,Question 8,2+5,3,2,+,1,1
-2 + 5,2+5,Question 9,2+5,2,5,+,1,1
-2 + 5,2+5,Question 10,2+5,2,3,+,1,1
-2 + 5,2+5,Question 11,2+5,5,2,+,1,1
-2 + 5,2+5,Question 12,2+5,2,2,+,1,1
-2 + 5,2+5,Question 13,2+5,2,5,+,1,1
-2 + 5,2+5,Question 14,2+5,2,2,+,1,1
-2 + 5,2+5,Question 15,2+5,1,6,+,1,1
-2 + 5,2+5,Question 16,2+5,5,1,+,1,1
-2 + 5,2+5,Question 17,2+5,0,9,+,1,1
-2 + 5,2+5,Question 18,2+5,1,0,+,1,1
-2 + 6,2+6,Question 1,2+6,2,6,+,1,1
-2 + 6,2+6,Question 2,2+6,2,5,+,1,1
-2 + 6,2+6,Question 3,2+6,6,2,+,1,1
-2 + 6,2+6,Question 4,2+6,5,2,+,1,1
-2 + 6,2+6,Question 5,2+6,2,6,+,1,1
-2 + 6,2+6,Question 6,2+6,2,5,+,1,1
-2 + 6,2+6,Question 7,2+6,6,2,+,1,1
-2 + 6,2+6,Question 8,2+6,4,2,+,1,1
-2 + 6,2+6,Question 9,2+6,2,6,+,1,1
-2 + 6,2+6,Question 10,2+6,2,3,+,1,1
-2 + 6,2+6,Question 11,2+6,6,2,+,1,1
-2 + 6,2+6,Question 12,2+6,2,2,+,1,1
-2 + 6,2+6,Question 13,2+6,2,6,+,1,1
-2 + 6,2+6,Question 14,2+6,2,0,+,1,1
-2 + 6,2+6,Question 15,2+6,0,3,+,1,1
-2 + 6,2+6,Question 16,2+6,4,1,+,1,1
-2 + 6,2+6,Question 17,2+6,1,3,+,1,1
-2 + 6,2+6,Question 18,2+6,2,1,+,1,1
-2 + 7,2+7,Question 1,2+7,2,7,+,1,1
-2 + 7,2+7,Question 2,2+7,6,2,+,1,1
-2 + 7,2+7,Question 3,2+7,7,2,+,1,1
-2 + 7,2+7,Question 4,2+7,2,6,+,1,1
-2 + 7,2+7,Question 5,2+7,2,7,+,1,1
-2 + 7,2+7,Question 6,2+7,6,2,+,1,1
-2 + 7,2+7,Question 7,2+7,7,2,+,1,1
-2 + 7,2+7,Question 8,2+7,2,5,+,1,1
-2 + 7,2+7,Question 9,2+7,2,7,+,1,1
-2 + 7,2+7,Question 10,2+7,4,2,+,1,1
-2 + 7,2+7,Question 11,2+7,7,2,+,1,1
-2 + 7,2+7,Question 12,2+7,2,3,+,1,1
-2 + 7,2+7,Question 13,2+7,2,7,+,1,1
-2 + 7,2+7,Question 14,2+7,2,2,+,1,1
-2 + 7,2+7,Question 15,2+7,1,2,+,1,1
-2 + 7,2+7,Question 16,2+7,1,0,+,1,1
-2 + 7,2+7,Question 17,2+7,1,1,+,1,1
-2 + 7,2+7,Question 18,2+7,3,1,+,1,1
-2 + 8 ,2+8,Question 1,2+8,2,8,+,1,1
-2 + 8 ,2+8,Question 2,2+8,2,7,+,1,1
-2 + 8 ,2+8,Question 3,2+8,8,2,+,1,1
-2 + 8 ,2+8,Question 4,2+8,7,2,+,1,1
-2 + 8 ,2+8,Question 5,2+8,2,8,+,1,1
-2 + 8 ,2+8,Question 6,2+8,2,7,+,1,1
-2 + 8 ,2+8,Question 7,2+8,8,2,+,1,1
-2 + 8 ,2+8,Question 8,2+8,6,2,+,1,1
-2 + 8 ,2+8,Question 9,2+8,2,8,+,1,1
-2 + 8 ,2+8,Question 10,2+8,2,5,+,1,1
-2 + 8 ,2+8,Question 11,2+8,8,2,+,1,1
-2 + 8 ,2+8,Question 12,2+8,4,2,+,1,1
-2 + 8 ,2+8,Question 13,2+8,2,8,+,1,1
-2 + 8 ,2+8,Question 14,2+8,2,3,+,1,1
-2 + 8 ,2+8,Question 15,2+8,2,2,+,1,1
-2 + 8 ,2+8,Question 16,2+8,4,1,+,1,1
-2 + 8 ,2+8,Question 17,2+8,1,5,+,1,1
-2 + 8 ,2+8,Question 18,2+8,2,0,+,1,1
-3 + 3,3+3,Question 1,3+3,3,3,+,1,1
-3 + 3,3+3,Question 2,3+3,2,8,+,1,1
-3 + 3,3+3,Question 3,3+3,3,3,+,1,1
-3 + 3,3+3,Question 4,3+3,8,2,+,1,1
-3 + 3,3+3,Question 5,3+3,3,3,+,1,1
-3 + 3,3+3,Question 6,3+3,2,8,+,1,1
-3 + 3,3+3,Question 7,3+3,3,3,+,1,1
-3 + 3,3+3,Question 8,3+3,7,2,+,1,1
-3 + 3,3+3,Question 9,3+3,3,3,+,1,1
-3 + 3,3+3,Question 10,3+3,2,6,+,1,1
-3 + 3,3+3,Question 11,3+3,3,3,+,1,1
-3 + 3,3+3,Question 12,3+3,5,2,+,1,1
-3 + 3,3+3,Question 13,3+3,3,3,+,1,1
-3 + 3,3+3,Question 14,3+3,2,4,+,1,1
-3 + 3,3+3,Question 15,3+3,3,2,+,1,1
-3 + 3,3+3,Question 16,3+3,2,2,+,1,1
-3 + 3,3+3,Question 17,3+3,1,6,+,1,1
-3 + 3,3+3,Question 18,3+3,3,0,+,1,1
-3 + 4,3+4,Question 1,3+4,3,4,+,1,1
-3 + 4,3+4,Question 2,3+4,3,3,+,1,1
-3 + 4,3+4,Question 3,3+4,4,3,+,1,1
-3 + 4,3+4,Question 4,3+4,3,3,+,1,1
-3 + 4,3+4,Question 5,3+4,3,4,+,1,1
-3 + 4,3+4,Question 6,3+4,3,3,+,1,1
-3 + 4,3+4,Question 7,3+4,4,3,+,1,1
-3 + 4,3+4,Question 8,3+4,2,8,+,1,1
-3 + 4,3+4,Question 9,3+4,3,4,+,1,1
-3 + 4,3+4,Question 10,3+4,2,7,+,1,1
-3 + 4,3+4,Question 11,3+4,4,3,+,1,1
-3 + 4,3+4,Question 12,3+4,6,2,+,1,1
-3 + 4,3+4,Question 13,3+4,3,4,+,1,1
-3 + 4,3+4,Question 14,3+4,2,5,+,1,1
-3 + 4,3+4,Question 15,3+4,4,2,+,1,1
-3 + 4,3+4,Question 16,3+4,2,3,+,1,1
-3 + 4,3+4,Question 17,3+4,2,2,+,1,1
-3 + 4,3+4,Question 18,3+4,1,7,+,1,1
-3 + 5,3+5,Question 1,3+5,3,5,+,1,1
-3 + 5,3+5,Question 2,3+5,3,4,+,1,1
-3 + 5,3+5,Question 3,3+5,5,3,+,1,1
-3 + 5,3+5,Question 4,3+5,4,3,+,1,1
-3 + 5,3+5,Question 5,3+5,3,5,+,1,1
-3 + 5,3+5,Question 6,3+5,3,4,+,1,1
-3 + 5,3+5,Question 7,3+5,5,3,+,1,1
-3 + 5,3+5,Question 8,3+5,3,3,+,1,1
-3 + 5,3+5,Question 9,3+5,3,5,+,1,1
-3 + 5,3+5,Question 10,3+5,8,2,+,1,1
-3 + 5,3+5,Question 11,3+5,5,3,+,1,1
-3 + 5,3+5,Question 12,3+5,2,7,+,1,1
-3 + 5,3+5,Question 13,3+5,3,5,+,1,1
-3 + 5,3+5,Question 14,3+5,6,2,+,1,1
-3 + 5,3+5,Question 15,3+5,2,5,+,1,1
-3 + 5,3+5,Question 16,3+5,3,2,+,1,1
-3 + 5,3+5,Question 17,3+5,8,1,+,1,1
-3 + 5,3+5,Question 18,3+5,0,4,+,1,1
-3 + 6,3+6,Question 1,3+6,3,6,+,1,1
-3 + 6,3+6,Question 2,3+6,3,5,+,1,1
-3 + 6,3+6,Question 3,3+6,6,3,+,1,1
-3 + 6,3+6,Question 4,3+6,5,3,+,1,1
-3 + 6,3+6,Question 5,3+6,3,6,+,1,1
-3 + 6,3+6,Question 6,3+6,3,5,+,1,1
-3 + 6,3+6,Question 7,3+6,6,3,+,1,1
-3 + 6,3+6,Question 8,3+6,4,3,+,1,1
-3 + 6,3+6,Question 9,3+6,3,6,+,1,1
-3 + 6,3+6,Question 10,3+6,3,3,+,1,1
-3 + 6,3+6,Question 11,3+6,6,3,+,1,1
-3 + 6,3+6,Question 12,3+6,8,2,+,1,1
-3 + 6,3+6,Question 13,3+6,3,6,+,1,1
-3 + 6,3+6,Question 14,3+6,2,2,+,1,1
-3 + 6,3+6,Question 15,3+6,1,9,+,1,1
-3 + 6,3+6,Question 16,3+6,0,5,+,1,1
-3 + 6,3+6,Question 17,3+6,2,3,+,1,1
-3 + 6,3+6,Question 18,3+6,4,2,+,1,1
-3 + 7,3+7,Question 1,3+7,3,7,+,1,1
-3 + 7,3+7,Question 2,3+7,3,6,+,1,1
-3 + 7,3+7,Question 3,3+7,7,3,+,1,1
-3 + 7,3+7,Question 4,3+7,6,3,+,1,1
-3 + 7,3+7,Question 5,3+7,3,7,+,1,1
-3 + 7,3+7,Question 6,3+7,3,6,+,1,1
-3 + 7,3+7,Question 7,3+7,7,3,+,1,1
-3 + 7,3+7,Question 8,3+7,5,3,+,1,1
-3 + 7,3+7,Question 9,3+7,3,7,+,1,1
-3 + 7,3+7,Question 10,3+7,4,3,+,1,1
-3 + 7,3+7,Question 11,3+7,7,3,+,1,1
-3 + 7,3+7,Question 12,3+7,3,3,+,1,1
-3 + 7,3+7,Question 13,3+7,3,7,+,1,1
-3 + 7,3+7,Question 14,3+7,5,2,+,1,1
-3 + 7,3+7,Question 15,3+7,2,6,+,1,1
-3 + 7,3+7,Question 16,3+7,0,6,+,1,1
-3 + 7,3+7,Question 17,3+7,7,0,+,1,1
-3 + 7,3+7,Question 18,3+7,0,8,+,1,1
-4 + 4,4+4,Question 1,4+4,4,4,+,1,1
-4 + 4,4+4,Question 2,4+4,7,3,+,1,1
-4 + 4,4+4,Question 3,4+4,4,4,+,1,1
-4 + 4,4+4,Question 4,4+4,3,7,+,1,1
-4 + 4,4+4,Question 5,4+4,4,4,+,1,1
-4 + 4,4+4,Question 6,4+4,7,3,+,1,1
-4 + 4,4+4,Question 7,4+4,4,4,+,1,1
-4 + 4,4+4,Question 8,4+4,3,6,+,1,1
-4 + 4,4+4,Question 9,4+4,4,4,+,1,1
-4 + 4,4+4,Question 10,4+4,5,3,+,1,1
-4 + 4,4+4,Question 11,4+4,4,4,+,1,1
-4 + 4,4+4,Question 12,4+4,3,4,+,1,1
-4 + 4,4+4,Question 13,4+4,4,4,+,1,1
-4 + 4,4+4,Question 14,4+4,3,3,+,1,1
-4 + 4,4+4,Question 15,4+4,8,2,+,1,1
-4 + 4,4+4,Question 16,4+4,2,7,+,1,1
-4 + 4,4+4,Question 17,4+4,6,2,+,1,1
-4 + 4,4+4,Question 18,4+4,2,5,+,1,1
-4 + 5,4+5,Question 1,4+5,4,5,+,1,1
-4 + 5,4+5,Question 2,4+5,4,4,+,1,1
-4 + 5,4+5,Question 3,4+5,5,4,+,1,1
-4 + 5,4+5,Question 4,4+5,4,4,+,1,1
-4 + 5,4+5,Question 5,4+5,4,5,+,1,1
-4 + 5,4+5,Question 6,4+5,4,4,+,1,1
-4 + 5,4+5,Question 7,4+5,5,4,+,1,1
-4 + 5,4+5,Question 8,4+5,3,7,+,1,1
-4 + 5,4+5,Question 9,4+5,4,5,+,1,1
-4 + 5,4+5,Question 10,4+5,6,3,+,1,1
-4 + 5,4+5,Question 11,4+5,5,4,+,1,1
-4 + 5,4+5,Question 12,4+5,3,5,+,1,1
-4 + 5,4+5,Question 13,4+5,4,5,+,1,1
-4 + 5,4+5,Question 14,4+5,4,3,+,1,1
-4 + 5,4+5,Question 15,4+5,5,0,+,1,1
-4 + 5,4+5,Question 16,4+5,3,3,+,1,1
-4 + 5,4+5,Question 17,4+5,3,2,+,1,1
-4 + 5,4+5,Question 18,4+5,2,4,+,1,1
-4 + 6,4+6,Question 1,4+6,4,6,+,1,1
-4 + 6,4+6,Question 2,4+6,4,5,+,1,1
-4 + 6,4+6,Question 3,4+6,6,4,+,1,1
-4 + 6,4+6,Question 4,4+6,5,4,+,1,1
-4 + 6,4+6,Question 5,4+6,4,6,+,1,1
-4 + 6,4+6,Question 6,4+6,4,5,+,1,1
-4 + 6,4+6,Question 7,4+6,6,4,+,1,1
-4 + 6,4+6,Question 8,4+6,4,4,+,1,1
-4 + 6,4+6,Question 9,4+6,4,6,+,1,1
-4 + 6,4+6,Question 10,4+6,3,4,+,1,1
-4 + 6,4+6,Question 11,4+6,6,4,+,1,1
-4 + 6,4+6,Question 12,4+6,3,5,+,1,1
-4 + 6,4+6,Question 13,4+6,4,6,+,1,1
-4 + 6,4+6,Question 14,4+6,6,3,+,1,1
-4 + 6,4+6,Question 15,4+6,3,7,+,1,1
-4 + 6,4+6,Question 16,4+6,0,4,+,1,1
-4 + 6,4+6,Question 17,4+6,1,1,+,1,1
-4 + 6,4+6,Question 18,4+6,2,1,+,1,1
-5 + 5,5+5,Question 1,5+5,5,5,+,1,1
-5 + 5,5+5,Question 2,5+5,6,4,+,1,1
-5 + 5,5+5,Question 3,5+5,5,5,+,1,1
-5 + 5,5+5,Question 4,5+5,4,6,+,1,1
-5 + 5,5+5,Question 5,5+5,5,5,+,1,1
-5 + 5,5+5,Question 6,5+5,6,4,+,1,1
-5 + 5,5+5,Question 7,5+5,5,5,+,1,1
-5 + 5,5+5,Question 8,5+5,5,4,+,1,1
-5 + 5,5+5,Question 9,5+5,5,5,+,1,1
-5 + 5,5+5,Question 10,5+5,4,2,+,1,1
-5 + 5,5+5,Question 11,5+5,5,5,+,1,1
-5 + 5,5+5,Question 12,5+5,3,4,+,1,1
-5 + 5,5+5,Question 13,5+5,5,5,+,1,1
-5 + 5,5+5,Question 14,5+5,3,6,+,1,1
-5 + 5,5+5,Question 15,5+5,7,3,+,1,1
-5 + 5,5+5,Question 16,5+5,5,0,+,1,1
-5 + 5,5+5,Question 17,5+5,3,1,+,1,1
-5 + 5,5+5,Question 18,5+5,1,4,+,1,1
+Zero Rule,Zeroes,1,,,,,,One Rule,One Rule,1,,,,,,2 + 2,2+2,1,,,,,,2 + 3,2+3,1,,,,,,2 + 4,2+4,1,,,,,,2 + 5,2+5,1,,,,,,2 + 6,2+6,1,,,,,,2 + 7,2+7,1,,,,,,2 + 8 ,2+8,1,,,,,,3 + 3,3+3,1,,,,,,3 + 4,3+4,1,,,,,,3 + 5,3+5,1,,,,,,3 + 6,3+6,1,,,,,,3 + 7,3+7,1,,,,,,4 + 4,4+4,1,,,,,,4 + 5,4+5,1,,,,,,4 + 6,4+6,1,,,,,,5 + 5,5+5,1,,,,,,NEXT,NEXT,NEXT,,,,,,Zero Rule,Zeroes,Question 1,Zeroes,0,1,+,0,1Zero Rule,Zeroes,Question 2,Zeroes,0,2,+,0,1Zero Rule,Zeroes,Question 3,Zeroes,0,3,+,0,1Zero Rule,Zeroes,Question 4,Zeroes,0,4,+,0,1Zero Rule,Zeroes,Question 5,Zeroes,0,5,+,0,1Zero Rule,Zeroes,Question 6,Zeroes,0,6,+,0,1Zero Rule,Zeroes,Question 7,Zeroes,0,7,+,0,1Zero Rule,Zeroes,Question 8,Zeroes,0,8,+,0,1Zero Rule,Zeroes,Question 9,Zeroes,0,9,+,0,1Zero Rule,Zeroes,Question 10,Zeroes,1,0,+,0,1Zero Rule,Zeroes,Question 11,Zeroes,2,0,+,0,1Zero Rule,Zeroes,Question 12,Zeroes,3,0,+,0,1Zero Rule,Zeroes,Question 13,Zeroes,4,0,+,0,1Zero Rule,Zeroes,Question 14,Zeroes,5,0,+,0,1Zero Rule,Zeroes,Question 15,Zeroes,6,0,+,0,1Zero Rule,Zeroes,Question 16,Zeroes,7,0,+,0,1Zero Rule,Zeroes,Question 17,Zeroes,8,0,+,0,1Zero Rule,Zeroes,Question 18,Zeroes,9,0,+,0,1One Rule,One Rule,Question 1,Ones,1,1,+,0,1One Rule,One Rule,Question 2,Ones,1,2,+,0,1One Rule,One Rule,Question 3,Ones,1,3,+,0,1One Rule,One Rule,Question 4,Ones,1,4,+,0,1One Rule,One Rule,Question 5,Ones,1,5,+,0,1One Rule,One Rule,Question 6,Ones,1,6,+,0,1One Rule,One Rule,Question 7,Ones,1,7,+,0,1One Rule,One Rule,Question 8,Ones,1,8,+,0,1One Rule,One Rule,Question 9,Ones,1,9,+,0,1One Rule,One Rule,Question 10,Ones,9,1,+,0,1One Rule,One Rule,Question 11,Ones,8,1,+,0,1One Rule,One Rule,Question 12,Ones,7,1,+,0,1One Rule,One Rule,Question 13,Ones,6,1,+,0,1One Rule,One Rule,Question 14,Ones,5,1,+,0,1One Rule,One Rule,Question 15,Ones,4,1,+,0,1One Rule,One Rule,Question 16,Ones,3,1,+,0,1One Rule,One Rule,Question 17,Ones,2,1,+,0,1One Rule,One Rule,Question 18,Ones,1,0,+,0,12 + 2,2+2,Question 1,2+2,2,2,+,0,12 + 2,2+2,Question 2,2+2,1,0,+,0,12 + 2,2+2,Question 3,2+2,2,2,+,0,12 + 2,2+2,Question 4,2+2,1,1,+,0,12 + 2,2+2,Question 5,2+2,2,2,+,0,12 + 2,2+2,Question 6,2+2,3,1,+,0,12 + 2,2+2,Question 7,2+2,2,2,+,0,12 + 2,2+2,Question 8,2+2,0,9,+,0,12 + 2,2+2,Question 9,2+2,2,2,+,0,12 + 2,2+2,Question 10,2+2,8,0,+,0,12 + 2,2+2,Question 11,2+2,2,2,+,0,12 + 2,2+2,Question 12,2+2,0,7,+,0,12 + 2,2+2,Question 13,2+2,2,2,+,0,12 + 2,2+2,Question 14,2+2,0,6,+,0,12 + 2,2+2,Question 15,2+2,5,0,+,0,12 + 2,2+2,Question 16,2+2,0,4,+,0,12 + 2,2+2,Question 17,2+2,3,0,+,0,12 + 2,2+2,Question 18,2+2,0,2,+,0,12 + 3,2+3,Question 1,2+3,2,3,+,0,12 + 3,2+3,Question 2,2+3,2,2,+,0,12 + 3,2+3,Question 3,2+3,3,2,+,0,12 + 3,2+3,Question 4,2+3,2,2,+,0,12 + 3,2+3,Question 5,2+3,2,3,+,0,12 + 3,2+3,Question 6,2+3,2,2,+,0,12 + 3,2+3,Question 7,2+3,3,2,+,0,12 + 3,2+3,Question 8,2+3,1,4,+,0,12 + 3,2+3,Question 9,2+3,2,3,+,0,12 + 3,2+3,Question 10,2+3,5,1,+,0,12 + 3,2+3,Question 11,2+3,3,2,+,0,12 + 3,2+3,Question 12,2+3,1,6,+,0,12 + 3,2+3,Question 13,2+3,2,3,+,0,12 + 3,2+3,Question 14,2+3,1,7,+,0,12 + 3,2+3,Question 15,2+3,1,0,+,0,12 + 3,2+3,Question 16,2+3,0,2,+,0,12 + 3,2+3,Question 17,2+3,3,0,+,0,12 + 3,2+3,Question 18,2+3,0,4,+,0,12 + 4,2+4,Question 1,2+4,2,4,+,0,12 + 4,2+4,Question 2,2+4,2,3,+,0,12 + 4,2+4,Question 3,2+4,4,2,+,0,12 + 4,2+4,Question 4,2+4,3,2,+,0,12 + 4,2+4,Question 5,2+4,2,4,+,0,12 + 4,2+4,Question 6,2+4,2,3,+,0,12 + 4,2+4,Question 7,2+4,4,2,+,0,12 + 4,2+4,Question 8,2+4,1,8,+,0,12 + 4,2+4,Question 9,2+4,2,4,+,0,12 + 4,2+4,Question 10,2+4,9,1,+,0,12 + 4,2+4,Question 11,2+4,4,2,+,0,12 + 4,2+4,Question 12,2+4,1,7,+,0,12 + 4,2+4,Question 13,2+4,2,4,+,0,12 + 4,2+4,Question 14,2+4,2,2,+,0,12 + 4,2+4,Question 15,2+4,8,0,+,0,12 + 4,2+4,Question 16,2+4,0,7,+,0,12 + 4,2+4,Question 17,2+4,6,0,+,0,12 + 4,2+4,Question 18,2+4,0,5,+,0,12 + 5,2+5,Question 1,2+5,2,5,+,0,12 + 5,2+5,Question 2,2+5,2,4,+,0,12 + 5,2+5,Question 3,2+5,5,2,+,0,12 + 5,2+5,Question 4,2+5,4,2,+,0,12 + 5,2+5,Question 5,2+5,2,5,+,0,12 + 5,2+5,Question 6,2+5,2,4,+,0,12 + 5,2+5,Question 7,2+5,5,2,+,0,12 + 5,2+5,Question 8,2+5,3,2,+,0,12 + 5,2+5,Question 9,2+5,2,5,+,0,12 + 5,2+5,Question 10,2+5,2,3,+,0,12 + 5,2+5,Question 11,2+5,5,2,+,0,12 + 5,2+5,Question 12,2+5,2,2,+,0,12 + 5,2+5,Question 13,2+5,2,5,+,0,12 + 5,2+5,Question 14,2+5,2,2,+,0,12 + 5,2+5,Question 15,2+5,1,6,+,0,12 + 5,2+5,Question 16,2+5,5,1,+,0,12 + 5,2+5,Question 17,2+5,0,9,+,0,12 + 5,2+5,Question 18,2+5,1,0,+,0,12 + 6,2+6,Question 1,2+6,2,6,+,0,12 + 6,2+6,Question 2,2+6,2,5,+,0,12 + 6,2+6,Question 3,2+6,6,2,+,0,12 + 6,2+6,Question 4,2+6,5,2,+,0,12 + 6,2+6,Question 5,2+6,2,6,+,0,12 + 6,2+6,Question 6,2+6,2,5,+,0,12 + 6,2+6,Question 7,2+6,6,2,+,0,12 + 6,2+6,Question 8,2+6,4,2,+,0,12 + 6,2+6,Question 9,2+6,2,6,+,0,12 + 6,2+6,Question 10,2+6,2,3,+,0,12 + 6,2+6,Question 11,2+6,6,2,+,0,12 + 6,2+6,Question 12,2+6,2,2,+,0,12 + 6,2+6,Question 13,2+6,2,6,+,0,12 + 6,2+6,Question 14,2+6,2,0,+,0,12 + 6,2+6,Question 15,2+6,0,3,+,0,12 + 6,2+6,Question 16,2+6,4,1,+,0,12 + 6,2+6,Question 17,2+6,1,3,+,0,12 + 6,2+6,Question 18,2+6,2,1,+,0,12 + 7,2+7,Question 1,2+7,2,7,+,0,12 + 7,2+7,Question 2,2+7,6,2,+,0,12 + 7,2+7,Question 3,2+7,7,2,+,0,12 + 7,2+7,Question 4,2+7,2,6,+,0,12 + 7,2+7,Question 5,2+7,2,7,+,0,12 + 7,2+7,Question 6,2+7,6,2,+,0,12 + 7,2+7,Question 7,2+7,7,2,+,0,12 + 7,2+7,Question 8,2+7,2,5,+,0,12 + 7,2+7,Question 9,2+7,2,7,+,0,12 + 7,2+7,Question 10,2+7,4,2,+,0,12 + 7,2+7,Question 11,2+7,7,2,+,0,12 + 7,2+7,Question 12,2+7,2,3,+,0,12 + 7,2+7,Question 13,2+7,2,7,+,0,12 + 7,2+7,Question 14,2+7,2,2,+,0,12 + 7,2+7,Question 15,2+7,1,2,+,0,12 + 7,2+7,Question 16,2+7,1,0,+,0,12 + 7,2+7,Question 17,2+7,1,1,+,0,12 + 7,2+7,Question 18,2+7,3,1,+,0,12 + 8 ,2+8,Question 1,2+8,2,8,+,0,12 + 8 ,2+8,Question 2,2+8,2,7,+,0,12 + 8 ,2+8,Question 3,2+8,8,2,+,0,12 + 8 ,2+8,Question 4,2+8,7,2,+,0,12 + 8 ,2+8,Question 5,2+8,2,8,+,0,12 + 8 ,2+8,Question 6,2+8,2,7,+,0,12 + 8 ,2+8,Question 7,2+8,8,2,+,0,12 + 8 ,2+8,Question 8,2+8,6,2,+,0,12 + 8 ,2+8,Question 9,2+8,2,8,+,0,12 + 8 ,2+8,Question 10,2+8,2,5,+,0,12 + 8 ,2+8,Question 11,2+8,8,2,+,0,12 + 8 ,2+8,Question 12,2+8,4,2,+,0,12 + 8 ,2+8,Question 13,2+8,2,8,+,0,12 + 8 ,2+8,Question 14,2+8,2,3,+,0,12 + 8 ,2+8,Question 15,2+8,2,2,+,0,12 + 8 ,2+8,Question 16,2+8,4,1,+,0,12 + 8 ,2+8,Question 17,2+8,1,5,+,0,12 + 8 ,2+8,Question 18,2+8,2,0,+,0,13 + 3,3+3,Question 1,3+3,3,3,+,0,13 + 3,3+3,Question 2,3+3,2,8,+,0,13 + 3,3+3,Question 3,3+3,3,3,+,0,13 + 3,3+3,Question 4,3+3,8,2,+,0,13 + 3,3+3,Question 5,3+3,3,3,+,0,13 + 3,3+3,Question 6,3+3,2,8,+,0,13 + 3,3+3,Question 7,3+3,3,3,+,0,13 + 3,3+3,Question 8,3+3,7,2,+,0,13 + 3,3+3,Question 9,3+3,3,3,+,0,13 + 3,3+3,Question 10,3+3,2,6,+,0,13 + 3,3+3,Question 11,3+3,3,3,+,0,13 + 3,3+3,Question 12,3+3,5,2,+,0,13 + 3,3+3,Question 13,3+3,3,3,+,0,13 + 3,3+3,Question 14,3+3,2,4,+,0,13 + 3,3+3,Question 15,3+3,3,2,+,0,13 + 3,3+3,Question 16,3+3,2,2,+,0,13 + 3,3+3,Question 17,3+3,1,6,+,0,13 + 3,3+3,Question 18,3+3,3,0,+,0,13 + 4,3+4,Question 1,3+4,3,4,+,0,13 + 4,3+4,Question 2,3+4,3,3,+,0,13 + 4,3+4,Question 3,3+4,4,3,+,0,13 + 4,3+4,Question 4,3+4,3,3,+,0,13 + 4,3+4,Question 5,3+4,3,4,+,0,13 + 4,3+4,Question 6,3+4,3,3,+,0,13 + 4,3+4,Question 7,3+4,4,3,+,0,13 + 4,3+4,Question 8,3+4,2,8,+,0,13 + 4,3+4,Question 9,3+4,3,4,+,0,13 + 4,3+4,Question 10,3+4,2,7,+,0,13 + 4,3+4,Question 11,3+4,4,3,+,0,13 + 4,3+4,Question 12,3+4,6,2,+,0,13 + 4,3+4,Question 13,3+4,3,4,+,0,13 + 4,3+4,Question 14,3+4,2,5,+,0,13 + 4,3+4,Question 15,3+4,4,2,+,0,13 + 4,3+4,Question 16,3+4,2,3,+,0,13 + 4,3+4,Question 17,3+4,2,2,+,0,13 + 4,3+4,Question 18,3+4,1,7,+,0,13 + 5,3+5,Question 1,3+5,3,5,+,0,13 + 5,3+5,Question 2,3+5,3,4,+,0,13 + 5,3+5,Question 3,3+5,5,3,+,0,13 + 5,3+5,Question 4,3+5,4,3,+,0,13 + 5,3+5,Question 5,3+5,3,5,+,0,13 + 5,3+5,Question 6,3+5,3,4,+,0,13 + 5,3+5,Question 7,3+5,5,3,+,0,13 + 5,3+5,Question 8,3+5,3,3,+,0,13 + 5,3+5,Question 9,3+5,3,5,+,0,13 + 5,3+5,Question 10,3+5,8,2,+,0,13 + 5,3+5,Question 11,3+5,5,3,+,0,13 + 5,3+5,Question 12,3+5,2,7,+,0,13 + 5,3+5,Question 13,3+5,3,5,+,0,13 + 5,3+5,Question 14,3+5,6,2,+,0,13 + 5,3+5,Question 15,3+5,2,5,+,0,13 + 5,3+5,Question 16,3+5,3,2,+,0,13 + 5,3+5,Question 17,3+5,8,1,+,0,13 + 5,3+5,Question 18,3+5,0,4,+,0,13 + 6,3+6,Question 1,3+6,3,6,+,0,13 + 6,3+6,Question 2,3+6,3,5,+,0,13 + 6,3+6,Question 3,3+6,6,3,+,0,13 + 6,3+6,Question 4,3+6,5,3,+,0,13 + 6,3+6,Question 5,3+6,3,6,+,0,13 + 6,3+6,Question 6,3+6,3,5,+,0,13 + 6,3+6,Question 7,3+6,6,3,+,0,13 + 6,3+6,Question 8,3+6,4,3,+,0,13 + 6,3+6,Question 9,3+6,3,6,+,0,13 + 6,3+6,Question 10,3+6,3,3,+,0,13 + 6,3+6,Question 11,3+6,6,3,+,0,13 + 6,3+6,Question 12,3+6,8,2,+,0,13 + 6,3+6,Question 13,3+6,3,6,+,0,13 + 6,3+6,Question 14,3+6,2,2,+,0,13 + 6,3+6,Question 15,3+6,1,9,+,0,13 + 6,3+6,Question 16,3+6,0,5,+,0,13 + 6,3+6,Question 17,3+6,2,3,+,0,13 + 6,3+6,Question 18,3+6,4,2,+,0,13 + 7,3+7,Question 1,3+7,3,7,+,0,13 + 7,3+7,Question 2,3+7,3,6,+,0,13 + 7,3+7,Question 3,3+7,7,3,+,0,13 + 7,3+7,Question 4,3+7,6,3,+,0,13 + 7,3+7,Question 5,3+7,3,7,+,0,13 + 7,3+7,Question 6,3+7,3,6,+,0,13 + 7,3+7,Question 7,3+7,7,3,+,0,13 + 7,3+7,Question 8,3+7,5,3,+,0,13 + 7,3+7,Question 9,3+7,3,7,+,0,13 + 7,3+7,Question 10,3+7,4,3,+,0,13 + 7,3+7,Question 11,3+7,7,3,+,0,13 + 7,3+7,Question 12,3+7,3,3,+,0,13 + 7,3+7,Question 13,3+7,3,7,+,0,13 + 7,3+7,Question 14,3+7,5,2,+,0,13 + 7,3+7,Question 15,3+7,2,6,+,0,13 + 7,3+7,Question 16,3+7,0,6,+,0,13 + 7,3+7,Question 17,3+7,7,0,+,0,13 + 7,3+7,Question 18,3+7,0,8,+,0,14 + 4,4+4,Question 1,4+4,4,4,+,0,14 + 4,4+4,Question 2,4+4,7,3,+,0,14 + 4,4+4,Question 3,4+4,4,4,+,0,14 + 4,4+4,Question 4,4+4,3,7,+,0,14 + 4,4+4,Question 5,4+4,4,4,+,0,14 + 4,4+4,Question 6,4+4,7,3,+,0,14 + 4,4+4,Question 7,4+4,4,4,+,0,14 + 4,4+4,Question 8,4+4,3,6,+,0,14 + 4,4+4,Question 9,4+4,4,4,+,0,14 + 4,4+4,Question 10,4+4,5,3,+,0,14 + 4,4+4,Question 11,4+4,4,4,+,0,14 + 4,4+4,Question 12,4+4,3,4,+,0,14 + 4,4+4,Question 13,4+4,4,4,+,0,14 + 4,4+4,Question 14,4+4,3,3,+,0,14 + 4,4+4,Question 15,4+4,8,2,+,0,14 + 4,4+4,Question 16,4+4,2,7,+,0,14 + 4,4+4,Question 17,4+4,6,2,+,0,14 + 4,4+4,Question 18,4+4,2,5,+,0,14 + 5,4+5,Question 1,4+5,4,5,+,0,14 + 5,4+5,Question 2,4+5,4,4,+,0,14 + 5,4+5,Question 3,4+5,5,4,+,0,14 + 5,4+5,Question 4,4+5,4,4,+,0,14 + 5,4+5,Question 5,4+5,4,5,+,0,14 + 5,4+5,Question 6,4+5,4,4,+,0,14 + 5,4+5,Question 7,4+5,5,4,+,0,14 + 5,4+5,Question 8,4+5,3,7,+,0,14 + 5,4+5,Question 9,4+5,4,5,+,0,14 + 5,4+5,Question 10,4+5,6,3,+,0,14 + 5,4+5,Question 11,4+5,5,4,+,0,14 + 5,4+5,Question 12,4+5,3,5,+,0,14 + 5,4+5,Question 13,4+5,4,5,+,0,14 + 5,4+5,Question 14,4+5,4,3,+,0,14 + 5,4+5,Question 15,4+5,5,0,+,0,14 + 5,4+5,Question 16,4+5,3,3,+,0,14 + 5,4+5,Question 17,4+5,3,2,+,0,14 + 5,4+5,Question 18,4+5,2,4,+,0,14 + 6,4+6,Question 1,4+6,4,6,+,0,14 + 6,4+6,Question 2,4+6,4,5,+,0,14 + 6,4+6,Question 3,4+6,6,4,+,0,14 + 6,4+6,Question 4,4+6,5,4,+,0,14 + 6,4+6,Question 5,4+6,4,6,+,0,14 + 6,4+6,Question 6,4+6,4,5,+,0,14 + 6,4+6,Question 7,4+6,6,4,+,0,14 + 6,4+6,Question 8,4+6,4,4,+,0,14 + 6,4+6,Question 9,4+6,4,6,+,0,14 + 6,4+6,Question 10,4+6,3,4,+,0,14 + 6,4+6,Question 11,4+6,6,4,+,0,14 + 6,4+6,Question 12,4+6,3,5,+,0,14 + 6,4+6,Question 13,4+6,4,6,+,0,14 + 6,4+6,Question 14,4+6,6,3,+,0,14 + 6,4+6,Question 15,4+6,3,7,+,0,14 + 6,4+6,Question 16,4+6,0,4,+,0,14 + 6,4+6,Question 17,4+6,1,1,+,0,14 + 6,4+6,Question 18,4+6,2,1,+,0,15 + 5,5+5,Question 1,5+5,5,5,+,0,15 + 5,5+5,Question 2,5+5,6,4,+,0,15 + 5,5+5,Question 3,5+5,5,5,+,0,15 + 5,5+5,Question 4,5+5,4,6,+,0,15 + 5,5+5,Question 5,5+5,5,5,+,0,15 + 5,5+5,Question 6,5+5,6,4,+,0,15 + 5,5+5,Question 7,5+5,5,5,+,0,15 + 5,5+5,Question 8,5+5,5,4,+,0,15 + 5,5+5,Question 9,5+5,5,5,+,0,15 + 5,5+5,Question 10,5+5,4,2,+,0,15 + 5,5+5,Question 11,5+5,5,5,+,0,15 + 5,5+5,Question 12,5+5,3,4,+,0,15 + 5,5+5,Question 13,5+5,5,5,+,0,15 + 5,5+5,Question 14,5+5,3,6,+,0,15 + 5,5+5,Question 15,5+5,7,3,+,0,15 + 5,5+5,Question 16,5+5,5,0,+,0,15 + 5,5+5,Question 17,5+5,3,1,+,0,15 + 5,5+5,Question 18,5+5,1,4,+,0,1

@@ -49,14 +49,26 @@
                }
 
 
-              //Inserting the new levelinto the database
-              $user->addLevel(array( 
-                'name' => $fileop[0],
-                'description' => $fileop[1],
-                'time_limit' => $fileop[2],
-                'class_id' => $classInfo['class_id']
-                ));
+              //Checking if the level name exists in the database already with the same class
+              $check = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
+                  $fileop[0],
+                  $classInfo['class_id']
+                  ));
+              if($check->count()) {
+                 print_r($fileop[0] . " already exsits in the class <br>");
+                } 
+              else{
+
+                //Inserting the new levelinto the database
+                $user->addLevel(array( 
+                  'name' => $fileop[0],
+                  'description' => $fileop[1],
+                  'time_limit' => $fileop[2],
+                  'class_id' => $classInfo['class_id']
+                  ));
               }
+
+            }
 
 
 
