@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,25 +17,44 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="tire-tracks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="P8L-sG-WKC">
-                    <rect key="frame" x="-33" y="31" width="546" height="381"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="P8L-sG-WKC" secondAttribute="height" multiplier="182:127" id="IJ7-lk-UPn"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="381" id="TTc-NM-SU4"/>
-                        <constraint firstAttribute="height" constant="381" id="TdP-p9-y5N"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="546" id="qli-1i-bvG"/>
-                        <constraint firstAttribute="width" constant="546" id="x5c-RC-pFE"/>
-                    </constraints>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tire-tracks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sky-hg-Cxl">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="-19" y="42" width="529" height="333"/>
+                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="sky-hg-Cxl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="54" id="1eN-1A-HN0"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstAttribute="trailing" secondItem="sky-hg-Cxl" secondAttribute="trailing" constant="-25" id="gCn-FS-iXV"/>
+                <constraint firstItem="sky-hg-Cxl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-24" id="kor-He-Ggj"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="sky-hg-Cxl"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="1eN-1A-HN0"/>
+                    <exclude reference="gCn-FS-iXV"/>
+                    <exclude reference="kor-He-Ggj"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="subviews">
+                    <include reference="sky-hg-Cxl"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="1eN-1A-HN0"/>
+                    <include reference="gCn-FS-iXV"/>
+                    <include reference="kor-He-Ggj"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>

@@ -10,10 +10,10 @@
 #define GraylingMathApp_baseURL_h
 
 
-//#define baseURL @"http://graylingmath.cloudapp.net/WebPortal/"
+#define baseURL @"http://graylingmath.cloudapp.net/WebPortal/"
 
 
-#define baseURL @"http://localhost/WebPortal/"
+//#define baseURL @"http://localhost/WebPortal/"
 
 
 #endif

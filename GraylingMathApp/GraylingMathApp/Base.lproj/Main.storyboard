@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -152,7 +153,7 @@
                                         <exclude reference="l0T-Hg-Hwv"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="695" y="122" width="50" height="30"/>
                                     <mask key="constraints">
                                         <include reference="l0T-Hg-Hwv"/>
@@ -190,7 +191,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="363" y="454" width="49" height="30"/>
                                 </variation>
                                 <connections>
@@ -570,6 +571,7 @@
         <!--Map-->
         <scene sceneID="Z2T-q6-Nz0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XBp-5C-CbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Map" id="6ew-p4-Vey" customClass="Map" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P1x-Fy-jGR"/>
@@ -579,6 +581,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVb-IO-geF">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlF-89-0PT">
                                 <rect key="frame" x="39" y="20" width="63" height="30"/>
                                 <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
@@ -593,11 +598,38 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="oVb-IO-geF" secondAttribute="trailing" constant="-16" id="DYA-YM-eE9"/>
+                            <constraint firstItem="EwB-2J-hTr" firstAttribute="top" secondItem="oVb-IO-geF" secondAttribute="bottom" id="EY0-Z8-fjG"/>
+                            <constraint firstItem="oVb-IO-geF" firstAttribute="top" secondItem="PoW-Fp-vJ1" secondAttribute="topMargin" id="Meh-de-dOr"/>
+                            <constraint firstItem="oVb-IO-geF" firstAttribute="leading" secondItem="PoW-Fp-vJ1" secondAttribute="leadingMargin" constant="-16" id="YUi-bD-Dn7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="oVb-IO-geF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="EY0-Z8-fjG"/>
+                                <exclude reference="DYA-YM-eE9"/>
+                                <exclude reference="Meh-de-dOr"/>
+                                <exclude reference="YUi-bD-Dn7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="oVb-IO-geF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="EY0-Z8-fjG"/>
+                                <include reference="DYA-YM-eE9"/>
+                                <include reference="Meh-de-dOr"/>
+                                <include reference="YUi-bD-Dn7"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XBp-5C-CbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-579" y="361"/>
+            <point key="canvasLocation" x="-579" y="360.75"/>
         </scene>
         <!--Class Login-->
         <scene sceneID="Vb0-k8-ojp">
@@ -1198,7 +1230,7 @@
                                         <exclude reference="3AY-Q5-eA3"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="695" y="122" width="50" height="30"/>
                                     <mask key="constraints">
                                         <include reference="3AY-Q5-eA3"/>
@@ -1236,7 +1268,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="363" y="454" width="49" height="30"/>
                                 </variation>
                                 <connections>
@@ -1598,6 +1630,7 @@
     </scenes>
     <resources>
         <image name="raceCarButton.png" width="600" height="337"/>
+        <image name="track.png" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GO7-GP-1lG"/>

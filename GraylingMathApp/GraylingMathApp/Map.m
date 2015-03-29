@@ -20,6 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
     //Grab the level infomation
     [self getLevelData];
@@ -68,7 +69,7 @@
 - (void)buttonPressed2:(UIButton *)button {
     
     //Setting the button
-    UIButton *theButton = (UIButton *)button;
+    //UIButton *theButton = (UIButton *)button;
     
     //alert to show that the level is not selectable
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Level Locked!" message:[NSString stringWithFormat:@"Please complete the previous level with ALL of the questions right to move onto the this level."] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
@@ -87,6 +88,12 @@
     
     NSInteger xPosition = 60;
     
+    NSInteger YValue = 150;
+    NSInteger yPosition = YValue;
+    
+    NSInteger rowCount = 0;
+    BOOL rowDirection = true; //Right = true; Left = false
+    
     //Creating variables to store level info
     NSString * levelName;
     NSString * prevlevelStatus;
@@ -104,14 +111,19 @@
         
         //Creating the button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        button.frame = CGRectMake(2210.0, 360.0, 150.0, 60.0);
+        button.frame = CGRectMake(0, 21, 102, 92);
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];
         [button.titleLabel setFont:[UIFont fontWithName:@"chalkboard SE" size:13.0]];
-        button.backgroundColor = [UIColor blackColor];
         [button setTitle:levelName forState:UIControlStateNormal];
-        [button sizeToFit];
+        
         [button setTag:i];
-        button.center = CGPointMake(320/2, xPosition);
+        button.center = CGPointMake(xPosition,yPosition);
+        
+        
+    
+        
+
+        
         
         
         // Add an action in current code file (i.e. target)
@@ -119,20 +131,91 @@
        {
            [button addTarget:self action:@selector(buttonPressed:)
             forControlEvents:UIControlEventTouchUpInside];
+           
+           UIImage* buttonImage =[UIImage imageNamed:@"car_redR.png"];
+           
+    
+           [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+           
+           [self.view addSubview: button];
+           
        } else {
            [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal ];
+           
+           UIImage* buttonImage =[UIImage imageNamed:@"car_lockR.png"];
+           [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
            
            [button addTarget:self action:@selector(buttonPressed2:)
             forControlEvents:UIControlEventTouchUpInside];
        }
         
-        //Incrementing the xposition
-        xPosition += 60;
+        //Incrementing the row counter
+        rowCount += 1;
+        
+        //Incrementing or decrementing x position
+        if(rowDirection)
+            xPosition += 100;
+        else
+            xPosition -= 100;
+        
+        
+        if(rowCount == 6){
+            
+            //Resetting the row count
+            rowCount = 0;
+            
+            
+            //Incrementng the y position
+            YValue -= 10;
+            yPosition += YValue;
+            
+            //Flip direction
+            rowDirection = !rowDirection;
+        }
         
         [self.view addSubview:button];
     }
     
 }
+
+
+
++ (UIButton *)buttonWithTitle:(NSString *)title
+                       target:(id)target
+                     selector:(SEL)selector
+                        frame:(CGRect)frame
+                        image:(UIImage *)image
+                 imagePressed:(UIImage *)imagePressed
+                darkTextColor:(BOOL)darkTextColor
+{
+    UIButton *button = [[UIButton alloc] initWithFrame:frame];
+    
+    button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    
+    UIImage *newImage = [image stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
+    [button setBackgroundImage:newImage forState:UIControlStateNormal];
+    
+    UIImage *newPressedImage = [imagePressed stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
+    [button setBackgroundImage:newPressedImage forState:UIControlStateHighlighted];
+    
+    [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    
+    // in case the parent view draws with a custom color or gradient, use a transparent color
+    button.backgroundColor = [UIColor clearColor];
+    
+    return button;
+}
+
+
+
+
+
+
 
 //Grabs all the level data
 - (void)getLevelData
@@ -176,6 +259,9 @@
     //Displaying the json array
     NSLog(@"%@", levelInfoJson);
 }
+
+
+
 
 
 
