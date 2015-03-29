@@ -48,16 +48,30 @@
                 break;
                }
 
+              //Variable to store failures
+               $failure = false;
+    
+              //Checking if the level count is 42 or below
+              $levelCount = $db->query('SELECT * FROM level WHERE class_id = ?', array($classInfo['class_id']));
+              if($levelCount->count() > 42){
+                 print_r($fileop[0] . " was NOT added. There can't be more than 42 levels<br>");
+                  $failure = true;
+                }
+
 
               //Checking if the level name exists in the database already with the same class
-              $check = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
-                  $fileop[0],
-                  $classInfo['class_id']
-                  ));
-              if($check->count()) {
-                 print_r($fileop[0] . " already exsits in the class <br>");
-                } 
-              else{
+              $nameCheck = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
+                      $fileop[0],
+                      $classInfo['class_id']
+                    ));
+              if($nameCheck->count()) {
+                   print_r($fileop[0] . " already exsits in the class <br>");
+                  $failure = true;
+              } 
+
+            
+
+              if(!$failure){
 
                 //Inserting the new levelinto the database
                 $user->addLevel(array( 

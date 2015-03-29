@@ -48,14 +48,27 @@ if(Input::exists()) {
              ),
           ));
         
-          //Checking if the level name exists in the database already with the same class
-            $check = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
+        $failure = false;
+        //Checking if the level count is 42 or below
+        $levelCount = $db->query('SELECT * FROM level WHERE class_id = ?', array($classInfo['class_id']));
+        if($levelCount->count() > 42){
+            echo ("This level was NOT added. There can't be more than 42 levels");
+            $failure = true;
+          }
+
+
+        //Checking if the level name exists in the database already with the same class
+        $nameCheck = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
                 $_POST['level_name'],
                 $classInfo['class_id']
-                 ));
-        if($check->count()) {
+                ));
+        if($nameCheck->count()) {
             echo ("This level name already exsits in the class");
-        } else {
+            $failure = true;
+        } 
+        
+        
+        if(!$failure){
 
              if($validation->passed()) {
 

@@ -92,6 +92,7 @@
     NSInteger yPosition = YValue;
     
     NSInteger carCount = 0;
+    NSInteger rowCount = 0;
     BOOL rowDirection = true; //Right = true; Left = false
     
     //Creating variables to store level info
@@ -104,6 +105,10 @@
     //Loop through each level
     for(int i = 0; i < numberOfLevels; i++) {
         
+        //Stopping if i > 42
+        if(i >= 42)
+            break;
+        
         //Setting the level info
         levelName = [[levelInfoJson objectAtIndex:i] objectForKey:@"levelName"];
         if(i>0)
@@ -115,18 +120,13 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.frame = CGRectMake(0, 21, 102, 92);
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];
-        [button.titleLabel setFont:[UIFont fontWithName:@"chalkboard SE" size:13.0]];
+        [button.titleLabel setFont:[UIFont fontWithName:@"chalkboard SE" size:17.0]];
         [button setTitle:levelName forState:UIControlStateNormal];
         
         [button setTag:i];
         button.center = CGPointMake(xPosition,yPosition);
         
-        
-    
-        
 
-        
-        
         
         // Add an action in current code file (i.e. target)
        if ( ([prevlevelStatus isEqualToString:@"1"]) || (i == 0))
@@ -169,22 +169,36 @@
         
         
         if(carCount == 6){
+           
             
             //Resetting the car count
             carCount = 0;
-            
-            
+      
             //Incrementng the y position
+            if(rowCount == 3)
+                YValue += 30;
+            if(rowCount == 5)
+                YValue += 15;
             YValue -= 10;
             yPosition += YValue;
             
             if(rowDirection)
+            {
                 xPosition -= 60;
+                if(rowCount ==4 )
+                    xPosition -= 30;
+            }
             else
+            {
                 xPosition += 100;
+            }
             
             //Flip direction
             rowDirection = !rowDirection;
+            
+            //Increment the car row count
+            rowCount += 1;
+           
         }
         
         [self.view addSubview:button];
