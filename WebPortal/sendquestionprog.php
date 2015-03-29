@@ -9,6 +9,34 @@
 	//Grabbing Variables from the link
 	$studentID = $_GET["studentid"];
 	$classID =  $_GET["classid"];
+	$questionProgData = $_GET["questionProg"];
+
+	//Converting into json
+	$questionProgData = json_decode($questionProgData)[0];
+	
+	//Creating a fields array
+	$fields = array();
+
+	//Looping through each progress and inserting it into the database
+	foreach($questionProgData as $questionProg)
+	{
+
+		$questionProg = get_object_vars($questionProg);
+	
+		$fields['answer'] = $questionProg['User Answer'];
+		$fields['attempts'] = 1;
+		//updating the question progress table with the passed info. If it works it echos 1, else it echos 0
+		if($db->update('question_progress', $questionProg['QuestionID'], 'question_id', $fields)) 
+			echo "1";
+		else
+			echo "0";
+	}
+
+
+/*
+	//Grabbing Variables from the link
+	$studentID = $_GET["studentid"];
+	$classID =  $_GET["classid"];
 	$level = $_GET["level"];
 	$question = $_GET["question"];
 
@@ -61,7 +89,7 @@
 	else
 		echo "0";
 
-
+*/
 
 
 

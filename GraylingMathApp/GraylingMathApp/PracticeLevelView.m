@@ -242,8 +242,9 @@
         currentQuestionProg = [[NSMutableDictionary alloc]initWithCapacity:2];
         
         //Saving the question progress if the question was wrong
-        [currentQuestionProg setObject:[NSNumber numberWithInt:questionID] forKey:@"QuestionID"];
         [currentQuestionProg setObject:[NSNumber numberWithInt:userAnswer] forKey:@"User Answer"];
+        [currentQuestionProg setObject:[NSNumber numberWithInt:[questionID intValue]] forKey:@"QuestionID"];
+        
         
         [questionProg addObject:currentQuestionProg];
         
