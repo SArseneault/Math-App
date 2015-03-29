@@ -70,13 +70,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GraylingMathApp/Map.m"
-            timestampString = "449353492.670005"
+            timestampString = "449358981.713424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-drawLevelButtons"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GraylingMathApp/Map.h"
+            timestampString = "449355269.73535"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

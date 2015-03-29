@@ -28,8 +28,6 @@
 		2068F7841ABE7A4E0074BB25 /* tire-tracks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2068F7831ABE7A4E0074BB25 /* tire-tracks.jpg */; };
 		2074BC211AB6769200D49D86 /* ClassLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074BC201AB6769200D49D86 /* ClassLogin.m */; };
 		2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074BC221AB6790900D49D86 /* StudentLogin.m */; };
-		2077BD1F1AC8270300CD7BA0 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD131AC8270300CD7BA0 /* track.png */; };
-		2077BD201AC8270300CD7BA0 /* track.psd in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD141AC8270300CD7BA0 /* track.psd */; };
 		2077BD291AC8389A00CD7BA0 /* car_blueR.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD211AC8389A00CD7BA0 /* car_blueR.png */; };
 		2077BD2A1AC8389A00CD7BA0 /* car_greenR.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD221AC8389A00CD7BA0 /* car_greenR.png */; };
 		2077BD2B1AC8389A00CD7BA0 /* car_lockR.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD231AC8389A00CD7BA0 /* car_lockR.png */; };
@@ -47,6 +45,7 @@
 		2077BD3F1AC8392400CD7BA0 /* car_redL.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD371AC8392400CD7BA0 /* car_redL.png */; };
 		2077BD401AC8392400CD7BA0 /* car_yellowL.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD381AC8392400CD7BA0 /* car_yellowL.png */; };
 		20D45FBB1ABE306D005EEBCE /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D45FBA1ABE306D005EEBCE /* Map.m */; };
+		20F8F6431AC89D2C00500A95 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F8F6421AC89D2C00500A95 /* track.png */; };
 		A2B207D81ABB8A1500676DC4 /* level.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D71ABB8A1500676DC4 /* level.json */; };
 		A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D91ABBB5DB00676DC4 /* studentLevel.json */; };
 /* End PBXBuildFile section */
@@ -96,8 +95,6 @@
 		2074BC201AB6769200D49D86 /* ClassLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassLogin.m; sourceTree = "<group>"; };
 		2074BC221AB6790900D49D86 /* StudentLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentLogin.m; sourceTree = "<group>"; };
 		2074BC231AB6790900D49D86 /* StudentLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentLogin.h; sourceTree = "<group>"; };
-		2077BD131AC8270300CD7BA0 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
-		2077BD141AC8270300CD7BA0 /* track.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = track.psd; sourceTree = "<group>"; };
 		2077BD211AC8389A00CD7BA0 /* car_blueR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_blueR.png; sourceTree = "<group>"; };
 		2077BD221AC8389A00CD7BA0 /* car_greenR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_greenR.png; sourceTree = "<group>"; };
 		2077BD231AC8389A00CD7BA0 /* car_lockR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_lockR.png; sourceTree = "<group>"; };
@@ -116,6 +113,7 @@
 		2077BD381AC8392400CD7BA0 /* car_yellowL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_yellowL.png; sourceTree = "<group>"; };
 		20D45FB91ABE3061005EEBCE /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		20D45FBA1ABE306D005EEBCE /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		20F8F6421AC89D2C00500A95 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
 		A2B207D71ABB8A1500676DC4 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
 		A2B207D91ABBB5DB00676DC4 /* studentLevel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studentLevel.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,8 +280,7 @@
 		2077BD121AC8270300CD7BA0 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				2077BD131AC8270300CD7BA0 /* track.png */,
-				2077BD141AC8270300CD7BA0 /* track.psd */,
+				20F8F6421AC89D2C00500A95 /* track.png */,
 			);
 			name = Maps;
 			path = Assets/Maps;
@@ -405,8 +402,6 @@
 				2077BD3F1AC8392400CD7BA0 /* car_redL.png in Resources */,
 				2077BD2E1AC8389A00CD7BA0 /* car_purpleR.png in Resources */,
 				2077BD3E1AC8392400CD7BA0 /* car_purpleL.png in Resources */,
-				2077BD201AC8270300CD7BA0 /* track.psd in Resources */,
-				2077BD1F1AC8270300CD7BA0 /* track.png in Resources */,
 				2036F4841AC53E90006ACE12 /* Images.xcassets in Resources */,
 				A2B207D81ABB8A1500676DC4 /* level.json in Resources */,
 				2077BD401AC8392400CD7BA0 /* car_yellowL.png in Resources */,
@@ -416,6 +411,7 @@
 				2077BD391AC8392400CD7BA0 /* car_blueL.png in Resources */,
 				2077BD301AC8389A00CD7BA0 /* car_yellowR.png in Resources */,
 				2077BD3D1AC8392400CD7BA0 /* car_pinkL.png in Resources */,
+				20F8F6431AC89D2C00500A95 /* track.png in Resources */,
 				2077BD3A1AC8392400CD7BA0 /* car_greenL.png in Resources */,
 				2068F7841ABE7A4E0074BB25 /* tire-tracks.jpg in Resources */,
 				2077BD291AC8389A00CD7BA0 /* car_blueR.png in Resources */,
@@ -583,6 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "67633be2-dd2e-4dfe-b075-49b3dec8b50b";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -597,6 +594,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "67633be2-dd2e-4dfe-b075-49b3dec8b50b";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

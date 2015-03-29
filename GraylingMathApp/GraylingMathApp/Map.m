@@ -13,19 +13,21 @@
 
 @interface Map()
 
+@property (weak, nonatomic) IBOutlet UIImageView *backGroundImage;
+
 @end
 
 @implementation Map
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
     //Grab the level infomation
     [self getLevelData];
     
-    
+    [self.view insertSubview:_backGroundImage atIndex:0];
     
     //Drawing a button for each level
     [self drawLevelButtons];
@@ -126,7 +128,9 @@
         [button setTag:i];
         button.center = CGPointMake(xPosition,yPosition);
         
+        
 
+        
         
         // Add an action in current code file (i.e. target)
        if ( ([prevlevelStatus isEqualToString:@"1"]) || (i == 0))
@@ -157,6 +161,7 @@
            [button addTarget:self action:@selector(buttonPressed2:)
             forControlEvents:UIControlEventTouchUpInside];
        }
+   
         
         //Incrementing the car counter
         carCount += 1;

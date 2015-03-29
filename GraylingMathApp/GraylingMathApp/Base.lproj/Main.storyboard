@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -115,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="400"/>
+            <point key="canvasLocation" x="363.75" y="512.25"/>
         </scene>
         <!--TestLevelView-->
         <scene sceneID="Tup-oE-3V8">
@@ -569,67 +568,75 @@
             <point key="canvasLocation" x="-1376" y="323"/>
         </scene>
         <!--Map-->
-        <scene sceneID="Z2T-q6-Nz0">
+        <scene sceneID="QPr-cR-zQH">
             <objects>
-                <viewController storyboardIdentifier="Map" id="6ew-p4-Vey" customClass="Map" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="uHE-61-2hL" customClass="Map" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="P1x-Fy-jGR"/>
-                        <viewControllerLayoutGuide type="bottom" id="EwB-2J-hTr"/>
+                        <viewControllerLayoutGuide type="top" id="RQf-su-PR5"/>
+                        <viewControllerLayoutGuide type="bottom" id="FhP-bO-rOk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PoW-Fp-vJ1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="Dx6-N6-I2z">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVb-IO-geF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track.png" translatesAutoresizingMaskIntoConstraints="NO" id="CDl-Ck-oi0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlF-89-0PT">
-                                <rect key="frame" x="39" y="20" width="63" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-gB-jhg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
                                 <state key="normal" title="Home">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="69" y="20" width="90" height="30"/>
+                                </variation>
                                 <connections>
-                                    <segue destination="eb0-BK-cpT" kind="modal" id="GPG-3j-jq1"/>
+                                    <segue destination="eb0-BK-cpT" kind="modal" id="dXd-AG-ebi"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="oVb-IO-geF" secondAttribute="trailing" constant="-16" id="DYA-YM-eE9"/>
-                            <constraint firstItem="EwB-2J-hTr" firstAttribute="top" secondItem="oVb-IO-geF" secondAttribute="bottom" id="EY0-Z8-fjG"/>
-                            <constraint firstItem="oVb-IO-geF" firstAttribute="top" secondItem="PoW-Fp-vJ1" secondAttribute="topMargin" id="Meh-de-dOr"/>
-                            <constraint firstItem="oVb-IO-geF" firstAttribute="leading" secondItem="PoW-Fp-vJ1" secondAttribute="leadingMargin" constant="-16" id="YUi-bD-Dn7"/>
+                            <constraint firstItem="FhP-bO-rOk" firstAttribute="top" secondItem="CDl-Ck-oi0" secondAttribute="bottom" id="OfH-Hz-ckg"/>
+                            <constraint firstItem="CDl-Ck-oi0" firstAttribute="top" secondItem="Dx6-N6-I2z" secondAttribute="topMargin" id="Xx9-mo-amU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CDl-Ck-oi0" secondAttribute="trailing" constant="-16" id="dvP-8y-WDS"/>
+                            <constraint firstItem="CDl-Ck-oi0" firstAttribute="leading" secondItem="Dx6-N6-I2z" secondAttribute="leadingMargin" constant="-16" id="z7H-lH-NpA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="oVb-IO-geF"/>
+                                <exclude reference="CDl-Ck-oi0"/>
+                                <exclude reference="dLB-gB-jhg"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="EY0-Z8-fjG"/>
-                                <exclude reference="DYA-YM-eE9"/>
-                                <exclude reference="Meh-de-dOr"/>
-                                <exclude reference="YUi-bD-Dn7"/>
+                                <exclude reference="Xx9-mo-amU"/>
+                                <exclude reference="dvP-8y-WDS"/>
+                                <exclude reference="z7H-lH-NpA"/>
+                                <exclude reference="OfH-Hz-ckg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="oVb-IO-geF"/>
+                                <include reference="CDl-Ck-oi0"/>
+                                <include reference="dLB-gB-jhg"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="EY0-Z8-fjG"/>
-                                <include reference="DYA-YM-eE9"/>
-                                <include reference="Meh-de-dOr"/>
-                                <include reference="YUi-bD-Dn7"/>
+                                <include reference="Xx9-mo-amU"/>
+                                <include reference="dvP-8y-WDS"/>
+                                <include reference="z7H-lH-NpA"/>
+                                <include reference="OfH-Hz-ckg"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="xVZ-i0-hJW"/>
+                    <connections>
+                        <outlet property="backGroundImage" destination="CDl-Ck-oi0" id="Z9M-gH-OSH"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XBp-5C-CbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6p6-fv-z8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-579" y="360.75"/>
+            <point key="canvasLocation" x="-690" y="312"/>
         </scene>
         <!--Class Login-->
         <scene sceneID="Vb0-k8-ojp">
@@ -812,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqx-c7-FB4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="1571"/>
+            <point key="canvasLocation" x="435" y="1525.5"/>
         </scene>
         <!--Home View-->
         <scene sceneID="wJ9-e6-h3y">
@@ -857,7 +864,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6ew-p4-Vey" kind="modal" id="MJH-x2-aSt"/>
+                                    <segue destination="uHE-61-2hL" kind="modal" id="ec1-hj-mCR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-DE-qf1">
@@ -885,13 +892,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kyP-oJ-DHd"/>
                     <connections>
                         <outlet property="usernameLabel" destination="ZYh-wK-4cK" id="Hdl-Cr-SEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXf-xc-39N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="2230"/>
+            <point key="canvasLocation" x="80.25" y="-315"/>
         </scene>
         <!--About Us-->
         <scene sceneID="UVB-J8-px8">
@@ -1004,7 +1012,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sih-Wt-6WF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="1198"/>
+            <point key="canvasLocation" x="-575.25" y="1712.25"/>
         </scene>
         <!--Student Login-->
         <scene sceneID="toP-65-2oR">
@@ -1183,7 +1191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlX-vh-JmY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="2208"/>
+            <point key="canvasLocation" x="-360.75" y="2365.5"/>
         </scene>
         <!--PracticeLevelView-->
         <scene sceneID="EUm-QG-RUk">
@@ -1633,7 +1641,7 @@
         <image name="track.png" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GO7-GP-1lG"/>
-        <segue reference="XyL-bb-h10"/>
+        <segue reference="LrK-8x-AS6"/>
+        <segue reference="IgK-zJ-R3d"/>
     </inferredMetricsTieBreakers>
 </document>
