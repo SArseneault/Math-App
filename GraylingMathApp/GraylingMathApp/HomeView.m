@@ -89,7 +89,7 @@
     classID = [[json objectAtIndex:0] objectForKey:@"class_id"];
     studentID = [[json objectAtIndex:1] objectForKey:@"student_id"];
     studentName = [[json objectAtIndex:2] objectForKey:@"studentName"];
-    
+   
 
     //Storing the student and class id's
     [[NSUserDefaults standardUserDefaults] setObject:classID forKey:@"classID"];

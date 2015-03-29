@@ -74,6 +74,12 @@
 //Creating a property for the json array
 @property (nonatomic, strong) NSMutableArray * json;
 
+
+
+//Creating a property for the question prog
+@property (nonatomic, strong) NSMutableArray * questionProg;
+@property (nonatomic, strong) NSMutableDictionary * currentQuestionProg;
+
 //Creating a property for the time limit and level name
 @property (strong, nonatomic) NSString *timeLimit;
 @property (strong, nonatomic) NSString *levelName;
