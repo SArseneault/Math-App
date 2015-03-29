@@ -184,33 +184,79 @@
 		public function clearStudentProg($classID){
 			
 
-
-			//Grabbing the level prog data
-			$levelProgData = $this->_db->query('SELECT * FROM level_progress');
+			//Grabbing the level data
+			$levelData = $this->_db->query('SELECT * FROM level  WHERE class_id = ?' , array(
+				$classID
+				));
 			
 			//Getting array of std objects
-			$levelProgData = $levelProgData->results();
+			$levelData = $levelData->results();
+
 
 			//Looping through each level
-			foreach($levelProgData as $levelProg){
+			foreach($levelData as $level){
 
 				//Convert the std object to an array
-	            $levelProg = get_object_vars($levelProg);
+	            $level = get_object_vars($level);
 
-            	//Creating a default progress level
-				$defaultProgress = array(
-	            	'status' => 0,
-	            	'test_time' => '00:00:00',
-	            	'test_attempts' => 0 ,
-	            	'practice_attempts' => 0,
-	            	'practice_time' => '00:00:00'
-	            	);
+
+	            //Grabbing the level prog data
+				$levelProgData = $this->_db->query('SELECT * FROM level_progress  WHERE level_id = ?' , array($level['level_id']));
+				$levelProgData = $levelProgData->results();
+
+				//Looping through each level progress
+				foreach($levelProgData as $levelProg)
+				{
+
+					//Convert the std object to an array
+	            	$levelProg = get_object_vars($levelProg);
+
+					//Creating a default progress level
+					$defaultProgress = array(
+		            	'status' => 0,
+		            	'test_time' => '00:00:00',
+		            	'test_attempts' => 0 ,
+		            	'practice_attempts' => 0,
+		            	'practice_time' => '00:00:00'
+		            	);
 	            
-				//Attempt to update default data for the progress level
-				if(!$this->_db->update('level_progress', $levelProg['levelprog_id'],'levelprog_id', $defaultProgress)) {
-					throw new Exception('There was a problem inserting default progress for one of the students');
+					//Attempt to update default data for the progress level
+					if(!$this->_db->update('level_progress', $levelProg['levelprog_id'],'levelprog_id', $defaultProgress)) 
+						throw new Exception('There was a problem inserting default level progress for one of the students');
+					
+
+
 				}
+
+
+				 //Grabbing the level prog data
+				$questionProgData = $this->_db->query('SELECT * FROM question_progress  WHERE level_id = ?' , array($level['level_id']));
+				$questionProgData = $questionProgData->results();
+
+				//Looping through each level progress
+				foreach($questionProgData as $questionProg)
+				{
+
+
+					//Convert the std object to an array
+	            	$questionProg = get_object_vars($questionProg);
+
+
+					//Creating a default progress level
+					$defaultProgress = array(
+		            	'answer' => -1,
+		            	'attempts' => 0
+		            	);
+	            
+					//Attempt to update default data for the progress level
+					if(!$this->_db->update('question_progress', $questionProg['questionprog_id'],'questionprog_id', $defaultProgress)) 
+						throw new Exception('There was a problem inserting default question progress for one of the students');
+
+
+				}
+
 			}
+			
 		}
 
 		//Removing a student by id
