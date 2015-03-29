@@ -86,18 +86,20 @@
 - (void)drawLevelButtons
 {
     
+    //Creatiing Variables for the position
     NSInteger xPosition = 60;
-    
     NSInteger YValue = 150;
     NSInteger yPosition = YValue;
     
-    NSInteger rowCount = 0;
+    NSInteger carCount = 0;
     BOOL rowDirection = true; //Right = true; Left = false
     
     //Creating variables to store level info
     NSString * levelName;
     NSString * prevlevelStatus;
    
+    //Creating a varaible to store the retireved image
+    NSString * car;
     
     //Loop through each level
     for(int i = 0; i < numberOfLevels; i++) {
@@ -132,9 +134,10 @@
            [button addTarget:self action:@selector(buttonPressed:)
             forControlEvents:UIControlEventTouchUpInside];
            
-           UIImage* buttonImage =[UIImage imageNamed:@"car_redR.png"];
-           
-    
+           //Grab gerenated car color
+           car = [self labelGenerator:rowDirection:carCount];
+           UIImage* buttonImage =[UIImage imageNamed:car];
+
            [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
            
            [self.view addSubview: button];
@@ -142,15 +145,21 @@
        } else {
            [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal ];
            
-           UIImage* buttonImage =[UIImage imageNamed:@"car_lockR.png"];
+           //Determine the corrrect button image based on direction
+           UIImage* buttonImage;
+           if(rowDirection)
+               buttonImage =[UIImage imageNamed:@"car_lockR.png"];
+           else
+               buttonImage =[UIImage imageNamed:@"car_lockL.png"];
+           
            [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
            
            [button addTarget:self action:@selector(buttonPressed2:)
             forControlEvents:UIControlEventTouchUpInside];
        }
         
-        //Incrementing the row counter
-        rowCount += 1;
+        //Incrementing the car counter
+        carCount += 1;
         
         //Incrementing or decrementing x position
         if(rowDirection)
@@ -159,15 +168,20 @@
             xPosition -= 100;
         
         
-        if(rowCount == 6){
+        if(carCount == 6){
             
-            //Resetting the row count
-            rowCount = 0;
+            //Resetting the car count
+            carCount = 0;
             
             
             //Incrementng the y position
             YValue -= 10;
             yPosition += YValue;
+            
+            if(rowDirection)
+                xPosition -= 60;
+            else
+                xPosition += 100;
             
             //Flip direction
             rowDirection = !rowDirection;
@@ -180,35 +194,21 @@
 
 
 
-+ (UIButton *)buttonWithTitle:(NSString *)title
-                       target:(id)target
-                     selector:(SEL)selector
-                        frame:(CGRect)frame
-                        image:(UIImage *)image
-                 imagePressed:(UIImage *)imagePressed
-                darkTextColor:(BOOL)darkTextColor
+- (NSString *) labelGenerator:(BOOL)direction:(NSInteger)carCount
 {
-    UIButton *button = [[UIButton alloc] initWithFrame:frame];
-    
-    button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //Arrays to store both the left an right car directions
+    NSArray * carsR[] ={@"car_blueR" , @"car_greenR" , @"car_orangeR" , @"car_pinkR" , @"car_purpleR" , @"car_redR" , @"car_yellowR"  };
+    NSArray * carsL[] ={@"car_blueL" , @"car_greenL" , @"car_orangeL" , @"car_pinkL" , @"car_purpleL" , @"car_redL" , @"car_yellowL"  };
+    NSString * car;
     
     
-    UIImage *newImage = [image stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
-    [button setBackgroundImage:newImage forState:UIControlStateNormal];
     
-    UIImage *newPressedImage = [imagePressed stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
-    [button setBackgroundImage:newPressedImage forState:UIControlStateHighlighted];
+    if(direction)
+        car = carsR[carCount];
+    else
+        car = carsL[carCount];
     
-    [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
-    
-    // in case the parent view draws with a custom color or gradient, use a transparent color
-    button.backgroundColor = [UIColor clearColor];
-    
-    return button;
+    return car;
 }
 
 
