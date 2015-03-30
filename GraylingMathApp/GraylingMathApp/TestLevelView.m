@@ -19,6 +19,9 @@
     //data for tiles
     TileModel *_tileModel;
     
+    //creates a dragged tile
+    TileUiView *_draggedTile;
+    
     
 }
 
@@ -68,9 +71,7 @@
         
     } else
     {
-        //creates actual keyboard layout
-        NSLog(@"cREATING KEYBOARD");
-        _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
+
         
         [self setUpLevel];
     }
@@ -165,8 +166,31 @@
     //create timer object, call to method increaseTime to increase and display current time spent on level
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0F target:self selector:@selector(increaseTime) userInfo: nil repeats:YES];
     
+    //creates actual keyboard layout
+    NSLog(@"cREATING KEYBOARD");
+    _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
+    
     //call to generate random number method to start game
     [self generateNumber];
+    
+    //Method to create dragged tile
+    [self initDraggedTileView];
+}
+
+#pragma mark - create tile view that will be dragged
+-(void) initDraggedTileView{
+    
+    NSLog(@"Creating Tile Drag");
+    
+    //size of tile
+    _draggedTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
+    
+    //Set to hidden for initial set up
+    _draggedTile.hidden = YES;
+    
+    [self.view addSubview:_draggedTile];
+    
+    
     
 }
 
