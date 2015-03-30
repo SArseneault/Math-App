@@ -78,6 +78,13 @@
     
 }
 
+#pragma mark- method to set up tile in view once keyboard view controller detects a succesfull index in view
+-(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point{
+    
+    NSLog(@"Tile is Recviced");
+    
+}
+
 
 //This function calls a php and returns a json string of questions
 - (void)grabQuestions

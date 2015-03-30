@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TileModel.h"
 
 @interface TestLevelView : UIViewController <UIAlertViewDelegate>
 {
@@ -73,5 +74,8 @@
 
 //Collection View for drag and drop keyboard
 @property (weak, nonatomic) IBOutlet UICollectionView *keyBoard;
+
+//communicate with Keyboard view controller to communicate when tile is pressed
+-(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point;
 
 @end
