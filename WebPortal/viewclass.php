@@ -467,6 +467,12 @@ if($user->classExist()){  ?>
       
         <h1 id="student_ID"></h1>
 
+
+
+
+
+
+
       </div>
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -594,7 +600,7 @@ if($user->classExist()){  ?>
     <div class="modal-content">
 
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" onclick="refreshPage()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Level View</h4></br>
     
         Test Time: <span id="test_time_ID"></span></br>       
@@ -696,7 +702,7 @@ if($user->classExist()){  ?>
 
 
         <div class="modal-footer">
-        <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" onclick="refreshPage()" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
 
 

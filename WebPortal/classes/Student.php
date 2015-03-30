@@ -66,8 +66,11 @@
 			}
 
 
-			//Grabbing the question data
-			$questiondata = $this->_db->get('question', array('class_id', '=', $fields['class_id']));
+			//Grabbing the question data for only the test questions
+			$questiondata = $this->_db->query('SELECT * FROM question WHERE class_id = ? AND question_type = ?', array(
+				$fields['class_id'],
+				1
+				));
 			
 			//Getting array of std objects
 			$questiondata = $questiondata->results();

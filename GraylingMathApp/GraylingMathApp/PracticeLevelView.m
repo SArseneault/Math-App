@@ -18,8 +18,6 @@
 //Synth
 @synthesize timeLimit;
 @synthesize levelName;
-@synthesize questionProg;
-@synthesize currentQuestionProg;
 @synthesize levelID;
 
 
@@ -103,8 +101,6 @@
     
     NSLog(@"Number of questions: %ld",(long)questionsInLevel);
     
-    //Ceating a new question prog array
-    questionProg = [[NSMutableArray alloc]initWithCapacity:questionCount];
 
     
 }
@@ -185,11 +181,6 @@
     //increment question counter
     questionCount++;
     
-    
-    
-    
-    
-    
    
     
     
@@ -238,15 +229,6 @@
     }
     else
     {
-        //Creating a new empty question prog dictionary
-        currentQuestionProg = [[NSMutableDictionary alloc]initWithCapacity:2];
-        
-        //Saving the question progress if the question was wrong
-        [currentQuestionProg setObject:[NSNumber numberWithInt:userAnswer] forKey:@"User Answer"];
-        [currentQuestionProg setObject:[NSNumber numberWithInt:[questionID intValue]] forKey:@"QuestionID"];
-        
-        
-        [questionProg addObject:currentQuestionProg];
         
         //alert to show the users input was wrong
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect!" message:[NSString stringWithFormat:@"%ld %@ %ld = %ld",valueOne, Qoperator, valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
@@ -287,13 +269,7 @@
 -(void) endResult
 {
     
-    //Question progress
-    NSMutableArray * arr = [[NSMutableArray alloc] init];
-    [arr addObject:questionProg];
-    NSError *error;
-    NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData2 encoding:NSUTF8StringEncoding];
-    NSLog(@"QUESTION PROGRESS IN JSON:\n%@", jsonString);
+
     
     
     //stop timer
@@ -327,19 +303,6 @@
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
     
-    //Creating a string contains url address for php file
-    strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendquestionprog.php?studentid=%@&classid=%@&questionProg=%@", studentID, classID, jsonString ]];
-    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    NSLog(@"%@", strURL);
-    
-    //Creating acutal url
-    myURL = [NSURL URLWithString:strURL];
-    
-    //Calling and storing the json data
-    data = [NSData dataWithContentsOfURL:myURL];
-    
-
     
     
     //Stopping the spinnging wheel

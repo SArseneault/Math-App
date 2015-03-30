@@ -42,18 +42,22 @@
 		//Grab the question prog data
 		$questionProgData = $db->get('question_progress', array('question_id', '=', $question['question_id']));
 		//$questionProgData = $db->query('SELECT * FROM question_progress WHERE question_id = ? AND attempts > 0', array($question['question_id']));
-		$questionProgData = $questionProgData->first();
-		$questionProgData = get_object_vars($questionProgData);
-
-		if($questionProgData['attempts'] > 0 && $questionProgData['answer'] != -1)
+		if($questionProgData->count())
 		{
-			//Pushing the level name and time onto the array
-			$json[$i]["operand1"] = $question['operand1'];
-			$json[$i]["operator"] = $question['operator'];
-			$json[$i]["operand2"] = $question['operand2'];
-			$json[$i]["studentAnswer"] = $questionProgData['answer'];
-			$json[$i]["attempts"] = $questionProgData['attempts'];
-			$i++;
+			$questionProgData = $questionProgData->first();
+			$questionProgData = get_object_vars($questionProgData);
+		
+
+			if( ($questionProgData['attempts'] > 0) && ($questionProgData['answer'] != -1) )
+			{
+				//Pushing the level name and time onto the array
+				$json[$i]["operand1"] = $question['operand1'];
+				$json[$i]["operator"] = $question['operator'];
+				$json[$i]["operand2"] = $question['operand2'];
+				$json[$i]["studentAnswer"] = $questionProgData['answer'];
+				$json[$i]["attempts"] = $questionProgData['attempts'];
+				$i++;
+			}
 		}
 	}
 
@@ -62,3 +66,4 @@
 
 
 ?>
+

@@ -14,8 +14,7 @@ mysql_select_db('mathappinfo') or die('Could not select database');
   
  //create an array 
 $data=array();
-
-
+  
 //get data from database, in this case, the student id is going along my 
 //x-axis and the level id is going along the y-axis
 $sql="SELECT  student_id,level_id FROM  level_progress";
@@ -36,7 +35,4 @@ $graph->setTitle('x=Student ID, y=Level ID');
 //changes bar color apperance, two-toned
 $graph->setGradient('green', 'blue');
 $graph->createGraph();
-
-
-
 ?>

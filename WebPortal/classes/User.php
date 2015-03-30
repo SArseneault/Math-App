@@ -241,48 +241,54 @@
 				throw new Exception('There was a problem creating this question.');
 			}
 
-			//Grabbing the question id
-			$questionID = $this->_db->query('SELECT * FROM question WHERE name = ? AND description = ? AND question_type = ? AND level_id = ?', array(
-				$fields['name'],
-				$fields['description'],
-				$fields['question_type'],
-				$fields['level_id']
-				));
 
-			//Getting std object
-			$questionID = $questionID->first();
+			//If the question type is a test question, THEN insert a question progres row for it
+			if($fields['question_type'] == 1)
+			{
+				//Grabbing the question id
+				$questionID = $this->_db->query('SELECT * FROM question WHERE name = ? AND description = ? AND question_type = ? AND level_id = ?', array(
+					$fields['name'],
+					$fields['description'],
+					$fields['question_type'],
+					$fields['level_id']
+					));
 
-			//Convert the std object to an array
-	       $questionID = get_object_vars($questionID)['question_id'];
+				//Getting std object
+				$questionID = $questionID->first();
 
-
-            //Creating a student helper object
-			$studentOBJ = new Student();
-
-			//Gabbing all the students inside of this class
-			$students = $studentOBJ->getStudents($this->getClass()['class_id']);
-
-			if( $students ){
-				//For each student update the question progress to a default value
-				foreach($students as $student){
-
-		            //Convert the std object to an array
-		            $student = get_object_vars($student);
+				//Convert the std object to an array
+		       $questionID = get_object_vars($questionID)['question_id'];
 
 
-	            	//Creating a default progress level
-					$defaultProgress = array(
-		            	'question_id' =>  $questionID,
-		            	'level_id' => $fields['level_id'],
-		            	'answer' => -1,
-		            	'student_id' => $student['student_id'],
-		            	'attempts' => 0
-		            );
 
-		       
-					 //Attempting to insert question progress information into the database for each student.
-					if(!$this->_db->insert('question_progress', $defaultProgress)) {
-						throw new Exception('There was a problem inserting default progress for one of the students');
+	            //Creating a student helper object
+				$studentOBJ = new Student();
+
+				//Gabbing all the students inside of this class
+				$students = $studentOBJ->getStudents($this->getClass()['class_id']);
+
+				if( $students ){
+					//For each student update the question progress to a default value
+					foreach($students as $student){
+
+			            //Convert the std object to an array
+			            $student = get_object_vars($student);
+
+
+		            	//Creating a default progress level
+						$defaultProgress = array(
+			            	'question_id' =>  $questionID,
+			            	'level_id' => $fields['level_id'],
+			            	'answer' => -1,
+			            	'student_id' => $student['student_id'],
+			            	'attempts' => 0
+			            );
+
+			       
+						 //Attempting to insert question progress information into the database for each student.
+						if(!$this->_db->insert('question_progress', $defaultProgress)) {
+							throw new Exception('There was a problem inserting default progress for one of the students');
+						}
 					}
 				}
 			}

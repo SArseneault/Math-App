@@ -20,6 +20,8 @@
 @synthesize timeLimit;
 @synthesize levelName;
 @synthesize levelID;
+@synthesize questionProg;
+@synthesize currentQuestionProg;
 
 //Sythensize Keyboard
 @synthesize keyBoard;
@@ -67,10 +69,6 @@
 - (void)grabQuestions
 {
     
-    
-
-    
-    
     //Creating and starting the spinning wheel
     UIApplication *app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = YES;
@@ -104,6 +102,9 @@
     questionsInLevel = [json count];
     
     NSLog(@"Number of questions: %ld",(long)questionsInLevel);
+    
+    //Ceating a new question prog array
+    questionProg = [[NSMutableArray alloc]initWithCapacity:questionCount];
     
 }
 
@@ -215,10 +216,30 @@
         //increase questions answered correctly
         totalQuestionsCorrect++;
         
+        //Creating a new empty question prog dictionary
+        currentQuestionProg = [[NSMutableDictionary alloc]initWithCapacity:2];
+        
+        //Saving the question progress if the question was wrong
+        [currentQuestionProg setObject:[NSNumber numberWithInt:-1] forKey:@"User Answer"];
+        [currentQuestionProg setObject:[NSNumber numberWithInt:[questionID intValue]] forKey:@"QuestionID"];
+        
+        
+        [questionProg addObject:currentQuestionProg];
+        
         
     }
     else
     {
+        
+        //Creating a new empty question prog dictionary
+        currentQuestionProg = [[NSMutableDictionary alloc]initWithCapacity:2];
+        
+        //Saving the question progress if the question was wrong
+        [currentQuestionProg setObject:[NSNumber numberWithInt:userAnswer] forKey:@"User Answer"];
+        [currentQuestionProg setObject:[NSNumber numberWithInt:[questionID intValue]] forKey:@"QuestionID"];
+        
+        
+        [questionProg addObject:currentQuestionProg];
         
     }
     
@@ -249,6 +270,15 @@
 //end result method that displays results, right/wrong and time taken to complete
 -(void) endResult
 {
+    
+    //Question progress
+    NSMutableArray * arr = [[NSMutableArray alloc] init];
+    [arr addObject:questionProg];
+    NSError *error;
+    NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData2 encoding:NSUTF8StringEncoding];
+    NSLog(@"QUESTION PROGRESS IN JSON:\n%@", jsonString);
+    
     //stop timer
     [timer invalidate];
     
@@ -288,6 +318,29 @@
     
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
+    
+    
+    //Creating a string contains url address for php file
+    NSString *strURL2 = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendquestionprog.php?studentid=%@&classid=%@&questionProg=%@", studentID, classID, jsonString ]];
+    NSString *escapedString = [strURL2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *add = [NSURL URLWithString:escapedString];
+    
+    
+    strURL2 = [strURL2 stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
+    
+    NSLog(@"%@", strURL2);
+    
+    //Creating acutal url
+    NSURL *myURL2 = [NSURL URLWithString:strURL2];
+    
+    //Calling and storing the json data
+    NSData *data2 = [NSData dataWithContentsOfURL:myURL2];
+    
+    NSLog(@"%@", data2);
+    
+    
+    
     
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
