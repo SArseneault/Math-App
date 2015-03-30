@@ -268,9 +268,13 @@ if($user->classExist()){  ?>
                         $currProg = get_object_vars($currProg);
                       
                         ///If the progress has been completed then display the link
-                        if( ($currProg['test_attempts'] > 0) or ($currProg['practice_attempts'] > 0) ){ ?>
-                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['test_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_time'])?>','<?php print_r($currProg['practice_attempts'])?>','<?php print_r($classInfo['class_id']); ?>','<?php print_r($level['level_id']); ?>')">Attempted</a></td> 
-                      <?php
+                        if( ($currProg['test_attempts'] > 0) or ($currProg['practice_attempts'] > 0) ){ 
+
+                         
+
+                            ?>
+                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['test_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_time'])?>','<?php print_r($currProg['practice_attempts'])?>','<?php print_r($classInfo['class_id']); ?>','<?php print_r($currProg['level_id']); ?>')">Attempted</a></td> 
+                      <?php 
                       //Else display not completed
                        } else { ?>
                           <td>Not Attempted</td> 
@@ -511,8 +515,6 @@ if($user->classExist()){  ?>
  
     $.post('getqprog.php',{classid:CID, levelid:LID},function(data){ 
        
-
-      //alert(data);  
       Qarr = JSON.parse(data);
 
       QArrLength = Qarr.length;
@@ -595,7 +597,6 @@ if($user->classExist()){  ?>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Level View</h4></br>
     
-         
         Test Time: <span id="test_time_ID"></span></br>       
         Test Attempts: <span id="test_attempts_ID"></span></br>    
         Practice Time: <span id="practice_time_ID"></span></br>    
@@ -623,7 +624,7 @@ if($user->classExist()){  ?>
                         function createTable() {
 
 
-                       
+                     
 
                          //Linking to the table
                         var table = document.getElementById("qtable");
@@ -646,8 +647,6 @@ if($user->classExist()){  ?>
                             var t = document.createTextNode(Qarr[i]['operand1'] + Qarr[i]['operator'] + Qarr[i]['operand2']);       
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn); 
-
-
 
                             //Answer
                             var O1 = parseInt(Qarr[i]['operand1']);
@@ -678,10 +677,6 @@ if($user->classExist()){  ?>
                             var t = document.createTextNode(Qarr[i]['attempts']);       
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn);  
-
-                            
-
-      
 
                           }
                           
