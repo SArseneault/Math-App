@@ -244,7 +244,7 @@ if(Input::exists()) {
 if($user->classExist()){  ?>
 <div class ="container">
   <div class = "table-responsive">
-    <table class = "table">
+    <table class="table table-striped">
       <?php if($levels){ ?>
       <thread>
         <tr>
@@ -509,9 +509,9 @@ if($user->classExist()){  ?>
       Qarr = JSON.parse(data);
 
       QArrLength = Qarr.length;
+ 
 
       createTable();
-     
      
     }); 
 
@@ -540,7 +540,7 @@ if($user->classExist()){  ?>
     
         <h2 id="level_ID"></h2>
         <div class = "table-responsive" >
-          <table id="qtable" class = "table" max-width="150px">
+          <table id="qtable" class="table table-striped" max-width="150px">
             <thread>
               <tr>
                 <th>Question</th>
@@ -555,11 +555,11 @@ if($user->classExist()){  ?>
             </thred>
            
                     <script type="text/javascript">
-                       //document.getElementById("level_ID").innerHTML=QArrLength;
+                      
 
-
+                      
                        function createTable(){
-
+                          
                          //Linking to the table
                         var table = document.getElementById("qtable");
 
@@ -605,7 +605,7 @@ if($user->classExist()){  ?>
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn); 
 
-                            ;  
+                            
 
                             //Question type
                             var newColumn = document.createElement("TD"); 

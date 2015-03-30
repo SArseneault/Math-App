@@ -221,7 +221,7 @@ if($user->classExist()){  ?>
   <h2> <?php print_r($classInfo['class_name']);?> </h2>
   <h4> <?php print_r($classInfo['teacher_name']);?>  </h4>
   <div class = "table-responsive">
-    <table class = "table">
+    <table class="table table-striped">
       <thread>
         <?php if(!$students) { ?>
         <p></br>Please add students to view the table</p>
@@ -269,7 +269,7 @@ if($user->classExist()){  ?>
                       
                         ///If the progress has been completed then display the link
                         if( ($currProg['test_attempts'] > 0) or ($currProg['practice_attempts'] > 0) ){ ?>
-                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['test_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_time'])?>','<?php print_r($currProg['practice_attempts'])?>')">Attempted</a></td> 
+                          <td><a data-toggle="modal" data-target="#viewLevelModal" onclick="setLevelInfo('<?php print_r($currProg['test_time'])?>','<?php print_r($currProg['test_attempts'])?>','<?php print_r($currProg['practice_time'])?>','<?php print_r($currProg['practice_attempts'])?>','<?php print_r($classInfo['class_id']); ?>','<?php print_r($level['level_id']); ?>')">Attempted</a></td> 
                       <?php
                       //Else display not completed
                        } else { ?>
@@ -472,8 +472,60 @@ if($user->classExist()){  ?>
   </div>
 </div>
 
-<!--Script to grab level info for editstudentmodal-->
-<script>
+
+<!--Script to grab level info for editlevelmodal-->
+<script type="text/javascript" src="./jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+  var test_time = 0;
+  var test_attempts = 0;
+  var practice_attemps = 0;
+  var practice_time = 0;
+  //Variable to store level id info
+  var LID = 0;
+  var CID = 0;
+  QArrLength = -1;
+  var Qarr; 
+
+  function setLevelInfo(TTime, TAttempts, PTime, PAttempts, classID, levelID){
+
+
+    test_time = TTime;
+    test_attempts = TAttempts;
+    practice_attemps = PAttempts;
+    practice_time = PTime;
+
+    document.getElementById('test_time_ID').innerHTML = test_time;
+    document.getElementById('test_attempts_ID').innerHTML = test_attempts;
+    document.getElementById('practice_time_ID').innerHTML = practice_time;
+    document.getElementById('practice_attempts_ID').innerHTML = practice_attemps;
+
+
+    //document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
+    CID = classID;
+    LID = levelID;
+    
+    //questions = JSON.parse(questions);
+
+
+ 
+    $.post('getqprog.php',{classid:CID, levelid:LID},function(data){ 
+       
+
+      //alert(data);  
+      Qarr = JSON.parse(data);
+
+      QArrLength = Qarr.length;
+      
+      createTable();
+       
+    }); 
+
+
+  }
+
+
+
 
   //Variable to store the student's  id 
   var SID = 0;
@@ -549,6 +601,100 @@ if($user->classExist()){  ?>
         Practice Time: <span id="practice_time_ID"></span></br>    
         Practice Attempts: <span id="practice_attempts_ID"></span></br>    
 
+        </br>
+        </br>
+        </br>
+        End Of Level Snapshot: </br>
+        <table class="table table-striped" id="qtable">
+            <thead id="tblHead">
+              <tr>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Student Answer</th>
+                <th>Attempts</th>
+              </tr>
+            </thead>
+
+
+
+                      <script type="text/javascript">
+                       
+                      
+                        function createTable() {
+
+
+                       
+
+                         //Linking to the table
+                        var table = document.getElementById("qtable");
+
+                        //Creating a new body and adding it to the table
+                        var body = document.createElement("tbody");
+                        table.appendChild(body);
+
+                          //Loop through each element of the array 
+                          for (var i = 0; i < QArrLength; i++) {
+
+                            //Create a new row
+                            var newRow = document.createElement("tr");
+                            newRow.align = "center";
+                            body.appendChild(newRow);
+
+
+                             //Question
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['operand1'] + Qarr[i]['operator'] + Qarr[i]['operand2']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
+
+
+
+                            //Answer
+                            var O1 = parseInt(Qarr[i]['operand1']);
+                            var O2 = parseInt(Qarr[i]['operand2']);
+                            var answer;
+                            if(Qarr[i]['operator'] == "+" )
+                              answer = O1 + O2;
+                            else if(Qarr[i]['operator'] == "-" )
+                              answer = Q1 - Q2;
+                            else if(Qarr[i]['operator'] == "*" )
+                              answer = Q1 - Q2;
+                            else if(Qarr[i]['operator'] == "/" )
+                              answer = Q1 / Q2;
+
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(answer);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
+
+                            //Student's Answer
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['studentAnswer']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn); 
+
+                            //Attempts
+                            var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode(Qarr[i]['attempts']);       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn);  
+
+                            
+
+      
+
+                          }
+                          
+                      }
+
+
+                     
+                      </script>
+
+
+
+
+          </table>
 
 
       </div>
@@ -562,52 +708,6 @@ if($user->classExist()){  ?>
     </div>
   </div>
 </div>
-
-
-
-
-  
-<!--Script to grab level info for the viewlevelmodal-->
-<script>
-
-  var test_time = 0;
-  var test_attempts = 0;
-  var practice_attemps = 0;
-  var practice_time = 0;
-  function setLevelInfo(TTime, TAttempts, PTime, PAttempts){
-
-
-    test_time = TTime;
-    test_attempts = TAttempts;
-    practice_attemps = PAttempts;
-    practice_time = PTime;
-
-    document.getElementById('test_time_ID').innerHTML = test_time;
-    document.getElementById('test_attempts_ID').innerHTML = test_attempts;
-    document.getElementById('practice_time_ID').innerHTML = practice_time;
-    document.getElementById('practice_attempts_ID').innerHTML = practice_attemps;
-
-  }
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
