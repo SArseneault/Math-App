@@ -9,24 +9,12 @@
 	//Grabbing Variables from the link
 	$studentID = $_GET["studentid"];
 	$classID =  $_GET["classid"];
-	$level = $_GET["level"];
+	$levelID = $_GET["level"];
 	$status = $_GET["status"];
 	$test_time = $_GET["test_time"];
 	$practice_time = $_GET["practice_time"];
 	$level_type = $_GET["level_type"];
 	
-
-
-	//Grabbing the level data
-	$levelData = $db->query('SELECT * FROM level WHERE class_id = ? AND name = ?', array(
-				$classID,
-				$level
-				));
-
-	$levelData = $levelData->first();
-	$levelData = get_object_vars($levelData);
-	$levelID = $levelData['level_id']; //Setting the level id
-
 
 	//Grabbing the level progress data
 	$levelProgData = $db->query('SELECT * FROM level_progress WHERE student_id = ? AND level_id = ?', array(

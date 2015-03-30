@@ -292,7 +292,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelName, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType]];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
     
