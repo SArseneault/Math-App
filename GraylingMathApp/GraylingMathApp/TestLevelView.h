@@ -67,4 +67,7 @@
 @property (strong, nonatomic) NSString *levelName;
 @property (strong, nonatomic) NSString *levelID;
 
+//Collection View for drag and drop keyboard
+@property (weak, nonatomic) IBOutlet UICollectionView *keyBoard;
+
 @end

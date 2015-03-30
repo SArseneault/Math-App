@@ -21,6 +21,9 @@
 @synthesize levelName;
 @synthesize levelID;
 
+//Sythensize Keyboard
+@synthesize keyBoard;
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear: (BOOL) animated];

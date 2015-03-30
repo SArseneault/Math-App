@@ -46,6 +46,10 @@
 		2077BD401AC8392400CD7BA0 /* car_yellowL.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD381AC8392400CD7BA0 /* car_yellowL.png */; };
 		20D45FBB1ABE306D005EEBCE /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D45FBA1ABE306D005EEBCE /* Map.m */; };
 		20F8F6431AC89D2C00500A95 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F8F6421AC89D2C00500A95 /* track.png */; };
+		A203946B1AC9C5B7008288AE /* TileUiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A203946A1AC9C5B7008288AE /* TileUiView.m */; };
+		A203946E1AC9C67E008288AE /* TileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A203946D1AC9C67E008288AE /* TileModel.m */; };
+		A20394741AC9C70F008288AE /* TileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20394731AC9C70F008288AE /* TileCollectionCell.m */; };
+		A20394791AC9CB1A008288AE /* KeyBoardCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A20394781AC9CB1A008288AE /* KeyBoardCollectionView.m */; };
 		A2B207D81ABB8A1500676DC4 /* level.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D71ABB8A1500676DC4 /* level.json */; };
 		A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D91ABBB5DB00676DC4 /* studentLevel.json */; };
 /* End PBXBuildFile section */
@@ -114,6 +118,14 @@
 		20D45FB91ABE3061005EEBCE /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		20D45FBA1ABE306D005EEBCE /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		20F8F6421AC89D2C00500A95 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
+		A20394691AC9C5B7008288AE /* TileUiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileUiView.h; sourceTree = "<group>"; };
+		A203946A1AC9C5B7008288AE /* TileUiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileUiView.m; sourceTree = "<group>"; };
+		A203946C1AC9C67E008288AE /* TileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileModel.h; sourceTree = "<group>"; };
+		A203946D1AC9C67E008288AE /* TileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileModel.m; sourceTree = "<group>"; };
+		A20394721AC9C70F008288AE /* TileCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileCollectionCell.h; sourceTree = "<group>"; };
+		A20394731AC9C70F008288AE /* TileCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileCollectionCell.m; sourceTree = "<group>"; };
+		A20394771AC9CB1A008288AE /* KeyBoardCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardCollectionView.h; sourceTree = "<group>"; };
+		A20394781AC9CB1A008288AE /* KeyBoardCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardCollectionView.m; sourceTree = "<group>"; };
 		A2B207D71ABB8A1500676DC4 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
 		A2B207D91ABBB5DB00676DC4 /* studentLevel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studentLevel.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +239,7 @@
 		204D000F1ABE164E00BE3A2F /* TestLevelView */ = {
 			isa = PBXGroup;
 			children = (
+				A20394681AC9C58A008288AE /* DragDropTiles */,
 				204D00091ABE146400BE3A2F /* TestLevelView.h */,
 				204D000A1ABE146400BE3A2F /* TestLevelView.m */,
 			);
@@ -314,6 +327,37 @@
 				20407B6C1AA5031000E536AB /* Main.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		A20394681AC9C58A008288AE /* DragDropTiles */ = {
+			isa = PBXGroup;
+			children = (
+				A20394761AC9CADE008288AE /* DragDropViewControllers */,
+				A20394751AC9C9D3008288AE /* Views */,
+				A203946C1AC9C67E008288AE /* TileModel.h */,
+				A203946D1AC9C67E008288AE /* TileModel.m */,
+			);
+			name = DragDropTiles;
+			sourceTree = "<group>";
+		};
+		A20394751AC9C9D3008288AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20394721AC9C70F008288AE /* TileCollectionCell.h */,
+				A20394731AC9C70F008288AE /* TileCollectionCell.m */,
+				A20394691AC9C5B7008288AE /* TileUiView.h */,
+				A203946A1AC9C5B7008288AE /* TileUiView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A20394761AC9CADE008288AE /* DragDropViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A20394771AC9CB1A008288AE /* KeyBoardCollectionView.h */,
+				A20394781AC9CB1A008288AE /* KeyBoardCollectionView.m */,
+			);
+			name = DragDropViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,11 +484,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				204D00171ABE197E00BE3A2F /* PracticeLevelView.m in Sources */,
+				A203946E1AC9C67E008288AE /* TileModel.m in Sources */,
+				A20394741AC9C70F008288AE /* TileCollectionCell.m in Sources */,
 				200B08071AA4E52A000E404A /* AppDelegate.m in Sources */,
 				200B08571AA4F48A000E404A /* HomeView.m in Sources */,
 				2074BC211AB6769200D49D86 /* ClassLogin.m in Sources */,
 				204D000B1ABE146400BE3A2F /* TestLevelView.m in Sources */,
 				2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */,
+				A203946B1AC9C5B7008288AE /* TileUiView.m in Sources */,
+				A20394791AC9CB1A008288AE /* KeyBoardCollectionView.m in Sources */,
 				200B08461AA4E6AB000E404A /* FirstViewController.m in Sources */,
 				20D45FBB1ABE306D005EEBCE /* Map.m in Sources */,
 				2068F7821ABE481F0074BB25 /* TypeSelect.m in Sources */,
