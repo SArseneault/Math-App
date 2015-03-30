@@ -52,6 +52,10 @@
     NSString *timeLimit = [[levelInfoJson objectAtIndex:tag] objectForKey:@"timeLimit"];
     NSLog(@"timeLimit: %@",timeLimit);
     
+    //Grabbing the level id
+    NSString *levelID = [[levelInfoJson objectAtIndex:tag] objectForKey:@"levelID"];
+    NSLog(@"levelID: %@",levelID);
+    
     
     //Creating a homeview object
     TypeSelect *TS = [self.storyboard instantiateViewControllerWithIdentifier:@"TypeSelect"];
@@ -59,6 +63,8 @@
     //Passing values to the timelimit to the storyboard
     TS.timeLimit = timeLimit;
     TS.levelName = levelName;
+    TS.levelID = levelID;
+    
 
     //Present the view controller
     [self presentViewController:TS animated:YES completion:nil];

@@ -83,5 +83,6 @@
 //Creating a property for the time limit and level name
 @property (strong, nonatomic) NSString *timeLimit;
 @property (strong, nonatomic) NSString *levelName;
+@property (strong, nonatomic) NSString *levelID;
 
 @end

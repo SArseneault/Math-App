@@ -13,21 +13,11 @@
 
 	//Grabbing Variables from the link
 	$classID =  $_GET["classid"];
-	$level = $_GET["level"];
+	$levelID = $_GET["level"];
 	$questiontype = $_GET["questiontype"];
 
 	//Creating a jason array
 	$json = array();
-
-
-	//Grab the level data
-	$leveldata = $db->query('SELECT * FROM level WHERE name = ? AND class_id = ?', array(
-							$level,
-							$classID
-						));
-	$leveldata = $leveldata->first();
-	$leveldata = get_object_vars($leveldata);
-	$levelID = $leveldata['level_id']; //Setting the level id	
 	
 
 	//Grabbing the question data

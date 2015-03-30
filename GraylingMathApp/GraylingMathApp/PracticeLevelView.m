@@ -20,7 +20,7 @@
 @synthesize levelName;
 @synthesize questionProg;
 @synthesize currentQuestionProg;
-
+@synthesize levelID;
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -75,7 +75,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getquestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelName, questionType]];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getquestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelID, questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSLog(@"%@", strURL);

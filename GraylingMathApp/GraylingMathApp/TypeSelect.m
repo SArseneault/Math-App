@@ -20,6 +20,7 @@
 //Synthesizing the timelimit
 @synthesize timeLimit;
 @synthesize levelName;
+@synthesize levelID;
 
 //Automatically called after screenload
 - (void)viewDidLoad
@@ -37,6 +38,7 @@
     //Passing values to the timelimit to the storyboard
     PL.timeLimit = timeLimit;
     PL.levelName = levelName;
+    PL.levelID = levelID;
     
     //Present the view controller
     [self presentViewController:PL animated:YES completion:nil];
@@ -51,6 +53,7 @@
     //Passing values to the timelimit to the storyboard
     TL.timeLimit = timeLimit;
     TL.levelName = levelName;
+    TL.levelID = levelID;
     
     //Present the view controller
     [self presentViewController:TL animated:YES completion:nil];

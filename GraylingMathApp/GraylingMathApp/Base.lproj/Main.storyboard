@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -576,6 +577,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FhP-bO-rOk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dx6-N6-I2z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track.png" translatesAutoresizingMaskIntoConstraints="NO" id="CDl-Ck-oi0">
@@ -610,10 +612,10 @@
                                 <exclude reference="dLB-gB-jhg"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="OfH-Hz-ckg"/>
                                 <exclude reference="Xx9-mo-amU"/>
                                 <exclude reference="dvP-8y-WDS"/>
                                 <exclude reference="z7H-lH-NpA"/>
-                                <exclude reference="OfH-Hz-ckg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -622,10 +624,10 @@
                                 <include reference="dLB-gB-jhg"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="OfH-Hz-ckg"/>
                                 <include reference="Xx9-mo-amU"/>
                                 <include reference="dvP-8y-WDS"/>
                                 <include reference="z7H-lH-NpA"/>
-                                <include reference="OfH-Hz-ckg"/>
                             </mask>
                         </variation>
                     </view>

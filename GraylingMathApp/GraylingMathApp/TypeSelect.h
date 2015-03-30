@@ -16,5 +16,6 @@
 
 @property (strong, nonatomic) NSString *timeLimit;
 @property (strong, nonatomic) NSString *levelName;
+@property (strong, nonatomic) NSString *levelID;
 
 @end
