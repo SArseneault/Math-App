@@ -40,9 +40,7 @@
 
 
 	//Creating a fields array
-	$fields = array(
-		'status' =>  $status
-		);
+	$fields = array();
 
 
 	//Determine whether to increment the prac or the test attempt
@@ -55,6 +53,10 @@
 	{
 		$fields["test_attempts"] = $levelProgData['test_attempts']+1;
 		$fields['test_time'] = $test_time;
+
+		//Only up date the status if its at zero
+		if($levelProgData['status'] == 0)
+			$fields['status'] =  $status;
 	}
 
 
