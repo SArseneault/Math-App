@@ -12,7 +12,7 @@
 #import "TileUiView.h"
 #import "TileModel.h"
 
-@interface TestLevelView()
+@interface TestLevelView()<UIGestureRecognizerDelegate>
 {
     KeyBoardCollectionView *_keyBoardCollectionView;
     
@@ -83,8 +83,26 @@
 -(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point{
     
     NSLog(@"Tile is Recviced");
+    _tileModel=tileModel;
+    
+    NSLog(@"Recived tile call");
+    if(_tileModel !=nil)
+    {
+        NSLog(@"Making tile visible");
+        _draggedTile.label.text=[NSString stringWithFormat:@"%d",tileModel.value];
+        _draggedTile.center=point;
+        _draggedTile.hidden=NO;
+        
+        //call to update dragged state and if it is a valid drag point
+        //[self updateTileViewDragState:[self isValidDragPoint:point]];
+    }
+    
+    
     
 }
+
+#pragma mark - draged state for tile view
+
 
 
 //This function calls a php and returns a json string of questions
@@ -175,6 +193,25 @@
     
     //Method to create dragged tile
     [self initDraggedTileView];
+    
+    //set up pangesture for dragged tile
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    panGesture.delegate = self;
+    [self.view addGestureRecognizer:panGesture];
+    
+}
+
+#pragma mark - pan gesture recgonizer for dragged tiles
+- (void)handlePan:(UIPanGestureRecognizer *)gesture {
+    
+    NSLog(@"In hadle pan gesture  of view controller");
+    
+    //get the point in the testlevel view
+    CGPoint touchPoint =[gesture locationInView:self.view];
+    
+    
+    
+    
 }
 
 #pragma mark - create tile view that will be dragged
@@ -182,7 +219,7 @@
     
     NSLog(@"Creating Tile Drag");
     
-    //size of tile
+    //size of tile 55x55, sligthly bigger than collectionview cells
     _draggedTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
     
     //Set to hidden for initial set up
