@@ -8,8 +8,19 @@
 #import "baseURL.h"
 #import "TestLevelView.h"
 #import "Map.h"
+#import "KeyBoardCollectionView.h"
+#import "TileUiView.h"
+#import "TileModel.h"
 
 @interface TestLevelView()
+{
+    KeyBoardCollectionView *_keyBoardCollectionView;
+    
+    //data for tiles
+    TileModel *_tileModel;
+    
+    
+}
 
 @end
 
@@ -57,6 +68,9 @@
         
     } else
     {
+        //creates actual keyboard layout
+        NSLog(@"cREATING KEYBOARD");
+        _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
         
         [self setUpLevel];
     }

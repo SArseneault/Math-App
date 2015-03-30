@@ -22,6 +22,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCt-3P-Wul">
                                 <rect key="frame" x="167" y="193" width="255" height="156"/>
                                 <state key="normal" image="raceCarButton.png"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="100" width="800" height="600"/>
+                                </variation>
                                 <connections>
                                     <action selector="toggleSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oJQ-bN-ZfV"/>
                                 </connections>
