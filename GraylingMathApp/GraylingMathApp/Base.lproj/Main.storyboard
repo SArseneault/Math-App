@@ -366,6 +366,19 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-QD-Atv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="185" y="454" width="67" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="clearInput" destination="fdR-Of-HNk" eventType="touchUpInside" id="Laz-1e-Jz7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8489188762626263" green="0.8489188762626263" blue="0.8489188762626263" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -383,9 +396,11 @@
                             <constraint firstItem="1tn-Ud-nbI" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="241" id="SaT-uB-2pg"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="45" id="VEp-cY-2Wi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GTb-24-Tr0" secondAttribute="trailing" constant="39" id="W4t-Q9-8rY"/>
+                            <constraint firstItem="yNr-QD-Atv" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="354" id="Yfg-Y1-Kka"/>
                             <constraint firstAttribute="centerX" secondItem="32H-sz-Uv6" secondAttribute="centerX" id="YkK-EZ-TpB"/>
                             <constraint firstItem="Atq-jg-QzK" firstAttribute="top" secondItem="HBH-Xs-oVe" secondAttribute="bottom" constant="39" id="kuh-JR-Fda"/>
                             <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="l0X-bB-cts"/>
+                            <constraint firstItem="Atq-jg-QzK" firstAttribute="leading" secondItem="yNr-QD-Atv" secondAttribute="trailing" constant="111" id="mUl-0Q-Jbw"/>
                             <constraint firstItem="yBQ-jC-GhP" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="197" id="mWi-t9-8MZ"/>
                             <constraint firstItem="iSM-kY-Vuk" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" constant="1" id="maS-xj-EJ8"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" constant="38" id="nCa-gl-V19"/>
@@ -400,6 +415,7 @@
                                 <exclude reference="gLO-eT-q59"/>
                                 <exclude reference="1tn-Ud-nbI"/>
                                 <exclude reference="1vL-YU-TKu"/>
+                                <exclude reference="yNr-QD-Atv"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KuH-rD-xMQ"/>
@@ -413,6 +429,7 @@
                                 <exclude reference="v1K-sI-1tI"/>
                                 <exclude reference="JwE-ma-CFu"/>
                                 <exclude reference="mWi-t9-8MZ"/>
+                                <exclude reference="Yfg-Y1-Kka"/>
                                 <exclude reference="l0X-bB-cts"/>
                                 <exclude reference="maS-xj-EJ8"/>
                                 <exclude reference="7Q9-kb-8q9"/>
@@ -421,6 +438,7 @@
                                 <exclude reference="vof-fS-XZn"/>
                                 <exclude reference="Jee-4R-Esr"/>
                                 <exclude reference="kuh-JR-Fda"/>
+                                <exclude reference="mUl-0Q-Jbw"/>
                                 <exclude reference="W4t-Q9-8rY"/>
                                 <exclude reference="pTR-JX-mtz"/>
                                 <exclude reference="VEp-cY-2Wi"/>
@@ -432,6 +450,7 @@
                                 <include reference="gLO-eT-q59"/>
                                 <include reference="1tn-Ud-nbI"/>
                                 <include reference="1vL-YU-TKu"/>
+                                <include reference="yNr-QD-Atv"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KuH-rD-xMQ"/>
@@ -445,6 +464,7 @@
                                 <include reference="v1K-sI-1tI"/>
                                 <include reference="JwE-ma-CFu"/>
                                 <include reference="mWi-t9-8MZ"/>
+                                <include reference="Yfg-Y1-Kka"/>
                                 <include reference="l0X-bB-cts"/>
                                 <include reference="maS-xj-EJ8"/>
                                 <include reference="7Q9-kb-8q9"/>
@@ -453,6 +473,7 @@
                                 <include reference="vof-fS-XZn"/>
                                 <include reference="Jee-4R-Esr"/>
                                 <include reference="kuh-JR-Fda"/>
+                                <include reference="mUl-0Q-Jbw"/>
                                 <include reference="W4t-Q9-8rY"/>
                                 <include reference="pTR-JX-mtz"/>
                                 <include reference="VEp-cY-2Wi"/>
@@ -460,6 +481,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="ClearInputButton" destination="yNr-QD-Atv" id="q1o-Qy-WRM"/>
                         <outlet property="firstNumber" destination="32H-sz-Uv6" id="d6i-44-rdh"/>
                         <outlet property="inputArea" destination="1tn-Ud-nbI" id="ms4-M8-jsO"/>
                         <outlet property="keyBoard" destination="gLO-eT-q59" id="4el-e7-R9n"/>

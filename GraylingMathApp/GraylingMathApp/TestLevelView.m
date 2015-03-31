@@ -315,6 +315,13 @@
     NSLog(@"Whole array is %@", userInputArray);
     NSLog(@"Printing String: %@", userInputString);
     
+    NSLog(@"Size Of string AFTER insert");
+    NSUInteger after =[userInputString length];
+    
+    NSLog(@"%lu", (unsigned long)after);
+    
+    
+    //display the numbers inputed
     userInputLabelDrag.text=userInputString;
     //NSLog(@"@", userInputString);
     
@@ -437,6 +444,30 @@
     
     //call method to check for end of practice section
     [self isEndCheck];
+    
+    
+}
+
+//action to clear current input in input text box
+-(IBAction)clearInput{
+    
+    NSUInteger lengthOfInput =[userInputString length];
+    
+        NSLog(@"Printing the size of string when button is pressed");
+        NSLog(@"Length is %lu", (unsigned long)lengthOfInput);
+    
+    //Make sure length of string is greater than 0
+    if (lengthOfInput >0)
+    {
+        
+        NSLog(@"Length is greater than 0 emptying string");
+        //create empty string
+        [userInputString setString:@""];
+    }
+    
+    //update the numbers inputed to empty
+    userInputLabelDrag.text =userInputString;
+    
     
     
 }

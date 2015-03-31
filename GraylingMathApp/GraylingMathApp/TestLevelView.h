@@ -18,9 +18,11 @@
     IBOutlet UILabel *labelForTimer; //label for timer
     IBOutlet UILabel *operatorLabel;
     
-
+    //Label Used to Display the users input
     IBOutlet UILabel *userInputLabelDrag;
     
+    //Button Used to clear the input from the userInputLabelDrag
+    IBOutlet UIButton *ClearInputButton;
 
     NSInteger valueOne; //int for first number
     NSInteger valueTwo; //int for second number
@@ -62,6 +64,9 @@
 
 //action to check users input
 -(IBAction) submitAnswer;
+
+//action to clear current input
+-(IBAction) clearInput;
 
 //Creating a property for the json array
 @property (nonatomic, strong) NSMutableArray * json;
