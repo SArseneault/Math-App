@@ -22,6 +22,9 @@
     //creates a dragged tile
     TileUiView *_draggedTile;
     
+    //Create array to store numbers inputed from dragged tiles
+    NSMutableArray *userInputArray;
+    
     
 }
 
@@ -222,6 +225,12 @@
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
     
+    //Set up array to store tile input
+    
+    userInputArray=[[NSMutableArray alloc]init];
+    
+    
+    
 }
 
 #pragma mark - pan gesture recgonizer for dragged tiles
@@ -255,12 +264,35 @@
             
             NSLog(@"VALID DROP AREA RECGONIZED");
             NSLog(@"Tile Dropped is %d",_tileModel.value);
+            [self addinputToArray:_tileModel.value];
         }
         else{
             
             NSLog(@"BADDDD DROPP AREA");
 
         }
+    }
+    
+    
+    
+    
+}
+
+-(void) addinputToArray:(int)inputNumber{
+    
+    NSLog(@"Recived call to add input to array, value it: %d", inputNumber);
+    NSLog(@"Size of input array is, %lu", (unsigned long)[userInputArray count]);
+    
+    //add integer to array
+    [userInputArray addObject:[NSNumber numberWithInteger:inputNumber]];
+    
+    //return userInputArray;
+    NSLog(@"Printing out contents of array");
+    
+    for(int i =0; i <[userInputArray count]; i++)
+    {
+        
+        NSLog(@"Value at: %d, is %@:", i, userInputArray[i]);
     }
     
     
@@ -321,6 +353,8 @@
     
     //increment question counter
     questionCount++;
+    
+
     
 }
 
