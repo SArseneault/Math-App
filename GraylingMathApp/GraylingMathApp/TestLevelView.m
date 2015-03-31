@@ -383,6 +383,13 @@
     //increment question counter
     questionCount++;
     
+    //Empty string used to store users input
+    [userInputString setString:@""];
+    
+    //update label for value
+    userInputLabelDrag.text =userInputString;
+    
+    
 
     
 }
@@ -406,7 +413,21 @@
     NSLog(@"Answer: %ld",correctAnswer);
     
     //get user input
-    userAnswer =([userInput.text integerValue]);
+    //userAnswer =([userInput.text integerValue]);
+    
+    //get users answer from input drag box
+    userAnswer =([userInputString integerValue]);
+    
+    NSLog(@"Answer from user input: %ld",userAnswer);
+    
+    //check is users answers are correct
+    if(correctAnswer == userAnswer)
+    {
+        NSLog(@"Answer is correct!");
+    }
+    else{
+        NSLog(@"Answer is incorrect!");
+    }
     
     
     //compare to values and display true or false
