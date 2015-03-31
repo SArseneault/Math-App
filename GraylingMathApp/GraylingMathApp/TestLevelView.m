@@ -388,14 +388,8 @@
 -(void) endResult
 {
     
-    //Question progress
-    NSMutableArray * arr = [[NSMutableArray alloc] init];
-    [arr addObject:questionProg];
-    NSError *error;
-    NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData2 encoding:NSUTF8StringEncoding];
-    NSLog(@"QUESTION PROGRESS IN JSON:\n%@", jsonString);
-    
+ 
+
     //stop timer
     [timer invalidate];
     
@@ -438,27 +432,38 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL2 = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendquestionprog.php?studentid=%@&classid=%@&questionProg=%@", studentID, classID, jsonString ]];
-    NSString *escapedString = [strURL2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *add = [NSURL URLWithString:escapedString];
-    
-    
-    strURL2 = [strURL2 stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    
+    NSString *strURL2 = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendquestionprog.php"]];
+
     NSLog(@"%@", strURL2);
+
+
+    //Question progress
+    NSMutableArray * arr = [[NSMutableArray alloc] init];
+    [arr addObject:questionProg];
+    NSError *error;
+    NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:&error];
     
-    //Creating acutal url
-    NSURL *myURL2 = [NSURL URLWithString:strURL2];
+    if (error)
+        NSLog(@"%s: JSON encode error: %@", __FUNCTION__, error);
     
-    //Calling and storing the json data
-    NSData *data2 = [NSData dataWithContentsOfURL:myURL2];
+    //Create the request
+    NSURL *url = [NSURL URLWithString:strURL2];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:jsonData2];
     
-    NSLog(@"%@", data2);
+    //Issue the request
+    NSURLResponse *response = nil;
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (error)
+        NSLog(@"%s: NSURLConnection error: %@", __FUNCTION__, error);
     
+    //Response
+    NSString *responseString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"responseString: %@",responseString);
     
-    
-    
+
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
     

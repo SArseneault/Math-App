@@ -49,6 +49,7 @@
 
 
 
+
 	//updating the level progress table with the passed info. If it works it echos 1, else it echos 0
 	if($db->update('level_progress', $levelProgID, 'levelprog_id', $fields)) 
 		echo "1";

@@ -453,8 +453,6 @@ if($user->classExist()){  ?>
 </div>
 
 
-
-
 <!--Model for editing a student-->
 <div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -466,12 +464,6 @@ if($user->classExist()){  ?>
         <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
       
         <h1 id="student_ID"></h1>
-
-
-
-
-
-
 
       </div>
         <div class="modal-footer">

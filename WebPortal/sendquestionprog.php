@@ -5,23 +5,28 @@
 	//Setting db to an instance of the database singleton 
 	$db = DB::getInstance();
 
+	//Grabing the post array
+	$handle = fopen("php://input", "rb");
+	$http_raw_post_data = '';
+	while (!feof($handle)) {
+	    $http_raw_post_data .= fread($handle, 8192);
+	}
+	fclose($handle);
 
-	//Grabbing Variables from the link
-	$studentID = $_GET["studentid"];
-	$classID =  $_GET["classid"];
-	$questionProgData = $_GET["questionProg"];
+	//Converting the json string array to an array
+	$questionProgData = json_decode($http_raw_post_data,true);
 
-	//Converting into json
-	$questionProgData = json_decode($questionProgData)[0];
-	
+	$questionProgData = $questionProgData[0];
+	//print_r($questionProgData);
+
 	//Creating a fields array
 	$fields = array();
+
 
 	//Looping through each progress and inserting it into the database
 	foreach($questionProgData as $questionProg)
 	{
 
-		$questionProg = get_object_vars($questionProg);
 	
 		$fields['answer'] = $questionProg['User Answer'];
 		$fields['attempts'] = 1;
