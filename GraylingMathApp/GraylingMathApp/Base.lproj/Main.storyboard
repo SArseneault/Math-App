@@ -399,26 +399,26 @@
                                 <exclude reference="gLO-eT-q59"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KuH-rD-xMQ"/>
-                                <exclude reference="nCa-gl-V19"/>
-                                <exclude reference="YkK-EZ-TpB"/>
-                                <exclude reference="qC9-iE-qWs"/>
-                                <exclude reference="EFh-ZA-yee"/>
-                                <exclude reference="v1K-sI-1tI"/>
-                                <exclude reference="JwE-ma-CFu"/>
-                                <exclude reference="mWi-t9-8MZ"/>
                                 <exclude reference="3bT-Yf-xtT"/>
                                 <exclude reference="cyE-oI-ieI"/>
                                 <exclude reference="fIx-g9-iNt"/>
                                 <exclude reference="l94-R4-O2Q"/>
-                                <exclude reference="l0X-bB-cts"/>
-                                <exclude reference="maS-xj-EJ8"/>
                                 <exclude reference="ntW-pb-OAm"/>
                                 <exclude reference="wI1-Ta-PJi"/>
-                                <exclude reference="KIb-9t-Q0S"/>
-                                <exclude reference="y3f-rV-wRP"/>
+                                <exclude reference="KuH-rD-xMQ"/>
+                                <exclude reference="nCa-gl-V19"/>
                                 <exclude reference="W4t-Q9-8rY"/>
                                 <exclude reference="pTR-JX-mtz"/>
+                                <exclude reference="YkK-EZ-TpB"/>
+                                <exclude reference="qC9-iE-qWs"/>
+                                <exclude reference="JwE-ma-CFu"/>
+                                <exclude reference="mWi-t9-8MZ"/>
+                                <exclude reference="EFh-ZA-yee"/>
+                                <exclude reference="v1K-sI-1tI"/>
+                                <exclude reference="l0X-bB-cts"/>
+                                <exclude reference="maS-xj-EJ8"/>
+                                <exclude reference="KIb-9t-Q0S"/>
+                                <exclude reference="y3f-rV-wRP"/>
                                 <exclude reference="VEp-cY-2Wi"/>
                             </mask>
                         </variation>
@@ -431,26 +431,26 @@
                                 <include reference="gLO-eT-q59"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KuH-rD-xMQ"/>
-                                <include reference="nCa-gl-V19"/>
-                                <include reference="YkK-EZ-TpB"/>
-                                <include reference="qC9-iE-qWs"/>
-                                <include reference="EFh-ZA-yee"/>
-                                <include reference="v1K-sI-1tI"/>
-                                <include reference="JwE-ma-CFu"/>
-                                <include reference="mWi-t9-8MZ"/>
                                 <include reference="3bT-Yf-xtT"/>
                                 <include reference="cyE-oI-ieI"/>
                                 <include reference="fIx-g9-iNt"/>
                                 <include reference="l94-R4-O2Q"/>
-                                <include reference="l0X-bB-cts"/>
-                                <include reference="maS-xj-EJ8"/>
                                 <include reference="ntW-pb-OAm"/>
                                 <include reference="wI1-Ta-PJi"/>
-                                <include reference="KIb-9t-Q0S"/>
-                                <include reference="y3f-rV-wRP"/>
+                                <include reference="KuH-rD-xMQ"/>
+                                <include reference="nCa-gl-V19"/>
                                 <include reference="W4t-Q9-8rY"/>
                                 <include reference="pTR-JX-mtz"/>
+                                <include reference="YkK-EZ-TpB"/>
+                                <include reference="qC9-iE-qWs"/>
+                                <include reference="JwE-ma-CFu"/>
+                                <include reference="mWi-t9-8MZ"/>
+                                <include reference="EFh-ZA-yee"/>
+                                <include reference="v1K-sI-1tI"/>
+                                <include reference="l0X-bB-cts"/>
+                                <include reference="maS-xj-EJ8"/>
+                                <include reference="KIb-9t-Q0S"/>
+                                <include reference="y3f-rV-wRP"/>
                                 <include reference="VEp-cY-2Wi"/>
                             </mask>
                         </variation>
@@ -665,7 +665,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ho-qc-QRT">
-                                <rect key="frame" x="224" y="256" width="41" height="30"/>
+                                <rect key="frame" x="224" y="257" width="41" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="gez-fh-HO5"/>
                                     <constraint firstAttribute="height" constant="30" id="guN-ag-thp"/>
@@ -1589,7 +1589,7 @@
         <image name="track.png" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XyL-bb-h10"/>
         <segue reference="GO7-GP-1lG"/>
-        <segue reference="IgK-zJ-R3d"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -132,6 +132,11 @@
     
 }
 
+#pragma mark - allow tile to be dragged after intiail press on index
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
 
 
 //This function calls a php and returns a json string of questions
@@ -277,6 +282,8 @@
             NSLog(@"BADDDD DROPP AREA");
 
         }
+        
+        //Tile Keyboard collection view to make tile avlaible again
     }
     
     
