@@ -40,6 +40,18 @@
     return self;
 }
 
+#pragma mark- Fill in tile once it is dropped
+-(void)cellDragCompleteWithModel:(TileModel *)model{
+    
+    NSLog(@"In cell drag complete with model");
+    if(model !=nil)
+    {
+        NSInteger index =[_tileModels indexOfObject:model];
+        NSIndexPath *indexPath =[NSIndexPath indexPathForItem:index inSection:0];
+        [_collectionView cellForItemAtIndexPath:indexPath].alpha=1.0f;
+    }
+}
+
 #pragma mark- set up gestures to send to parent view
 
 - (void)setUpGestures {

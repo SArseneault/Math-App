@@ -15,4 +15,5 @@
 //method to communinicate between TestlevelView controller and uicollection view controller to notify when a cell has been selected.
 - (instancetype)initWithCollectionView:(UICollectionView *)view andParentViewController:(TestLevelView *)parent;
 
+-(void)cellDragCompleteWithModel:(TileModel*)model;
 @end

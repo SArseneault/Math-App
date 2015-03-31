@@ -275,6 +275,8 @@
             
             NSLog(@"VALID DROP AREA RECGONIZED");
             NSLog(@"Tile Dropped is %d",_tileModel.value);
+            
+            //adds the value of the tile to the array/string used for input
             [self addinputToArray:_tileModel.value];
         }
         else{
@@ -284,6 +286,7 @@
         }
         
         //Tile Keyboard collection view to make tile avlaible again
+        [_keyBoardCollectionView cellDragCompleteWithModel:_tileModel];
     }
     
     
