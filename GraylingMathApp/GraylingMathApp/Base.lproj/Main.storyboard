@@ -285,8 +285,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tn-Ud-nbI">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0Hr-lX-YgR"/>
+                                    <constraint firstAttribute="height" constant="65" id="mSg-Ez-VPR"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Hr-lX-YgR"/>
+                                        <exclude reference="mSg-Ez-VPR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="347" y="467" width="80" height="65"/>
+                                    <mask key="constraints">
+                                        <include reference="0Hr-lX-YgR"/>
+                                        <include reference="mSg-Ez-VPR"/>
+                                    </mask>
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-QD-Atv">
@@ -357,9 +371,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="12.5"/>
                             </constraint>
                             <constraint firstItem="1vL-YU-TKu" firstAttribute="top" secondItem="iSM-kY-Vuk" secondAttribute="bottom" constant="33" id="cyE-oI-ieI"/>
-                            <constraint firstItem="1vL-YU-TKu" firstAttribute="leading" secondItem="yNr-QD-Atv" secondAttribute="trailing" constant="37" id="fIx-g9-iNt">
-                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
-                            </constraint>
+                            <constraint firstItem="1vL-YU-TKu" firstAttribute="leading" secondItem="yNr-QD-Atv" secondAttribute="trailing" constant="37" id="fIx-g9-iNt"/>
                             <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="l0X-bB-cts">
                                 <variation key="heightClass=regular-widthClass=regular" constant="10.5"/>
                             </constraint>
@@ -369,11 +381,13 @@
                             <constraint firstItem="yBQ-jC-GhP" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="197" id="mWi-t9-8MZ"/>
                             <constraint firstItem="iSM-kY-Vuk" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" constant="1" id="maS-xj-EJ8"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" constant="38" id="nCa-gl-V19"/>
+                            <constraint firstAttribute="centerX" secondItem="1tn-Ud-nbI" secondAttribute="centerX" id="ntW-pb-OAm"/>
                             <constraint firstItem="GTb-24-Tr0" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="22" id="pTR-JX-mtz"/>
                             <constraint firstItem="32H-sz-Uv6" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="157" id="qC9-iE-qWs"/>
                             <constraint firstAttribute="centerX" secondItem="rUt-U0-aJd" secondAttribute="centerX" id="v1K-sI-1tI">
                                 <variation key="heightClass=regular-widthClass=regular" constant="11"/>
                             </constraint>
+                            <constraint firstItem="1tn-Ud-nbI" firstAttribute="top" secondItem="1vL-YU-TKu" secondAttribute="bottom" constant="28" id="wI1-Ta-PJi"/>
                             <constraint firstItem="Atq-jg-QzK" firstAttribute="top" secondItem="1vL-YU-TKu" secondAttribute="bottom" constant="28" id="y3f-rV-wRP"/>
                         </constraints>
                         <variation key="default">
@@ -399,6 +413,8 @@
                                 <exclude reference="l94-R4-O2Q"/>
                                 <exclude reference="l0X-bB-cts"/>
                                 <exclude reference="maS-xj-EJ8"/>
+                                <exclude reference="ntW-pb-OAm"/>
+                                <exclude reference="wI1-Ta-PJi"/>
                                 <exclude reference="KIb-9t-Q0S"/>
                                 <exclude reference="y3f-rV-wRP"/>
                                 <exclude reference="W4t-Q9-8rY"/>
@@ -429,6 +445,8 @@
                                 <include reference="l94-R4-O2Q"/>
                                 <include reference="l0X-bB-cts"/>
                                 <include reference="maS-xj-EJ8"/>
+                                <include reference="ntW-pb-OAm"/>
+                                <include reference="wI1-Ta-PJi"/>
                                 <include reference="KIb-9t-Q0S"/>
                                 <include reference="y3f-rV-wRP"/>
                                 <include reference="W4t-Q9-8rY"/>
