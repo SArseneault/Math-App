@@ -94,14 +94,33 @@
         _draggedTile.hidden=NO;
         
         //call to update dragged state and if it is a valid drag point
-        //[self updateTileViewDragState:[self isValidDragPoint:point]];
+        [self updateTileViewDragState:[self isValidDragPoint:point]];
     }
     
     
     
 }
 
-#pragma mark - draged state for tile view
+#pragma mark - draged state for tile view this is where it updates to see where dragged point is
+-(void) updateTileViewDragState:(BOOL)validDropPoint{
+    
+    //If it is a valid drag point highlight tile
+    if(validDropPoint){
+        [ _draggedTile setHighLight:YES];
+    }
+    else{
+        [ _draggedTile setHighLight:NO];
+    }
+    
+}
+
+#pragma mark- method recgonizes when the tile is over in input area and creates a bool
+-(BOOL)isValidDragPoint:(CGPoint)point{
+    
+    NSLog(@"Drag Point is set to false");
+    
+    return false;
+}
 
 
 
@@ -208,6 +227,22 @@
     
     //get the point in the testlevel view
     CGPoint touchPoint =[gesture locationInView:self.view];
+    
+    //calls when tile is moving
+    if(gesture.state==UIGestureRecognizerStateChanged && !_draggedTile.hidden)
+    {
+        NSLog(@"Drag recgonizer moving tile");
+        //tile is dragged
+        _draggedTile.center=touchPoint;
+        
+        //update where card is
+        [self updateTileViewDragState:[self isValidDragPoint:touchPoint]];
+    }
+    if(gesture.state ==UIGestureRecognizerStateEnded && !_draggedTile.hidden)
+    {
+        //hide dragged tile
+        _draggedTile.hidden=YES;
+    }
     
     
     

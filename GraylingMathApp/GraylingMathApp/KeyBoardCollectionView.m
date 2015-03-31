@@ -79,6 +79,11 @@
             //tell view controller cell has been selected
             [_parentController setSelectedTile:_selectedTile atPoint:point];
             
+            //Dim the tile when it is being dragged in parent view
+            //Dim Cell when index is clicked
+            [_collectionView cellForItemAtIndexPath:indexPath].alpha =0.2f;
+            
+            
         }
         else
         {
