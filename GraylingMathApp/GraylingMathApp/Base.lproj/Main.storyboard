@@ -244,6 +244,77 @@
                                     <rect key="frame" x="341" y="326" width="96" height="29"/>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tn-Ud-nbI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0Hr-lX-YgR"/>
+                                    <constraint firstAttribute="height" constant="65" id="mSg-Ez-VPR"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Hr-lX-YgR"/>
+                                        <exclude reference="mSg-Ez-VPR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="347" y="467" width="80" height="65"/>
+                                    <mask key="constraints">
+                                        <include reference="0Hr-lX-YgR"/>
+                                        <include reference="mSg-Ez-VPR"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vL-YU-TKu">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Leg-O0-RAJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="f3W-M6-dde"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Leg-O0-RAJ"/>
+                                        <exclude reference="f3W-M6-dde"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="289" y="410" width="200" height="29"/>
+                                    <mask key="constraints">
+                                        <include reference="Leg-O0-RAJ"/>
+                                        <include reference="f3W-M6-dde"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-QD-Atv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="185" y="467" width="67" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="clearInput" destination="fdR-Of-HNk" eventType="touchUpInside" id="Laz-1e-Jz7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atq-jg-QzK">
+                                <rect key="frame" x="253" y="470" width="95" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="514" y="467" width="49" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="submitAnswer" destination="fdR-Of-HNk" eventType="touchUpInside" id="TRL-g6-qps"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-eT-q59">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,77 +353,6 @@
                                     </mask>
                                 </variation>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tn-Ud-nbI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="0Hr-lX-YgR"/>
-                                    <constraint firstAttribute="height" constant="65" id="mSg-Ez-VPR"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0Hr-lX-YgR"/>
-                                        <exclude reference="mSg-Ez-VPR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="347" y="467" width="80" height="65"/>
-                                    <mask key="constraints">
-                                        <include reference="0Hr-lX-YgR"/>
-                                        <include reference="mSg-Ez-VPR"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-QD-Atv">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
-                                <state key="normal" title="Clear">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="185" y="467" width="67" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="clearInput" destination="fdR-Of-HNk" eventType="touchUpInside" id="Laz-1e-Jz7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atq-jg-QzK">
-                                <rect key="frame" x="253" y="470" width="95" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="514" y="467" width="49" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="submitAnswer" destination="fdR-Of-HNk" eventType="touchUpInside" id="TRL-g6-qps"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vL-YU-TKu">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="Leg-O0-RAJ"/>
-                                    <constraint firstAttribute="width" constant="200" id="f3W-M6-dde"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Leg-O0-RAJ"/>
-                                        <exclude reference="f3W-M6-dde"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="289" y="410" width="200" height="29"/>
-                                    <mask key="constraints">
-                                        <include reference="Leg-O0-RAJ"/>
-                                        <include reference="f3W-M6-dde"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8489188762626263" green="0.8489188762626263" blue="0.8489188762626263" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -393,10 +393,10 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="LU8-fo-TNy"/>
-                                <exclude reference="gLO-eT-q59"/>
                                 <exclude reference="1tn-Ud-nbI"/>
-                                <exclude reference="yNr-QD-Atv"/>
                                 <exclude reference="1vL-YU-TKu"/>
+                                <exclude reference="yNr-QD-Atv"/>
+                                <exclude reference="gLO-eT-q59"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KuH-rD-xMQ"/>
@@ -425,10 +425,10 @@
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="LU8-fo-TNy"/>
-                                <include reference="gLO-eT-q59"/>
                                 <include reference="1tn-Ud-nbI"/>
-                                <include reference="yNr-QD-Atv"/>
                                 <include reference="1vL-YU-TKu"/>
+                                <include reference="yNr-QD-Atv"/>
+                                <include reference="gLO-eT-q59"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KuH-rD-xMQ"/>
@@ -467,16 +467,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqE-fc-a5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="dD8-oI-bOn" userLabel="Pan Gesture Recognizer-0"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="dui-0E-ZGF" userLabel="Pan Gesture Recognizer-1"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="kgU-xJ-1dC" userLabel="Pan Gesture Recognizer-2"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="o2d-Y1-ccM" userLabel="Pan Gesture Recognizer-3"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="ZCB-Ty-fV5" userLabel="Pan Gesture Recognizer-4"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="vvI-go-W4g" userLabel="Pan Gesture Recognizer-5"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Y4B-yJ-39D" userLabel="Pan Gesture Recognizer-6"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Me7-X0-hcy" userLabel="Pan Gesture Recognizer-7"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="csm-S4-VJr" userLabel="Pan Gesture Recognizer-8"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Ru2-0A-DpA" userLabel="Pan Gesture Recognizer-9"/>
             </objects>
             <point key="canvasLocation" x="-1174.5" y="1141.5"/>
         </scene>

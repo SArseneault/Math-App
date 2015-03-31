@@ -53,6 +53,7 @@
     [_collectionView addGestureRecognizer:longPressGesture];
 }
 
+
 #pragma mark- hadle press function
 - (void)handlePress:(UILongPressGestureRecognizer *)gesture {
     
@@ -126,7 +127,12 @@
     
 
     
-    TileCollectionCell *tile = [_collectionView dequeueReusableCellWithReuseIdentifier:@"TileCell" forIndexPath:indexPath];
+    TileCollectionCell *tile =(TileCollectionCell*) [_collectionView dequeueReusableCellWithReuseIdentifier:@"TileCell" forIndexPath:indexPath];
+    
+    TileModel *model = [_tileModels objectAtIndex:indexPath.item];
+    
+    //set label of tile
+    [tile setModel:model];
     
     //tile.backgroundColor = [UIColor blackColor];
     return tile;
