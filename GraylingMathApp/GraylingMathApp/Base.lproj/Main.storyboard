@@ -170,7 +170,7 @@
                                 <rect key="frame" x="68" y="28" width="166" height="27"/>
                                 <color key="backgroundColor" red="0.33958661379999999" green="0.43844325610000001" blue="0.1432873737" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="6Vg-Dp-VyB"/>
+                                    <constraint firstAttribute="width" constant="115" id="6Vg-Dp-VyB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,7 +202,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grayling Math Racer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU8-fo-TNy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Grayling Math Racer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU8-fo-TNy">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -315,8 +315,7 @@
                                     <action selector="submitAnswer" destination="fdR-Of-HNk" eventType="touchUpInside" id="TRL-g6-qps"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-eT-q59">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-eT-q59">
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="800" id="J7W-TO-QmT"/>
@@ -333,7 +332,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -392,11 +390,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="LU8-fo-TNy"/>
                                 <exclude reference="1tn-Ud-nbI"/>
                                 <exclude reference="1vL-YU-TKu"/>
                                 <exclude reference="yNr-QD-Atv"/>
-                                <exclude reference="gLO-eT-q59"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="3bT-Yf-xtT"/>
@@ -1589,7 +1585,7 @@
         <image name="track.png" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="GO7-GP-1lG"/>
         <segue reference="XyL-bb-h10"/>
-        <segue reference="DS6-FN-2hn"/>
     </inferredMetricsTieBreakers>
 </document>

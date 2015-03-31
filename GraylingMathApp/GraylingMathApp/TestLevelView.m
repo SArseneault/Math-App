@@ -614,8 +614,31 @@
     //increment seconds
     seconds++;
     
-    //update timmer label
-    labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
+    if(seconds >=60)
+    {
+        int minutes = seconds/60;
+        int tempSeconds = seconds%60;
+        
+        
+        if(tempSeconds<10)
+        {
+            labelForTimer.text=[NSString stringWithFormat:@"Time: %d:0%d",minutes, tempSeconds];
+            
+        }
+        else{
+            //Update timer lable
+            labelForTimer.text =[NSString stringWithFormat:@"Time: %d:%d", minutes, tempSeconds];
+            
+        }
+        
+        
+    }
+    else{
+        //update timmer label
+        labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
+        
+    }
+
     
     //Check for timeLimit
     if(seconds == timeLimitSeconds){
