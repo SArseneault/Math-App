@@ -342,10 +342,35 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vL-YU-TKu">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cIM-6J-xFt"/>
+                                    <constraint firstAttribute="width" constant="42" id="zSE-Nj-F5C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cIM-6J-xFt"/>
+                                        <exclude reference="zSE-Nj-F5C"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="70" y="214" width="42" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="cIM-6J-xFt"/>
+                                        <include reference="zSE-Nj-F5C"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8489188762626263" green="0.8489188762626263" blue="0.8489188762626263" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="HBH-Xs-oVe" secondAttribute="centerX" id="7Q9-kb-8q9"/>
+                            <constraint firstItem="1vL-YU-TKu" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" constant="54" id="8lF-V1-Rjc"/>
                             <constraint firstItem="rUt-U0-aJd" firstAttribute="top" secondItem="yBQ-jC-GhP" secondAttribute="bottom" constant="8" id="EFh-ZA-yee"/>
                             <constraint firstItem="HBH-Xs-oVe" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="285" id="HDk-7W-3yv"/>
                             <constraint firstAttribute="centerX" secondItem="Atq-jg-QzK" secondAttribute="centerX" id="Jee-4R-Esr">
@@ -354,6 +379,7 @@
                             <constraint firstAttribute="centerX" secondItem="yBQ-jC-GhP" secondAttribute="centerX" id="JwE-ma-CFu"/>
                             <constraint firstAttribute="centerX" secondItem="HBH-Xs-oVe" secondAttribute="centerX" id="Jxq-BO-Zh2"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="17" id="KuH-rD-xMQ"/>
+                            <constraint firstItem="1vL-YU-TKu" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="114" id="M9F-4Z-5Sg"/>
                             <constraint firstItem="1tn-Ud-nbI" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="241" id="SaT-uB-2pg"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="45" id="VEp-cY-2Wi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GTb-24-Tr0" secondAttribute="trailing" constant="39" id="W4t-Q9-8rY"/>
@@ -373,10 +399,13 @@
                                 <exclude reference="LU8-fo-TNy"/>
                                 <exclude reference="gLO-eT-q59"/>
                                 <exclude reference="1tn-Ud-nbI"/>
+                                <exclude reference="1vL-YU-TKu"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KuH-rD-xMQ"/>
                                 <exclude reference="nCa-gl-V19"/>
+                                <exclude reference="8lF-V1-Rjc"/>
+                                <exclude reference="M9F-4Z-5Sg"/>
                                 <exclude reference="SaT-uB-2pg"/>
                                 <exclude reference="YkK-EZ-TpB"/>
                                 <exclude reference="qC9-iE-qWs"/>
@@ -402,10 +431,13 @@
                                 <include reference="LU8-fo-TNy"/>
                                 <include reference="gLO-eT-q59"/>
                                 <include reference="1tn-Ud-nbI"/>
+                                <include reference="1vL-YU-TKu"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KuH-rD-xMQ"/>
                                 <include reference="nCa-gl-V19"/>
+                                <include reference="8lF-V1-Rjc"/>
+                                <include reference="M9F-4Z-5Sg"/>
                                 <include reference="SaT-uB-2pg"/>
                                 <include reference="YkK-EZ-TpB"/>
                                 <include reference="qC9-iE-qWs"/>
@@ -435,6 +467,7 @@
                         <outlet property="operatorLabel" destination="yBQ-jC-GhP" id="mi0-g2-jg8"/>
                         <outlet property="secondNumber" destination="rUt-U0-aJd" id="lgD-bd-vbl"/>
                         <outlet property="userInput" destination="HBH-Xs-oVe" id="xGf-D3-kiS"/>
+                        <outlet property="userInputLabelDrag" destination="1vL-YU-TKu" id="boD-6S-JUI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqE-fc-a5A" userLabel="First Responder" sceneMemberID="firstResponder"/>

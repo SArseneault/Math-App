@@ -18,7 +18,10 @@
     IBOutlet UILabel *labelForTimer; //label for timer
     IBOutlet UILabel *operatorLabel;
     
+
+    IBOutlet UILabel *userInputLabelDrag;
     
+
     NSInteger valueOne; //int for first number
     NSInteger valueTwo; //int for second number
     NSInteger correctAnswer; //int for correct answer

@@ -291,6 +291,10 @@
     NSLog(@"Recived call to add input to array, value it: %d", inputNumber);
     NSLog(@"Size of input array is, %lu", (unsigned long)[userInputArray count]);
     
+    NSLog(@"Printing the size of string before numbers are added");
+    NSUInteger length = [userInputString length];
+    NSLog(@"%lu", (unsigned long)length);
+    
     //add integer to array
     [userInputArray addObject:[NSNumber numberWithInteger:inputNumber]];
     
@@ -310,6 +314,8 @@
     
     NSLog(@"Whole array is %@", userInputArray);
     NSLog(@"Printing String: %@", userInputString);
+    
+    userInputLabelDrag.text=userInputString;
     //NSLog(@"@", userInputString);
     
     
