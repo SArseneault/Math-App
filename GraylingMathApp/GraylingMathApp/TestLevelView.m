@@ -246,6 +246,21 @@
     {
         //hide dragged tile
         _draggedTile.hidden=YES;
+        
+        //check to see if it is a valid drop point
+        BOOL validDropPoint =[self isValidDragPoint:touchPoint];
+        
+        if(validDropPoint)
+        {
+            
+            NSLog(@"VALID DROP AREA RECGONIZED");
+            NSLog(@"Tile Dropped is %d",_tileModel.value);
+        }
+        else{
+            
+            NSLog(@"BADDDD DROPP AREA");
+
+        }
     }
     
     
