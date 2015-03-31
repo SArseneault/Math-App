@@ -25,6 +25,9 @@
     //Create array to store numbers inputed from dragged tiles
     NSMutableArray *userInputArray;
     
+    //create string to store users input
+    NSMutableString *userInputString;
+    
     
 }
 
@@ -229,6 +232,9 @@
     
     userInputArray=[[NSMutableArray alloc]init];
     
+    //create string to store users input
+    userInputString =[[NSMutableString alloc]init];
+    
     
     
 }
@@ -278,6 +284,8 @@
     
 }
 
+#pragma mark - input dragged tiles into array and then display current input as text on screen
+
 -(void) addinputToArray:(int)inputNumber{
     
     NSLog(@"Recived call to add input to array, value it: %d", inputNumber);
@@ -293,8 +301,16 @@
     {
         
         NSLog(@"Value at: %d, is %@:", i, userInputArray[i]);
+
     }
     
+    [userInputString appendFormat:@"%i", inputNumber];
+    
+    //userInputString = [NSString stringWithFormat:@"%d", inputNumber];
+    
+    NSLog(@"Whole array is %@", userInputArray);
+    NSLog(@"Printing String: %@", userInputString);
+    //NSLog(@"@", userInputString);
     
     
     
