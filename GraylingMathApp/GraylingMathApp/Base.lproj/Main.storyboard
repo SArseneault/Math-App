@@ -468,7 +468,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqE-fc-a5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1174.5" y="1141.5"/>
+            <point key="canvasLocation" x="-1273" y="1483"/>
         </scene>
         <!--Type Select-->
         <scene sceneID="h1v-YF-LpV">
@@ -1200,7 +1200,7 @@
                                 <rect key="frame" x="68" y="28" width="151" height="27"/>
                                 <color key="backgroundColor" red="0.33958661379999999" green="0.43844325610000001" blue="0.1432873737" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="g0l-QG-cYa"/>
+                                    <constraint firstAttribute="width" constant="115" id="g0l-QG-cYa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1590,6 +1590,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XyL-bb-h10"/>
-        <segue reference="GO7-GP-1lG"/>
+        <segue reference="DS6-FN-2hn"/>
     </inferredMetricsTieBreakers>
 </document>
