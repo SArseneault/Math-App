@@ -40,6 +40,9 @@
 //Sythensize Keyboard
 @synthesize keyBoard;
 
+//uiview for input area
+@synthesize inputArea;
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear: (BOOL) animated];
@@ -117,9 +120,10 @@
 #pragma mark- method recgonizes when the tile is over in input area and creates a bool
 -(BOOL)isValidDragPoint:(CGPoint)point{
     
-    NSLog(@"Drag Point is set to false");
+    NSLog(@"Checking input area");
     
-    return false;
+    return CGRectContainsPoint(self.inputArea.frame, point);
+    
 }
 
 

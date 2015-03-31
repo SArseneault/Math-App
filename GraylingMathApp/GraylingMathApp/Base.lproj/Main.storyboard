@@ -23,7 +23,7 @@
                                 <rect key="frame" x="167" y="193" width="255" height="156"/>
                                 <state key="normal" image="raceCarButton.png"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="100" width="800" height="600"/>
+                                    <rect key="frame" x="100" y="100" width="800" height="600"/>
                                 </variation>
                                 <connections>
                                     <action selector="toggleSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oJQ-bN-ZfV"/>
@@ -318,6 +318,30 @@
                                     </mask>
                                 </variation>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tn-Ud-nbI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ewi-8L-Nm8"/>
+                                    <constraint firstAttribute="height" constant="65" id="gRU-GF-mKH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="oWT-Av-Gwu"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ewi-8L-Nm8"/>
+                                        <exclude reference="gRU-GF-mKH"/>
+                                        <exclude reference="oWT-Av-Gwu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="341" width="80" height="65"/>
+                                    <mask key="constraints">
+                                        <include reference="ewi-8L-Nm8"/>
+                                        <include reference="gRU-GF-mKH"/>
+                                        <include reference="oWT-Av-Gwu"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8489188762626263" green="0.8489188762626263" blue="0.8489188762626263" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -330,6 +354,7 @@
                             <constraint firstAttribute="centerX" secondItem="yBQ-jC-GhP" secondAttribute="centerX" id="JwE-ma-CFu"/>
                             <constraint firstAttribute="centerX" secondItem="HBH-Xs-oVe" secondAttribute="centerX" id="Jxq-BO-Zh2"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="17" id="KuH-rD-xMQ"/>
+                            <constraint firstItem="1tn-Ud-nbI" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="241" id="SaT-uB-2pg"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="45" id="VEp-cY-2Wi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GTb-24-Tr0" secondAttribute="trailing" constant="39" id="W4t-Q9-8rY"/>
                             <constraint firstAttribute="centerX" secondItem="32H-sz-Uv6" secondAttribute="centerX" id="YkK-EZ-TpB"/>
@@ -347,10 +372,12 @@
                             <mask key="subviews">
                                 <exclude reference="LU8-fo-TNy"/>
                                 <exclude reference="gLO-eT-q59"/>
+                                <exclude reference="1tn-Ud-nbI"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KuH-rD-xMQ"/>
                                 <exclude reference="nCa-gl-V19"/>
+                                <exclude reference="SaT-uB-2pg"/>
                                 <exclude reference="YkK-EZ-TpB"/>
                                 <exclude reference="qC9-iE-qWs"/>
                                 <exclude reference="EFh-ZA-yee"/>
@@ -374,10 +401,12 @@
                             <mask key="subviews">
                                 <include reference="LU8-fo-TNy"/>
                                 <include reference="gLO-eT-q59"/>
+                                <include reference="1tn-Ud-nbI"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KuH-rD-xMQ"/>
                                 <include reference="nCa-gl-V19"/>
+                                <include reference="SaT-uB-2pg"/>
                                 <include reference="YkK-EZ-TpB"/>
                                 <include reference="qC9-iE-qWs"/>
                                 <include reference="EFh-ZA-yee"/>
@@ -400,6 +429,7 @@
                     </view>
                     <connections>
                         <outlet property="firstNumber" destination="32H-sz-Uv6" id="d6i-44-rdh"/>
+                        <outlet property="inputArea" destination="1tn-Ud-nbI" id="ms4-M8-jsO"/>
                         <outlet property="keyBoard" destination="gLO-eT-q59" id="4el-e7-R9n"/>
                         <outlet property="labelForTimer" destination="OS6-WI-nhX" id="H8n-jW-8j6"/>
                         <outlet property="operatorLabel" destination="yBQ-jC-GhP" id="mi0-g2-jg8"/>
