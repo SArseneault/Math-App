@@ -181,7 +181,6 @@ if(Input::exists()) {
 
 
 
-
 } 
 
 ?>
@@ -252,7 +251,6 @@ if($user->classExist()){  ?>
           <th>Time Limit</th>
           <th>Practice Questions</th>
           <th>Test Questions</th>
-          <th>Students on level</th>
         </tr>
       </thred>
       <tbody>
@@ -293,7 +291,6 @@ if($user->classExist()){  ?>
           <td><?php print_r($level['time_limit']); ?></td>
           <td><?php print_r($practiceCount); ?></td>
           <td><?php print_r($testCount); ?></td>
-          <td></td>
         </tr>
 
         <?php $i = $i + 1; } ?>
@@ -309,7 +306,11 @@ if($user->classExist()){  ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createLevelModal">Create Level</a>
     </div>
-    <?php if($levels){ ?>
+    <?php if(!$levels){ ?>
+    <div class ="col-md-2">
+      <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#addDefaultLevelsModal">Add Default Levels</a>
+    </div>
+    <?php } if($levels){ ?>
     <div class ="col-md-2">
       <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addQuestionModal">Add Question</a>
     </div>
@@ -324,6 +325,33 @@ if($user->classExist()){  ?>
   <p>Please created a class to the unlock level editor mode</p>
   
 <?php } ?>
+
+<!--modal for adding default levels -->
+<div class="modal fade" id="addDefaultLevelsModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Adding Default Levels</h4>
+      </div>
+        <div class="modal-body">
+          <h3>Are you sure you want to add a default layout of levels?</h3>
+          <br>
+          <h1 id="addDefaultLevelsResult"></h1>
+        </div>
+          <div class="modal-footer">
+            <button type="button" onclick="refreshPage();" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="addDefaultLevels();" class="btn btn-primary">Add Default Levels</button>
+    
+          </div>
+        </div>
+
+  </div>
+</div> 
+
+
+
+
 
 <!--modal for remove all levels -->
 <div class="modal fade" id="removeLevelsModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -688,24 +716,32 @@ if($user->classExist()){  ?>
     location.reload();
   })
 
- function refreshPage() {
+
+function refreshPage() {
     location.reload();
-  }
+}
+
 function removeLevels(){
-  
 
     $.post('removelevelsall.php',{classid:CID},
     function(data)
     {
       document.getElementById('removeLevelsResult').innerHTML=data;
     });
-  }
+}
+
+function addDefaultLevels() {
+$.post('setDefaultLevel.php',
+    function(data)
+    {
+      document.getElementById('addDefaultLevelsResult').innerHTML=data;
+    });
+}
 
 
-
-    function setClassID(classID){
-      CID = classID;
-    }
+function setClassID(classID){
+  CID = classID;
+}
   
 
  

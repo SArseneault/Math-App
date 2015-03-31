@@ -122,8 +122,6 @@
 
 		            );
 
-		       
-
 					//Attempt to insert default data for the progress level
 					if(!$this->_db->insert('level_progress', $defaultProgress)) {
 						throw new Exception('There was a problem inserting default progress for one of the students');
