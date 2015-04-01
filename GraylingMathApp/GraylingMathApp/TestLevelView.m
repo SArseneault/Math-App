@@ -12,6 +12,7 @@
 #import "TileUiView.h"
 #import "TileModel.h"
 #import "DestinationController.h"
+#import "TestEnd.h"
 
 @interface TestLevelView()<UIGestureRecognizerDelegate>
 {
@@ -559,12 +560,12 @@
     [timer invalidate];
     
     //alert to show that the practice section is over
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of %ld questions correct\n Total Time: %ld seconds", totalQuestionsCorrect, questionsInLevel, seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of %ld questions correct\n Total Time: %ld seconds", totalQuestionsCorrect, questionsInLevel, seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
     
     
     //set alert tag to endTag
-    [alert setTag:1];
-    [alert show];
+    //[alert setTag:1];
+    //[alert show];
     
     
     NSString *status = @"0";
@@ -632,7 +633,25 @@
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
     
- 
+    TestEnd *TEND = [self.storyboard instantiateViewControllerWithIdentifier:@"TestEnd"];
+    
+    if(totalQuestionsCorrect == questionsInLevel)
+        TEND.PassFail = true;
+    else
+        TEND.PassFail = false;
+    
+    //Setting level info incase of a reply
+    TEND.levelName = levelName;
+    TEND.levelID = levelID;
+    TEND.timeLimit = timeLimit;
+    
+    [self presentViewController:TEND animated:YES completion:nil];
+    
+    
+    
+    
+    
+    
     
 }
 
