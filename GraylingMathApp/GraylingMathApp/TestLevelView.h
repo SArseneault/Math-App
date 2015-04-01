@@ -85,6 +85,10 @@
 
 //communicate with Keyboard view controller to communicate when tile is pressed
 -(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point;
-@property (weak, nonatomic) IBOutlet UIView *inputArea;
+
+
+//collection view for user input
+@property (strong, nonatomic) IBOutlet UICollectionView *inputTileCollectionView;
+
 
 @end

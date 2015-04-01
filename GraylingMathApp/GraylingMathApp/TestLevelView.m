@@ -11,10 +11,13 @@
 #import "KeyBoardCollectionView.h"
 #import "TileUiView.h"
 #import "TileModel.h"
+#import "DestinationController.h"
 
 @interface TestLevelView()<UIGestureRecognizerDelegate>
 {
     KeyBoardCollectionView *_keyBoardCollectionView;
+    
+    DestinationController *_destionController;
     
     //data for tiles
     TileModel *_tileModel;
@@ -46,8 +49,9 @@
 //Sythensize Keyboard
 @synthesize keyBoard;
 
-//uiview for input area
-@synthesize inputArea;
+
+
+@synthesize inputTileCollectionView;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -128,7 +132,20 @@
     
     NSLog(@"Checking input area");
     
-    return CGRectContainsPoint(self.inputArea.frame, point);
+    NSInteger numberOfTiles =[inputTileCollectionView numberOfItemsInSection:0];
+    
+    if(numberOfTiles <2)
+    {
+        NSLog(@"Number of tiles in collection view ARE: %i", numberOfTiles);
+        return CGRectContainsPoint(self.inputTileCollectionView.frame, point);
+        
+    }
+    else{
+        return false;
+    }
+    
+    
+
     
 }
 
@@ -222,6 +239,9 @@
     NSLog(@"cREATING KEYBOARD");
     _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
     
+    //Create user input collection view
+    _destionController=[[DestinationController alloc]initWithCollectionView:self.inputTileCollectionView];
+    
     //call to generate random number method to start game
     [self generateNumber];
     
@@ -277,6 +297,9 @@
             
             //adds the value of the tile to the array/string used for input
             [self addinputToArray:_tileModel.value];
+            
+            NSLog(@"Adding to input collection view");
+            [_destionController addModel:_tileModel];
         }
         else{
             
@@ -474,6 +497,9 @@
     //call method to check for end of practice section
     [self isEndCheck];
     
+    //clear input view controller
+    [_destionController clearInput];
+    
     
 }
 
@@ -496,6 +522,10 @@
     
     //update the numbers inputed to empty
     userInputLabelDrag.text =userInputString;
+    
+    //clear input view controller
+    [_destionController clearInput];
+    
     
     
     
