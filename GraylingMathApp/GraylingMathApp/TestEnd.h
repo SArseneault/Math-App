@@ -10,6 +10,8 @@
 
 @interface TestEnd : UIViewController <UIAlertViewDelegate>
 {
+    NSMutableArray * json;
+    NSString * strURL;
 }
 
 
@@ -20,5 +22,10 @@
 @property (strong, nonatomic) NSString *timeLimit;
 @property (strong, nonatomic) NSString *levelName;
 @property (strong, nonatomic) NSString *levelID;
+@property (weak, nonatomic) IBOutlet UILabel *outPutBox;
+@property (weak, nonatomic) IBOutlet UIButton *nextLevel;
+
+@property (weak, nonatomic) IBOutlet UITableView *questionTable;
+
 
 @end

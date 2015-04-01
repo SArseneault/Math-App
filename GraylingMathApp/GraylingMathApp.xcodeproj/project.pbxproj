@@ -47,6 +47,7 @@
 		20BDF0FC1ACC755B0047805E /* TestEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BDF0FB1ACC755B0047805E /* TestEnd.m */; };
 		20BDF0FF1ACC75F60047805E /* greenArrowLpng.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BDF0FD1ACC75F60047805E /* greenArrowLpng.png */; };
 		20BDF1001ACC75F60047805E /* greenArrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BDF0FE1ACC75F60047805E /* greenArrowR.png */; };
+		20BDF1041ACC94F80047805E /* chalkboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20BDF1031ACC94F80047805E /* chalkboard.jpg */; };
 		20D45FBB1ABE306D005EEBCE /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D45FBA1ABE306D005EEBCE /* Map.m */; };
 		20F8F6431AC89D2C00500A95 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F8F6421AC89D2C00500A95 /* track.png */; };
 		A203946B1AC9C5B7008288AE /* TileUiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A203946A1AC9C5B7008288AE /* TileUiView.m */; };
@@ -123,6 +124,7 @@
 		20BDF0FB1ACC755B0047805E /* TestEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEnd.m; sourceTree = "<group>"; };
 		20BDF0FD1ACC75F60047805E /* greenArrowLpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowLpng.png; path = Assets/greenArrowLpng.png; sourceTree = SOURCE_ROOT; };
 		20BDF0FE1ACC75F60047805E /* greenArrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowR.png; path = Assets/greenArrowR.png; sourceTree = SOURCE_ROOT; };
+		20BDF1031ACC94F80047805E /* chalkboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chalkboard.jpg; path = ../../../Desktop/GraylingMathApp/Assets/chalkboard.jpg; sourceTree = "<group>"; };
 		20D45FB91ABE3061005EEBCE /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		20D45FBA1ABE306D005EEBCE /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		20F8F6421AC89D2C00500A95 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				2077BD121AC8270300CD7BA0 /* Maps */,
 				2068F7831ABE7A4E0074BB25 /* tire-tracks.jpg */,
 				20BDF0FD1ACC75F60047805E /* greenArrowLpng.png */,
+				20BDF1031ACC94F80047805E /* chalkboard.jpg */,
 				20BDF0FE1ACC75F60047805E /* greenArrowR.png */,
 				200B08271AA4E63A000E404A /* carHorn.mp3 */,
 				200B082D1AA4E63A000E404A /* raceCarButton.png */,
@@ -482,6 +485,7 @@
 				200B08121AA4E52A000E404A /* LaunchScreen.xib in Resources */,
 				200B08331AA4E63A000E404A /* carHorn.mp3 in Resources */,
 				2077BD3C1AC8392400CD7BA0 /* car_orangeL.png in Resources */,
+				20BDF1041ACC94F80047805E /* chalkboard.jpg in Resources */,
 				2077BD2F1AC8389A00CD7BA0 /* car_redR.png in Resources */,
 				A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */,
 			);
