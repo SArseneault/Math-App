@@ -19,7 +19,11 @@
 					Session::flash('success', 'You have successfully logged in!');
 					Redirect::to("index.php");
 				} else {
-					echo '<p>Sorry, logging in failed.</p>';
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong>Sorry, logging in failed.
+              </div> <?php
 				}
 
 

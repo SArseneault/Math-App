@@ -100,6 +100,16 @@
 
 		}
 
+		//Update the level table
+		public function updateLevel($fields = array(), $id = null) {
+
+	
+			if(!$this->_db->update('level', $id, 'level_id', $fields)) {
+				throw new exception('There was a problem updating the level table.');
+			}
+		}
+		
+
 
 
 		//Find class by its classname or id

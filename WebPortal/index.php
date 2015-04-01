@@ -1,16 +1,21 @@
 <?php
 	require_once 'core/init.php';
 
-	if(Session::exists('success')) {
-		//echo '<p>' . Session::flash('success') . '</p>';
+  //Decides when to display the success messages
+  if(Session::exists('success')) {
+   
+      
 
-    Session::flash('success');
-    ?><div class="alert alert-success">
-                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
-                <strong>You have successfully logged in!</strong> 
-      </div> <?php
+      //Displaying the flash message
+      ?><div class="alert alert-success">
+                  <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                  <strong><?php print_r(Session::get('success') );?></strong> 
+        </div> <?php
 
-	}
+        //Removing the flash instance
+        Session::flash('success');
+
+    }
 
 	$user = new User();//Picking current user details
 

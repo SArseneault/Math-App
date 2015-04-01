@@ -44,9 +44,18 @@
         }
 
       } else {
-        foreach($validation->errors() as $error) {
-          echo $error, '<br>';
-        }
+
+              $errorString = "</br>";
+              foreach($validation->errors() as $error) {
+                $errorString = $errorString . $error . "</br>";
+               
+              }
+
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> <?php echo($errorString); ?>
+              </div> <?php
       }
     }
   } elseif(isset($_POST['ChangePass'])) {/////////////////////////////////////
@@ -100,9 +109,22 @@
         }
 
       } else {
-        foreach($validation->errors() as $error) {
-          echo $error, '<br>';
-        }
+      
+              $errorString = "</br>";
+              foreach($validation->errors() as $error) {
+                $errorString = $errorString . $error . "</br>";
+               
+              }
+
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> <?php echo($errorString); ?>
+              </div> <?php
+
+
+
+
       }
     }
 

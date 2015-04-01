@@ -113,7 +113,7 @@
 
 				
 					//If the passwords match return true
-					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
+					if($this->data()->password === $password) {
  
 						return true;
 					}

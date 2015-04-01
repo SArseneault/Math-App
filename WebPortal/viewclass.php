@@ -1,7 +1,21 @@
 <?php 
   require_once 'core/init.php';
 
+  //Decides when to display the success messages
+  if(Session::exists('success')) {
+   
+      
 
+      //Displaying the flash message
+      ?><div class="alert alert-success">
+                  <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                  <strong><?php print_r(Session::get('success') );?></strong> 
+        </div> <?php
+
+        //Removing the flash instance
+        Session::flash('success');
+
+    }
 
   $user = new User();//Picking current user details
   $studentOBJ = new Student(); //Creating a student object
@@ -80,6 +94,9 @@
 
             //Updating the teacher's class ID
 
+            Session::flash('success', 'You have succesfully created a class');
+
+
             //Refresh the page to show the update
             header("Refresh:0");
         } catch(Execption $e) {
@@ -136,22 +153,18 @@
 
         try {
            
-
-            //Creating a new salt
-            $salt = Hash::salt(32);
-
             //Inserting the new student into the database
             $studentOBJ->create(array(
               'first_name' => Input::get('first_name'),
               'last_name' => Input::get('last_name'),
               'username' => Input::get('username'),
-              'password' => Hash::make(Input::get('password'), $salt),
+              'password' => Input::get('password'),
               'class_id' => $classInfo['class_id'],
-              'joined' => date('Y-m-d H:i:s'),
-              'salt' => $salt
+              'joined' => date('Y-m-d H:i:s')
               ));
 
 
+            Session::flash('success', 'You have succesfully created a student');
 
             //Refresh the page to show the update
             header("Refresh:0");
@@ -280,7 +293,7 @@ if($user->classExist()){  ?>
 
                     ?>
                       <tr>
-                      <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
+                      <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>','<?php print_r($student['username']); ?>','<?php print_r($student['password']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
                       
                       <?php
 
@@ -488,6 +501,9 @@ if($user->classExist()){  ?>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
       
+        Student Username: <span id="student_username_ID"></span></br>       
+        Student Password: <span id="student_password_ID"></span></br>    
+      
         <h1 id="student_ID"></h1>
 
       </div>
@@ -554,9 +570,20 @@ if($user->classExist()){  ?>
 
   //Variable to store the student's  id 
   var SID = 0;
-  function setStudentID(studentID){
+  var SUN = "";
+  var SPW = "";
+
+  function setStudentID(studentID, studentUsername, studentPassword){
  
+    //Storing the student information globally to the rest of javascript
     SID = studentID;
+    SUN = studentUsername;
+    SPW = studentPassword;
+
+
+    //Displaying the student credentials in the edit student modal
+    document.getElementById('student_username_ID').innerHTML = SUN;
+    document.getElementById('student_password_ID').innerHTML = SPW;
     
   }
 

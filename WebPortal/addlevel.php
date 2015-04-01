@@ -1,6 +1,23 @@
 <?php 
   require_once 'core/init.php';
 
+  //Decides when to display the success messages
+  if(Session::exists('success')) {
+   
+      
+
+      //Displaying the flash message
+      ?><div class="alert alert-success">
+                  <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                  <strong><?php print_r(Session::get('success') );?></strong> 
+        </div> <?php
+
+        //Removing the flash instance
+        Session::flash('success');
+
+    }
+
+
   $user = new User();//Picking current user details
   $student = new Student(); //Creating a student object
   $db = DB::getInstance();
@@ -41,11 +58,6 @@ if(Input::exists()) {
             'required' => true,
             'max' => 11
             ),
-          'lDescription' => array(
-                'required' => false,
-                'min' => 2,
-                'max' => 100
-             ),
           ));
         
         $failure = false;
@@ -204,12 +216,29 @@ if(Input::exists()) {
         }
     }
 
-  }
+  }else if (isset($_POST['leveltime'])) {//////////////////////////
+    
+
+    //Grabbing Variables from the link
+    $levelID = $_POST["levelid"];
+    $levelTime = $_POST["leveltime"];
+
+    $SClass = new SClass();
+
+      //Updating the level with the new time
+      $SClass->updateLevel(array(
+        'time_limit' => $levelTime
+      ),  $levelID);
 
 
+      Session::flash('success', 'You have successfully changed the level time!');
+
+      //Refresh the page to show the update
+      header("Refresh:0");
+   } 
 
 
-} 
+}
 
 ?>
 
@@ -315,7 +344,7 @@ if($user->classExist()){  ?>
     
 
         <tr>
-          <td><a data-toggle="modal" data-target="#editLevelModal" id="levelview" onclick="setLevelID( '<?php print_r($classInfo['class_id']); ?>' , '<?php print_r($level['level_id']); ?>' ) "><?php print_r($level['name']); ?></a></td>
+          <td><a data-toggle="modal" data-target="#editLevelModal" id="levelview" onclick="setLevelID( '<?php print_r($classInfo['class_id']); ?>' , '<?php print_r($level['level_id']); ?>', '<?php print_r($level['description']); ?>', '<?php print_r($level['time_limit']); ?>') "><?php print_r($level['name']); ?></a></td>
           <td><?php print_r($level['time_limit']); ?></td>
           <td><?php print_r($practiceCount); ?></td>
           <td><?php print_r($testCount); ?></td>
@@ -549,11 +578,15 @@ if($user->classExist()){  ?>
   var CID = 0;
   QArrLength = -1;
   var Qarr; 
-  function setLevelID(classID, levelID){
+  var LDES = "There is no description for this level";
+  var LTIME = "";
+  function setLevelID(classID, levelID, description, timeLimit){
   
     //document.getElementById('level_ID').innerHTML="Level "+levelID+" info:";
     CID = classID;
     LID = levelID;
+    LDES = description;
+    LTIME = timeLimit;
     
     //questions = JSON.parse(questions);
 
@@ -571,6 +604,17 @@ if($user->classExist()){  ?>
      
     }); 
 
+
+  }
+
+  function changeLevelTime() 
+  {
+    newTime = document.getElementById('level_time_ID').value;
+    $.post('addlevel.php',{levelid:LID, leveltime:newTime},function(data){ 
+      
+      
+     
+    }); 
 
   }
 
@@ -593,7 +637,12 @@ if($user->classExist()){  ?>
         
         <button type="button" id="refreshpage2" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Level Edit</h4>
-    
+
+
+        Level Description:  <span id="level_description_ID"></span></br>       
+        Level Time:         <input type="text" maxlength="2" id="level_time_ID" class"form-control input-sm"/>   <button type="submit" onclick="changeLevelTime();" class="btn-xs btn-info">Update Time</button>
+        </br>
+   
         <h2 id="level_ID"></h2>
         <div class = "table-responsive" >
           <table id="qtable" class="table table-striped" max-width="150px">
@@ -612,9 +661,12 @@ if($user->classExist()){  ?>
            
                     <script type="text/javascript">
                       
-
+                     
                       
                        function createTable(){
+
+                        document.getElementById('level_description_ID').innerHTML = LDES;
+                        document.getElementById('level_time_ID').value = LTIME;
                           
                          //Linking to the table
                         var table = document.getElementById("qtable");
