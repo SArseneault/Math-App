@@ -2,7 +2,14 @@
 	require_once 'core/init.php';
 
 	if(Session::exists('success')) {
-		echo '<p>' . Session::flash('success') . '</p>';
+		//echo '<p>' . Session::flash('success') . '</p>';
+
+    Session::flash('success');
+    ?><div class="alert alert-success">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>You have successfully logged in!</strong> 
+      </div> <?php
+
 	}
 
 	$user = new User();//Picking current user details

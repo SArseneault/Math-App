@@ -87,9 +87,20 @@
           }
 
       } else {
-          foreach($validation->errors() as $error) {
-            echo $error, '<br>';
-          }
+          
+          $errorString = "</br>";
+              foreach($validation->errors() as $error) {
+                $errorString = $errorString . $error . "</br>";
+               
+              }
+
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> <?php echo($errorString); ?>
+              </div> <?php
+
+
         }
     }
   } elseif (isset($_POST['addStudent'])) {
@@ -105,17 +116,16 @@
           'max' => 50
           ),
         'last_name' => array(
-          'required' => true,
           'min' => 2,
           'max' => 50
           ),
         'password' => array(
             'required' => true,
-            'min' => 6
+            'min' => 2
            ),
         'password_again' => array(
             'required' => true,
-            'min' => 6,
+            'min' => 2,
             'matches' => 'password'
             )
 
@@ -142,16 +152,31 @@
               ));
 
 
+
             //Refresh the page to show the update
             header("Refresh:0");
+
         } catch(Execption $e) {
           die($e->getMessage());
           }
 
       } else {
-          foreach($validation->errors() as $error) {
-            echo $error, '<br>';
-          }
+         
+
+          $errorString = "</br>";
+              foreach($validation->errors() as $error) {
+                $errorString = $errorString . $error . "</br>";
+               
+              }
+
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> <?php echo($errorString); ?>
+              </div> <?php
+
+
+
         }
     }
 

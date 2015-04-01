@@ -27,6 +27,7 @@
 				return $session;
 			} else {
 				self::put($name, $string);
+				
 			}
 			return '';
 		}

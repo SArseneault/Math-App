@@ -40,47 +40,54 @@
               }
               $handle = fopen($location.$name, "r");
 
+             //Creating an string to store all the error info
+              $errorString = "</br>";
+              $failure = false;
+
               //Uploading the level info
               while(($fileop = fgetcsv($handle,1000,",")) !== false)
               {
                
-               if($fileop[0] === "NEXT" AND $fileop[1] === "NEXT" AND $fileop[2] === "NEXT"){
-                break;
-               }
+                 if($fileop[0] === "NEXT" AND $fileop[1] === "NEXT" AND $fileop[2] === "NEXT"){
+                  break;
+                 }
 
-              //Variable to store failures
-               $failure = false;
-    
-              //Checking if the level count is 42 or below
-              $levelCount = $db->query('SELECT * FROM level WHERE class_id = ?', array($classInfo['class_id']));
-              if($levelCount->count() > 42){
-                 print_r($fileop[0] . " was NOT added. There can't be more than 42 levels<br>");
-                  $failure = true;
-                }
+                //Variable to store failures
+                 
+      
+                //Checking if the level count is 42 or below
+                $levelCount = $db->query('SELECT * FROM level WHERE class_id = ?', array($classInfo['class_id']));
+                if($levelCount->count() > 42){
+                    $errorString = $errorString . $fileop[0] . " was NOT added. There can't be more than 42 levels<br>";
+                    $failure = true;
+                  }
 
 
-              //Checking if the level name exists in the database already with the same class
-              $nameCheck = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
-                      $fileop[0],
-                      $classInfo['class_id']
+                //Checking if the level name exists in the database already with the same class
+                $nameCheck = $db->query('SELECT * FROM level WHERE name = ?  AND class_id = ?', array(
+                        $fileop[0],
+                        $classInfo['class_id']
+                      ));
+                
+                if($nameCheck->count()) {
+                     $errorString = $errorString . $fileop[0] . " already exsits in the class <br>";
+                   
+
+                    $failure = true;
+                } 
+
+              
+
+                if(!$failure){
+
+                  //Inserting the new levelinto the database
+                  $user->addLevel(array( 
+                    'name' => $fileop[0],
+                    'description' => $fileop[1],
+                    'time_limit' => $fileop[2],
+                    'class_id' => $classInfo['class_id']
                     ));
-              if($nameCheck->count()) {
-                   print_r($fileop[0] . " already exsits in the class <br>");
-                  $failure = true;
-              } 
-
-            
-
-              if(!$failure){
-
-                //Inserting the new levelinto the database
-                $user->addLevel(array( 
-                  'name' => $fileop[0],
-                  'description' => $fileop[1],
-                  'time_limit' => $fileop[2],
-                  'class_id' => $classInfo['class_id']
-                  ));
-              }
+                }
 
             }
 
@@ -118,14 +125,33 @@
                 ));
 
 
+             
+
+
               }
-              echo "Successfully uploaded level and question information";
+               if($failure == true)
+              {
+                 ?> <div class="alert alert-warning">
+                        <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                        <strong>Warning!</strong> <?php print_r($errorString);?>
+                    </div> <?php
+              }
+              ?> <div class="alert alert-success">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Successfully uploaded level and question information</strong> 
+              </div> <?php
           }       
       }  else {
-          echo 'please upload file';
+          ?><div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> Please upload file.
+          </div> <?php
       }
     } else {
-      echo "Please create a class before attempting to upload level and question information.";
+       ?><div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> Please create a class before attempting to upload level and question information.
+          </div> <?php
     }
   }
 
@@ -217,7 +243,11 @@
 }
 
     } else {
-      echo "Please add levels and questions to export";
+
+        ?><div class="alert alert-danger">
+              <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+              <strong>Error!</strong> Please add levels and questions to export.
+          </div> <?php
     }
     
     fclose($fp);

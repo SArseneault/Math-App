@@ -49,7 +49,12 @@
 
 
 						$login = $user->login($username, $password, true);
-						Redirect::to("index.php");
+
+						?><div class="alert alert-success">
+						    <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+						    <strong>Success!</strong> Please go to the login page to login
+						</div> <?php
+						//Redirect::to("login.php");
 					
 						
 						
@@ -61,7 +66,7 @@
 					
 				} else {
 					foreach($validation->errors() as $error) {
-						echo $error, '<br>';
+						echo "<script type='text/javascript'>alert('$error');</script>";
 					}
 				}
 		}
@@ -69,7 +74,6 @@
 
 
 ?>
-
 
 
 

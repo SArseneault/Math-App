@@ -83,18 +83,36 @@ if(Input::exists()) {
                 'class_id' => $classInfo['class_id']
                 ));
 
-              
+            
 
               //Refresh the page to show the update
              header("Refresh:0");
+
+
+
           } catch(Execption $e) {
             die($e->getMessage());
             }
 
             } else {
+
+
+
+              $errorString = "</br>";
               foreach($validation->errors() as $error) {
-                echo $error, '<br>';
+                $errorString = $errorString . $error . "</br>";
+               
               }
+
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> <?php echo($errorString); ?>
+              </div> <?php
+
+
+
+
             }
          }
       }
@@ -170,9 +188,19 @@ if(Input::exists()) {
           }
 
       } else {
+
+          $errorString = "</br>";
           foreach($validation->errors() as $error) {
-            echo $error, '<br>';
+            $errorString = $errorString . $error . "</br>";
+           
           }
+
+
+          ?> <div class="alert alert-danger">
+                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> <?php echo($errorString); ?>
+              </div> <?php
+
         }
     }
 
@@ -341,7 +369,7 @@ if($user->classExist()){  ?>
         </div>
           <div class="modal-footer">
             <button type="button" onclick="refreshPage();" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" onclick="addDefaultLevels();" class="btn btn-primary">Add Default Levels</button>
+            <button type="submit" id="addDefaultButton" onclick="addDefaultLevels();" class="btn btn-primary">Add Default Levels</button>
     
           </div>
         </div>
@@ -731,11 +759,18 @@ function removeLevels(){
 }
 
 function addDefaultLevels() {
-$.post('setDefaultLevel.php',
+  //Display wait message and disable the button
+  document.getElementById('addDefaultLevelsResult').innerHTML = "Please wait...";
+  
+   document.getElementById('addDefaultButton').style.visibility = 'hidden';
+
+  $.post('setDefaultLevel.php',
     function(data)
     {
+
       document.getElementById('addDefaultLevelsResult').innerHTML=data;
     });
+   
 }
 
 
