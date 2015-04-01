@@ -15,7 +15,6 @@
 
 @implementation PracticeLevelView
 
-//Synth
 @synthesize timeLimit;
 @synthesize levelName;
 @synthesize levelID;
@@ -269,8 +268,6 @@
 -(void) endResult
 {
     
-
-    
     
     //stop timer
     [timer invalidate];
@@ -334,17 +331,12 @@
         else{
             //Update timer lable
             labelForTimer.text =[NSString stringWithFormat:@"Time: %d:%d", minutes, tempSeconds];
-            
         }
     }
     else{
-        
         //update timmer label when it is less than one minute
         labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
-        
     }
-
-    
     //Check for timeLimit
     if(seconds == timeLimitSeconds){
         [self endResult];

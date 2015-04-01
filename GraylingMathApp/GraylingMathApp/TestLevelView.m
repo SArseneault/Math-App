@@ -234,7 +234,6 @@
     [self.view addGestureRecognizer:panGesture];
     
     //Set up array to store tile input
-    
     userInputArray=[[NSMutableArray alloc]init];
     
     //create string to store users input
@@ -295,7 +294,6 @@
 }
 
 #pragma mark - input dragged tiles into array and then display current input as text on screen
-
 -(void) addinputToArray:(int)inputNumber{
     
     NSLog(@"Recived call to add input to array, value it: %d", inputNumber);
@@ -631,11 +629,10 @@
             
         }
         
-        
     }
     else{
         //update timmer label
-        labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
+        labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", (long)seconds];
         
     }
 
