@@ -129,8 +129,8 @@
     NSInteger valueTwo; //int for second number
     
     //Creating x and y positions
-    NSInteger xPosition = 250;
-    NSInteger yPosition = 300;
+    NSInteger xPosition = 350;
+    NSInteger yPosition = 275;
     
     
     //Creating the beggining label
