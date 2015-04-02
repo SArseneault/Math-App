@@ -120,18 +120,24 @@
     
     NSLog(@"recived added tile");
     
-    NSLog(@"Tile dropeeeeeee is %d", model.value);
+    NSLog(@"Tile dropeeeeeee is %@", model);
+    
+    NSLog(@"Tile dropeeeeeee value is %d", model.value);
+    
+    
     
     int insertNumber = model.value;
     
     [_userInputArray addObject:[NSNumber numberWithInt:insertNumber]];
     
-    [self AddInputToArray:(int)model.value];
+    //[self AddInputToArray:(int)model.value];
     
     
      NSLog(@"Size is beforeeeee   %d", [_userInputArray count]);
     NSLog(@"Added thissssss %i", insertNumber);
      [_models addObject:model];
+    //NSLog(@"modelllllllll %i", _models.value);
+    NSLog(@"PRINTING MODELSS %lu", (unsigned long)[_models count]);
     
     [_collectionView reloadData];
     
@@ -154,9 +160,21 @@
 -(void)removeTile:(TileModel *)model
 {
     
-    NSLog(@"fUCK YOU, IT WORKS. REMOVING");
+    NSLog(@"REMOVING");
     NSInteger index = [_models indexOfObject:model];
     NSIndexPath *indexPath =[NSIndexPath indexPathForItem:index inSection:0];
+    
+    NSInteger size = [_userInputArray count];
+    
+    NSLog(@"Size is of array in remove is _______________________%d", size);
+    
+    NSLog(@"NSINT INDEX IS %d", index);
+    NSLog(@"NSINT INDEXPATH IS %@", indexPath);
+    
+    int removeInt = model.value;
+    NSLog(@"VALUEEE REMOVED %i", removeInt);
+    
+    [_userInputArray removeObject:[NSNumber numberWithInt:index]];
     
     NSLog(@"Tile removed is %d", model.value);
     
@@ -171,26 +189,68 @@
 -(NSInteger)getValue{
     
     
-    NSInteger size = [_userInputArray count];
+    NSInteger size = [_models count];
     
-    NSLog(@"Size is _______________________%d", size);
+    NSLog(@"Size of model is %i", size);
     
-    if(size >1)
+    if(size ==0)
     {
-        NSInteger temp = (10*[[_userInputArray objectAtIndex:0]intValue]);
         
-        NSInteger tempTw0 = [[_userInputArray objectAtIndex:1]intValue];
+        return 0;
+    }
+    else if (size >1)
+    {
+        TileModel *firstModel =[_models objectAtIndex:0];
+        TileModel *secondModel =[_models objectAtIndex:1];
+        NSInteger firstValue = firstModel.value;
+        NSInteger secondValue = secondModel.value;
         
-
+        return (firstValue*10)+secondValue;
         
-        return temp+tempTw0;
-
+        
     }
     else
     {
-
-        return [[_userInputArray objectAtIndex:0]intValue];
+        TileModel *firstModel =[_models objectAtIndex:0];
+        NSInteger finalV= firstModel.value;
+        
+        return finalV;
     }
+    
+    
+    
+    //NSLog(@"Models %@", _models);
+    
+//    TileModel *firstModel =[_models objectAtIndex:0];
+//    
+//    NSLog(@"firsttt modelllll %i", firstModel.value);
+    
+
+    //NSInteger tempModel = [_models objectAtIndex:0];
+    
+    //NSLog(@"temmpppp model is %i", tempModel);
+ 
+    
+//    if(size ==0)
+//    {
+//        return 0;
+//    }
+//    else if(size >1)
+//    {
+//        NSInteger temp = (10*[[_userInputArray objectAtIndex:0]intValue]);
+//        
+//        NSInteger tempTw0 = [[_userInputArray objectAtIndex:1]intValue];
+//        
+//
+//        
+//        return temp+tempTw0;
+//
+//    }
+//    else
+//    {
+//
+//        return [[_userInputArray objectAtIndex:0]intValue];
+//    }
 
 
 

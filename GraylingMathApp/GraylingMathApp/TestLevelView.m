@@ -173,7 +173,7 @@
     
     if(numberOfTiles <2)
     {
-        NSLog(@"Number of tiles in collection view ARE: %i", numberOfTiles);
+        //NSLog(@"Number of tiles in collection view ARE: %i", numberOfTiles);
         return CGRectContainsPoint(self.inputTileCollectionView.frame, point);
         
     }
@@ -335,7 +335,7 @@
             NSLog(@"Tile Dropped is %d",_tileModel.value);
             
             //adds the value of the tile to the array/string used for input
-            [self addinputToArray:_tileModel.value];
+            //[self addinputToArray:_tileModel.value];
             
  
             [_destionController addModel:_tileModel];
@@ -395,49 +395,7 @@
     
 }
 
-#pragma mark - input dragged tiles into array and then display current input as text on screen
--(void) addinputToArray:(int)inputNumber{
-    
-    NSLog(@"Recived call to add input to array, value it: %d", inputNumber);
-    NSLog(@"Size of input array is, %lu", (unsigned long)[userInputArray count]);
-    
-    NSLog(@"Printing the size of string before numbers are added");
-    NSUInteger length = [userInputString length];
-    NSLog(@"%lu", (unsigned long)length);
-    
-    //add integer to array
-    [userInputArray addObject:[NSNumber numberWithInteger:inputNumber]];
-    
-    //return userInputArray;
-    NSLog(@"Printing out contents of array");
-    
-    for(int i =0; i <[userInputArray count]; i++)
-    {
-        
-        NSLog(@"Value at: %d, is %@:", i, userInputArray[i]);
 
-    }
-    
-    [userInputString appendFormat:@"%i", inputNumber];
-    
-    //userInputString = [NSString stringWithFormat:@"%d", inputNumber];
-    
-    NSLog(@"Whole array is %@", userInputArray);
-    NSLog(@"Printing String: %@", userInputString);
-    
-    NSLog(@"Size Of string AFTER insert");
-    NSUInteger after =[userInputString length];
-    
-    NSLog(@"%lu", (unsigned long)after);
-    
-    
-    //display the numbers inputed
-    userInputLabelDrag.text=userInputString;
-    //NSLog(@"@", userInputString);
-    
-    
-    
-}
 
 #pragma mark - create tile for the tiles being dragged out of input box
 -(void) initDraggedInputTileView{
@@ -539,7 +497,7 @@
     //get users answer from input drag box
     //userAnswer =([userInputString integerValue]);
     
-    NSLog(@"Answer from user input: %ld",userAnswer);
+    //NSLog(@"Answer from user input: %ld",userAnswer);
     
     //Getting answer from destination controller
     NSInteger testValue =[_destionController getValue];
