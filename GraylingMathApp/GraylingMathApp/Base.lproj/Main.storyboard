@@ -409,14 +409,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vf-s6-hfE">
                                 <rect key="frame" x="112" y="183" width="166" height="126"/>
-                                <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="3Eu-eF-oT7"/>
                                     <constraint firstAttribute="width" constant="250" id="hha-fu-1ZA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
                                 <state key="normal" title="Practice">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -435,14 +435,14 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-dw-xaE">
                                 <rect key="frame" x="358" y="183" width="166" height="126"/>
-                                <color key="backgroundColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="3mc-E5-jk8"/>
                                     <constraint firstAttribute="width" constant="250" id="hof-al-l3u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
                                 <state key="normal" title="Test">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.67676767680000005" green="0.15345839410000001" blue="0.248823563" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

@@ -267,10 +267,28 @@
 //end result method that displays results, right/wrong and time taken to complete
 -(void) endResult
 {
-    
+//    NSString *totalTime;
     
     //stop timer
     [timer invalidate];
+    
+//    if(seconds >=60)
+//    {
+//        int minutes = seconds/60;
+//        int tempSec = seconds%60;
+//        
+//        if(tempSec<10)
+//        {
+//            NSString *totalTime=[NSString stringWithFormat:@"%i:0%i", minutes, tempSec];
+//        }
+//        NSLog(@"Greater than 60");
+//        NSString *totalTime=[NSString stringWithFormat:@"%i:%i", minutes, tempSec];
+//    }
+//    else{
+//        
+//         NSString *totalTime=[NSString stringWithFormat:@"%i",seconds];
+//    }
+//    
     
     //alert to show that the practice section is over
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of %ld questions correct\n Total Time: %ld seconds", totalQuestionsCorrect, questionsInLevel, seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
