@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1111,116 +1111,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUU-Bc-VIs">
-                                <rect key="frame" x="290" y="532" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="1">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="tlp-am-uTI" appends="YES" id="9NN-Xc-2go"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-2t-kIz">
-                                <rect key="frame" x="252" y="532" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fLx-bl-Xoe" appends="YES" id="Fdu-bP-DLJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zU-G9-ELu">
-                                <rect key="frame" x="328" y="532" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="2">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Tya-x4-dLd" appends="YES" id="vWD-ir-Kyv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHV-8J-G4B">
-                                <rect key="frame" x="366" y="532" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="3">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="14P-RL-4JR" appends="YES" id="Rwi-ae-WFD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgU-X5-Z7d">
-                                <rect key="frame" x="401" y="532" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="4">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="LqI-aV-2ja" appends="YES" id="AEd-x8-lXn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozs-JO-AOC">
-                                <rect key="frame" x="290" y="570" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="6">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="tSi-F1-vGe" appends="YES" id="av0-MO-KQy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjD-R6-ElB">
-                                <rect key="frame" x="252" y="570" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="5">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="OIt-Ud-gG9" appends="YES" id="vLS-J4-clZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gh-MP-1GZ">
-                                <rect key="frame" x="328" y="570" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="7">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="s67-Ne-jtT" appends="YES" id="2wy-z4-yju"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlc-Oi-8BS">
-                                <rect key="frame" x="366" y="570" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="8">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fSC-f0-5jW" appends="YES" id="YPn-G1-ms9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-V3-OK0">
-                                <rect key="frame" x="401" y="570" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.20568207769999999" green="0.60503472219999999" blue="0.20123945700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="9">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="wJr-CS-5f6" appends="YES" id="V59-Js-V08"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="FirstNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Je-oW-2nX">
                                 <rect key="frame" x="263" y="105" width="75" height="32"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
@@ -1388,56 +1278,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGx-tk-VRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="fLx-bl-Xoe" userLabel="Pan Gesture Recognizer-0">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="lsi-r7-blY"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="tlp-am-uTI" userLabel="Pan Gesture Recognizer-1">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="2jy-dC-GRa"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Tya-x4-dLd" userLabel="Pan Gesture Recognizer-2">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="y1q-f9-piL"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="14P-RL-4JR" userLabel="Pan Gesture Recognizer-3">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="jEe-Vl-8rU"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="LqI-aV-2ja" userLabel="Pan Gesture Recognizer-4">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="UC0-My-HZl"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="OIt-Ud-gG9" userLabel="Pan Gesture Recognizer-5">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="V7t-xW-aXl"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="tSi-F1-vGe" userLabel="Pan Gesture Recognizer-6">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="qIL-ZA-15S"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="s67-Ne-jtT" userLabel="Pan Gesture Recognizer-7">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="rsz-Km-tuP"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="fSC-f0-5jW" userLabel="Pan Gesture Recognizer-8">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="HWN-zW-dvP"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="wJr-CS-5f6" userLabel="Pan Gesture Recognizer-9">
-                    <connections>
-                        <action selector="panPiece:" destination="qcI-Yw-NOk" id="t8t-vx-QhK"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1880" y="936"/>
         </scene>
@@ -1450,7 +1290,7 @@
         <image name="track.png" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GO7-GP-1lG"/>
+        <segue reference="DS6-FN-2hn"/>
         <segue reference="XyL-bb-h10"/>
         <segue reference="P4d-91-MRb"/>
     </inferredMetricsTieBreakers>
