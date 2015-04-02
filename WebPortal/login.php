@@ -101,7 +101,22 @@
   </div>
 </div>
 
+<!-- This script will check to see if the caps lock is on when entering a password -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script language="Javascript">
+        $(document).ready(function(){
+            $('input').keypress(function(e) { 
+                var s = String.fromCharCode( e.which );
 
+                if((s.toUpperCase() === s && s.toLowerCase() !== s && !e.shiftKey) ||
+                   (s.toUpperCase() !== s && s.toLowerCase() === s && e.shiftKey)){
+                    if($('#capsalert').length < 1) $(this).after('<b id="capsalert">CapsLock is on!</b>');
+                } else {
+                    if($('#capsalert').length > 0 ) $('#capsalert').remove();
+                }
+            });
+        });
+    </script>
   <!-- Bootstrap js plugins -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <!-- include all compiled plugins -->
