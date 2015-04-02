@@ -20,7 +20,6 @@
 		200B084F1AA4E8AF000E404A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 200B084E1AA4E8AF000E404A /* Foundation.framework */; };
 		200B08511AA4E8B5000E404A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 200B08501AA4E8B5000E404A /* AVFoundation.framework */; };
 		200B08571AA4F48A000E404A /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 200B08561AA4F48A000E404A /* HomeView.m */; };
-		2034FBB21ACCDAC7007B97E6 /* chalkboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2034FBB11ACCDAC7007B97E6 /* chalkboard.jpg */; };
 		2036F4841AC53E90006ACE12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2036F4831AC53E90006ACE12 /* Images.xcassets */; };
 		20407B6E1AA5031000E536AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20407B6C1AA5031000E536AB /* Main.storyboard */; };
 		204D000B1ABE146400BE3A2F /* TestLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 204D000A1ABE146400BE3A2F /* TestLevelView.m */; };
@@ -45,9 +44,10 @@
 		2077BD3E1AC8392400CD7BA0 /* car_purpleL.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD361AC8392400CD7BA0 /* car_purpleL.png */; };
 		2077BD3F1AC8392400CD7BA0 /* car_redL.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD371AC8392400CD7BA0 /* car_redL.png */; };
 		2077BD401AC8392400CD7BA0 /* car_yellowL.png in Resources */ = {isa = PBXBuildFile; fileRef = 2077BD381AC8392400CD7BA0 /* car_yellowL.png */; };
-		20BDF0FC1ACC755B0047805E /* TestEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BDF0FB1ACC755B0047805E /* TestEnd.m */; };
-		20BDF0FF1ACC75F60047805E /* greenArrowLpng.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BDF0FD1ACC75F60047805E /* greenArrowLpng.png */; };
-		20BDF1001ACC75F60047805E /* greenArrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BDF0FE1ACC75F60047805E /* greenArrowR.png */; };
+		2096F9E61ACCE9B90067D597 /* chalkboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2096F9E51ACCE9B90067D597 /* chalkboard.jpg */; };
+		2096F9E91ACCE9E80067D597 /* TestEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096F9E81ACCE9E80067D597 /* TestEnd.m */; };
+		20B11D801ACCEC1900EA1431 /* greenArrowLpng.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B11D7E1ACCEC1900EA1431 /* greenArrowLpng.png */; };
+		20B11D811ACCEC1900EA1431 /* greenArrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B11D7F1ACCEC1900EA1431 /* greenArrowR.png */; };
 		20D45FBB1ABE306D005EEBCE /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D45FBA1ABE306D005EEBCE /* Map.m */; };
 		20F8F6431AC89D2C00500A95 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F8F6421AC89D2C00500A95 /* track.png */; };
 		A203946B1AC9C5B7008288AE /* TileUiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A203946A1AC9C5B7008288AE /* TileUiView.m */; };
@@ -90,7 +90,6 @@
 		200B08501AA4E8B5000E404A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		200B08551AA4F48A000E404A /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
 		200B08561AA4F48A000E404A /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
-		2034FBB11ACCDAC7007B97E6 /* chalkboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chalkboard.jpg; path = Assets/chalkboard.jpg; sourceTree = SOURCE_ROOT; };
 		2036F4651AC5382B006ACE12 /* baseURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = baseURL.h; path = GraylingMathApp/baseURL.h; sourceTree = "<group>"; };
 		2036F4831AC53E90006ACE12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		20407B6D1AA5031000E536AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,10 +120,11 @@
 		2077BD361AC8392400CD7BA0 /* car_purpleL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_purpleL.png; sourceTree = "<group>"; };
 		2077BD371AC8392400CD7BA0 /* car_redL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_redL.png; sourceTree = "<group>"; };
 		2077BD381AC8392400CD7BA0 /* car_yellowL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_yellowL.png; sourceTree = "<group>"; };
-		20BDF0FA1ACC754E0047805E /* TestEnd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestEnd.h; sourceTree = "<group>"; };
-		20BDF0FB1ACC755B0047805E /* TestEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEnd.m; sourceTree = "<group>"; };
-		20BDF0FD1ACC75F60047805E /* greenArrowLpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowLpng.png; path = Assets/greenArrowLpng.png; sourceTree = SOURCE_ROOT; };
-		20BDF0FE1ACC75F60047805E /* greenArrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowR.png; path = Assets/greenArrowR.png; sourceTree = SOURCE_ROOT; };
+		2096F9E51ACCE9B90067D597 /* chalkboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chalkboard.jpg; path = Assets/chalkboard.jpg; sourceTree = SOURCE_ROOT; };
+		2096F9E71ACCE9E80067D597 /* TestEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestEnd.h; sourceTree = "<group>"; };
+		2096F9E81ACCE9E80067D597 /* TestEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEnd.m; sourceTree = "<group>"; };
+		20B11D7E1ACCEC1900EA1431 /* greenArrowLpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowLpng.png; path = Assets/greenArrowLpng.png; sourceTree = SOURCE_ROOT; };
+		20B11D7F1ACCEC1900EA1431 /* greenArrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowR.png; path = Assets/greenArrowR.png; sourceTree = SOURCE_ROOT; };
 		20D45FB91ABE3061005EEBCE /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		20D45FBA1ABE306D005EEBCE /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		20F8F6421AC89D2C00500A95 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
@@ -214,9 +214,9 @@
 				2077BD071AC8270300CD7BA0 /* Cars */,
 				2077BD121AC8270300CD7BA0 /* Maps */,
 				2068F7831ABE7A4E0074BB25 /* tire-tracks.jpg */,
-				20BDF0FD1ACC75F60047805E /* greenArrowLpng.png */,
-				2034FBB11ACCDAC7007B97E6 /* chalkboard.jpg */,
-				20BDF0FE1ACC75F60047805E /* greenArrowR.png */,
+				2096F9E51ACCE9B90067D597 /* chalkboard.jpg */,
+				20B11D7E1ACCEC1900EA1431 /* greenArrowLpng.png */,
+				20B11D7F1ACCEC1900EA1431 /* greenArrowR.png */,
 				200B08271AA4E63A000E404A /* carHorn.mp3 */,
 				200B082D1AA4E63A000E404A /* raceCarButton.png */,
 				200B08021AA4E52A000E404A /* Info.plist */,
@@ -257,8 +257,8 @@
 				A20394681AC9C58A008288AE /* DragDropTiles */,
 				204D00091ABE146400BE3A2F /* TestLevelView.h */,
 				204D000A1ABE146400BE3A2F /* TestLevelView.m */,
-				20BDF0FA1ACC754E0047805E /* TestEnd.h */,
-				20BDF0FB1ACC755B0047805E /* TestEnd.m */,
+				2096F9E71ACCE9E80067D597 /* TestEnd.h */,
+				2096F9E81ACCE9E80067D597 /* TestEnd.m */,
 			);
 			name = TestLevelView;
 			sourceTree = "<group>";
@@ -460,11 +460,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B11D811ACCEC1900EA1431 /* greenArrowR.png in Resources */,
 				200B08391AA4E63A000E404A /* raceCarButton.png in Resources */,
 				2077BD3B1AC8392400CD7BA0 /* car_lockL.png in Resources */,
+				2096F9E61ACCE9B90067D597 /* chalkboard.jpg in Resources */,
 				2077BD3F1AC8392400CD7BA0 /* car_redL.png in Resources */,
 				2077BD2E1AC8389A00CD7BA0 /* car_purpleR.png in Resources */,
-				20BDF0FF1ACC75F60047805E /* greenArrowLpng.png in Resources */,
 				2077BD3E1AC8392400CD7BA0 /* car_purpleL.png in Resources */,
 				2036F4841AC53E90006ACE12 /* Images.xcassets in Resources */,
 				A2B207D81ABB8A1500676DC4 /* level.json in Resources */,
@@ -477,15 +478,14 @@
 				2077BD3D1AC8392400CD7BA0 /* car_pinkL.png in Resources */,
 				20F8F6431AC89D2C00500A95 /* track.png in Resources */,
 				2077BD3A1AC8392400CD7BA0 /* car_greenL.png in Resources */,
-				20BDF1001ACC75F60047805E /* greenArrowR.png in Resources */,
 				2068F7841ABE7A4E0074BB25 /* tire-tracks.jpg in Resources */,
 				2077BD291AC8389A00CD7BA0 /* car_blueR.png in Resources */,
 				2077BD2C1AC8389A00CD7BA0 /* car_orangeR.png in Resources */,
 				2077BD2B1AC8389A00CD7BA0 /* car_lockR.png in Resources */,
+				20B11D801ACCEC1900EA1431 /* greenArrowLpng.png in Resources */,
 				200B08121AA4E52A000E404A /* LaunchScreen.xib in Resources */,
 				200B08331AA4E63A000E404A /* carHorn.mp3 in Resources */,
 				2077BD3C1AC8392400CD7BA0 /* car_orangeL.png in Resources */,
-				2034FBB21ACCDAC7007B97E6 /* chalkboard.jpg in Resources */,
 				2077BD2F1AC8389A00CD7BA0 /* car_redR.png in Resources */,
 				A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */,
 			);
@@ -516,7 +516,7 @@
 				2074BC241AB6790900D49D86 /* StudentLogin.m in Sources */,
 				A203946B1AC9C5B7008288AE /* TileUiView.m in Sources */,
 				A20394791AC9CB1A008288AE /* KeyBoardCollectionView.m in Sources */,
-				20BDF0FC1ACC755B0047805E /* TestEnd.m in Sources */,
+				2096F9E91ACCE9E80067D597 /* TestEnd.m in Sources */,
 				200B08461AA4E6AB000E404A /* FirstViewController.m in Sources */,
 				20D45FBB1ABE306D005EEBCE /* Map.m in Sources */,
 				2068F7821ABE481F0074BB25 /* TypeSelect.m in Sources */,

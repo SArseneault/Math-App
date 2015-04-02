@@ -101,6 +101,87 @@
             </objects>
             <point key="canvasLocation" x="363.75" y="512.25"/>
         </scene>
+        <!--Test End-->
+        <scene sceneID="5ib-mt-S00">
+            <objects>
+                <viewController storyboardIdentifier="TestEnd" id="1kq-OK-IxZ" customClass="TestEnd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pTx-eO-1ew"/>
+                        <viewControllerLayoutGuide type="bottom" id="BcJ-Jw-Myd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u4E-ik-DQz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49Y-eT-afQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Next Level" backgroundImage="greenArrowR.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="610" y="635" width="158" height="138"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="uHE-61-2hL" kind="modal" id="P4d-91-MRb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osz-95-NNn">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="46"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="306" y="69" width="188" height="146"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fVT-WK-2PE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="129" y="223" width="542" height="429"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG0-wb-ORM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Replay" backgroundImage="greenArrowLpng.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="21" y="635" width="158" height="138"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="49Y-eT-afQ"/>
+                                <exclude reference="osz-95-NNn"/>
+                                <exclude reference="fVT-WK-2PE"/>
+                                <exclude reference="FG0-wb-ORM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="49Y-eT-afQ"/>
+                                <include reference="osz-95-NNn"/>
+                                <include reference="fVT-WK-2PE"/>
+                                <include reference="FG0-wb-ORM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="nextLevel" destination="49Y-eT-afQ" id="VH4-SR-EMr"/>
+                        <outlet property="outPutBox" destination="osz-95-NNn" id="SFt-xu-Pzv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXb-1u-0a0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-547.5" y="1017.75"/>
+        </scene>
         <!--TestLevelView-->
         <scene sceneID="Tup-oE-3V8">
             <objects>
@@ -736,91 +817,6 @@
             </objects>
             <point key="canvasLocation" x="80.25" y="-315"/>
         </scene>
-        <!--Test End-->
-        <scene sceneID="jFZ-LJ-ecW">
-            <objects>
-                <viewController storyboardIdentifier="TestEnd" id="Big-mV-qvx" customClass="TestEnd" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WHC-Op-b63"/>
-                        <viewControllerLayoutGuide type="bottom" id="0W0-T0-r9A"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fj9-fp-Jma">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-xn-YN0">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
-                                <state key="normal" title="Next Level" backgroundImage="greenArrowR.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="547" y="586" width="237" height="206"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="uHE-61-2hL" kind="modal" id="ooL-iH-YYi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOo-kA-pSu">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
-                                <state key="normal" title="Replay" backgroundImage="greenArrowLpng.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="586" width="237" height="206"/>
-                                </variation>
-                                <connections>
-                                    <action selector="replayLevel:" destination="Big-mV-qvx" eventType="touchUpInside" id="LPz-IK-3Xd"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueK-1b-DMe">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="51"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="285" y="28" width="231" height="179"/>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-xp-YQu">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="158" y="220" width="485" height="400"/>
-                                </variation>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="m1o-xn-YN0"/>
-                                <exclude reference="qOo-kA-pSu"/>
-                                <exclude reference="ueK-1b-DMe"/>
-                                <exclude reference="cR9-xp-YQu"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="m1o-xn-YN0"/>
-                                <include reference="qOo-kA-pSu"/>
-                                <include reference="ueK-1b-DMe"/>
-                                <include reference="cR9-xp-YQu"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="dBd-V9-D4I"/>
-                    <connections>
-                        <outlet property="nextLevel" destination="m1o-xn-YN0" id="r0Z-ci-AWq"/>
-                        <outlet property="outPutBox" destination="ueK-1b-DMe" id="UEB-9h-5dj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yl6-SZ-uqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-600" y="1316.25"/>
-        </scene>
         <!--Student Login-->
         <scene sceneID="toP-65-2oR">
             <objects>
@@ -1451,8 +1447,8 @@
         <image name="track.png" width="1536" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ooL-iH-YYi"/>
         <segue reference="GO7-GP-1lG"/>
         <segue reference="XyL-bb-h10"/>
+        <segue reference="P4d-91-MRb"/>
     </inferredMetricsTieBreakers>
 </document>

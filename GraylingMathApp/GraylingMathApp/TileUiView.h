@@ -16,5 +16,7 @@
 
 -(void)setHighLight:(BOOL)highLight; //highlight tiles
 
+-(void)setOutHighLight:(BOOL)highLight;
+
 
 @end

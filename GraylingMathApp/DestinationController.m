@@ -9,12 +9,15 @@
 #import "DestinationController.h"
 #import "TileCollectionCell.h"
 #import "TileModel.h"
+#import "TestLevelView.h"
 
 @interface DestinationController()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     
     //Array to store models entered into input box
     NSMutableArray *_models;
     UICollectionView *_collectionView;
+    TestLevelView *_parentController;
+    TileModel *_selectedInputTile;
     
     
 }
@@ -23,7 +26,7 @@
 
 
 @implementation DestinationController
--(instancetype)initWithCollectionView:(UICollectionView* ) collectionView{
+-(instancetype)initWithCollectionView:(UICollectionView* ) collectionView andParentViewController:(TestLevelView *)parent{
     
     if(self = [super init]){
         
@@ -35,10 +38,75 @@
         //Set up tile from tileCollection Cell
         [_collectionView registerClass:[TileCollectionCell class] forCellWithReuseIdentifier:@"InputTileCell"];
         
+        //set up gestures
+        [self setUpInputGesture];
+        
+        //Set up tile models
+        //[self setupInputTiles];
+        
+        _parentController = parent;
+        
     }
     return self;
 }
 
+//set up gestures for input controller
+-(void) setUpInputGesture{
+    
+    NSLog(@"Setting Up Gestures INPUT BOX");
+    
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                                   action:@selector(handlePress:)];
+    longPressGesture.numberOfTouchesRequired = 1;
+    longPressGesture.minimumPressDuration    = 0.1f;
+    [_collectionView addGestureRecognizer:longPressGesture];
+    
+    
+    
+}
+
+- (void)handlePress:(UILongPressGestureRecognizer *)gesture {
+    NSLog(@"GOT HANDLE pRESS IN INPUT");
+    
+    CGPoint point = [gesture locationInView:_collectionView];
+    
+    if (gesture.state ==UIGestureRecognizerStateBegan){
+        
+        NSLog(@"Gesture state started INPUTTT");
+        
+    
+    NSIndexPath *indexPath =[_collectionView indexPathForItemAtPoint:point];
+        
+        if(indexPath !=nil)
+        {
+            NSLog(@"Index path not nil");
+            NSLog(@"Index path is %@", indexPath);
+            _selectedInputTile=[_models objectAtIndex:indexPath.item];
+            
+            NSLog(@"DIMMINING");
+            
+            //find the point in the parent view
+            point =[gesture locationInView:_parentController.view];
+            
+            //tell the parent which tile is selected
+            [_parentController setSelectedInputTile:_selectedInputTile atPoint:point];
+            
+            
+            [_collectionView cellForItemAtIndexPath:indexPath].alpha =0.2f;
+            
+            
+        }
+        else{
+            
+            NSLog(@"Index path nil");
+        }
+        
+    }
+
+    
+    
+    
+}
 //add objects to model array to populate collection view and reload view
 -(void)addModel:(TileModel *)model{
     
@@ -47,6 +115,24 @@
     [_models addObject:model];
     
     [_collectionView reloadData];
+    
+}
+
+//remove tile from input
+
+-(void)removeTile:(TileModel *)model
+{
+    
+    NSLog(@"fUCK YOU, IT WORKS. REMOVING");
+    NSInteger index = [_models indexOfObject:model];
+    NSIndexPath *indexPath =[NSIndexPath indexPathForItem:index inSection:0];
+    
+    [_models removeObjectAtIndex:index];
+    [_collectionView deleteItemsAtIndexPaths:@[indexPath]];
+    [_collectionView reloadData];
+
+    
+    
     
 }
 

@@ -90,5 +90,9 @@
 //collection view for user input
 @property (strong, nonatomic) IBOutlet UICollectionView *inputTileCollectionView;
 
+//Communcate between input controller
+
+-(void)setSelectedInputTile:(TileModel*)inputTile atPoint:(CGPoint)point;
+
 
 @end

@@ -26,6 +26,9 @@
     //creates a dragged tile
     TileUiView *_draggedTile;
     
+    //Creates a dragged tile for input box
+    TileUiView *_draggedInputTile;
+    
     //Create array to store numbers inputed from dragged tiles
     NSMutableArray *userInputArray;
     
@@ -96,13 +99,13 @@
 #pragma mark- method to set up tile in view once keyboard view controller detects a succesfull index in view
 -(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point{
     
-    NSLog(@"Tile is Recviced");
+   
     _tileModel=tileModel;
     
-    NSLog(@"Recived tile call");
+  
     if(_tileModel !=nil)
     {
-        NSLog(@"Making tile visible");
+  
         _draggedTile.label.text=[NSString stringWithFormat:@"%d",tileModel.value];
         _draggedTile.center=point;
         _draggedTile.hidden=NO;
@@ -110,6 +113,21 @@
         //call to update dragged state and if it is a valid drag point
         [self updateTileViewDragState:[self isValidDragPoint:point]];
     }
+    
+}
+
+#pragma mark - recive from destination what tile has been selected
+-(void)setSelectedInputTile:(TileModel*)inputTile atPoint:(CGPoint)point{
+    
+
+    
+    _tileModel =inputTile;
+    
+    _draggedInputTile.label.text=[NSString stringWithFormat:@"%d", inputTile.value];
+    _draggedInputTile.center=point;
+    _draggedInputTile.hidden=NO;
+    
+    [self updateOutputTileViewDragState:[self isValidDragPointOutput:point]];
     
     
     
@@ -128,10 +146,28 @@
     
 }
 
+-(void)updateOutputTileViewDragState:(BOOL)isValidDragPointOutput{
+    
+    if(isValidDragPointOutput){
+        [_draggedInputTile setOutHighLight:YES];
+    }
+    else{
+        [_draggedInputTile setOutHighLight:NO];
+    }
+    
+}
+
+#pragma mark - method for dragging the input tile around
+-(BOOL)isValidDragPointOutput:(CGPoint)point
+{
+   
+    return !CGRectContainsPoint(self.inputTileCollectionView.frame, point);
+    
+}
+
 #pragma mark- method recgonizes when the tile is over in input area and creates a bool
 -(BOOL)isValidDragPoint:(CGPoint)point{
     
-    NSLog(@"Checking input area");
     
     NSInteger numberOfTiles =[inputTileCollectionView numberOfItemsInSection:0];
     
@@ -237,17 +273,19 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0F target:self selector:@selector(increaseTime) userInfo: nil repeats:YES];
     
     //creates actual keyboard layout
-    NSLog(@"cREATING KEYBOARD");
     _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
     
     //Create user input collection view
-    _destionController=[[DestinationController alloc]initWithCollectionView:self.inputTileCollectionView];
+    _destionController=[[DestinationController alloc]initWithCollectionView:self.inputTileCollectionView andParentViewController:self];
     
     //call to generate random number method to start game
     [self generateNumber];
     
     //Method to create dragged tile
     [self initDraggedTileView];
+    
+    //Method to create dragged tile for input view
+    [self initDraggedInputTileView];
     
     //set up pangesture for dragged tile
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
@@ -267,7 +305,7 @@
 #pragma mark - pan gesture recgonizer for dragged tiles
 - (void)handlePan:(UIPanGestureRecognizer *)gesture {
     
-    NSLog(@"In hadle pan gesture  of view controller");
+
     
     //get the point in the testlevel view
     CGPoint touchPoint =[gesture locationInView:self.view];
@@ -275,7 +313,7 @@
     //calls when tile is moving
     if(gesture.state==UIGestureRecognizerStateChanged && !_draggedTile.hidden)
     {
-        NSLog(@"Drag recgonizer moving tile");
+
         //tile is dragged
         _draggedTile.center=touchPoint;
         
@@ -293,24 +331,64 @@
         if(validDropPoint)
         {
             
-            NSLog(@"VALID DROP AREA RECGONIZED");
+   
             NSLog(@"Tile Dropped is %d",_tileModel.value);
             
             //adds the value of the tile to the array/string used for input
             [self addinputToArray:_tileModel.value];
             
-            NSLog(@"Adding to input collection view");
+ 
             [_destionController addModel:_tileModel];
         }
         else{
             
-            NSLog(@"BADDDD DROPP AREA");
+  
 
         }
         
         //Tile Keyboard collection view to make tile avlaible again
         [_keyBoardCollectionView cellDragCompleteWithModel:_tileModel];
     }
+    
+    
+    //started to drag tile from input box
+    if(gesture.state==UIGestureRecognizerStateChanged &&!_draggedInputTile.hidden)
+    {
+
+        _draggedInputTile.center =touchPoint;
+        [self updateOutputTileViewDragState:[self isValidDragPointOutput:touchPoint]];
+        
+
+    }
+    
+    //stop dragging tile from output box
+    if(gesture.state ==UIGestureRecognizerStateEnded && !_draggedInputTile.hidden)
+    {
+
+        _draggedInputTile.hidden=YES;
+        
+        //check drop point
+        
+        BOOL validOutPoutDroppoint =[self isValidDragPointOutput:touchPoint];
+
+        if(validOutPoutDroppoint)
+        {
+            
+
+            [_destionController removeTile:_tileModel];
+
+            
+
+        }
+        else{
+            
+
+           // [_destionController reloadData];
+        }
+    
+        
+    }
+
     
     
     
@@ -361,10 +439,21 @@
     
 }
 
+#pragma mark - create tile for the tiles being dragged out of input box
+-(void) initDraggedInputTileView{
+    
+    _draggedInputTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
+    
+    //Set to hidden for initial set up
+    _draggedInputTile.hidden = YES;
+    
+    
+    [self.view addSubview:_draggedInputTile];
+}
 #pragma mark - create tile view that will be dragged
 -(void) initDraggedTileView{
     
-    NSLog(@"Creating Tile Drag");
+
     
     //size of tile 55x55, sligthly bigger than collectionview cells
     _draggedTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
@@ -565,7 +654,7 @@
     
     //set alert tag to endTag
     //[alert setTag:1];
-    //[alert show];
+   // [alert show];
     
     
     NSString *status = @"0";
@@ -633,6 +722,7 @@
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
     
+    
     TestEnd *TEND = [self.storyboard instantiateViewControllerWithIdentifier:@"TestEnd"];
     
     if(totalQuestionsCorrect == questionsInLevel)
@@ -647,11 +737,7 @@
     
     [self presentViewController:TEND animated:YES completion:nil];
     
-    
-    
-    
-    
-    
+ 
     
 }
 

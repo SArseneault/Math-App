@@ -26,7 +26,6 @@
 - (instancetype)initWithCollectionView:(UICollectionView *)view andParentViewController:(TestLevelView *)parent{
     if (self = [super init]) {
         
-        NSLog(@"cUSTOM");
         [self setUpTileModels];//set up the actual tiles
         
         [self initCollectionView:view]; //set up collection view in the parent view
@@ -43,7 +42,7 @@
 #pragma mark- Fill in tile once it is dropped
 -(void)cellDragCompleteWithModel:(TileModel *)model{
     
-    NSLog(@"In cell drag complete with model");
+
     if(model !=nil)
     {
         NSInteger index =[_tileModels indexOfObject:model];
@@ -56,7 +55,7 @@
 
 - (void)setUpGestures {
     
-    NSLog(@"Setting Up Gestures");
+
     
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                                    action:@selector(handlePress:)];
@@ -69,7 +68,7 @@
 #pragma mark- hadle press function
 - (void)handlePress:(UILongPressGestureRecognizer *)gesture {
     
-    NSLog(@"Handle Press function");
+
     
     CGPoint point = [gesture locationInView:_collectionView];
     
@@ -82,7 +81,6 @@
         //if point is on an index
         if(indexPath !=nil)
         {
-            NSLog(@"Good");
             
             _selectedTile=[_tileModels objectAtIndex:indexPath.item];
             
@@ -101,7 +99,7 @@
         }
         else
         {
-            NSLog(@"Bad");
+
             
         }
         
@@ -127,7 +125,7 @@
 //Set up actual tiles in the collection view
 - (void)initCollectionView:(UICollectionView *)view {
     
-    NSLog(@"KeyboardCollectionView initCollectionView view");
+
     _collectionView            = view;
     _collectionView.delegate   = self;
     _collectionView.dataSource = self;

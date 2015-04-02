@@ -12,12 +12,15 @@
 
 @interface DestinationController : NSObject
 
--(instancetype)initWithCollectionView:(UICollectionView* ) collectionView;
+-(instancetype)initWithCollectionView:(UICollectionView* ) collectionView andParentViewController:(TestLevelView *)parent;
 
 //Takes the dragged tile from view controller and adds it to the collection view
 -(void)addModel:(TileModel*)model;
 
 -(void)clearInput;
+
+//remove tile from input view
+-(void)removeTile:(TileModel*)model;
 
 
 @end

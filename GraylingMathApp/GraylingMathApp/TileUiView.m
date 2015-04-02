@@ -39,6 +39,22 @@
     }
 }
 
+-(void)setOutHighLight:(BOOL)highlight{
+    
+    if(highlight)
+    {
+        self.layer.borderColor = [UIColor redColor].CGColor;
+        self.layer.borderWidth = 5.0f;
+    }
+    else
+    {
+        self.layer.borderWidth = 0.0f;
+    }
+    
+    
+    
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
