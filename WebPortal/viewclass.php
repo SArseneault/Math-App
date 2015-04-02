@@ -136,6 +136,12 @@
           'min' => 2,
           'max' => 50
           ),
+        'username' => array(
+          'min' => 2,
+          'max' => 50,
+          'unique'=> 'student',
+          'required' => true
+          ),
         'password' => array(
             'required' => true,
             'min' => 2
