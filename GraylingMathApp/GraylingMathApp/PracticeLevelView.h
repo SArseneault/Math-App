@@ -47,7 +47,8 @@
     NSString * timeLimit;
     NSInteger timeLimitSeconds;
     
-
+    
+    BOOL timeBool;
     
     
     //Variables to store extracted question info
@@ -80,5 +81,8 @@
 @property (strong, nonatomic) NSString *timeLimit;
 @property (strong, nonatomic) NSString *levelName;
 @property (strong, nonatomic) NSString *levelID;
+
+//Bool for time
+//@property (assign) BOOL timeBool;
 
 @end

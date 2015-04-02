@@ -18,6 +18,7 @@
 @synthesize timeLimit;
 @synthesize levelName;
 @synthesize levelID;
+//@synthesize timeBool;
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -128,13 +129,18 @@
     //create timer object, call to method increaseTime to increase and display current time spent on level
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0F target:self selector:@selector(increaseTime) userInfo: nil repeats:YES];
     
+    //Set bool for timer to false
+    timeBool =NO;
+    
     //call to generate random number method to start game
     [self generateNumber];
+ 
     
 }
 
 -(void) generateNumber
 {
+    timeBool=NO;
 
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
@@ -187,7 +193,8 @@
 
 -(IBAction)submitAnswer
 {
-    
+    //PAUSE TIMER
+    timeBool=YES;
     
     //calulate answer
     if ([Qoperator isEqualToString:@"+"])
@@ -241,7 +248,7 @@
     
     
     //call method to check for end of practice section
-    [self isEndCheck];
+   // [self isEndCheck];
     
     
 }
@@ -331,9 +338,11 @@
 //timer method to increase time, fired every second
 -(void) increaseTime
 {
-    //increment seconds
-    seconds++;
-    
+    if(timeBool==NO)
+    {
+        //increment seconds
+        seconds++;
+    }
     //seconds to minutes
     if(seconds >=60)
     {
@@ -386,6 +395,16 @@
             [self setUpLevel];
         }
         
+    }
+    if(alertView.tag==2) //entered the correct answer
+    {
+        
+        [self isEndCheck];
+    }
+    
+    if(alertView.tag ==3) //entered the wrong answer
+    {
+        [self isEndCheck];
     }
     
 }
