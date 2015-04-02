@@ -537,9 +537,16 @@
     //userAnswer =([userInput.text integerValue]);
     
     //get users answer from input drag box
-    userAnswer =([userInputString integerValue]);
+    //userAnswer =([userInputString integerValue]);
     
     NSLog(@"Answer from user input: %ld",userAnswer);
+    
+    //Getting answer from destination controller
+    NSInteger testValue =[_destionController getValue];
+    
+    userAnswer = (testValue);
+    
+    NSLog(@"FINAL NUMBER ISSSSSS %d", testValue);
     
     //check is users answers are correct
     if(correctAnswer == userAnswer)

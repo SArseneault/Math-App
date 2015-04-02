@@ -19,6 +19,11 @@
     TestLevelView *_parentController;
     TileModel *_selectedInputTile;
     
+    //Create array to store numbers inputed from dragged tiles
+    NSMutableArray *_userInputArray;
+    
+
+    
     
 }
 
@@ -45,6 +50,9 @@
         //[self setupInputTiles];
         
         _parentController = parent;
+        
+        //Set up array to store tile input
+        _userInputArray=[[NSMutableArray alloc]init];
         
     }
     return self;
@@ -112,9 +120,32 @@
     
     NSLog(@"recived added tile");
     
-    [_models addObject:model];
+    NSLog(@"Tile dropeeeeeee is %d", model.value);
+    
+    int insertNumber = model.value;
+    
+    [_userInputArray addObject:[NSNumber numberWithInt:insertNumber]];
+    
+    [self AddInputToArray:(int)model.value];
+    
+    
+     NSLog(@"Size is beforeeeee   %d", [_userInputArray count]);
+    NSLog(@"Added thissssss %i", insertNumber);
+     [_models addObject:model];
     
     [_collectionView reloadData];
+    
+        NSLog(@"Size is afterreeeee  %d", [_userInputArray count]);
+    
+}
+
+-(void)AddInputToArray:(int)input{
+    
+    NSLog(@"Number recived!!!!!!!!!!!!!!! is %d", input);
+    
+
+    
+    
     
 }
 
@@ -127,6 +158,8 @@
     NSInteger index = [_models indexOfObject:model];
     NSIndexPath *indexPath =[NSIndexPath indexPathForItem:index inSection:0];
     
+    NSLog(@"Tile removed is %d", model.value);
+    
     [_models removeObjectAtIndex:index];
     [_collectionView deleteItemsAtIndexPaths:@[indexPath]];
     [_collectionView reloadData];
@@ -135,7 +168,33 @@
     
     
 }
+-(NSInteger)getValue{
+    
+    
+    NSInteger size = [_userInputArray count];
+    
+    NSLog(@"Size is _______________________%d", size);
+    
+    if(size >1)
+    {
+        NSInteger temp = (10*[[_userInputArray objectAtIndex:0]intValue]);
+        
+        NSInteger tempTw0 = [[_userInputArray objectAtIndex:1]intValue];
+        
 
+        
+        return temp+tempTw0;
+
+    }
+    else
+    {
+
+        return [[_userInputArray objectAtIndex:0]intValue];
+    }
+
+
+
+}
 -(void)clearInput
 {
     
@@ -143,6 +202,10 @@
     [self->_models removeAllObjects];
     
     [_collectionView reloadData];
+    
+    
+    //remove everything from array
+    [_userInputArray removeAllObjects];
     
     
 }

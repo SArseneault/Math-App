@@ -22,5 +22,7 @@
 //remove tile from input view
 -(void)removeTile:(TileModel*)model;
 
+-(NSInteger)getValue;
+
 
 @end
