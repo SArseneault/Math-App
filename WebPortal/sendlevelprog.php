@@ -15,6 +15,18 @@
 	$practice_time = $_GET["practice_time"];
 	$level_type = $_GET["level_type"];
 	
+	//Converting seconds to minutes
+	if( ($test_time < 100) && ($test_time > 59) ) 
+	{
+		$test_time = ($test_time/60)*100;
+	}
+
+	//Converting minutes to hours
+	if( ($test_time < 10000) && ($test_time > 590) ) 
+	{
+		$test_time = ($test_time/6000)*10000;
+	}
+
 
 	//Grabbing the level progress data
 	$levelProgData = $db->query('SELECT * FROM level_progress WHERE student_id = ? AND level_id = ?', array(
@@ -46,7 +58,6 @@
 		if($levelProgData['status'] == 0)
 			$fields['status'] =  $status;
 	}
-
 
 
 

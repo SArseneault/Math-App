@@ -150,8 +150,10 @@
 		public function getStudents($classID){
 			
 			
-		 $data = $this->_db->get('student', array('class_id', '=', $classID));
-				
+		 //$data = $this->_db->get('student', array('class_id', '=', $classID));
+				$data = $this->_db->query('SELECT * FROM student WHERE class_id = ? ORDER BY first_name', array($classID));
+
+
 			if($data->count()) {
 
 				//Getting array of st objects

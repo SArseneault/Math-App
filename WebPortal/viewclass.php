@@ -285,6 +285,7 @@ if($user->classExist()){  ?>
 
          <?php 
           $i = 0;
+         
 
          foreach($students as $student){
                 //Convert the std object to an array
@@ -682,6 +683,34 @@ if($user->classExist()){  ?>
                         //Creating a new body and adding it to the table
                         var body = document.createElement("tbody");
                         table.appendChild(body);
+        
+                          //Display that the studnet got a 100%
+                          if(QArrLength <= 0){
+                            var newRow = document.createElement("tr");
+                            newRow.align = "center";
+                           //var t = document.createTextNode("This student got all the questions correct for this level.");       
+                            //newRow.appendChild(t); 
+                            body.appendChild(newRow);
+
+
+                             //Question
+                            var newColumn = document.createElement("TD");  
+                            newRow.appendChild(newColumn);
+
+                             var newColumn = document.createElement("TD"); 
+                            newRow.appendChild(newColumn);
+
+                             var newColumn = document.createElement("TD"); 
+                            var t = document.createTextNode('This student got all the questions correct for this level');       
+                            newColumn.appendChild(t); 
+                            newRow.appendChild(newColumn);
+
+                             var newColumn = document.createElement("TD"); 
+                            newRow.appendChild(newColumn);
+
+
+                          }
+
 
                           //Loop through each element of the array 
                           for (var i = 0; i < QArrLength; i++) {
