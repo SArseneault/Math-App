@@ -745,6 +745,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0W0-T0-r9A"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fj9-fp-Jma">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-xn-YN0">
@@ -1443,7 +1444,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chalkboard.jpg" width="1669" height="994"/>
+        <image name="chalkboard.jpg" width="1670" height="991"/>
         <image name="greenArrowLpng.png" width="582" height="595"/>
         <image name="greenArrowR.png" width="582" height="595"/>
         <image name="raceCarButton.png" width="600" height="337"/>
