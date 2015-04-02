@@ -30,7 +30,7 @@
     
     if(highlight)
     {
-        self.layer.borderColor = [UIColor blueColor].CGColor;
+        self.layer.borderColor = [UIColor greenColor].CGColor;
         self.layer.borderWidth = 5.0f;
     }
     else
