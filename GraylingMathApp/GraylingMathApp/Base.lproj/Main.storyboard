@@ -153,6 +153,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="21" y="635" width="158" height="138"/>
                                 </variation>
+                                <connections>
+                                    <action selector="replayLevel:" destination="1kq-OK-IxZ" eventType="touchUpInside" id="cQB-Cj-lMk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>

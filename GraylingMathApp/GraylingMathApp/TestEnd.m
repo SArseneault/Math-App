@@ -147,7 +147,7 @@
     
     
     yPosition += 50;
-    
+    xPosition -= 70;
     
     
     //Loop through each level
