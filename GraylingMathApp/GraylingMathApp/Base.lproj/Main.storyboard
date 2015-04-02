@@ -902,23 +902,15 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-Xd-EXa">
                                 <rect key="frame" x="12" y="177" width="50" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3AY-Q5-eA3"/>
+                                    <constraint firstAttribute="width" constant="115" id="HTN-MO-s23"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3AY-Q5-eA3"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="695" y="122" width="50" height="30"/>
-                                    <mask key="constraints">
-                                        <include reference="3AY-Q5-eA3"/>
-                                    </mask>
                                 </variation>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="modal" id="DS6-FN-2hn"/>
@@ -926,28 +918,22 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mum-yj-eBp">
                                 <rect key="frame" x="68" y="28" width="151" height="27"/>
-                                <color key="backgroundColor" red="0.33958661379999999" green="0.43844325610000001" blue="0.1432873737" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="g0l-QG-cYa"/>
+                                    <constraint firstAttribute="width" constant="151" id="waD-OP-jZH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="g0l-QG-cYa"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="54" y="117" width="75" height="27"/>
-                                    <mask key="constraints">
-                                        <include reference="g0l-QG-cYa"/>
-                                    </mask>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-om-XVN">
                                 <rect key="frame" x="253" y="470" width="95" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="F6E-om-5Dk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -996,28 +982,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grayling Math Racer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnp-Tu-XXK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Grayling Math Racer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnp-Tu-XXK">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="800" id="8kD-Gn-IFz"/>
-                                    <constraint firstAttribute="height" constant="100" id="GsA-y5-6sb"/>
+                                    <constraint firstAttribute="height" constant="100" id="lei-Sd-Fus"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8kD-Gn-IFz"/>
-                                        <exclude reference="GsA-y5-6sb"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="100"/>
-                                    <mask key="constraints">
-                                        <include reference="8kD-Gn-IFz"/>
-                                        <include reference="GsA-y5-6sb"/>
-                                    </mask>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a04-GY-ZSu">
@@ -1063,29 +1038,29 @@
                         <constraints>
                             <constraint firstItem="HGT-ow-0iE" firstAttribute="top" secondItem="5O6-U8-TZf" secondAttribute="bottom" constant="1" id="4k9-PC-v2v"/>
                             <constraint firstItem="VcY-0v-eC4" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="285" id="9ZC-yG-NsR"/>
+                            <constraint firstItem="Jnp-Tu-XXK" firstAttribute="leading" secondItem="tF3-KI-NiX" secondAttribute="leading" id="H9S-qa-mTv"/>
                             <constraint firstItem="mum-yj-eBp" firstAttribute="leading" secondItem="tF3-KI-NiX" secondAttribute="leadingMargin" constant="38" id="IlT-V2-s8V"/>
-                            <constraint firstItem="mum-yj-eBp" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="17" id="Jyy-x0-a9l"/>
+                            <constraint firstItem="mum-yj-eBp" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="31" id="Jyy-x0-a9l"/>
                             <constraint firstItem="a04-GY-ZSu" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="197" id="KjG-oF-kh3"/>
                             <constraint firstAttribute="centerX" secondItem="5Je-oW-2nX" secondAttribute="centerX" id="STA-zK-2sA"/>
                             <constraint firstItem="M2e-om-XVN" firstAttribute="top" secondItem="VcY-0v-eC4" secondAttribute="bottom" constant="39" id="ZFs-dZ-uh9"/>
+                            <constraint firstItem="Jnp-Tu-XXK" firstAttribute="top" secondItem="tF3-KI-NiX" secondAttribute="top" constant="20" id="ZQ9-be-RtC"/>
                             <constraint firstAttribute="centerX" secondItem="VcY-0v-eC4" secondAttribute="centerX" id="aQk-Hb-Dtn"/>
                             <constraint firstAttribute="centerX" secondItem="a04-GY-ZSu" secondAttribute="centerX" id="cfg-Ac-zEw"/>
                             <constraint firstAttribute="centerX" secondItem="HGT-ow-0iE" secondAttribute="centerX" id="ebY-gA-ecq"/>
+                            <constraint firstAttribute="trailing" secondItem="Jnp-Tu-XXK" secondAttribute="trailing" id="fyX-5t-C1w"/>
                             <constraint firstAttribute="centerX" secondItem="VcY-0v-eC4" secondAttribute="centerX" id="gvW-ZG-XAL"/>
                             <constraint firstAttribute="centerX" secondItem="5O6-U8-TZf" secondAttribute="centerX" id="h2A-Im-T1P"/>
                             <constraint firstAttribute="centerX" secondItem="M2e-om-XVN" secondAttribute="centerX" id="lkl-tr-A2A">
                                 <variation key="heightClass=regular-widthClass=regular" constant="12.5"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="c7k-Xd-EXa" secondAttribute="trailing" constant="39" id="n7q-hw-hZC"/>
-                            <constraint firstItem="c7k-Xd-EXa" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="22" id="piX-Cv-EDm"/>
+                            <constraint firstItem="c7k-Xd-EXa" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="31" id="piX-Cv-EDm"/>
                             <constraint firstItem="VcY-0v-eC4" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="285" id="qaQ-qx-awJ"/>
                             <constraint firstItem="5Je-oW-2nX" firstAttribute="top" secondItem="Jnp-Tu-XXK" secondAttribute="bottom" constant="157" id="r6g-1z-tFN"/>
                             <constraint firstItem="5O6-U8-TZf" firstAttribute="top" secondItem="a04-GY-ZSu" secondAttribute="bottom" constant="8" id="sE6-dw-Sb1"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Jnp-Tu-XXK"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="IlT-V2-s8V"/>
                                 <exclude reference="Jyy-x0-a9l"/>
@@ -1162,6 +1137,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ec1-hj-mCR"/>
         <segue reference="IgK-zJ-R3d"/>
-        <segue reference="LrK-8x-AS6"/>
+        <segue reference="DS6-FN-2hn"/>
     </inferredMetricsTieBreakers>
 </document>
