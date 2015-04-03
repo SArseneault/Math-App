@@ -27,6 +27,7 @@
 //Creating properties for the labels
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *selectLevel;
 
 
 @end

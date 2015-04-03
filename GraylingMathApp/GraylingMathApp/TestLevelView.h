@@ -14,7 +14,7 @@
     //IBOutlet refers to an empty varaible and method in interface builder
     IBOutlet UILabel *firstNumber; //label first number generated
     IBOutlet UILabel *secondNumber; //label second number generated
-    IBOutlet UITextField *userInput; //textbox store user input
+  
     IBOutlet UILabel *labelForTimer; //label for timer
     IBOutlet UILabel *operatorLabel;
     

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TestLevelView.h"
 #import "TileModel.h"
+#import "PracticeLevelView.h"
 
 @interface KeyBoardCollectionView : NSObject
 

@@ -181,9 +181,6 @@
         return false;
     }
     
-    
-
-    
 }
 
 #pragma mark - allow tile to be dragged after intiail press on index
@@ -421,8 +418,6 @@
     
     [self.view addSubview:_draggedTile];
     
-    
-    
 }
 
 -(void) generateNumber
@@ -457,7 +452,7 @@
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
     
     //clear user input textbox
-    userInput.text = @"";
+    //userInput.text = @"";
     
     //increment question counter
     questionCount++;

@@ -17,5 +17,7 @@
 @property (strong, nonatomic) NSString *timeLimit;
 @property (strong, nonatomic) NSString *levelName;
 @property (strong, nonatomic) NSString *levelID;
+@property (strong, nonatomic) IBOutlet UIButton *practiceButton;
+@property (strong, nonatomic) IBOutlet UIButton *testButton;
 
 @end

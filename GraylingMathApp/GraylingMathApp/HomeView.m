@@ -21,7 +21,7 @@
 
 //Synthesizing the label names from the header file
 @synthesize usernameLabel;
-
+@synthesize selectLevel;
 
 
 //Automatically called after screenload
@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     
+    //Rounded buttons
+    selectLevel.layer.cornerRadius = 5.0f;
   
     
     

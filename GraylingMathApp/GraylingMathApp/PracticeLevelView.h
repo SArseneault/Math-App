@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TileModel.h"
 
 @interface PracticeLevelView : UIViewController <UIAlertViewDelegate>
 {
@@ -18,13 +19,13 @@
     IBOutlet UILabel *operatorLabel;
     IBOutlet UILabel *equalVert;
     
-    //Horizitonal
-    IBOutlet UILabel *firstNumberHorz; //label first number generated
-    IBOutlet UILabel *secondNumberHorz; //label second number generated
-    IBOutlet UITextField *userInputHorz; //textbox store user input
-    IBOutlet UILabel *operatorLabelHorz;
-    
-    IBOutlet UILabel *equalHorz;
+//    //Horizitonal
+//    IBOutlet UILabel *firstNumberHorz; //label first number generated
+//    IBOutlet UILabel *secondNumberHorz; //label second number generated
+//    IBOutlet UITextField *userInputHorz; //textbox store user input
+//    IBOutlet UILabel *operatorLabelHorz;
+//    
+//    IBOutlet UILabel *equalHorz;
     
     NSInteger valueOne; //int for first number
     NSInteger valueTwo; //int for second number
@@ -84,5 +85,13 @@
 
 //Bool for time
 //@property (assign) BOOL timeBool;
+@property (strong, nonatomic) IBOutlet UICollectionView *keyBoard;
+
+//communicate with Keyboard view controller to communicate when tile is pressed
+-(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point;
+
+@property (strong, nonatomic) IBOutlet UICollectionView *inputTileCollectionView;
+
+-(void)setSelectedInputTile:(TileModel*)inputTile atPoint:(CGPoint)point;
 
 @end

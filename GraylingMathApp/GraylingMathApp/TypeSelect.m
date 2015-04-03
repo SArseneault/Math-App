@@ -21,12 +21,14 @@
 @synthesize timeLimit;
 @synthesize levelName;
 @synthesize levelID;
+@synthesize practiceButton;
+@synthesize testButton;
 
 //Automatically called after screenload
 - (void)viewDidLoad
 {
-    
-    
+    practiceButton.layer.cornerRadius = 5.0f;
+    testButton.layer.cornerRadius = 5.0f;
 }
 
 - (IBAction)goToPractice:(id)sender {

@@ -8,8 +8,28 @@
 #import "baseURL.h"
 #import "PracticeLevelView.h"
 #import "Map.h"
+#import "KeyBoardCollectionView.h"
+#import "TileUiView.h"
+#import "TileModel.h"
+#import "DestinationController.h"
+#import "TestEnd.h"
 
-@interface PracticeLevelView()
+@interface PracticeLevelView() <UIGestureRecognizerDelegate>
+{
+    KeyBoardCollectionView *_keyBoardCollectionView;
+    
+    DestinationController *_destionController;
+    
+    //data for tiles
+    TileModel *_tileModel;
+    
+    //creates a dragged tile
+    TileUiView *_draggedTile;
+    
+    //Creates a dragged tile for input box
+    TileUiView *_draggedInputTile;
+    
+}
 
 @end
 
@@ -19,6 +39,10 @@
 @synthesize levelName;
 @synthesize levelID;
 //@synthesize timeBool;
+
+@synthesize keyBoard;
+
+@synthesize inputTileCollectionView;
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -132,20 +156,246 @@
     //Set bool for timer to false
     timeBool =NO;
     
+    //creates actual keyboard layout
+    _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
+    
+    //Create user input collection view
+    _destionController=[[DestinationController alloc]initWithCollectionView:self.inputTileCollectionView andParentViewController:self];
+    
+    //set up pangesture for dragged tile
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    panGesture.delegate = self;
+    [self.view addGestureRecognizer:panGesture];
+    
+    //Method to create dragged tile
+    [self initDraggedTileView];
+    
+    //Method to create dragged tile for input view
+    [self initDraggedInputTileView];
+    
+    
     //call to generate random number method to start game
     [self generateNumber];
  
     
 }
 
+#pragma mark - allow tile to be dragged after intiail press on index
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (void)handlePan:(UIPanGestureRecognizer *)gesture {
+    
+    
+    
+    //get the point in the testlevel view
+    CGPoint touchPoint =[gesture locationInView:self.view];
+    
+    //calls when tile is moving
+    if(gesture.state==UIGestureRecognizerStateChanged && !_draggedTile.hidden)
+    {
+        
+        //tile is dragged
+        _draggedTile.center=touchPoint;
+        
+        //update where card is
+        [self updateTileViewDragState:[self isValidDragPoint:touchPoint]];
+    }
+    if(gesture.state ==UIGestureRecognizerStateEnded && !_draggedTile.hidden)
+    {
+        //hide dragged tile
+        _draggedTile.hidden=YES;
+        
+        //check to see if it is a valid drop point
+        BOOL validDropPoint =[self isValidDragPoint:touchPoint];
+        
+        if(validDropPoint)
+        {
+            
+            
+            NSLog(@"Tile Dropped is %d",_tileModel.value);
+            
+            //adds the value of the tile to the array/string used for input
+            //[self addinputToArray:_tileModel.value];
+            
+            
+            [_destionController addModel:_tileModel];
+        }
+        else{
+            
+            
+            
+        }
+        
+        //Tile Keyboard collection view to make tile avlaible again
+        [_keyBoardCollectionView cellDragCompleteWithModel:_tileModel];
+    }
+    
+    
+    //started to drag tile from input box
+    if(gesture.state==UIGestureRecognizerStateChanged &&!_draggedInputTile.hidden)
+    {
+        
+        _draggedInputTile.center =touchPoint;
+        [self updateOutputTileViewDragState:[self isValidDragPointOutput:touchPoint]];
+        
+        
+    }
+    
+    //stop dragging tile from output box
+    if(gesture.state ==UIGestureRecognizerStateEnded && !_draggedInputTile.hidden)
+    {
+        
+        _draggedInputTile.hidden=YES;
+        
+        //check drop point
+        
+        BOOL validOutPoutDroppoint =[self isValidDragPointOutput:touchPoint];
+        
+        if(validOutPoutDroppoint)
+        {
+            
+            
+            [_destionController removeTile:_tileModel];
+            
+            
+            
+        }
+        else{
+            
+            
+            // [_destionController reloadData];
+        }
+        
+        
+    }
+    
+    
+}
+
+#pragma mark - create tile for the tiles being dragged out of input box
+-(void) initDraggedInputTileView{
+    
+    _draggedInputTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
+    
+    //Set to hidden for initial set up
+    _draggedInputTile.hidden = YES;
+    
+    
+    [self.view addSubview:_draggedInputTile];
+}
+#pragma mark - create tile view that will be dragged
+-(void) initDraggedTileView{
+    
+    
+    
+    //size of tile 55x55, sligthly bigger than collectionview cells
+    _draggedTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
+    
+    //Set to hidden for initial set up
+    _draggedTile.hidden = YES;
+    
+    [self.view addSubview:_draggedTile];
+    
+}
+
+#pragma mark - method for dragging the input tile around
+-(BOOL)isValidDragPointOutput:(CGPoint)point
+{
+    
+    return !CGRectContainsPoint(self.inputTileCollectionView.frame, point);
+    
+}
+
+#pragma mark- method recgonizes when the tile is over in input area and creates a bool
+-(BOOL)isValidDragPoint:(CGPoint)point{
+    
+    
+    NSInteger numberOfTiles =[inputTileCollectionView numberOfItemsInSection:0];
+    
+    if(numberOfTiles <2)
+    {
+        //NSLog(@"Number of tiles in collection view ARE: %i", numberOfTiles);
+        return CGRectContainsPoint(self.inputTileCollectionView.frame, point);
+        
+    }
+    else{
+        return false;
+    }
+    
+}
+
+#pragma mark - draged state for tile view this is where it updates to see where dragged point is
+-(void) updateTileViewDragState:(BOOL)validDropPoint{
+    
+    //If it is a valid drag point highlight tile
+    if(validDropPoint){
+        [ _draggedTile setHighLight:YES];
+    }
+    else{
+        [ _draggedTile setHighLight:NO];
+    }
+    
+}
+
+-(void)updateOutputTileViewDragState:(BOOL)isValidDragPointOutput{
+    
+    if(isValidDragPointOutput){
+        [_draggedInputTile setOutHighLight:YES];
+    }
+    else{
+        [_draggedInputTile setOutHighLight:NO];
+    }
+    
+}
+
+#pragma mark- method to set up tile in view once keyboard view controller detects a succesfull index in view
+-(void)setSelectedTile:(TileModel*)tileModel atPoint:(CGPoint)point{
+    
+    
+    _tileModel=tileModel;
+    
+    
+    if(_tileModel !=nil)
+    {
+        
+        _draggedTile.label.text=[NSString stringWithFormat:@"%d",tileModel.value];
+        _draggedTile.center=point;
+        _draggedTile.hidden=NO;
+        
+        //call to update dragged state and if it is a valid drag point
+        [self updateTileViewDragState:[self isValidDragPoint:point]];
+    }
+    
+}
+
+#pragma mark - recive from destination what tile has been selected
+-(void)setSelectedInputTile:(TileModel*)inputTile atPoint:(CGPoint)point{
+    
+    
+    
+    _tileModel =inputTile;
+    
+    _draggedInputTile.label.text=[NSString stringWithFormat:@"%d", inputTile.value];
+    _draggedInputTile.center=point;
+    _draggedInputTile.hidden=NO;
+    
+    [self updateOutputTileViewDragState:[self isValidDragPointOutput:point]];
+    
+    
+    
+}
+
 -(void) generateNumber
 {
+    //bool to start/stop timmer
     timeBool=NO;
 
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
     NSLog(@"Question Orientaiton: %d",questionOrientation);
-    [self flipOrientaion];
+    //[self flipOrientaion];
     
     //Extracting the next question information
     operand1 = [[json objectAtIndex:questionCount] objectForKey:@"operand1"];
@@ -174,10 +424,10 @@
     firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
     secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
-    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
-    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
-    operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
-    
+//    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
+//    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
+//    operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
+//    
     
     //clear user input textbox
     userInput.text = @"";
@@ -209,11 +459,12 @@
     NSLog(@"operator After: %@",Qoperator);
     NSLog(@"Answer: %ld",correctAnswer);
     
-    //get user input
-    if(questionOrientation == 0)
-        userAnswer = ([userInput.text integerValue]);
-    else
-        userAnswer = ([userInputHorz.text integerValue]);
+    NSInteger testValue =[_destionController getValue];
+    
+
+        //userAnswer = ([userInput.text integerValue]);
+    userAnswer = (testValue);
+ 
     
     
     
@@ -244,11 +495,13 @@
     
     //Clearing input fields
     userInput.text = nil;
-    userInputHorz.text = nil;
+ //   userInputHorz.text = nil;
     
     
     //call method to check for end of practice section
    // [self isEndCheck];
+    
+    [_destionController clearInput];
     
     
 }
@@ -413,49 +666,49 @@
 
 
 
--(void)flipOrientaion{
-    
-    //Clearing input fields
-    userInput.text = nil;
-    userInputHorz.text = nil;
-    
-    if(questionOrientation == 1)
-    {
-        //Set veritcle labels to hide
-        [firstNumber setHidden:YES];
-        [secondNumber setHidden:YES];
-        [userInput setHidden:YES];
-        [operatorLabel setHidden:YES];
-        [equalVert setHidden:YES];
-        
-        //Set horziontal labels to visible
-        [firstNumberHorz setHidden:NO];
-        [secondNumberHorz setHidden:NO];
-        [userInputHorz setHidden:NO];
-        [operatorLabelHorz setHidden:NO];
-        [equalHorz setHidden:NO];
-        
-        
-        
-     } else {
-        
-         [firstNumberHorz setHidden:YES];
-         [secondNumberHorz setHidden:YES];
-         [userInputHorz setHidden:YES];
-         [operatorLabelHorz setHidden:YES];
-         [equalHorz setHidden:YES];
-         
-         //Set veritcle labels to hide
-         [firstNumber setHidden:NO];
-         [secondNumber setHidden:NO];
-         [userInput setHidden:NO];
-         [operatorLabel setHidden:NO];
-         [equalVert setHidden:NO];
-     }
-     
-    
-   
-}
+//-(void)flipOrientaion{
+//    
+//    //Clearing input fields
+//    userInput.text = nil;
+//    userInputHorz.text = nil;
+//    
+//    if(questionOrientation == 1)
+//    {
+//        //Set veritcle labels to hide
+//        [firstNumber setHidden:YES];
+//        [secondNumber setHidden:YES];
+//        [userInput setHidden:YES];
+//        [operatorLabel setHidden:YES];
+//        [equalVert setHidden:YES];
+//        
+//        //Set horziontal labels to visible
+//        [firstNumberHorz setHidden:NO];
+//        [secondNumberHorz setHidden:NO];
+//        [userInputHorz setHidden:NO];
+//        [operatorLabelHorz setHidden:NO];
+//        [equalHorz setHidden:NO];
+//        
+//        
+//        
+//     } else {
+//        
+//         [firstNumberHorz setHidden:YES];
+//         [secondNumberHorz setHidden:YES];
+//         [userInputHorz setHidden:YES];
+//         [operatorLabelHorz setHidden:YES];
+//         [equalHorz setHidden:YES];
+//         
+//         //Set veritcle labels to hide
+//         [firstNumber setHidden:NO];
+//         [secondNumber setHidden:NO];
+//         [userInput setHidden:NO];
+//         [operatorLabel setHidden:NO];
+//         [equalVert setHidden:NO];
+//     }
+//     
+//    
+//   
+//}
 
 
 
