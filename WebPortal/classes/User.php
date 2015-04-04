@@ -88,13 +88,20 @@
 			}
 
 			//Grabbing the newly created level data
-			$leveldata = $this->_db->get('level', array('name', '=', $fields['name']));
+			$leveldata = $this->_db->query('SELECT * FROM level WHERE name = ? AND description = ? AND time_limit = ? AND class_id = ?', array(
+					$fields['name'],
+					$fields['description'],
+					$fields['time_limit'],
+					$fields['class_id']
+					));
 
 			//Grabbing std object
 			$leveldata = $leveldata->first();
 
 			//Convert the std object to an array
 	        $leveldata = get_object_vars($leveldata);
+
+	
 
 		
 			//Creating a student helper object

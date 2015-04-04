@@ -8,7 +8,7 @@
 
       //Displaying the flash message
       ?><div class="alert alert-success">
-                  <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                  <a href="" class="close" data-dismiss="alert">&times;</a>
                   <strong><?php print_r(Session::get('success') );?></strong> 
         </div> <?php
 

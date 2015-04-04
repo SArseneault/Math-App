@@ -3,6 +3,8 @@
 
     ini_set('display_errors', 1);
 
+
+
 	//Allow people to login
 	session_start();
 
@@ -44,3 +46,6 @@
 		}
 	}
 ?>
+
+<!-- Website icon -->
+<link rel="shortcut icon" href="includes/images/icon.gif">

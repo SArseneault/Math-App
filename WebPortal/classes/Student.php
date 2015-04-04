@@ -141,6 +141,22 @@
 			}
 		}
 
+		//Find student by their username or id
+		public function findByClassID($username, $classID) {
+			$data = $this->_db->query('SELECT * FROM student WHERE username =? AND class_id = ?', array(
+					$username,
+					$classID
+					));
+
+			
+				if($data->count()) {
+					$this->_data = $data->first();
+
+					return true;
+				}
+				return false;
+		}
+
 		public function data() {
 			return $this->_data;
 		}

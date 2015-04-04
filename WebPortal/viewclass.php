@@ -72,6 +72,7 @@
         ));
       
 
+
       if($validation->passed()) {
 
         try {
@@ -139,7 +140,6 @@
         'username' => array(
           'min' => 2,
           'max' => 50,
-          'unique'=> 'student',
           'required' => true
           ),
         'password' => array(
@@ -154,8 +154,18 @@
 
         ));
       
+      $failure = false;
+      $errorString = "</br>";
 
-      if($validation->passed()) {
+      //Check to ensure the username doesn't already exist in the class
+      if($studentOBJ->findByClassID($_POST['username'], $classInfo['class_id']))
+      {
+        $failure = true;
+        $errorString = "</br>" . $_POST['username'] . " already exsits in this class </br>"; 
+      
+      }
+
+      if( ($validation->passed()) and (!$failure) ) {
 
         try {
            
@@ -182,7 +192,7 @@
       } else {
          
 
-          $errorString = "</br>";
+          
               foreach($validation->errors() as $error) {
                 $errorString = $errorString . $error . "</br>";
                
@@ -190,7 +200,7 @@
 
 
           ?> <div class="alert alert-danger">
-                <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                <a href="" class="close" data-dismiss="alert">&times;</a>
                 <strong>Error!</strong> <?php echo($errorString); ?>
               </div> <?php
 
@@ -304,11 +314,14 @@ if($user->classExist()){  ?>
                       
                       <?php
 
+                  
                       $studentProg = $studentOBJ->getLevelProgress($student['student_id']);
 
-                      
+            
+    
 
                       if($studentProg){
+                        
                       foreach($studentProg as $currProg) {
                         $currProg = get_object_vars($currProg);
                       

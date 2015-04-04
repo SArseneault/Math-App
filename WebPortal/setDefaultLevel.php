@@ -62,6 +62,7 @@
 
 
 	  if(!$failure){
+
    
 	    //Inserting the new levelinto the database
 	    $user->addLevel(array( 
