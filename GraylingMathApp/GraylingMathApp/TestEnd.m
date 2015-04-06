@@ -21,7 +21,7 @@
 @synthesize levelID;
 @synthesize outPutBox;
 @synthesize nextLevel;
-
+@synthesize chalkBoardTable;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -34,7 +34,6 @@
         self.outPutBox.text = @"PASS!";
         
         
-        
         //Creating x and y positions
         NSInteger xPosition = 380;
         NSInteger yPosition = 380;
@@ -43,7 +42,7 @@
         //Creating the beggining label
         UILabel *lbl1 = [[UILabel alloc] init];
         [lbl1 setFrame:CGRectMake(0,5,250,70)];
-        lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:30.0];
+        lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:35.0];
         lbl1.backgroundColor=[UIColor clearColor];
         lbl1.textColor=[UIColor whiteColor];
         lbl1.userInteractionEnabled=YES;
@@ -89,6 +88,7 @@
 }
 
 
+
 -(void)getQuestionProg
 {
     
@@ -129,26 +129,27 @@
     NSInteger valueTwo; //int for second number
     
     //Creating x and y positions
-    NSInteger xPosition = 350;
-    NSInteger yPosition = 275;
+    NSInteger xPosition = 245;
+    NSInteger yPosition = 240;
     
     
     //Creating the beggining label
     UILabel *lbl1 = [[UILabel alloc] init];
-    [lbl1 setFrame:CGRectMake(0,5,250,20)];
-    lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:17.0];
+    [lbl1 setFrame:CGRectMake(0,5,300,25)];
+    lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:25.0];
     lbl1.backgroundColor=[UIColor clearColor];
     lbl1.textColor=[UIColor whiteColor];
     lbl1.userInteractionEnabled=YES;
     [self.view addSubview:lbl1];
-    lbl1.text = @"Question      Your Answer";
+    lbl1.text = @"Question    Your Answer";
     
     lbl1.center = CGPointMake(xPosition,yPosition);
     
     
-    yPosition += 50;
-    xPosition -= 70;
+    yPosition = 25;
+    xPosition = 125;
     
+    chalkBoardTable.rowHeight = 42;
     
     //Loop through each level
     for(int i = 0; i < questionProgCount; i++) {
@@ -183,32 +184,44 @@
        
         Question = [Question stringByAppendingString:[@(correctAnswer) stringValue]];
         
+        
+    
         //Question
         UILabel *lbl1 = [[UILabel alloc] init];
         [lbl1 setFrame:CGRectMake(0,5,100,20)];
-        lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:17.0];
+        lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:20.0];
         lbl1.backgroundColor=[UIColor clearColor];
         lbl1.textColor=[UIColor whiteColor];
         lbl1.userInteractionEnabled=YES;
-        [self.view addSubview:lbl1];
+        //[self.view addSubview:lbl1];
         lbl1.text= Question;
 
         lbl1.center = CGPointMake(xPosition,yPosition);
         
+        [chalkBoardTable insertSubview:lbl1 atIndex:0];
+        
+    
         
         //Answer
         UILabel *lbl2 = [[UILabel alloc] init];
         [lbl2 setFrame:CGRectMake(0,5,100,20)];
         lbl2.backgroundColor=[UIColor clearColor];
-        lbl2.font = [UIFont fontWithName:@"chalkboard SE" size:17.0];
+        lbl2.font = [UIFont fontWithName:@"chalkboard SE" size:20.0];
         lbl2.textColor=[UIColor redColor];
         lbl2.userInteractionEnabled=YES;
-        [self.view addSubview:lbl2];
+        //[self.view addSubview:lbl2];
         lbl2.text= studentAnswer;
         
         lbl2.center = CGPointMake(xPosition+150,yPosition);
         
-        yPosition += 50;
+        yPosition += 42;
+        
+        [chalkBoardTable insertSubview:lbl2 atIndex:0];
+        
+       
+        
+       
+        
     }
 
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestEnd : UIViewController <UIAlertViewDelegate>
+@interface TestEnd : UIViewController <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray * json;
     NSString * strURL;
@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextLevel;
 
 @property (weak, nonatomic) IBOutlet UITableView *questionTable;
+
+@property (weak, nonatomic) IBOutlet UITableView *chalkBoardTable;
 
 
 @end
