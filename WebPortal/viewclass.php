@@ -246,12 +246,12 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
-        <li class="active"><a href="viewclass.php">Class Editor</a></li>
+<!--         <li><a href="index.php">Home</a></li>
+ -->        <li class="active"><a href="viewclass.php">Class Editor</a></li>
         <li><a href="addlevel.php">Level Editor</a></li>
         <li><a href="importexport.php">Import/Export</a></li>
-        <li><a href="help.php">Help</a></li>
-
+<!--         <li><a href="help.php">Help</a></li>
+ -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="account.php">Account</a></li>
@@ -526,6 +526,9 @@ if($user->classExist()){  ?>
       
         <h1 id="student_ID"></h1>
 
+      </div>
+      <div class="modal-body">
+        <img src = "barGraph2.php">
       </div>
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>

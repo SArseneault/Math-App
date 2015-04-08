@@ -17,7 +17,7 @@
 				
 				if($login) {
 					Session::flash('success', 'You have successfully logged in!');
-					Redirect::to("index.php");
+					Redirect::to("viewclass.php");
 				} else {
 
           ?> <div class="alert alert-danger">

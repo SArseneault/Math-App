@@ -61,12 +61,12 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="viewclass.php">Class Editor</a></li>
+<!--         <li class="active"><a href="index.php">Home</a></li>
+ -->        <li><a href="viewclass.php">Class Editor</a></li>
         <li><a href="addlevel.php">Level Editor</a></li>
         <li><a href="importexport.php">Import/Export</a></li>
-        <li><a href="help.php">Help</a></li>
-      </ul>
+<!--         <li><a href="help.php">Help</a></li>
+ -->      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="account.php">Account</a></li>
         <li><a href="logout.php">Log Out</a></li>
