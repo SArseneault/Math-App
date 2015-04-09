@@ -31,7 +31,7 @@
     if(PassFail){
         nextLevel.enabled = YES;
         self.outPutBox.backgroundColor = [UIColor greenColor];
-        self.outPutBox.text = @"PASS!";
+        self.outPutBox.text = @"COMPLETED!";
         
         
         //Creating x and y positions
@@ -56,9 +56,8 @@
         
         
     } else {
-        nextLevel.enabled = NO;
         self.outPutBox.backgroundColor = [UIColor colorWithRed:(169/255.0) green:(34/255.0) blue:(64/255.0) alpha:1];
-        self.outPutBox.text = @"FAIL";
+        self.outPutBox.text = @"Not Completed";
         [self getQuestionProg];
     }
     
@@ -129,7 +128,7 @@
     NSInteger valueTwo; //int for second number
     
     //Creating x and y positions
-    NSInteger xPosition = 245;
+    NSInteger xPosition = 325;
     NSInteger yPosition = 240;
     
     
