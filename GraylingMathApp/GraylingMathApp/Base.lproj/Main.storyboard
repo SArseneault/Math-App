@@ -299,25 +299,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in_race.png" translatesAutoresizingMaskIntoConstraints="NO" id="DLZ-Ms-VjQ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="250" y="131" width="240" height="128"/>
+                                    <rect key="frame" x="263" y="28" width="240" height="128"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FirstNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32H-sz-Uv6">
                                 <rect key="frame" x="249" y="176" width="100" height="36"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="68"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="350" y="257" width="75" height="32"/>
+                                    <rect key="frame" x="180" y="-12" width="75" height="32"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SecondNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUt-U0-aJd">
                                 <rect key="frame" x="238" y="250" width="124" height="34"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="85"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="341" y="326" width="96" height="29"/>
+                                    <rect key="frame" x="345" y="172" width="96" height="29"/>
                                 </variation>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-eT-q59">
@@ -347,7 +347,7 @@
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OS6-WI-nhX">
                                 <rect key="frame" x="16" y="151" width="115" height="32"/>
-                                <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="QZ8-cr-o9L"/>
                                 </constraints>
@@ -358,37 +358,33 @@
                                     <rect key="frame" x="54" y="117" width="75" height="27"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atq-jg-QzK">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atq-jg-QzK">
                                 <rect key="frame" x="355" y="432" width="90" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="aoc-Si-WEO"/>
+                                    <constraint firstAttribute="height" constant="200" id="Omg-UF-xeE">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="110"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="90" id="aoc-Si-WEO">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="110"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
-                                <state key="normal" title="Submit">
+                                <state key="normal" image="generic_btn_ok_submit.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="514" y="467" width="49" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Omg-UF-xeE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Omg-UF-xeE"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="submitAnswer" destination="fdR-Of-HNk" eventType="touchUpInside" id="TRL-g6-qps"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNr-QD-Atv">
-                                <rect key="frame" x="155" y="432" width="90" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="CaO-p4-bhZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
-                                <state key="normal" title="Clear">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="185" y="467" width="67" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="clearInput" destination="fdR-Of-HNk" eventType="touchUpInside" id="Laz-1e-Jz7"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QNj-oe-jFE">
@@ -415,29 +411,25 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-jC-GhP">
-                                <rect key="frame" x="295" y="214" width="11" height="34"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="369" y="297" width="39" height="21"/>
+                                    <rect key="frame" x="305" y="397" width="190" height="90"/>
                                 </variation>
-                            </label>
+                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSM-kY-Vuk">
                                 <rect key="frame" x="295" y="284" width="11" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="18D-b3-Dkp"/>
+                                    <constraint firstAttribute="width" constant="20" id="18D-b3-Dkp">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                    </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="86"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" misplaced="YES">
                                     <rect key="frame" x="291" y="375" width="20" height="51"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="369" y="356" width="41" height="21"/>
+                                    <rect key="frame" x="369" y="209" width="41" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-24-Tr0">
@@ -457,49 +449,77 @@
                                     <segue destination="uHE-61-2hL" kind="modal" id="UvG-ge-XVP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-jC-GhP">
+                                <rect key="frame" x="295" y="214" width="11" height="34"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="86"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="374" y="164" width="39" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8489188762626263" green="0.8489188762626263" blue="0.8489188762626263" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rUt-U0-aJd" firstAttribute="top" secondItem="yBQ-jC-GhP" secondAttribute="bottom" constant="2" id="0D0-nQ-VkG"/>
-                            <constraint firstAttribute="centerX" secondItem="QNj-oe-jFE" secondAttribute="centerX" id="2Nk-SY-gK1"/>
+                            <constraint firstItem="QNj-oe-jFE" firstAttribute="top" secondItem="iSM-kY-Vuk" secondAttribute="bottom" constant="50" id="0Ax-Px-lAX">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Atq-jg-QzK" firstAttribute="top" secondItem="QNj-oe-jFE" secondAttribute="bottom" constant="35" id="36X-rZ-Fio"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DLZ-Ms-VjQ" secondAttribute="trailing" constant="294" id="4WR-5b-s3Q">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                             </constraint>
-                            <constraint firstItem="yBQ-jC-GhP" firstAttribute="top" secondItem="32H-sz-Uv6" secondAttribute="bottom" constant="2" id="584-DW-FDC"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="20" id="5i9-ZQ-d1Z"/>
-                            <constraint firstAttribute="centerX" secondItem="32H-sz-Uv6" secondAttribute="centerX" id="BN1-UX-iom"/>
-                            <constraint firstItem="Atq-jg-QzK" firstAttribute="leading" secondItem="QNj-oe-jFE" secondAttribute="trailing" id="Bia-i8-tSt"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="DLZ-Ms-VjQ" secondAttribute="bottom" constant="541" id="CjN-Vu-VGg">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                             </constraint>
-                            <constraint firstItem="yNr-QD-Atv" firstAttribute="top" secondItem="QNj-oe-jFE" secondAttribute="bottom" constant="46" id="Eqo-S3-MJS"/>
-                            <constraint firstItem="iSM-kY-Vuk" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" id="I64-Fn-dgh"/>
-                            <constraint firstItem="QNj-oe-jFE" firstAttribute="top" secondItem="iSM-kY-Vuk" secondAttribute="bottom" constant="20" id="Jyb-CX-aIA"/>
+                            <constraint firstItem="rUt-U0-aJd" firstAttribute="top" secondItem="yBQ-jC-GhP" secondAttribute="bottom" constant="131" id="NwR-ky-TPa">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="iSM-kY-Vuk" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" constant="8" id="OIF-rv-NlS">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" constant="234" id="ONt-f2-y9b">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                             </constraint>
-                            <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="WNJ-f4-LTY"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" id="YRx-LP-6cy"/>
-                            <constraint firstAttribute="centerX" secondItem="yBQ-jC-GhP" secondAttribute="centerX" id="bSv-yd-oNb"/>
-                            <constraint firstItem="QNj-oe-jFE" firstAttribute="leading" secondItem="yNr-QD-Atv" secondAttribute="trailing" id="cWw-Ef-D3l"/>
-                            <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="d4z-BG-wtN"/>
-                            <constraint firstAttribute="centerY" secondItem="iSM-kY-Vuk" secondAttribute="centerY" id="fWF-2J-90D"/>
-                            <constraint firstAttribute="centerX" secondItem="rUt-U0-aJd" secondAttribute="centerX" id="k96-xo-cum"/>
-                            <constraint firstItem="Atq-jg-QzK" firstAttribute="top" secondItem="QNj-oe-jFE" secondAttribute="bottom" constant="46" id="mNT-Ah-SKD"/>
+                            <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="bhs-3K-Tlk"/>
+                            <constraint firstItem="yBQ-jC-GhP" firstAttribute="top" secondItem="32H-sz-Uv6" secondAttribute="bottom" constant="144" id="d0d-sj-gro">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="rUt-U0-aJd" secondAttribute="centerX" id="i3e-oL-bsi"/>
+                            <constraint firstItem="gLO-eT-q59" firstAttribute="top" secondItem="Atq-jg-QzK" secondAttribute="bottom" constant="139" id="ier-Q1-PDi">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="QNj-oe-jFE" secondAttribute="centerX" id="izk-Kf-7Uj"/>
+                            <constraint firstAttribute="centerX" secondItem="Atq-jg-QzK" secondAttribute="centerX" id="noj-RX-GdV"/>
                             <constraint firstItem="GTb-24-Tr0" firstAttribute="trailing" secondItem="nWX-0c-zbl" secondAttribute="trailingMargin" id="qbM-5q-rYK"/>
+                            <constraint firstAttribute="centerX" secondItem="32H-sz-Uv6" secondAttribute="centerX" id="qeK-xt-Kyk"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="RPs-h7-Xwo" secondAttribute="bottom" constant="111" id="rxU-UU-dY8">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="gLO-eT-q59" secondAttribute="centerX" id="tHC-2g-czD"/>
+                            <constraint firstAttribute="centerX" secondItem="yBQ-jC-GhP" secondAttribute="centerX" id="uDR-kJ-cr8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="DLZ-Ms-VjQ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="qeK-xt-Kyk"/>
                                 <exclude reference="4WR-5b-s3Q"/>
                                 <exclude reference="ONt-f2-y9b"/>
                                 <exclude reference="rxU-UU-dY8"/>
+                                <exclude reference="NwR-ky-TPa"/>
+                                <exclude reference="i3e-oL-bsi"/>
+                                <exclude reference="d0d-sj-gro"/>
+                                <exclude reference="uDR-kJ-cr8"/>
+                                <exclude reference="OIF-rv-NlS"/>
+                                <exclude reference="bhs-3K-Tlk"/>
+                                <exclude reference="0Ax-Px-lAX"/>
+                                <exclude reference="izk-Kf-7Uj"/>
+                                <exclude reference="36X-rZ-Fio"/>
+                                <exclude reference="noj-RX-GdV"/>
+                                <exclude reference="ier-Q1-PDi"/>
                                 <exclude reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
@@ -507,18 +527,28 @@
                             <mask key="subviews">
                                 <include reference="DLZ-Ms-VjQ"/>
                                 <include reference="gLO-eT-q59"/>
-                                <include reference="yNr-QD-Atv"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="qeK-xt-Kyk"/>
                                 <include reference="4WR-5b-s3Q"/>
                                 <include reference="ONt-f2-y9b"/>
                                 <include reference="rxU-UU-dY8"/>
+                                <include reference="NwR-ky-TPa"/>
+                                <include reference="i3e-oL-bsi"/>
+                                <include reference="d0d-sj-gro"/>
+                                <include reference="uDR-kJ-cr8"/>
+                                <include reference="OIF-rv-NlS"/>
+                                <include reference="bhs-3K-Tlk"/>
+                                <include reference="0Ax-Px-lAX"/>
+                                <include reference="izk-Kf-7Uj"/>
+                                <include reference="36X-rZ-Fio"/>
+                                <include reference="noj-RX-GdV"/>
+                                <include reference="ier-Q1-PDi"/>
                                 <include reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ClearInputButton" destination="yNr-QD-Atv" id="q1o-Qy-WRM"/>
                         <outlet property="firstNumber" destination="32H-sz-Uv6" id="d6i-44-rdh"/>
                         <outlet property="inputTileCollectionView" destination="QNj-oe-jFE" id="Zn1-kE-2Pz"/>
                         <outlet property="keyBoard" destination="gLO-eT-q59" id="4el-e7-R9n"/>
@@ -1567,6 +1597,7 @@
         <image name="generic_btn_danger_logout_class.png" width="200" height="200"/>
         <image name="generic_btn_danger_logout_student.png" width="200" height="200"/>
         <image name="generic_btn_ok_login.png" width="200" height="200"/>
+        <image name="generic_btn_ok_submit.png" width="200" height="200"/>
         <image name="generic_btn_warn.png" width="200" height="200"/>
         <image name="generic_btn_warn_back.png" width="200" height="200"/>
         <image name="home_welcome_01.png" width="1536" height="2048"/>
