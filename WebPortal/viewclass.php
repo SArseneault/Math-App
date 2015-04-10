@@ -229,6 +229,23 @@
   <meta name ="viewport" content="width=deivce-width, initial-scale=1.0">
   <link href="includes/css/bootstrap.min.css" rel="stylesheet">
   <Title> Grayling Math Racer</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://rawgit.com/nnnick/Chart.js/master/Chart.min.js"></script>
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="./Chart.Bar.js"></script>
+
+     <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="styles/kendo.dataviz.default.min.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+
+
+ 
   </head>
 
 
@@ -518,7 +535,6 @@ if($user->classExist()){  ?>
   </div>
 </div>
 
-
 <!--Model for editing a student-->
 <div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -536,7 +552,14 @@ if($user->classExist()){  ?>
 
       </div>
       <div class="modal-body">
+       
+
+       <div class="modal-body">
         <img src = "barGraph2.php">
+      </div>
+
+
+
       </div>
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -545,6 +568,11 @@ if($user->classExist()){  ?>
     </div>
   </div>
 </div>
+
+
+
+
+
 
 
 <!--Script to grab level info for editlevelmodal-->
@@ -616,6 +644,7 @@ if($user->classExist()){  ?>
     document.getElementById('student_username_ID').innerHTML = SUN;
     document.getElementById('student_password_ID').innerHTML = SPW;
     
+
   }
 
   var CID = -1;
