@@ -22,19 +22,28 @@
 	//Creating a fields array
 	$fields = array();
 
-	//Grabbing the current question data
-	$Questiondata = $this->_db->get('question_progress', array('question_id', '=', $questionProg['QuestionID']));
-	$Questiondata = $Questiondata->first();
 
-	////////////////////////////////////////////234234234/////////////////////////////////////////////
+    //Grabbing the current question data
+    $Questiondata = $db->get('question_progress', array('question_id', '=', $questionProg['QuestionID']));
+    if($Questiondata->count()) {
 
+      $Questiondata = $Questiondata->first();
+      $Questiondata = get_object_vars($Questiondata);
+      
+    } else {
+      return 0;
+    }
+
+	
+
+	
 	//Looping through each progress and inserting it into the database
 	foreach($questionProgData as $questionProg)
 	{
 
 	
 		$fields['answer'] = $questionProg['User Answer'];
-		$fields['attempts'] = 1;
+		$fields['attempts'] = $Questiondata['attempts'] + 1;
 		//updating the question progress table with the passed info. If it works it echos 1, else it echos 0
 		if($db->update('question_progress', $questionProg['QuestionID'], 'question_id', $fields)) 
 			echo "1";
