@@ -66,7 +66,7 @@
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                                    action:@selector(handlePress:)];
     longPressGesture.numberOfTouchesRequired = 1;
-    longPressGesture.minimumPressDuration    = 0.1f;
+    longPressGesture.minimumPressDuration    = 0.01f;
     [_collectionView addGestureRecognizer:longPressGesture];
     
     
