@@ -296,6 +296,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in_race.png" translatesAutoresizingMaskIntoConstraints="NO" id="DLZ-Ms-VjQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="250" y="131" width="240" height="128"/>
+                                </variation>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FirstNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32H-sz-Uv6">
                                 <rect key="frame" x="249" y="176" width="100" height="36"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
@@ -303,27 +309,6 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="350" y="257" width="75" height="32"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Grayling Math Racer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU8-fo-TNy">
-                                <rect key="frame" x="16" y="20" width="568" height="100"/>
-                                <color key="backgroundColor" red="0.015686274510000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="sdQ-dP-V7p"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="60"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <attributedString key="userComments">
-                                    <fragment content="k;l'j">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="smallSystem"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="800" height="100"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SecondNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUt-U0-aJd">
@@ -339,7 +324,7 @@
                                 <rect key="frame" x="150" y="470" width="300" height="110"/>
                                 <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="5zc-1S-aOY"/>
+                                    <constraint firstAttribute="height" constant="190" id="5zc-1S-aOY"/>
                                     <constraint firstAttribute="width" constant="500" id="Elm-lf-Fop"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8QB-bx-1vk">
@@ -369,7 +354,7 @@
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="54" y="117" width="75" height="27"/>
                                 </variation>
                             </label>
@@ -465,7 +450,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="690" y="117" width="50" height="30"/>
                                 </variation>
                                 <connections>
@@ -477,35 +462,58 @@
                         <constraints>
                             <constraint firstItem="rUt-U0-aJd" firstAttribute="top" secondItem="yBQ-jC-GhP" secondAttribute="bottom" constant="2" id="0D0-nQ-VkG"/>
                             <constraint firstAttribute="centerX" secondItem="QNj-oe-jFE" secondAttribute="centerX" id="2Nk-SY-gK1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DLZ-Ms-VjQ" secondAttribute="trailing" constant="294" id="4WR-5b-s3Q">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="yBQ-jC-GhP" firstAttribute="top" secondItem="32H-sz-Uv6" secondAttribute="bottom" constant="2" id="584-DW-FDC"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="20" id="5i9-ZQ-d1Z"/>
-                            <constraint firstItem="GTb-24-Tr0" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="31" id="84o-in-zmn"/>
                             <constraint firstAttribute="centerX" secondItem="32H-sz-Uv6" secondAttribute="centerX" id="BN1-UX-iom"/>
                             <constraint firstItem="Atq-jg-QzK" firstAttribute="leading" secondItem="QNj-oe-jFE" secondAttribute="trailing" id="Bia-i8-tSt"/>
+                            <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="DLZ-Ms-VjQ" secondAttribute="bottom" constant="541" id="CjN-Vu-VGg">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="yNr-QD-Atv" firstAttribute="top" secondItem="QNj-oe-jFE" secondAttribute="bottom" constant="46" id="Eqo-S3-MJS"/>
-                            <constraint firstItem="OS6-WI-nhX" firstAttribute="top" secondItem="LU8-fo-TNy" secondAttribute="bottom" constant="31" id="Fuf-lF-Qto"/>
                             <constraint firstItem="iSM-kY-Vuk" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" id="I64-Fn-dgh"/>
                             <constraint firstItem="QNj-oe-jFE" firstAttribute="top" secondItem="iSM-kY-Vuk" secondAttribute="bottom" constant="20" id="Jyb-CX-aIA"/>
+                            <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" constant="234" id="ONt-f2-y9b">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="WNJ-f4-LTY"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" id="YRx-LP-6cy"/>
-                            <constraint firstAttribute="trailing" secondItem="LU8-fo-TNy" secondAttribute="trailing" id="bQg-Bc-grn"/>
                             <constraint firstAttribute="centerX" secondItem="yBQ-jC-GhP" secondAttribute="centerX" id="bSv-yd-oNb"/>
                             <constraint firstItem="QNj-oe-jFE" firstAttribute="leading" secondItem="yNr-QD-Atv" secondAttribute="trailing" id="cWw-Ef-D3l"/>
                             <constraint firstAttribute="centerX" secondItem="iSM-kY-Vuk" secondAttribute="centerX" id="d4z-BG-wtN"/>
                             <constraint firstAttribute="centerY" secondItem="iSM-kY-Vuk" secondAttribute="centerY" id="fWF-2J-90D"/>
-                            <constraint firstAttribute="centerX" secondItem="LU8-fo-TNy" secondAttribute="centerX" id="iDR-jm-yZ6"/>
                             <constraint firstAttribute="centerX" secondItem="rUt-U0-aJd" secondAttribute="centerX" id="k96-xo-cum"/>
                             <constraint firstItem="Atq-jg-QzK" firstAttribute="top" secondItem="QNj-oe-jFE" secondAttribute="bottom" constant="46" id="mNT-Ah-SKD"/>
-                            <constraint firstItem="LU8-fo-TNy" firstAttribute="top" secondItem="nWX-0c-zbl" secondAttribute="topMargin" constant="20" id="mck-ba-B92"/>
                             <constraint firstItem="GTb-24-Tr0" firstAttribute="trailing" secondItem="nWX-0c-zbl" secondAttribute="trailingMargin" id="qbM-5q-rYK"/>
+                            <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="RPs-h7-Xwo" secondAttribute="bottom" constant="111" id="rxU-UU-dY8">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="gLO-eT-q59" secondAttribute="centerX" id="tHC-2g-czD"/>
-                            <constraint firstItem="LU8-fo-TNy" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leading" id="xMk-VB-wrB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="DLZ-Ms-VjQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4WR-5b-s3Q"/>
+                                <exclude reference="ONt-f2-y9b"/>
+                                <exclude reference="rxU-UU-dY8"/>
+                                <exclude reference="CjN-Vu-VGg"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="LU8-fo-TNy"/>
+                                <include reference="DLZ-Ms-VjQ"/>
                                 <include reference="gLO-eT-q59"/>
                                 <include reference="yNr-QD-Atv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4WR-5b-s3Q"/>
+                                <include reference="ONt-f2-y9b"/>
+                                <include reference="rxU-UU-dY8"/>
+                                <include reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
                     </view>
@@ -1563,6 +1571,7 @@
         <image name="generic_btn_warn_back.png" width="200" height="200"/>
         <image name="home_welcome_01.png" width="1536" height="2048"/>
         <image name="home_with_name.png" width="1536" height="2048"/>
+        <image name="in_race.png" width="1536" height="2048"/>
         <image name="login_btn.png" width="700" height="200"/>
         <image name="login_class.png" width="1536" height="2048"/>
         <image name="login_student.png" width="1536" height="2048"/>
@@ -1574,7 +1583,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UvG-ge-XVP"/>
         <segue reference="8Ng-X1-fm5"/>
-        <segue reference="a9G-nF-AGi"/>
     </inferredMetricsTieBreakers>
 </document>
