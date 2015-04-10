@@ -47,5 +47,3 @@
 	}
 ?>
 
-<!-- Website icon -->
-<link rel="shortcut icon" href="includes/images/icon.gif">

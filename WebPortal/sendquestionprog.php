@@ -22,6 +22,11 @@
 	//Creating a fields array
 	$fields = array();
 
+	//Grabbing the current question data
+	$Questiondata = $this->_db->get('question_progress', array('question_id', '=', $questionProg['QuestionID']));
+	$Questiondata = $Questiondata->first();
+
+	////////////////////////////////////////////234234234/////////////////////////////////////////////
 
 	//Looping through each progress and inserting it into the database
 	foreach($questionProgData as $questionProg)

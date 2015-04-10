@@ -64,7 +64,7 @@
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="register.php">Create Account</a></li>
-      <li><a href="help1.php">Help</a></li>
+      <!-- <li><a href="help1.php">Help</a></li> -->
     </ul>
   </div><!--/.nav-collapse -->
 </div>
