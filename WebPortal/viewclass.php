@@ -17,6 +17,11 @@
 
     }
 
+
+  
+  
+ 
+
   $user = new User();//Picking current user details
   $studentOBJ = new Student(); //Creating a student object
   //Redirect the user if they are not logged in.
@@ -210,6 +215,9 @@
     }
 
   }
+
+
+
 
 } ?>
 
