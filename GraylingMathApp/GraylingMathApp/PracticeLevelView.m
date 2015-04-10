@@ -277,7 +277,7 @@
 #pragma mark - create tile for the tiles being dragged out of input box
 -(void) initDraggedInputTileView{
     
-    _draggedInputTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
+    _draggedInputTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 95, 95)];
     
     //Set to hidden for initial set up
     _draggedInputTile.hidden = YES;
@@ -291,7 +291,7 @@
     
     
     //size of tile 55x55, sligthly bigger than collectionview cells
-    _draggedTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 55, 55)];
+    _draggedTile =[[TileUiView alloc]initWithFrame:CGRectMake(0, 0, 95, 95)];
     
     //Set to hidden for initial set up
     _draggedTile.hidden = YES;
