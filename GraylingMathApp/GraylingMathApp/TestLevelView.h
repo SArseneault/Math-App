@@ -12,11 +12,19 @@
 @interface TestLevelView : UIViewController <UIAlertViewDelegate>
 {
     //IBOutlet refers to an empty varaible and method in interface builder
+    //Vertical
     IBOutlet UILabel *firstNumber; //label first number generated
     IBOutlet UILabel *secondNumber; //label second number generated
-  
-    IBOutlet UILabel *labelForTimer; //label for timer
     IBOutlet UILabel *operatorLabel;
+    //Horizontal
+    IBOutlet UILabel *firstNumberHorz;
+    
+    
+    
+    
+    
+    IBOutlet UILabel *labelForTimer; //label for timer
+   
     
     //Label Used to Display the users input
     IBOutlet UILabel *userInputLabelDrag;
