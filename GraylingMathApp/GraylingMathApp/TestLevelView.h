@@ -18,8 +18,9 @@
     IBOutlet UILabel *operatorLabel;
     //Horizontal
     IBOutlet UILabel *firstNumberHorz;
-    
-    
+    IBOutlet UILabel *secondNumberHorz; //label second number generated
+    IBOutlet UILabel *operatorLabelHorz;
+    NSInteger questionOrientation;
     
     
     

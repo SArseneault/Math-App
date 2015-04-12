@@ -423,6 +423,12 @@
 -(void) generateNumber
 {
     
+    //generates random number between 0 and 1
+    questionOrientation =arc4random()%2;
+    NSLog(@"Question Orientaiton: %d",questionOrientation);
+    [self flipOrientaion];
+    
+    
     
     //Extracting the next question information
     operand1 = [[json objectAtIndex:questionCount] objectForKey:@"operand1"];
@@ -450,6 +456,9 @@
     firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
     secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
+    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
+    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
     
     //clear user input textbox
     //userInput.text = @"";
@@ -764,6 +773,42 @@
         
         
     }
+
+    
+    
+}
+
+
+-(void)flipOrientaion{
+    
+    
+    if(questionOrientation == 1)
+    {
+        //Set veritcle labels to hide
+        [firstNumber setHidden:YES];
+        [secondNumber setHidden:YES];
+        [operatorLabel setHidden:YES];
+
+        
+        //Set horziontal labels to visible
+        [firstNumberHorz setHidden:NO];
+        [secondNumberHorz setHidden:NO];
+        [operatorLabelHorz setHidden:NO];
+        
+        
+    } else {
+        
+        [firstNumberHorz setHidden:YES];
+        [secondNumberHorz setHidden:YES];
+        [operatorLabelHorz setHidden:YES];
+        
+        //Set veritcle labels to hide
+        [firstNumber setHidden:NO];
+        [secondNumber setHidden:NO];
+        [operatorLabel setHidden:NO];
+
+    }
+    
     
     
 }
