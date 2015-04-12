@@ -14,10 +14,12 @@
     //IBOutlet refers to an empty varaible and method in interface builder
     IBOutlet UILabel *firstNumber; //label first number generated
     IBOutlet UILabel *secondNumber; //label second number generated
-    IBOutlet UITextField *userInput; //textbox store user input
-    IBOutlet UILabel *labelForTimer; //label for timer
     IBOutlet UILabel *operatorLabel;
-    IBOutlet UILabel *equalVert;
+    //Horizontal
+    IBOutlet UILabel *firstNumberHorz;
+    IBOutlet UILabel *secondNumberHorz; //label second number generated
+    IBOutlet UILabel *operatorLabelHorz;
+    NSInteger questionOrientation;
     
 //    //Horizitonal
 //    IBOutlet UILabel *firstNumberHorz; //label first number generated
@@ -36,7 +38,6 @@
     NSInteger questionCount; //keeps track of the number of questions answered
     NSInteger totalQuestionsCorrect; //number of questions answered correctly
     NSInteger seconds; //variable to store seconds used by timer object
-    NSInteger questionOrientation;
     
     NSTimer *timer; //timer object
     

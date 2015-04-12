@@ -39,9 +39,7 @@
 @synthesize levelName;
 @synthesize levelID;
 //@synthesize timeBool;
-
 @synthesize keyBoard;
-
 @synthesize inputTileCollectionView;
 
 
@@ -140,6 +138,19 @@
 //method to setup level
 -(void) setUpLevel
 {
+    
+    if(questionsInLevel <= 0)
+    {
+        //Alert the student
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oh no!" message:@"Please have your teacher create questions for this level!" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+        [alert show];
+        
+        //Switch back to the map
+        Map *map = [self.storyboard instantiateViewControllerWithIdentifier:@"Map"];
+        [self presentViewController:map animated:YES completion:nil];
+        
+        
+    }
     
     //set seconds to 0
     seconds = 0;
@@ -395,7 +406,8 @@
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
     NSLog(@"Question Orientaiton: %d",questionOrientation);
-    //[self flipOrientaion];
+   [self flipOrientaion];
+    
     
     //Extracting the next question information
     operand1 = [[json objectAtIndex:questionCount] objectForKey:@"operand1"];
@@ -420,17 +432,17 @@
     valueTwo = [operand2 integerValue];
     
 
-    //displays the random numbersquesti
+    //displays the random numbers
     firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
     secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
-//    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
-//    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
-//    operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
-//    
+    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
+    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
+  
     
     //clear user input textbox
-    userInput.text = @"";
+    //userInput.text = @"";
     
     
     //increment question counter
@@ -493,9 +505,6 @@
         [alert show];
     }
     
-    //Clearing input fields
-    userInput.text = nil;
- //   userInputHorz.text = nil;
     
     
     //call method to check for end of practice section
@@ -601,26 +610,8 @@
     {
         int minutes = seconds/60;
         int tempSeconds = seconds%60;
-
-        
-        if(tempSeconds<10)
-        {
-            labelForTimer.text=[NSString stringWithFormat:@"Time: %d:0%d",minutes, tempSeconds];
-
-        }
-        else{
-            //Update timer lable
-            labelForTimer.text =[NSString stringWithFormat:@"Time: %d:%d", minutes, tempSeconds];
-        }
     }
-    else{
-        //update timmer label when it is less than one minute
-        labelForTimer.text = [NSString stringWithFormat:@"Time: %ld", seconds];
-    }
-    //Check for timeLimit
-    if(seconds == timeLimitSeconds){
-        [self endResult];
-    }
+    
 }
 
 //method for when UIalert button is pressed, helps diferentiate between which one is pressed
@@ -663,52 +654,39 @@
 }
 
 
+-(void)flipOrientaion{
+    
+    
+    if(questionOrientation == 1)
+    {
+        //Set veritcle labels to hide
+        [firstNumber setHidden:YES];
+        [secondNumber setHidden:YES];
+        [operatorLabel setHidden:YES];
+        
+        
+        //Set horziontal labels to visible
+        [firstNumberHorz setHidden:NO];
+        [secondNumberHorz setHidden:NO];
+        [operatorLabelHorz setHidden:NO];
+        
+        
+    } else {
+        
+        [firstNumberHorz setHidden:YES];
+        [secondNumberHorz setHidden:YES];
+        [operatorLabelHorz setHidden:YES];
+        
+        //Set veritcle labels to hide
+        [firstNumber setHidden:NO];
+        [secondNumber setHidden:NO];
+        [operatorLabel setHidden:NO];
+        
+    }
+    
+}
 
 
-
-//-(void)flipOrientaion{
-//    
-//    //Clearing input fields
-//    userInput.text = nil;
-//    userInputHorz.text = nil;
-//    
-//    if(questionOrientation == 1)
-//    {
-//        //Set veritcle labels to hide
-//        [firstNumber setHidden:YES];
-//        [secondNumber setHidden:YES];
-//        [userInput setHidden:YES];
-//        [operatorLabel setHidden:YES];
-//        [equalVert setHidden:YES];
-//        
-//        //Set horziontal labels to visible
-//        [firstNumberHorz setHidden:NO];
-//        [secondNumberHorz setHidden:NO];
-//        [userInputHorz setHidden:NO];
-//        [operatorLabelHorz setHidden:NO];
-//        [equalHorz setHidden:NO];
-//        
-//        
-//        
-//     } else {
-//        
-//         [firstNumberHorz setHidden:YES];
-//         [secondNumberHorz setHidden:YES];
-//         [userInputHorz setHidden:YES];
-//         [operatorLabelHorz setHidden:YES];
-//         [equalHorz setHidden:YES];
-//         
-//         //Set veritcle labels to hide
-//         [firstNumber setHidden:NO];
-//         [secondNumber setHidden:NO];
-//         [userInput setHidden:NO];
-//         [operatorLabel setHidden:NO];
-//         [equalVert setHidden:NO];
-//     }
-//     
-//    
-//   
-//}
 
 
 
