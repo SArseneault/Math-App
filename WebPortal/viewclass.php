@@ -335,7 +335,7 @@ if($user->classExist()){  ?>
 
                     ?>
                       <tr>
-                      <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>','<?php print_r($student['username']); ?>','<?php print_r($student['password']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
+                      <td><a data-toggle="modal" data-target="#editStudentModal" onclick="setStudentID('<?php print_r($student['student_id']); ?>','<?php print_r($student['username']); ?>','<?php print_r($student['password']); ?>','<?php print_r($classInfo['class_id']); ?>')"><?php print_r($student['first_name']); print_r(" "); print_r($student['last_name']);?></a></td>
                       
                       <?php
 
@@ -552,12 +552,14 @@ if($user->classExist()){  ?>
 
       </div>
       <div class="modal-body">
-        //d3.js bar graph with dummy data
+
        <style>
 
-    body {
-      font: 10px sans-serif;
-    }
+#editStudentModal .modal-dialog
+{
+    width: 1500px; /* your width */
+    
+}
 
     .axis path,
     .axis line {
@@ -569,87 +571,134 @@ if($user->classExist()){  ?>
     .bar {
       fill: steelblue;
     }
+   
 
     .x.axis path {
       display: none;
     }
 
+    .bar text {
+      fill: white;
+    }
+
     </style>
-    <body>
-        <div id="bar"></div>
+    <div class = "table-responsive">
+      <table class="table" id="ltable">
+            <thead id="tblHead">
+              <tr>
+                <th><h4>Student Level Progres:<h4></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              <td id="bar"> </td>
+              <tf
+              </tr>
+            </tbody>
+            
+      </table>
+    </div>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>
-    var $window = $(window);
-    var wWidth  = $window.width();
-    var wHeight = $window.height();
 
-    var margin = {top: 10, right: 0, bottom: 30, left: 40},
-        width = 300 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+          var data = [
+          {levelName:"Zero Rule",testTime:"60", testAttempts:"1"},
+          {levelName:"1+1",testTime:"5", testAttempts:"7"},
+          {levelName:"Level 3",testTime:"0", testAttempts:"3"},
+          {levelName:"Level 4",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 5",testTime:"0", testAttempts:"4"},
+          {levelName:"Level 6",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 7",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 8",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 9",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 10",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 11",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 12",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 13",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 14",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 15",testTime:"0", testAttempts:"9"},
+          {levelName:"Level 16",testTime:"0", testAttempts:"9"}
+      ];
+      
 
-    //var formatPercent = d3.format("1");
+    function createGraph() {
 
-    var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1);
-
-    var y = d3.scale.linear()
-        .range([height, 0]);
-
-    var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom");
-
-    var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left")
-    //var data = [[1,1],[2,3],[3,2],[4,5],[5,4]];
-    var svg = d3.select("#bar").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
-        //dummy data
-    var data = [
-        {level:"Level 1",frequency:"4"},
-        {level:"Level 2",frequency:"5"},
-        {level:"Level 3",frequency:"2"},
-        {level:"Level 4",frequency:"1"},
-        {level:"Level 5",frequency:"6"}
-    ];
-
-      x.domain(data.map(function(d) { return d.level; }));
-      y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-      svg.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-        .append("text")
-          .attr("transform","rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text("Progress");
-
-      svg.selectAll(".bar")
-          .data(data)
-        .enter().append("rect")
-          .attr("class", "bar")
-          .attr("x", function(d) { return x(d.level); })
-          .attr("width", x.rangeBand())
-          .attr("y", function(d) { return y(d.frequency); })
-          .attr("height", function(d) { return height - y(d.frequency); });
+      //JOHN COMMENT THIS LINE OF CODE OUT TO USE THE ABOVE DUMMY DATA INSTEAD! (just so you don't have to manually enter shit into your local database)
+      //Setting the level data
+     // data = Larr;
 
   
-    function type(d) {
-      d.frequency = +d.frequency;
-      return d;
+    
+ 
+      var $window = $(window);
+      var wWidth  = $window.width();
+      var wHeight = $window.height();
+
+      var margin = {top: 10, right: 0, bottom: 30, left: 60},
+          width = (300 - margin.left - margin.right) + data.length*100,
+          height = 300 - margin.top - margin.bottom;
+
+      //var formatPercent = d3.format("1");
+
+      var x = d3.scale.ordinal()
+          .rangeRoundBands([0, width], .1);
+
+      var y = d3.scale.linear()
+          .range([height, 0]);
+
+      var xAxis = d3.svg.axis()
+          .scale(x)
+          .orient("bottom");
+
+      var yAxis = d3.svg.axis()
+          .scale(y)
+          .orient("left")
+      //var data = [[1,1],[2,3],[3,2],[4,5],[5,4]];
+
+      var svg = d3.select("#bar").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      
+   
+
+
+
+        x.domain(data.map(function(d) { return d.levelName; }));
+        y.domain([0, d3.max(data, function(d) { return d.testTime; })]);
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform","rotate(-90)")
+            .attr("y", -45)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Time Spend on Level");
+
+        svg.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.levelName); })
+            .attr("width", x.rangeBand())
+            .attr("y", function(d) { return y(d.testTime); })
+            .attr("height", function(d) { return height - y(d.testTime); });
+         
+
+    
+      function type(d) {
+        d.testTime = +d.testTime;
+        return d;
+      }
     }
 
     </script>
@@ -729,7 +778,11 @@ if($user->classExist()){  ?>
   var SUN = "";
   var SPW = "";
 
-  function setStudentID(studentID, studentUsername, studentPassword){
+  //Varaible to store the level prog info
+  LArrLength = -1;
+  var Larr = [];
+
+  function setStudentID(studentID, studentUsername, studentPassword, classID){
  
     //Storing the student information globally to the rest of javascript
     SID = studentID;
@@ -740,7 +793,24 @@ if($user->classExist()){  ?>
     //Displaying the student credentials in the edit student modal
     document.getElementById('student_username_ID').innerHTML = SUN;
     document.getElementById('student_password_ID').innerHTML = SPW;
+
     
+    //Grabbing the
+     $.post('getlprog.php',{studentid: SID, classid:classID},function(data){ 
+       
+      var parsed = JSON.parse(data);
+
+      for(var x in parsed){
+        Larr.push(parsed[x]);
+      }
+
+       LArrLength = Larr.length;
+      
+      //document.getElementById('student_password_ID').innerHTML = data;
+      
+      createGraph();
+       
+    });
 
   }
 

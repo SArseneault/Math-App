@@ -632,7 +632,13 @@ if($user->classExist()){  ?>
     
 
 
+<style>
 
+#editLevelModal .modal-dialog
+{
+    width: 1000px; /* your width */
+}
+</style>
 
 <!--Model for editing a level-->
 <div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
