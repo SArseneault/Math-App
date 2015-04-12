@@ -280,6 +280,15 @@
 			
 		}
 
+		//Update the student table
+		public function updateStudent($fields = array(), $id = null) {
+
+	
+			if(!$this->_db->update('student', $id, 'student_id', $fields)) {
+				throw new exception('There was a problem updating the student table.');
+			}
+		}
+
 		//Removing a student by id
 		public function removeStudent($studentID) {
 

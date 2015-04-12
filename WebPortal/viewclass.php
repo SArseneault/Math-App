@@ -214,7 +214,29 @@
         }
     }
 
-  }
+  } else if (isset($_POST['newpass'])) {//////////////////////////
+    
+
+    //Grabbing Variables from the link
+    $studentID = $_POST["studentid"];
+    $newPass = $_POST["newpass"];
+
+
+    
+      //Updating the level with the new time
+      $studentOBJ->updateStudent(array(
+        'password' => $newPass
+        ), $studentID);
+
+
+      Session::flash('success', 'You have successfully updated the student\'s password!');
+
+      //Refresh the page to show the update
+      header("Refresh:0");
+   
+
+
+}
 
 
 
@@ -546,7 +568,23 @@ if($user->classExist()){  ?>
         <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
       
         Student Username: <span id="student_username_ID"></span></br>       
-        Student Password: <span id="student_password_ID"></span></br>    
+        <!--Student Password: <span id="student_password_ID"></span></br>  -->
+        Student Password: <input type="text" id="student_password_ID" class"form-control input-sm"/><button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
+        </br>  
+      <script>
+      function updateStudentPass()
+      {
+
+        newPass = document.getElementById('student_password_ID').value;
+        $.post('viewclass.php',{studentid:SID, newpass:newPass},function(data){ 
+          document.getElementById('student_password_ID').value = data;
+          
+         location.reload();
+   
+        }); 
+
+      }
+    </script>
       
         <h1 id="student_ID"></h1>
 
@@ -671,7 +709,7 @@ if($user->classExist()){  ?>
             .attr("y", -45)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Time Spend on Level");
+            .text("Time Spent on Level (in minutes)");
 
         svg.selectAll(".bar")
             .data(data)
@@ -780,8 +818,8 @@ if($user->classExist()){  ?>
 
 
     //Displaying the student credentials in the edit student modal
-    document.getElementById('student_username_ID').innerHTML = SUN;
-    document.getElementById('student_password_ID').innerHTML = SPW;
+    document.getElementById('student_username_ID').value = SUN;
+    document.getElementById('student_password_ID').value = SPW;
 
     
     //Grabbing the
