@@ -96,12 +96,12 @@
 		20B11D801ACCEC1900EA1431 /* greenArrowLpng.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B11D7E1ACCEC1900EA1431 /* greenArrowLpng.png */; };
 		20B11D811ACCEC1900EA1431 /* greenArrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B11D7F1ACCEC1900EA1431 /* greenArrowR.png */; };
 		20D45FBB1ABE306D005EEBCE /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D45FBA1ABE306D005EEBCE /* Map.m */; };
+		20F7CA431ADA58E80011D17D /* in_race.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F7CA421ADA58E80011D17D /* in_race.png */; };
 		20F8F6431AC89D2C00500A95 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F8F6421AC89D2C00500A95 /* track.png */; };
 		A203946B1AC9C5B7008288AE /* TileUiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A203946A1AC9C5B7008288AE /* TileUiView.m */; };
 		A203946E1AC9C67E008288AE /* TileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A203946D1AC9C67E008288AE /* TileModel.m */; };
 		A20394741AC9C70F008288AE /* TileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20394731AC9C70F008288AE /* TileCollectionCell.m */; };
 		A20394791AC9CB1A008288AE /* KeyBoardCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A20394781AC9CB1A008288AE /* KeyBoardCollectionView.m */; };
-		A205DF781AD7AAE100FB0BBA /* in_race.png in Resources */ = {isa = PBXBuildFile; fileRef = A205DF771AD7AAE100FB0BBA /* in_race.png */; };
 		A2800FAC1ACC6A22007C446D /* DestinationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800FAB1ACC6A22007C446D /* DestinationController.m */; };
 		A2B207D81ABB8A1500676DC4 /* level.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D71ABB8A1500676DC4 /* level.json */; };
 		A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D91ABBB5DB00676DC4 /* studentLevel.json */; };
@@ -222,6 +222,7 @@
 		20B11D7F1ACCEC1900EA1431 /* greenArrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenArrowR.png; path = Assets/greenArrowR.png; sourceTree = SOURCE_ROOT; };
 		20D45FB91ABE3061005EEBCE /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		20D45FBA1ABE306D005EEBCE /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		20F7CA421ADA58E80011D17D /* in_race.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = in_race.png; path = Assets/in_race.png; sourceTree = SOURCE_ROOT; };
 		20F8F6421AC89D2C00500A95 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
 		A20394691AC9C5B7008288AE /* TileUiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileUiView.h; sourceTree = "<group>"; };
 		A203946A1AC9C5B7008288AE /* TileUiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileUiView.m; sourceTree = "<group>"; };
@@ -231,7 +232,6 @@
 		A20394731AC9C70F008288AE /* TileCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileCollectionCell.m; sourceTree = "<group>"; };
 		A20394771AC9CB1A008288AE /* KeyBoardCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardCollectionView.h; sourceTree = "<group>"; };
 		A20394781AC9CB1A008288AE /* KeyBoardCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardCollectionView.m; sourceTree = "<group>"; };
-		A205DF771AD7AAE100FB0BBA /* in_race.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = in_race.png; sourceTree = "<group>"; };
 		A2800FAA1ACC6A22007C446D /* DestinationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationController.h; path = ../DestinationController.h; sourceTree = "<group>"; };
 		A2800FAB1ACC6A22007C446D /* DestinationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationController.m; path = ../DestinationController.m; sourceTree = "<group>"; };
 		A2B207D71ABB8A1500676DC4 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
@@ -313,12 +313,12 @@
 				204E0DF61AD62FF300FC37D6 /* generic_btn_danger_home.png */,
 				204E0DF71AD62FF300FC37D6 /* generic_btn_danger_logout_class.png */,
 				204E0DF81AD62FF300FC37D6 /* generic_btn_danger_logout_student.png */,
+				20F7CA421ADA58E80011D17D /* in_race.png */,
 				204E0DF91AD62FF300FC37D6 /* generic_btn_danger_logout.png */,
 				204E0DFA1AD62FF300FC37D6 /* generic_btn_danger_quit.png */,
 				204E0DFB1AD62FF300FC37D6 /* generic_btn_danger.ai */,
 				204E0DFC1AD62FF300FC37D6 /* generic_btn_ok_login.png */,
 				204E0DFD1AD62FF300FC37D6 /* generic_btn_ok_next_level.png */,
-				A205DF771AD7AAE100FB0BBA /* in_race.png */,
 				204E0DFE1AD62FF300FC37D6 /* generic_btn_ok_next.png */,
 				204E0DFF1AD62FF300FC37D6 /* generic_btn_ok_ok.png */,
 				204E0E001AD62FF300FC37D6 /* generic_btn_ok_submit.png */,
@@ -615,11 +615,11 @@
 				204E0E441AD62FF300FC37D6 /* select_btn_practice.png in Resources */,
 				204E0E3A1AD62FF300FC37D6 /* home_welcome_only_shadow.png in Resources */,
 				204E0E2D1AD62FF300FC37D6 /* generic_btn_ok_next.png in Resources */,
+				20F7CA431ADA58E80011D17D /* in_race.png in Resources */,
 				204E0E4B1AD62FF300FC37D6 /* tile_2.png in Resources */,
 				2077BD3B1AC8392400CD7BA0 /* car_lockL.png in Resources */,
 				204E0E331AD62FF300FC37D6 /* generic_btn_warn_clear.png in Resources */,
 				204E0E311AD62FF300FC37D6 /* generic_btn_ok.png in Resources */,
-				A205DF781AD7AAE100FB0BBA /* in_race.png in Resources */,
 				204E0E3F1AD62FF300FC37D6 /* login_btn.png in Resources */,
 				2096F9E61ACCE9B90067D597 /* chalkboard.jpg in Resources */,
 				2077BD3F1AC8392400CD7BA0 /* car_redL.png in Resources */,
