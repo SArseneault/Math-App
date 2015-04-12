@@ -602,34 +602,23 @@ if($user->classExist()){  ?>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>
 
-          var data = [
-          {levelName:"Zero Rule",testTime:"60", testAttempts:"1"},
-          {levelName:"1+1",testTime:"5", testAttempts:"7"},
-          {levelName:"Level 3",testTime:"0", testAttempts:"3"},
-          {levelName:"Level 4",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 5",testTime:"0", testAttempts:"4"},
-          {levelName:"Level 6",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 7",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 8",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 9",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 10",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 11",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 12",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 13",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 14",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 15",testTime:"0", testAttempts:"9"},
-          {levelName:"Level 16",testTime:"0", testAttempts:"9"}
-      ];
+          /*
+            var data = [
+              {levelName:"Zero Rule",testTime:"60", testAttempts:"1"},
+              {levelName:"1+1",testTime:"5", testAttempts:"7"},
+              {levelName:"Level 3",testTime:"0", testAttempts:"3"},
+              {levelName:"Level 4",testTime:"0", testAttempts:"9"},
+            ];
+          */
       
 
     function createGraph() {
 
-      //JOHN COMMENT THIS LINE OF CODE OUT TO USE THE ABOVE DUMMY DATA INSTEAD! (just so you don't have to manually enter shit into your local database)
+      
       //Setting the level data
-     // data = Larr;
+      data = Larr; //<------ JOHN!!!! COMMENT THIS LINE OF CODE OUT TO USE THE ABOVE DUMMY DATA INSTEAD! (just so you don't have to manually enter shit into your local database)
 
-  
-    
+
  
       var $window = $(window);
       var wWidth  = $window.width();
