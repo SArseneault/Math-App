@@ -112,8 +112,8 @@
 
 - (void) promptStudent
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Successful" message:@"Welcome" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-    [alert show];
+   /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Successful" message:@"Welcome" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [alert show];*/
     
     
     //Storing the class credentials
