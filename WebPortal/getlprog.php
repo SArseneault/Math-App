@@ -47,7 +47,7 @@
 			$str_time = $levelProgData['test_time'];
 			$str_time = preg_replace("/^([\d]{1,2})\:([\d]{2})$/", "00:$1:$2", $str_time);
 			sscanf($str_time, "%d:%d:%d", $hours, $minutes, $seconds);
-			$time_minute = $hours * 60 + $minutes;
+			$time_minute = $hours * 60 + $minutes + $seconds/60;
 
 			//Pushing the level information onto the array
 			$json[$i]["levelName"] = $level['name'];
