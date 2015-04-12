@@ -8,14 +8,28 @@
 
       //Displaying the flash message
       ?><div class="alert alert-success">
-                  <a href="login.php" class="close" data-dismiss="alert">&times;</a>
+                  <a href="viewclass.php" class="close" data-dismiss="alert">&times;</a>
                   <strong><?php print_r(Session::get('success') );?></strong> 
         </div> <?php
 
         //Removing the flash instance
         Session::flash('success');
 
+    } else if(Session::exists('fail')) {
+   
+      
+
+      //Displaying the flash message
+      ?><div class="alert alert-danger">
+                  <a href="viewclass.php" class="close" data-dismiss="alert">&times;</a>
+                  <strong><?php print_r(Session::get('fail') );?></strong> 
+        </div> <?php
+
+        //Removing the flash instance
+        Session::flash('fail');
+
     }
+
 
 
   
@@ -214,7 +228,7 @@
         }
     }
 
-  } else if (isset($_POST['newpass'])) {//////////////////////////
+  } else if (isset($_POST['newpass'])) { //////////////////////////
     
 
     //Grabbing Variables from the link
@@ -222,21 +236,116 @@
     $newPass = $_POST["newpass"];
 
 
+     //Validate fields
+      $validate = new Validate();
+
+      $validation = $validate->check($_POST, array(
+            'newpass' => array(
+              'required' => true,
+              'min' => 2
+              )
+            ));
+
+
+    if($validation->passed()) {
+
+        try {
+           
+         //Updating the level with the new time
+          $studentOBJ->updateStudent(array(
+            'password' => $newPass
+            ), $studentID);
+
+
+          Session::flash('success', 'You have successfully updated the student\'s password!');
+
+          //Refresh the page to show the update
+          header("Refresh:0");
+
+        } catch(Execption $e) {
+          die($e->getMessage());
+          }
+
+   } else {
+          
+
+        foreach($validation->errors() as $error) {
+          $errorString = $errorString . $error . "</br>";
+           
+        }
+
+        Session::flash('fail',$errorString);
+        header("Refresh:0");
+
+      }
+
+  
+    } else if (isset($_POST['newusername'])) {//////////////////////////
     
-      //Updating the level with the new time
-      $studentOBJ->updateStudent(array(
-        'password' => $newPass
-        ), $studentID);
+
+    //Grabbing Variables from the link
+    $studentID = $_POST["studentid"];
+    $newUsername = $_POST["newusername"];
 
 
-      Session::flash('success', 'You have successfully updated the student\'s password!');
 
-      //Refresh the page to show the update
-      header("Refresh:0");
-   
+      //Validate fields
+      $validate = new Validate();
+
+      $validation = $validate->check($_POST, array(
+        'newusername' => array(
+          'min' => 2,
+          'max' => 50,
+          'required' => true
+          )
+        ));
+      
+      $failure = false;
+      $errorString = "</br>";
+
+      //Check to ensure the username doesn't already exist in the class
+      if($studentOBJ->findByClassID($_POST['newusername'], $classInfo['class_id']))
+      {
+        $failure = true;
+        $errorString = "</br>" . $_POST['newusername'] . " already exsits in this class </br>"; 
+      
+      }
 
 
-}
+      if( ($validation->passed()) and (!$failure) ) {
+
+        try {
+           
+            //Updating the user with the new username
+            $studentOBJ->updateStudent(array(
+              'username' => $newUsername
+              ), $studentID);
+
+            Session::flash('success', 'You have successfully updated the student\'s username!');
+
+          //Refresh the page to show the update
+          header("Refresh:0");
+
+        } catch(Execption $e) {
+          die($e->getMessage());
+          }
+
+      } else {
+          
+
+              foreach($validation->errors() as $error) {
+                $errorString = $errorString . $error . "</br>";
+                 
+              }
+
+              Session::flash('fail',$errorString);
+              header("Refresh:0");
+
+        }
+
+
+
+    }
 
 
 
@@ -566,18 +675,30 @@ if($user->classExist()){  ?>
          
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Student Edit</h4>
-      
-        Student Username: <span id="student_username_ID"></span></br>       
-        <!--Student Password: <span id="student_password_ID"></span></br>  -->
-        Student Password: <input type="text" id="student_password_ID" class"form-control input-sm"/><button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
-        </br>  
+        <pre>
+        Student Username: <input type="text" id="student_username_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentUser();" class="btn-xs btn-info">Update Username</button>        
+        </br>
+        Student Password: <input type="text" id="student_password_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
+        </br> </pre> 
       <script>
+      function updateStudentUser()
+      {
+
+        newUsername = document.getElementById('student_username_ID').value;
+        $.post('viewclass.php',{studentid:SID, newusername:newUsername},function(data){ 
+          //document.getElementById('student_username_ID').value = data;
+          
+         location.reload();
+   
+        }); 
+
+      }
       function updateStudentPass()
       {
 
         newPass = document.getElementById('student_password_ID').value;
         $.post('viewclass.php',{studentid:SID, newpass:newPass},function(data){ 
-          document.getElementById('student_password_ID').value = data;
+          //document.getElementById('student_password_ID').value = data;
           
          location.reload();
    
@@ -732,7 +853,7 @@ if($user->classExist()){  ?>
 
 
 
-      </div>
+    
       </div>
         <div class="modal-footer">
         <button type="button" id="refreshpage" class="btn btn-default" data-dismiss="modal">Close</button>
