@@ -21,6 +21,12 @@
 		$test_time = ($test_time/60)*100;
 	}
 
+		//Converting seconds to minutes
+	if( ($practice_time > 59) ) 
+	{
+		$practice_time = ($practice_time/60)*100;
+	}
+
 	
 	//Grabbing the level progress data
 	$levelProgData = $db->query('SELECT * FROM level_progress WHERE student_id = ? AND level_id = ?', array(

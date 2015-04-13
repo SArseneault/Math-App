@@ -744,6 +744,32 @@
     
     //Check for timeLimit
     if(seconds == timeLimitSeconds){
+       
+        
+            //Looping through the rest of the questions
+            for(int i=questionCount; i<questionsInLevel; i++) {
+            
+            //Only need to extract the question ID
+            questionID = [[json objectAtIndex:questionCount] objectForKey:@"questionID"];
+            
+    
+            //Creating a new empty question prog dictionary
+            currentQuestionProg = [[NSMutableDictionary alloc]initWithCapacity:2];
+            
+            //Settting th answer to zero
+            [currentQuestionProg setObject:[NSNumber numberWithInt:0] forKey:@"User Answer"];
+            [currentQuestionProg setObject:[NSNumber numberWithInt:[questionID intValue]] forKey:@"QuestionID"];
+            
+            //Adding the question to the rest of the list
+            [questionProg addObject:currentQuestionProg];
+                
+            
+            //increment question counter
+            questionCount++;
+            
+        }
+        
+        //Going to the end result
         [self endResult];
     }
 }
