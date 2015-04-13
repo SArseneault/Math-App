@@ -540,7 +540,7 @@
     //stop timer
     [timer invalidate];
     
-    if(seconds >=60)
+  /*  if(seconds >=60)
     {
         int minutes = seconds/60;
         int tempSec = seconds%60;
@@ -555,7 +555,7 @@
     else{
         
          NSString *totalTime=[NSString stringWithFormat:@"%i",seconds];
-    }
+    }*/
     
     
     //Ensuring the textbox is gone when user fades back
@@ -573,7 +573,7 @@
 
     
     //Creating a string contains url address for php file
-    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, totalTime, totalTime, questionType]];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
     
