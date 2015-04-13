@@ -48,7 +48,7 @@
 		$fields['attempts'] = $Questiondata['attempts'] + 1;
 		//updating the question progress table with the passed info. If it works it echos 1, else it echos 0
 		if($db->update('question_progress', $questionProg['QuestionID'], 'question_id', $fields)) 
-			echo "1"
+			echo "1";
 		else
 			echo "0";
 	}

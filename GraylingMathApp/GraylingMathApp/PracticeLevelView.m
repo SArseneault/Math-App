@@ -651,7 +651,7 @@
 //Function to fade the label
 -(void)fadeOutLabels
 {   resultsBox.alpha = 1;
-    [UIView animateWithDuration:1.0
+    [UIView animateWithDuration:2.0
                           delay:0.0  /* do not add a delay because we will use performSelector. */
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {

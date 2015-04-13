@@ -24,9 +24,10 @@
 {
     [super viewDidAppear:(BOOL) animated];
     
-    
-    
-    
+    //Removing auto correct
+    usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
+    passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
+
     //Looking up class login info
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
     className = [define stringForKey:@"className"];

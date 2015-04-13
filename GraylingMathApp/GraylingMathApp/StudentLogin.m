@@ -24,7 +24,9 @@
 {
     [super viewDidAppear:(BOOL) animated];
     
-    
+    //Removing auto correct
+    usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
+    passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     
     //Displaying the username
