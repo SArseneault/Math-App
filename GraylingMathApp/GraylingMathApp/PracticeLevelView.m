@@ -90,11 +90,6 @@
 {
     
     
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-    
-    
     //Creating a string contains url address for php file
     NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getquestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelID, questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
@@ -107,16 +102,19 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+        
+    } else {
     
-    //Converting the data to json format
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
-    
-    
-    //Displaying the json array
-    NSLog(@"%@", json);
+        //Converting the data to json format
+        json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        //Displaying the json array
+        NSLog(@"%@", json);
+    }
     
     
     //Setting the total question count
@@ -565,11 +563,7 @@
     
     //Status will always equal 0 for practice
     NSString *status = @"0";
-   
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-    
+
     
     //Creating a string contains url address for php file
     NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, totalTime, totalTime, questionType]];
@@ -582,10 +576,12 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
-    
-    
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+        
+    }
     
     //Restart level
     [self grabQuestions];

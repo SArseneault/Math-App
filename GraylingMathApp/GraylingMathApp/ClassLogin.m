@@ -101,6 +101,13 @@
     NSLog(@"%@",dataURL);
     
     
+    //Lost Wifi Error message
+    if(dataURL == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    
     // to receive the returend value
     strResult =  [ [NSString alloc] initWithData:dataURL encoding:NSUTF8StringEncoding];
     

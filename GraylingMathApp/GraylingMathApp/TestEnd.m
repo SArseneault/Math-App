@@ -109,118 +109,123 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
-    
-    //Converting the data to json format
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    NSLog(@"RESULTS FROM GQP: %@",json);
-    
-    
-    //Setting the total question prog count
-    NSInteger* questionProgCount = [json count];
-    NSString* attempts = @"";
-    NSString* operand1 = @"";
-    NSString* operand2 = @"";
-    NSString* operator = @"";
-    NSString* studentAnswer = @"";
-    NSInteger correctAnswer;
-    NSInteger valueOne; //int for first number
-    NSInteger valueTwo; //int for second number
-    
-    //Creating x and y positions
-    NSInteger xPosition = 325;
-    NSInteger yPosition = 240;
-    
-    
-    //Creating the beggining label
-    UILabel *lbl1 = [[UILabel alloc] init];
-    [lbl1 setFrame:CGRectMake(0,5,300,25)];
-    lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:25.0];
-    lbl1.backgroundColor=[UIColor clearColor];
-    lbl1.textColor=[UIColor whiteColor];
-    lbl1.userInteractionEnabled=YES;
-    [self.view addSubview:lbl1];
-    lbl1.text = @"Question    Your Answer";
-    
-    lbl1.center = CGPointMake(xPosition,yPosition);
-    
-    
-    yPosition = 25;
-    xPosition = 125;
-    
-    chalkBoardTable.rowHeight = 42;
-    
-    //Loop through each level
-    for(int i = 0; i < questionProgCount; i++) {
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
         
-        NSString* Question = @"";
-        attempts = [[json objectAtIndex:i] objectForKey:@"attempts"];
-        operand1 = [[json objectAtIndex:i] objectForKey:@"operand1"];
-        operand2 = [[json objectAtIndex:i] objectForKey:@"operand2"];
-        operator = [[json objectAtIndex:i] objectForKey:@"operator"];
-        studentAnswer = [[json objectAtIndex:i] objectForKey:@"studentAnswer"];
-       
+    } else {
+    
+    
+        //Converting the data to json format
+        json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
-        Question = [Question stringByAppendingString:operand1];
-        Question = [Question stringByAppendingString:operator];
-        Question = [Question stringByAppendingString:operand2];
-        Question = [Question stringByAppendingString:@" = "];
+        NSLog(@"RESULTS FROM GQP: %@",json);
         
         
-        //Converting the string to an integer
-        valueOne = [operand1 integerValue];
-        valueTwo = [operand2 integerValue];
+        //Setting the total question prog count
+        NSInteger* questionProgCount = [json count];
+        NSString* attempts = @"";
+        NSString* operand1 = @"";
+        NSString* operand2 = @"";
+        NSString* operator = @"";
+        NSString* studentAnswer = @"";
+        NSInteger correctAnswer;
+        NSInteger valueOne; //int for first number
+        NSInteger valueTwo; //int for second number
         
-        //calulate answer
-        if ([operator isEqualToString:@"+"])
-            correctAnswer =valueOne +valueTwo;
-        else if ([operator isEqualToString:@"-"])
-            correctAnswer =valueOne - valueTwo;
-        else if ([operator isEqualToString:@"*"])
-            correctAnswer =valueOne * valueTwo;
-        else if ([operator isEqualToString:@"/"])
-            correctAnswer =valueOne / valueTwo;
-       
-        Question = [Question stringByAppendingString:[@(correctAnswer) stringValue]];
+        //Creating x and y positions
+        NSInteger xPosition = 325;
+        NSInteger yPosition = 240;
         
         
-    
-        //Question
+        //Creating the beggining label
         UILabel *lbl1 = [[UILabel alloc] init];
-        [lbl1 setFrame:CGRectMake(0,5,100,20)];
-        lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:20.0];
+        [lbl1 setFrame:CGRectMake(0,5,300,25)];
+        lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:25.0];
         lbl1.backgroundColor=[UIColor clearColor];
         lbl1.textColor=[UIColor whiteColor];
         lbl1.userInteractionEnabled=YES;
-        //[self.view addSubview:lbl1];
-        lbl1.text= Question;
-
+        [self.view addSubview:lbl1];
+        lbl1.text = @"Question    Your Answer";
+        
         lbl1.center = CGPointMake(xPosition,yPosition);
         
-        [chalkBoardTable insertSubview:lbl1 atIndex:0];
         
-    
+        yPosition = 25;
+        xPosition = 125;
         
-        //Answer
-        UILabel *lbl2 = [[UILabel alloc] init];
-        [lbl2 setFrame:CGRectMake(0,5,100,20)];
-        lbl2.backgroundColor=[UIColor clearColor];
-        lbl2.font = [UIFont fontWithName:@"chalkboard SE" size:20.0];
-        lbl2.textColor=[UIColor redColor];
-        lbl2.userInteractionEnabled=YES;
-        //[self.view addSubview:lbl2];
-        lbl2.text= studentAnswer;
+        chalkBoardTable.rowHeight = 42;
         
-        lbl2.center = CGPointMake(xPosition+150,yPosition);
+        //Loop through each level
+        for(int i = 0; i < questionProgCount; i++) {
+            
+            NSString* Question = @"";
+            attempts = [[json objectAtIndex:i] objectForKey:@"attempts"];
+            operand1 = [[json objectAtIndex:i] objectForKey:@"operand1"];
+            operand2 = [[json objectAtIndex:i] objectForKey:@"operand2"];
+            operator = [[json objectAtIndex:i] objectForKey:@"operator"];
+            studentAnswer = [[json objectAtIndex:i] objectForKey:@"studentAnswer"];
+           
+            
+            Question = [Question stringByAppendingString:operand1];
+            Question = [Question stringByAppendingString:operator];
+            Question = [Question stringByAppendingString:operand2];
+            Question = [Question stringByAppendingString:@" = "];
+            
+            
+            //Converting the string to an integer
+            valueOne = [operand1 integerValue];
+            valueTwo = [operand2 integerValue];
+            
+            //calulate answer
+            if ([operator isEqualToString:@"+"])
+                correctAnswer =valueOne +valueTwo;
+            else if ([operator isEqualToString:@"-"])
+                correctAnswer =valueOne - valueTwo;
+            else if ([operator isEqualToString:@"*"])
+                correctAnswer =valueOne * valueTwo;
+            else if ([operator isEqualToString:@"/"])
+                correctAnswer =valueOne / valueTwo;
+           
+            Question = [Question stringByAppendingString:[@(correctAnswer) stringValue]];
+            
+            
         
-        yPosition += 42;
+            //Question
+            UILabel *lbl1 = [[UILabel alloc] init];
+            [lbl1 setFrame:CGRectMake(0,5,100,20)];
+            lbl1.font = [UIFont fontWithName:@"chalkboard SE" size:20.0];
+            lbl1.backgroundColor=[UIColor clearColor];
+            lbl1.textColor=[UIColor whiteColor];
+            lbl1.userInteractionEnabled=YES;
+            //[self.view addSubview:lbl1];
+            lbl1.text= Question;
+
+            lbl1.center = CGPointMake(xPosition,yPosition);
+            
+            [chalkBoardTable insertSubview:lbl1 atIndex:0];
+            
         
-        [chalkBoardTable insertSubview:lbl2 atIndex:0];
-        
-       
-        
-       
-        
+            
+            //Answer
+            UILabel *lbl2 = [[UILabel alloc] init];
+            [lbl2 setFrame:CGRectMake(0,5,100,20)];
+            lbl2.backgroundColor=[UIColor clearColor];
+            lbl2.font = [UIFont fontWithName:@"chalkboard SE" size:20.0];
+            lbl2.textColor=[UIColor redColor];
+            lbl2.userInteractionEnabled=YES;
+            //[self.view addSubview:lbl2];
+            lbl2.text= studentAnswer;
+            
+            lbl2.center = CGPointMake(xPosition+150,yPosition);
+            
+            yPosition += 42;
+            
+            [chalkBoardTable insertSubview:lbl2 atIndex:0];
+            
+            
+        }
     }
 
 }

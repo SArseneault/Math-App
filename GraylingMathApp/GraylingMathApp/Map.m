@@ -10,7 +10,7 @@
 #import "Map.h"
 #import "TypeSelect.h"
 #import "baseURL.h" 
-
+#import "HomeView.h"
 @interface Map()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backGroundImage;
@@ -250,10 +250,6 @@
     NSString *classID = [define stringForKey:@"classID"];
     NSString *studentID = [define stringForKey:@"studentID"];
     NSString *userName = [define stringForKey:@"studentUsername"];
-
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
     
     
     //Creating a string contains url address for php file
@@ -268,21 +264,30 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
-    //Calling the php file
-    //NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+        
+      
+        
+        
+    } else {
     
-    //Converting the data to json format
-    levelInfoJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
-    
-    //Setting the total level count
-    numberOfLevels = [levelInfoJson count];
-    
-    
-    //Displaying the json array
-    NSLog(@"%@", levelInfoJson);
+        //Calling the php file
+        //NSString *phpResponse = [[NSString alloc] initWithContentsOfURL:myURL encoding:NSUTF8StringEncoding error:nil];
+        
+        //Converting the data to json format
+        levelInfoJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        
+        //Setting the total level count
+        numberOfLevels = [levelInfoJson count];
+        
+        
+        //Displaying the json array
+        NSLog(@"%@", levelInfoJson);
+    }
 }
 
 

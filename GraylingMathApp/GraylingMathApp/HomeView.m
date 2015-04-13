@@ -58,10 +58,7 @@
 {
     
     
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-    
+
 
     
     //Creating a string contains url address for php file
@@ -76,27 +73,34 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
-    
-    //Converting the data to json format
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
-    
-    
-    //Displaying the json array
-    NSLog(@"%@", json);
-    
-    //Extracting the student and class id's
-    classID = [[json objectAtIndex:0] objectForKey:@"class_id"];
-    studentID = [[json objectAtIndex:1] objectForKey:@"student_id"];
-    studentName = [[json objectAtIndex:2] objectForKey:@"studentName"];
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+        
    
+        
+    }else{
+    
+    
+        //Converting the data to json format
+        json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        
+        //Displaying the json array
+        NSLog(@"%@", json);
+        
+        //Extracting the student and class id's
+        classID = [[json objectAtIndex:0] objectForKey:@"class_id"];
+        studentID = [[json objectAtIndex:1] objectForKey:@"student_id"];
+        studentName = [[json objectAtIndex:2] objectForKey:@"studentName"];
+       
 
-    //Storing the student and class id's
-    [[NSUserDefaults standardUserDefaults] setObject:classID forKey:@"classID"];
-    [[NSUserDefaults standardUserDefaults] setObject:studentID forKey:@"studentID"];
-    [[NSUserDefaults standardUserDefaults] setObject:studentName forKey:@"studentName"];
+        //Storing the student and class id's
+        [[NSUserDefaults standardUserDefaults] setObject:classID forKey:@"classID"];
+        [[NSUserDefaults standardUserDefaults] setObject:studentID forKey:@"studentID"];
+        [[NSUserDefaults standardUserDefaults] setObject:studentName forKey:@"studentName"];
+    }
     
 }
 

@@ -194,11 +194,7 @@
 - (void)grabQuestions
 {
     
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-    
-    
+
     //Creating a string contains url address for php file
     NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"getquestions.php?username=%@&studentid=%@&classid=%@&level=%@&questiontype=%@", userName, studentID, classID, levelID, questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
@@ -211,17 +207,21 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+
+    } else {
     
-    //Converting the data to json format
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        //Converting the data to json format
+        json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        
+        //Displaying the json array
+        NSLog(@"%@", json);
     
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
-    
-    
-    //Displaying the json array
-    NSLog(@"%@", json);
-    
+    }
     
     //Setting the total question count
     questionsInLevel = [json count];
@@ -637,10 +637,6 @@
     NSString *studentID = [define stringForKey:@"studentID"];
     
     
-    //Creating and starting the spinning wheel
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-    
     
     //Creating a string contains url address for php file
     NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType]];
@@ -654,42 +650,47 @@
     //Calling and storing the json data
     NSData * data = [NSData dataWithContentsOfURL:myURL];
     
+    //Lost Wifi Error message
+    if(data == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"It appears you have lost internect connection. Please check your wifi connection." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+        
+        
+        
+    } else {
     
-    //Creating a string contains url address for php file
-    NSString *strURL2 = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendquestionprog.php"]];
+        //Creating a string contains url address for php file
+        NSString *strURL2 = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendquestionprog.php"]];
 
-    NSLog(@"%@", strURL2);
+        NSLog(@"%@", strURL2);
 
 
-    //Question progress
-    NSMutableArray * arr = [[NSMutableArray alloc] init];
-    [arr addObject:questionProg];
-    NSError *error;
-    NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:&error];
-    
-    if (error)
-        NSLog(@"%s: JSON encode error: %@", __FUNCTION__, error);
-    
-    //Create the request
-    NSURL *url = [NSURL URLWithString:strURL2];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:jsonData2];
-    
-    //Issue the request
-    NSURLResponse *response = nil;
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (error)
-        NSLog(@"%s: NSURLConnection error: %@", __FUNCTION__, error);
-    
-    //Response
-    NSString *responseString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    NSLog(@"responseString: %@",responseString);
-    
-
-    //Stopping the spinnging wheel
-    app.networkActivityIndicatorVisible = NO;
+        //Question progress
+        NSMutableArray * arr = [[NSMutableArray alloc] init];
+        [arr addObject:questionProg];
+        NSError *error;
+        NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:&error];
+        
+        if (error)
+            NSLog(@"%s: JSON encode error: %@", __FUNCTION__, error);
+        
+        //Create the request
+        NSURL *url = [NSURL URLWithString:strURL2];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:jsonData2];
+        
+        //Issue the request
+        NSURLResponse *response = nil;
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (error)
+            NSLog(@"%s: NSURLConnection error: %@", __FUNCTION__, error);
+        
+        //Response
+        NSString *responseString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+        NSLog(@"responseString: %@",responseString);
+    }
     
     
     TestEnd *TEND = [self.storyboard instantiateViewControllerWithIdentifier:@"TestEnd"];
