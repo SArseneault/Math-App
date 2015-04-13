@@ -41,6 +41,7 @@
 //@synthesize timeBool;
 @synthesize keyBoard;
 @synthesize inputTileCollectionView;
+@synthesize resultsBox;
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -479,10 +480,6 @@
  
     
     
-    
-    
-    
-    
     //compare to values and display true or false
     if(correctAnswer == userAnswer)
     {
@@ -490,25 +487,25 @@
         totalQuestionsCorrect++;
         
         
-        //alert to show that the user was correct
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:[NSString stringWithFormat:@"%ld %@ %ld = %ld",valueOne, Qoperator, valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-        [alert setTag:2];
-        [alert show];
+        [resultsBox setHidden:NO];
+        self.resultsBox.backgroundColor = [UIColor greenColor];
+        self.resultsBox.text = @"CORRECT!";
+        [self performSelector:@selector(fadeOutLabels) withObject:nil afterDelay:0.0f];
         
     }
     else
     {
         
-        //alert to show the users input was wrong
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect!" message:[NSString stringWithFormat:@"%ld %@ %ld = %ld",valueOne, Qoperator, valueTwo,correctAnswer] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-        [alert setTag:3];
-        [alert show];
+        [resultsBox setHidden:NO];
+        self.resultsBox.backgroundColor = [UIColor colorWithRed:(169/255.0) green:(34/255.0) blue:(64/255.0) alpha:1];
+        self.resultsBox.text = @"Incorrect";
+        [self performSelector:@selector(fadeOutLabels) withObject:nil afterDelay:0.0f];
     }
     
     
     
     //call method to check for end of practice section
-   // [self isEndCheck];
+    [self isEndCheck];
     
     [_destionController clearInput];
     
@@ -536,36 +533,35 @@
 //end result method that displays results, right/wrong and time taken to complete
 -(void) endResult
 {
-//    NSString *totalTime;
+    NSString *totalTime;
     
     //stop timer
     [timer invalidate];
     
-//    if(seconds >=60)
-//    {
-//        int minutes = seconds/60;
-//        int tempSec = seconds%60;
-//        
-//        if(tempSec<10)
-//        {
-//            NSString *totalTime=[NSString stringWithFormat:@"%i:0%i", minutes, tempSec];
-//        }
-//        NSLog(@"Greater than 60");
-//        NSString *totalTime=[NSString stringWithFormat:@"%i:%i", minutes, tempSec];
-//    }
-//    else{
-//        
-//         NSString *totalTime=[NSString stringWithFormat:@"%i",seconds];
-//    }
-//    
-    
-    //alert to show that the practice section is over
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Practice Over" message:[NSString stringWithFormat:@"You got %ld out of %ld questions correct\n Total Time: %ld seconds", totalQuestionsCorrect, questionsInLevel, seconds] delegate:self cancelButtonTitle:@"PlayAgain?" otherButtonTitles:nil];
+    if(seconds >=60)
+    {
+        int minutes = seconds/60;
+        int tempSec = seconds%60;
+        
+        if(tempSec<10)
+        {
+            NSString *totalTime=[NSString stringWithFormat:@"%i:0%i", minutes, tempSec];
+        }
+        NSLog(@"Greater than 60");
+        NSString *totalTime=[NSString stringWithFormat:@"%i:%i", minutes, tempSec];
+    }
+    else{
+        
+         NSString *totalTime=[NSString stringWithFormat:@"%i",seconds];
+    }
     
     
-    //set alert tag to endTag
-    [alert setTag:1];
-    [alert show];
+    
+    
+    [resultsBox setHidden:NO];
+    self.resultsBox.backgroundColor = [UIColor blueColor];
+    self.resultsBox.text = @"END!";
+    [self performSelector:@selector(fadeOutLabels) withObject:nil afterDelay:5.0f];
     
     //Status will always equal 0 for practice
     NSString *status = @"0";
@@ -576,7 +572,7 @@
     
     
     //Creating a string contains url address for php file
-    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, [@(seconds) stringValue], [@(seconds) stringValue], questionType]];
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"sendlevelprog.php?studentid=%@&classid=%@&level=%@&status=%@&test_time=%@&practice_time=%@&level_type=%@", studentID, classID, levelID, status, totalTime, totalTime, questionType]];
     strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
     
@@ -588,10 +584,12 @@
     
     
     
-    
     //Stopping the spinnging wheel
     app.networkActivityIndicatorVisible = NO;
     
+    //Restart level
+    [self grabQuestions];
+    [self setUpLevel];
     
     
     
@@ -610,45 +608,6 @@
     {
         int minutes = seconds/60;
         int tempSeconds = seconds%60;
-    }
-    
-}
-
-//method for when UIalert button is pressed, helps diferentiate between which one is pressed
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    if(alertView.tag ==1)   //end alert view was pressed
-    {
-
-        //Grabbing the questions from the back end
-        [self grabQuestions];
-        
-        if(questionsInLevel <= 0)
-        {
-            //Alert the student
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oh no!" message:@"Please have your teacher create questions for this level!" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-            [alert show];
-            
-            //Switch back to the map
-            Map *map = [self.storyboard instantiateViewControllerWithIdentifier:@"Map"];
-            [self presentViewController:map animated:YES completion:nil];
-            
-        } else
-        {
-            
-            [self setUpLevel];
-        }
-        
-    }
-    if(alertView.tag==2) //entered the correct answer
-    {
-        
-        [self isEndCheck];
-    }
-    
-    if(alertView.tag ==3) //entered the wrong answer
-    {
-        [self isEndCheck];
     }
     
 }
@@ -686,6 +645,23 @@
     
 }
 
+//Function to fade the label
+-(void)fadeOutLabels
+{   resultsBox.alpha = 1;
+    [UIView animateWithDuration:1.0
+                          delay:0.0  /* do not add a delay because we will use performSelector. */
+                        options:UIViewAnimationCurveEaseInOut
+                     animations:^ {
+                         resultsBox.alpha = 0.0;
+                         
+                     }
+                     completion:^(BOOL finished) {
+                         [resultsBox setHidden:YES];
+                         resultsBox.alpha = 1;
+                         
+                         
+                     }];
+}
 
 
 
