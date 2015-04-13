@@ -42,11 +42,15 @@
 @synthesize keyBoard;
 @synthesize inputTileCollectionView;
 @synthesize resultsBox;
+@synthesize replayLevelNotif;
 
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:(BOOL) animated];
+    
+    //Setting any number of lines for replay notif
+    replayLevelNotif.numberOfLines = 0;
     
     //Looking up the class and student id's
     NSUserDefaults *define = [NSUserDefaults standardUserDefaults];
@@ -554,13 +558,16 @@
     }
     
     
+    //Ensuring the textbox is gone when user fades back
+    [resultsBox setHidden:YES];
     
+    //Displaying the replay box
+    [replayLevelNotif setHidden:NO];
+    self.replayLevelNotif.backgroundColor = [UIColor colorWithRed:(93/255.0) green:(188/255.0) blue:(210/255.0) alpha:1];
+    self.replayLevelNotif.text = @"REPLAYING LEVEL! \nGET READY...";
+    [self performSelector:@selector(fadeOutLabels2) withObject:nil afterDelay:2.0f];
     
-    [resultsBox setHidden:NO];
-    self.resultsBox.backgroundColor = [UIColor blueColor];
-    self.resultsBox.text = @"END!";
-    [self performSelector:@selector(fadeOutLabels) withObject:nil afterDelay:5.0f];
-    
+ 
     //Status will always equal 0 for practice
     NSString *status = @"0";
 
@@ -652,8 +659,30 @@
                          
                      }
                      completion:^(BOOL finished) {
-                         [resultsBox setHidden:YES];
-                         resultsBox.alpha = 1;
+                         //do nothings
+                         
+                         
+                     }];
+}
+
+//Function to fade the label
+-(void)fadeOutLabels2
+{   resultsBox.alpha = 1;
+    [UIView animateWithDuration:1.0
+                          delay:0.0  /* do not add a delay because we will use performSelector. */
+                        options:UIViewAnimationCurveEaseInOut
+                     animations:^ {
+                         resultsBox.alpha = 0.0;
+                         replayLevelNotif.alpha = 0.0;
+                         
+                     }
+                     completion:^(BOOL finished) {
+                         resultsBox.alpha = 0.0;
+                         [replayLevelNotif setHidden:YES];
+                         replayLevelNotif.alpha = 1;
+                         
+                         //[self viewDidAppear:(BOOL)];
+                         
                          
                          
                      }];

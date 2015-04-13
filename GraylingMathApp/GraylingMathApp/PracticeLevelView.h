@@ -98,4 +98,9 @@
 //Linking the box which displays if the answer is correct or not
 @property (weak, nonatomic) IBOutlet UILabel *resultsBox;
 
+//Box which display when the level is being replayed
+@property (weak, nonatomic) IBOutlet UILabel *replayLevelNotif;
+
+
+
 @end
