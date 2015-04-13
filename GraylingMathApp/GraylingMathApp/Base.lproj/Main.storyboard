@@ -1381,30 +1381,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_student.png" translatesAutoresizingMaskIntoConstraints="NO" id="JGb-v3-4S3">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-cj-ScN">
-                                <rect key="frame" x="377" y="356" width="90" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="CQL-7n-Afg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
-                                <state key="normal" image="generic_btn_ok_login.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="CQL-7n-Afg"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="CQL-7n-Afg"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="Login" destination="XR5-Gb-qsH" eventType="touchUpInside" id="tiY-ME-Dwq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-gb-gpz">
                                 <rect key="frame" x="224" y="358" width="41" height="30"/>
                                 <constraints>
@@ -1520,6 +1496,30 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-cj-ScN">
+                                <rect key="frame" x="377" y="356" width="90" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="CQL-7n-Afg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
+                                <state key="normal" image="generic_btn_ok_login.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CQL-7n-Afg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="CQL-7n-Afg"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="Login" destination="XR5-Gb-qsH" eventType="touchUpInside" id="tiY-ME-Dwq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1721,35 +1721,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-el-BQf">
-                                <rect key="frame" x="159" y="515" width="300" height="77"/>
-                                <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="1CC-L5-Dt6">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="110" id="SnE-T8-QZK">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="210"/>
-                                    </constraint>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="75t-FX-LT4">
-                                    <size key="itemSize" width="90" height="90"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xye-5J-UXc">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="anQ-E5-jWu">
                                 <rect key="frame" x="212" y="303" width="195" height="63"/>
                                 <color key="backgroundColor" red="0.95401278410000001" green="0.95401278410000001" blue="0.95401278410000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1778,7 +1749,7 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="345" y="444" width="110" height="50"/>
                                 </variation>
                             </collectionView>
@@ -1888,6 +1859,35 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-el-BQf">
+                                <rect key="frame" x="159" y="515" width="300" height="77"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1CC-L5-Dt6">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="110" id="SnE-T8-QZK">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="210"/>
+                                    </constraint>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="75t-FX-LT4">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xye-5J-UXc">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1898,11 +1898,15 @@
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="top" secondItem="1XD-6n-tXA" secondAttribute="bottom" constant="-294" id="L7I-3h-AXL"/>
                             <constraint firstItem="yfS-cc-3mb" firstAttribute="top" secondItem="Xhp-0F-tyF" secondAttribute="bottom" id="LAh-KU-MKG"/>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="top" secondItem="rhx-Oe-9fe" secondAttribute="bottom" constant="-255" id="LW0-fl-eUD"/>
+                            <constraint firstItem="anQ-E5-jWu" firstAttribute="top" secondItem="Xhp-0F-tyF" secondAttribute="bottom" constant="-356" id="QCn-ka-G9w">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-700"/>
+                            </constraint>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="top" secondItem="cXP-0r-EIf" secondAttribute="bottom" constant="-255" id="Rn3-Yx-4y6"/>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="top" secondItem="tF3-KI-NiX" secondAttribute="topMargin" id="VVu-h2-Ums"/>
                             <constraint firstItem="5O6-U8-TZf" firstAttribute="leading" secondItem="Xhp-0F-tyF" secondAttribute="trailing" constant="-379" id="Vdt-dc-wz0"/>
                             <constraint firstAttribute="centerX" secondItem="MLm-el-BQf" secondAttribute="centerX" id="WR0-Ma-uNf"/>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="top" secondItem="eDn-uD-EmX" secondAttribute="bottom" constant="-263" id="Wfb-HF-0d8"/>
+                            <constraint firstAttribute="centerX" secondItem="anQ-E5-jWu" secondAttribute="centerX" id="aw3-cj-87R"/>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="leading" secondItem="44k-Jb-Ktb" secondAttribute="trailing" constant="-357" id="dX7-dC-cnL"/>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="top" secondItem="44k-Jb-Ktb" secondAttribute="bottom" constant="-263" id="gFy-qg-bvJ"/>
                             <constraint firstItem="5Je-oW-2nX" firstAttribute="leading" secondItem="Xhp-0F-tyF" secondAttribute="trailing" constant="-378" id="hBc-fb-hpf"/>
@@ -1923,8 +1927,6 @@
                                 <exclude reference="rhx-Oe-9fe"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2dL-N2-QfB"/>
-                                <exclude reference="Cm6-2T-BIV"/>
                                 <exclude reference="FH7-Ly-THE"/>
                                 <exclude reference="Jvv-x7-FdS"/>
                                 <exclude reference="L7I-3h-AXL"/>
@@ -1938,8 +1940,12 @@
                                 <exclude reference="pz5-zX-awW"/>
                                 <exclude reference="rI0-LT-wHr"/>
                                 <exclude reference="uAM-ST-7cj"/>
+                                <exclude reference="2dL-N2-QfB"/>
                                 <exclude reference="hBc-fb-hpf"/>
                                 <exclude reference="Vdt-dc-wz0"/>
+                                <exclude reference="Cm6-2T-BIV"/>
+                                <exclude reference="QCn-ka-G9w"/>
+                                <exclude reference="aw3-cj-87R"/>
                                 <exclude reference="LAh-KU-MKG"/>
                             </mask>
                         </variation>
@@ -1953,8 +1959,6 @@
                                 <include reference="rhx-Oe-9fe"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2dL-N2-QfB"/>
-                                <include reference="Cm6-2T-BIV"/>
                                 <include reference="FH7-Ly-THE"/>
                                 <include reference="Jvv-x7-FdS"/>
                                 <include reference="L7I-3h-AXL"/>
@@ -1968,8 +1972,12 @@
                                 <include reference="pz5-zX-awW"/>
                                 <include reference="rI0-LT-wHr"/>
                                 <include reference="uAM-ST-7cj"/>
+                                <include reference="2dL-N2-QfB"/>
                                 <include reference="hBc-fb-hpf"/>
                                 <include reference="Vdt-dc-wz0"/>
+                                <include reference="Cm6-2T-BIV"/>
+                                <include reference="QCn-ka-G9w"/>
+                                <include reference="aw3-cj-87R"/>
                                 <include reference="LAh-KU-MKG"/>
                             </mask>
                         </variation>
