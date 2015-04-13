@@ -538,7 +538,7 @@ if($user->classExist()){  ?>
 
 
 <!--modal for remove Class -->
-<div class="modal fade" id="deleteClassModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="deleteClassModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -561,7 +561,7 @@ if($user->classExist()){  ?>
 
 
 <!--modal for clear student progress -->
-<div class="modal fade" id="clearStudentProgModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="clearStudentProgModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -586,7 +586,7 @@ if($user->classExist()){  ?>
 
 
 <!--modal for create Class -->
-<div class="modal fade" id="createClassModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="createClassModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -626,7 +626,7 @@ if($user->classExist()){  ?>
 </div> 
 
 <!--modal for add student -->
-<div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="addStudentModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -667,7 +667,7 @@ if($user->classExist()){  ?>
 </div>
 
 <!--Model for editing a student-->
-<div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="editStudentModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -719,6 +719,7 @@ if($user->classExist()){  ?>
     width: 1500px; /* your width */
     
 }
+
 
     .axis path,
     .axis line {
@@ -1033,7 +1034,7 @@ if($user->classExist()){  ?>
 
 
 <!--Model for editing a student-->
-<div class="modal fade"  id="viewLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade"  id="viewLevelModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 

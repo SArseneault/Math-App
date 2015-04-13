@@ -390,7 +390,7 @@ if($user->classExist()){  ?>
 <?php } ?>
 
 <!--modal for adding default levels -->
-<div class="modal fade" id="addDefaultLevelsModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="addDefaultLevelsModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -417,7 +417,7 @@ if($user->classExist()){  ?>
 
 
 <!--modal for remove all levels -->
-<div class="modal fade" id="removeLevelsModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="removeLevelsModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -444,7 +444,7 @@ if($user->classExist()){  ?>
 
 
 <!--modal for create Class -->
-<div class="modal fade" id="createLevelModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="createLevelModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -486,7 +486,7 @@ if($user->classExist()){  ?>
 
 
 <!--modal for add Question -->
-<div class="modal fade" id="addQuestionModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="addQuestionModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -641,7 +641,7 @@ if($user->classExist()){  ?>
 </style>
 
 <!--Model for editing a level-->
-<div class="modal fade" id="editLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="editLevelModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
