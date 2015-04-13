@@ -739,6 +739,14 @@ if($user->classExist()){  ?>
     .bar text {
       fill: white;
     }
+    /*add the format for the bar labels*/
+    .label {
+ 
+        font-family: sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        fill: white;
+      }
 
     </style>
     <div class = "table-responsive">
@@ -840,7 +848,18 @@ if($user->classExist()){  ?>
             .attr("width", x.rangeBand())
             .attr("y", function(d) { return y(d.testTime); })
             .attr("height", function(d) { return height - y(d.testTime); });
-         
+        
+        // This adds a label inside the bar graph in each bar that represent the value of it
+        svg.selectAll(".label")
+           .data(data)
+           .enter().append("text")
+           .text(function(d) {
+           return d.testTime;
+           })
+           .attr("x", function(d) {var t=(d.levelName == "") ? "Unknown":d.levelName; return x(t)+x.rangeBand()/2;})
+           .attr("y", function(d) {return y(d.testTime)+15;})
+           .attr("text-anchor", "middle")
+           .attr("class", "label"); 
 
     
       function type(d) {
