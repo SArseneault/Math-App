@@ -769,14 +769,14 @@ if($user->classExist()){  ?>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>
 
-          /*
-            var data = [
+          
+           /* var data = [
               {levelName:"Zero Rule",testTime:"60", testAttempts:"1"},
               {levelName:"1+1",testTime:"5", testAttempts:"7"},
               {levelName:"Level 3",testTime:"0", testAttempts:"3"},
               {levelName:"Level 4",testTime:"0", testAttempts:"9"},
-            ];
-          */
+            ];*/
+          
       
 
     function createGraph() {
@@ -854,7 +854,7 @@ if($user->classExist()){  ?>
            .data(data)
            .enter().append("text")
            .text(function(d) {
-           return d.testTime;
+           return "Attempts: "+d.testAttempts;
            })
            .attr("x", function(d) {var t=(d.levelName == "") ? "Unknown":d.levelName; return x(t)+x.rangeBand()/2;})
            .attr("y", function(d) {return y(d.testTime)+15;})
