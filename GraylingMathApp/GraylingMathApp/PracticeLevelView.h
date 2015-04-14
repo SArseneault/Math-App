@@ -48,9 +48,7 @@
     NSString *levelName;
     NSString * timeLimit;
     NSInteger timeLimitSeconds;
-    
-    
-    BOOL timeBool;
+
     
     
     //Variables to store extracted question info

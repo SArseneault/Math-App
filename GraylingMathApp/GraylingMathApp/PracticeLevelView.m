@@ -458,8 +458,6 @@
 
 -(IBAction)submitAnswer
 {
-    //PAUSE TIMER
-    timeBool=YES;
     
     //calulate answer
     if ([Qoperator isEqualToString:@"+"])
@@ -601,11 +599,10 @@
 //timer method to increase time, fired every second
 -(void) increaseTime
 {
-    if(timeBool==NO)
-    {
-        //increment seconds
-        seconds++;
-    }
+    
+    //increment seconds
+    seconds++;
+    
     //seconds to minutes
     if(seconds >=60)
     {
