@@ -166,9 +166,7 @@
     
     //create timer object, call to method increaseTime to increase and display current time spent on level
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0F target:self selector:@selector(increaseTime) userInfo: nil repeats:YES];
-    
-    //Set bool for timer to false
-    timeBool =NO;
+
     
     //creates actual keyboard layout
     _keyBoardCollectionView = [[KeyBoardCollectionView alloc]initWithCollectionView:self.keyBoard andParentViewController:self];
@@ -403,8 +401,7 @@
 
 -(void) generateNumber
 {
-    //bool to start/stop timmer
-    timeBool=NO;
+
 
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
