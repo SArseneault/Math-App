@@ -187,15 +187,19 @@
       if( ($validation->passed()) and (!$failure) ) {
 
         try {
+
+           //Creating a new salt 
+            $salt = Hash::salt(32);
            
             //Inserting the new student into the database
             $studentOBJ->create(array(
               'first_name' => Input::get('first_name'),
               'last_name' => Input::get('last_name'),
               'username' => Input::get('username'),
-              'password' => Input::get('password'),
+              'password' => Hash::make(Input::get('password'), $salt),
               'class_id' => $classInfo['class_id'],
-              'joined' => date('Y-m-d H:i:s')
+              'joined' => date('Y-m-d H:i:s'),
+              'salt' => $salt
               ));
 
 
@@ -251,9 +255,13 @@
 
         try {
            
+          //Creating a new salt 
+          $salt = Hash::salt(32);
+
          //Updating the level with the new time
           $studentOBJ->updateStudent(array(
-            'password' => $newPass
+            'password' => Hash::make($newPass, $salt),
+            'salt' => $salt
             ), $studentID);
 
 
@@ -819,10 +827,6 @@ if($user->classExist()){  ?>
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
       
-   
-
-
-
         x.domain(data.map(function(d) { return d.levelName; }));
         y.domain([0, d3.max(data, function(d) { return d.testTime; })]);
 
@@ -960,7 +964,6 @@ if($user->classExist()){  ?>
 
     //Displaying the student credentials in the edit student modal
     document.getElementById('student_username_ID').value = SUN;
-    document.getElementById('student_password_ID').value = SPW;
 
     
     //Grabbing the
