@@ -112,7 +112,7 @@
     else {
         [[NSUserDefaults standardUserDefaults] setObject:@"FALSE" forKey:@"isStudentLoggedIn"];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"The password is incorrect or the class doesn't exist." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"The password is incorrect or the username doesn't exist." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [alert show];
     }
     

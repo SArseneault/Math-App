@@ -339,18 +339,18 @@
 					
 					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
 					
-						Session::put($this->_sessionName, $this->data()->id);
+						Session::put($this->_sessionName, $this->data()->student_id);
 
 						//If the user wants to be rememered
 						if($remember) {
 
 							//Generate hash
 							$hash = Hash::unique();
-							$hashCheck = $this->_db->get('student_session', array('student_id','=',$this->data()->id));
+							$hashCheck = $this->_db->get('student_session', array('student_id','=',$this->data()->student_id));
 
 							if(!$hashCheck->count()) {
 								$this->_db->insert('student_session',array(
-									'student_id' => $this->data()->id,
+									'student_id' => $this->data()->student_id,
 									'hash' => $hash
 									));
 							} else {
