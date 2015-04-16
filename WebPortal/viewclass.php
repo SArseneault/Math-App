@@ -862,7 +862,7 @@ if($user->classExist()){  ?>
            return "Attempts: "+d.testAttempts;
            })
            .attr("x", function(d) {var t=(d.levelName == "") ? "Unknown":d.levelName; return x(t)+x.rangeBand()/2;})
-           .attr("y", function(d) {return y(d.testTime);})
+           .attr("y", function(d) {return y(d.testTime)-1;})
            .attr("text-anchor", "middle")
            .attr("class", "label");
     
