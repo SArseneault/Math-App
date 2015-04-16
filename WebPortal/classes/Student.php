@@ -1,11 +1,38 @@
 <?php
 	class Student {
 		private $_db,
-				$_data;
+				$_data,
+				$_sessionName,
+				$_cookieName,
+				$isLoggedIn;
+
 
 		//Default constructor connects to database
-		public function __construct() {
+		public function __construct($student = null) {
 			$this->_db = DB::getInstance();
+			$this->_sessionName = Config::get('studentsession/session_name');
+			$this->_cookieName = Config::get('remember/cookie_name');
+
+
+			if(!$student) {
+
+				//Checking if there is a logged in
+				if(Session::exists($this->_sessionName)) {
+					$student = Session::get($this->_sessionName);
+				}
+
+				//checking if the studetn exsits
+				if($this->find($student)) {
+					$this->_isLoggedIn = true;
+				} else {
+					$this->_isLoggedIn = false;
+					// process logout
+				}
+
+			}else {
+				$this->find($student);
+			}
+
 
 		}
 
@@ -101,27 +128,6 @@
 		}
 
 
-		//Ability to login to a class
-		public function login($username = null, $password = null) {
-
-			//$student == 1 if $username is found in the database
-			$student = $this->find($username);
-			
-
-			//If the user exists
-			if($student) {
-
-				
-					//If the passwords match return true
-					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
- 
-						return true;
-					}
-					
-				}
-
-			return false;
-		}
 
 
 		//Find student by their username or id
@@ -311,6 +317,78 @@
 
 
 		}
+
+
+		//Ability to login to data base
+		public function login($username = null, $password = null, $remember = false) {
+
+			//Check if a username and password hasn't been defined
+			if(!$username && $password && $this->exists()) {
+				//C
+				Session::put($this->_sessionName, $this->data()->id);
+			} else {
+
+				//$user == 1 if $username is found in the database
+				$student = $this->find($username);
+			
+
+
+			//If the user exists
+			if($student) {
+				
+					
+					if($this->data()->password === Hash::make($password, $this->data()->salt)) {
+					
+						Session::put($this->_sessionName, $this->data()->id);
+
+						//If the user wants to be rememered
+						if($remember) {
+
+							//Generate hash
+							$hash = Hash::unique();
+							$hashCheck = $this->_db->get('student_session', array('student_id','=',$this->data()->id));
+
+							if(!$hashCheck->count()) {
+								$this->_db->insert('student_session',array(
+									'student_id' => $this->data()->id,
+									'hash' => $hash
+									));
+							} else {
+								$hash = $hashCheck->first()->hash;
+							}
+
+							//Storinng the cookie
+							Cookie::put($this->_cookieName, $hash, Config::get('remember/cookie_expiry'));
+						}
+
+						return true;
+					}
+					//if($this->data()->password === Hash::make($password, $this->data()->salt)) 
+				}
+
+			}
+			return false;
+		}
+
+		public function logout() {
+
+			//Delete current login id
+			if(!$this->_db->delete('student_session', array('student_id', '=', $this->data()->id))){
+				Redirect::to("includes/errors/logoutError.php");
+
+			}
+
+			//Delete session and cookie
+			Session::delete($this->_sessionName);
+			Cookie::delete($this->_cookieName);
+
+		}
+
+
+		public function isLoggedIn() {
+			return $this->_isLoggedIn;
+		}
+
 		
 
 	}//End of class

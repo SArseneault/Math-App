@@ -754,7 +754,7 @@ if($user->classExist()){  ?>
         font-family: sans-serif;
         font-size: 11px;
         font-weight: bold;
-        fill: white;
+        fill: black;
       }
 
     </style>
@@ -779,12 +779,12 @@ if($user->classExist()){  ?>
     <script>
 
           
-           /* var data = [
+            var data = [
               {levelName:"Zero Rule",testTime:"60", testAttempts:"1"},
               {levelName:"1+1",testTime:"5", testAttempts:"7"},
               {levelName:"Level 3",testTime:"0", testAttempts:"3"},
               {levelName:"Level 4",testTime:"0", testAttempts:"9"},
-            ];*/
+            ];
           
       
 
@@ -792,7 +792,7 @@ if($user->classExist()){  ?>
 
       
       //Setting the level data
-      data = Larr; //<------ JOHN!!!! COMMENT THIS LINE OF CODE OUT TO USE THE ABOVE DUMMY DATA INSTEAD! (just so you don't have to manually enter shit into your local database)
+      //data = Larr; //<------ JOHN!!!! COMMENT THIS LINE OF CODE OUT TO USE THE ABOVE DUMMY DATA INSTEAD! (just so you don't have to manually enter shit into your local database)
 
 
  
@@ -862,10 +862,9 @@ if($user->classExist()){  ?>
            return "Attempts: "+d.testAttempts;
            })
            .attr("x", function(d) {var t=(d.levelName == "") ? "Unknown":d.levelName; return x(t)+x.rangeBand()/2;})
-           .attr("y", function(d) {return y(d.testTime)+15;})
+           .attr("y", function(d) {return y(d.testTime);})
            .attr("text-anchor", "middle")
-           .attr("class", "label"); 
-
+           .attr("class", "label");
     
       function type(d) {
         d.testTime = +d.testTime;

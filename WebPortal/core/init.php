@@ -15,10 +15,14 @@
 		),
 		'remember' => array(
 			'cookie_name' => 'hash',
-			'cookie_expiry' => 604800 //604800 == months in seconds
+			'cookie_expiry' => 604800 //604800 1 week in seconds
 		),
-		'session' => array(
+		'teachersession' => array(
 			'session_name' => 'teacher',
+			'token_name' => 'token'
+		),
+		'studentsession' => array(
+			'session_name' => 'student',
 			'token_name' => 'token'
 		)
 	);
@@ -33,7 +37,7 @@
 	require_once 'functions/sanitize.php';
 
 
-	if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))) {
+	if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('teachersession/session_name'))) {
 		$hash = Cookie::get(Config::get('remember/cookie_name'));
 		$hashCheck = DB::getInstance()->get('teacher_session', array('hash', '=', $hash));
 
@@ -41,6 +45,21 @@
 			$user = new User($hashCheck->first()->teacher_id);
 			$user->login();
 		}
+
+
+
+
+	if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('studentsession/session_name'))) {
+		$hash = Cookie::get(Config::get('remember/cookie_name'));
+		$hashCheck = DB::getInstance()->get('student_session', array('hash', '=', $hash));
+
+		if($hashCheck->count()) {
+			$student = new User($hashCheck->first()->student_id);
+			$student->login();
+		}
+
+	}
+
 	}
 
 
