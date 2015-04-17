@@ -779,12 +779,12 @@ if($user->classExist()){  ?>
     <script>
 
           
-            var data = [
+            /*var data = [
               {levelName:"Zero Rule",testTime:"60", testAttempts:"1"},
               {levelName:"1+1",testTime:"5", testAttempts:"7"},
               {levelName:"Level 3",testTime:"0", testAttempts:"3"},
               {levelName:"Level 4",testTime:"0", testAttempts:"9"},
-            ];
+            ];*/
           
       
 
@@ -792,7 +792,7 @@ if($user->classExist()){  ?>
 
       
       //Setting the level data
-      //data = Larr; //<------ JOHN!!!! COMMENT THIS LINE OF CODE OUT TO USE THE ABOVE DUMMY DATA INSTEAD! (just so you don't have to manually enter shit into your local database)
+      data = Larr; 
 
 
  
@@ -1059,7 +1059,7 @@ if($user->classExist()){  ?>
                 <th>Question</th>
                 <th>Answer</th>
                 <th>Student Answer</th>
-                <th>Attempts</th>
+                <!--<th>Attempts</th>-->
               </tr>
             </thead>
 
@@ -1093,13 +1093,15 @@ if($user->classExist()){  ?>
                             var newColumn = document.createElement("TD");  
                             newRow.appendChild(newColumn);
 
-                             var newColumn = document.createElement("TD"); 
-                            newRow.appendChild(newColumn);
-
-                             var newColumn = document.createElement("TD"); 
+                            var newColumn = document.createElement("TD"); 
                             var t = document.createTextNode('This student got all the questions correct for this level');       
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn);
+
+                             var newColumn = document.createElement("TD"); 
+                            newRow.appendChild(newColumn);
+
+                          
 
                              var newColumn = document.createElement("TD"); 
                             newRow.appendChild(newColumn);
@@ -1147,11 +1149,11 @@ if($user->classExist()){  ?>
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn); 
 
-                            //Attempts
+                           /* //Attempts
                             var newColumn = document.createElement("TD"); 
                             var t = document.createTextNode(Qarr[i]['attempts']);       
                             newColumn.appendChild(t); 
-                            newRow.appendChild(newColumn);  
+                            newRow.appendChild(newColumn);  */
 
                           }
                           
