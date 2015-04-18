@@ -6,6 +6,18 @@
 	//Ensure we are outputting a text javascript page
 	//header('Content-type: text/javascript');
 
+	  $user = new User();//Picking current user details
+    //Redirect the user if they are not logged in.
+    if(!$user->isLoggedIn()) {
+        Redirect::to("includes/errors/loginerror.php");
+    }
+    if(!Session::exists(Config::get('teachersession/session_name'))) {
+
+        Redirect::to("includes/errors/sessionexpired.php");
+
+    }
+
+
 			
 	//Creating a database object
 	$db = DB::getInstance();

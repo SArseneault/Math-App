@@ -11,6 +11,12 @@
   if(!$user->isLoggedIn()) {
       Redirect::to("includes/errors/loginerror.php");
   }
+  if(!Session::exists(Config::get('teachersession/session_name'))) {
+
+      Redirect::to("includes/errors/sessionexpired.php");
+
+  }
+
 
   //Creating and setting the classInfo and students variables
   if($user->classExist()){
