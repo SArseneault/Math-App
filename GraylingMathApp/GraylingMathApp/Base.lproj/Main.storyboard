@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -321,7 +321,7 @@
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="54" y="117" width="75" height="27"/>
                                 </variation>
                             </label>
@@ -600,6 +600,9 @@
                             <constraint firstItem="rUt-U0-aJd" firstAttribute="leading" secondItem="DLZ-Ms-VjQ" secondAttribute="trailing" constant="-418" id="X2z-Oj-hX7"/>
                             <constraint firstItem="GTb-24-Tr0" firstAttribute="leading" secondItem="DLZ-Ms-VjQ" secondAttribute="trailing" constant="-154" id="XOl-8X-jUJ"/>
                             <constraint firstItem="OS6-WI-nhX" firstAttribute="leading" secondItem="nWX-0c-zbl" secondAttribute="leadingMargin" id="YRx-LP-6cy"/>
+                            <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="OS6-WI-nhX" secondAttribute="bottom" constant="-144" id="Yhu-s8-Vmf">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-70"/>
+                            </constraint>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="GTb-24-Tr0" secondAttribute="bottom" constant="-144" id="YoZ-XX-VA6"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="Vgb-Mc-TQf" secondAttribute="bottom" constant="-287" id="ZXL-ld-i0n"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="QNj-oe-jFE" secondAttribute="bottom" constant="-406" id="csV-sZ-ceD"/>
@@ -623,7 +626,6 @@
                                 <exclude reference="ShW-eC-ydG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Nwt-4V-Mvi"/>
                                 <exclude reference="0KE-kn-Ywa"/>
                                 <exclude reference="31s-2F-ajC"/>
                                 <exclude reference="4WR-5b-s3Q"/>
@@ -636,6 +638,7 @@
                                 <exclude reference="K6q-B4-E42"/>
                                 <exclude reference="ONt-f2-y9b"/>
                                 <exclude reference="Pzh-Nb-W8f"/>
+                                <exclude reference="Yhu-s8-Vmf"/>
                                 <exclude reference="YoZ-XX-VA6"/>
                                 <exclude reference="ZXL-ld-i0n"/>
                                 <exclude reference="csV-sZ-ceD"/>
@@ -643,9 +646,10 @@
                                 <exclude reference="rxU-UU-dY8"/>
                                 <exclude reference="lyl-Z9-DFE"/>
                                 <exclude reference="X2z-Oj-hX7"/>
-                                <exclude reference="XOl-8X-jUJ"/>
-                                <exclude reference="ier-Q1-PDi"/>
+                                <exclude reference="Nwt-4V-Mvi"/>
                                 <exclude reference="noj-RX-GdV"/>
+                                <exclude reference="ier-Q1-PDi"/>
+                                <exclude reference="XOl-8X-jUJ"/>
                                 <exclude reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
@@ -659,7 +663,6 @@
                                 <include reference="ShW-eC-ydG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Nwt-4V-Mvi"/>
                                 <include reference="0KE-kn-Ywa"/>
                                 <include reference="31s-2F-ajC"/>
                                 <include reference="4WR-5b-s3Q"/>
@@ -672,6 +675,7 @@
                                 <include reference="K6q-B4-E42"/>
                                 <include reference="ONt-f2-y9b"/>
                                 <include reference="Pzh-Nb-W8f"/>
+                                <include reference="Yhu-s8-Vmf"/>
                                 <include reference="YoZ-XX-VA6"/>
                                 <include reference="ZXL-ld-i0n"/>
                                 <include reference="csV-sZ-ceD"/>
@@ -679,9 +683,10 @@
                                 <include reference="rxU-UU-dY8"/>
                                 <include reference="lyl-Z9-DFE"/>
                                 <include reference="X2z-Oj-hX7"/>
-                                <include reference="XOl-8X-jUJ"/>
-                                <include reference="ier-Q1-PDi"/>
+                                <include reference="Nwt-4V-Mvi"/>
                                 <include reference="noj-RX-GdV"/>
+                                <include reference="ier-Q1-PDi"/>
+                                <include reference="XOl-8X-jUJ"/>
                                 <include reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
@@ -2119,7 +2124,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P4d-91-MRb"/>
+        <segue reference="UvG-ge-XVP"/>
         <segue reference="IgK-zJ-R3d"/>
     </inferredMetricsTieBreakers>
 </document>
