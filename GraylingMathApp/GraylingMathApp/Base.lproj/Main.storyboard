@@ -2096,6 +2096,7 @@
                         <outlet property="resultsBox" destination="W6k-lK-y6R" id="VpP-rT-Tf6"/>
                         <outlet property="secondNumber" destination="5O6-U8-TZf" id="srf-5w-6dc"/>
                         <outlet property="secondNumberHorz" destination="eDn-uD-EmX" id="dpM-xp-W7z"/>
+                        <outlet property="submitButton" destination="EcQ-mC-sF5" id="i14-s1-lL6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGx-tk-VRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2124,7 +2125,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UvG-ge-XVP"/>
+        <segue reference="a9G-nF-AGi"/>
         <segue reference="IgK-zJ-R3d"/>
     </inferredMetricsTieBreakers>
 </document>

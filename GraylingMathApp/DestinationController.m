@@ -217,42 +217,6 @@
         return finalV;
     }
     
-    
-    
-    //NSLog(@"Models %@", _models);
-    
-//    TileModel *firstModel =[_models objectAtIndex:0];
-//    
-//    NSLog(@"firsttt modelllll %i", firstModel.value);
-    
-
-    //NSInteger tempModel = [_models objectAtIndex:0];
-    
-    //NSLog(@"temmpppp model is %i", tempModel);
- 
-    
-//    if(size ==0)
-//    {
-//        return 0;
-//    }
-//    else if(size >1)
-//    {
-//        NSInteger temp = (10*[[_userInputArray objectAtIndex:0]intValue]);
-//        
-//        NSInteger tempTw0 = [[_userInputArray objectAtIndex:1]intValue];
-//        
-//
-//        
-//        return temp+tempTw0;
-//
-//    }
-//    else
-//    {
-//
-//        return [[_userInputArray objectAtIndex:0]intValue];
-//    }
-
-
 
 }
 -(void)clearInput

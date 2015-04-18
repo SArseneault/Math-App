@@ -61,6 +61,9 @@
     NSString *classID;
     NSString *studentID;
     NSString *userName;
+    
+    //submit button
+    IBOutlet UILabel *submitButton;
 }
 
 //method called to set up leve once screen is loaded
@@ -68,6 +71,9 @@
 
 //method to generate numbers
 -(void) generateNumber;
+
+//count number of tiles in input box
++(int)count;
 
 //action to check users input
 -(IBAction) submitAnswer;

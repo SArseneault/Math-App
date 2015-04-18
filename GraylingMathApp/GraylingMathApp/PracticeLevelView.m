@@ -43,6 +43,9 @@
 @synthesize inputTileCollectionView;
 @synthesize resultsBox;
 @synthesize replayLevelNotif;
+//@synthesize submitButton;
+
+static int inputCount;
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -439,6 +442,10 @@
     firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
     secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
+    
+    //set count to 0
+    //count:0;
+    [self count:0];
   
     
     //clear user input textbox
@@ -452,6 +459,60 @@
     
     
 }
+
+-(void)updateSubmitButton:(int*)number
+{
+    if(number==0)
+    {
+        submitButton.enabled = NO;
+        submitButton.hidden= YES;
+        
+        NSLog(@"Hidding");
+        
+        
+        
+    }
+    else{
+        submitButton.enabled= YES;
+        NSLog(@"Not hidding!!");
+        
+    }
+    
+}
+
+-(void) count: (int*) tempValue
+{
+    
+ 
+    if(tempValue ==0)
+    {
+        
+           NSLog(@"HIIIIIII-----------------------II");
+        //hide it because new question just started
+        inputCount =0;
+    }
+    else if (tempValue ==1)
+    {
+        //tile is placed
+        inputCount++;
+        
+    }
+    else if(tempValue ==2)
+    {
+        //tile was dragged out of input box
+        inputCount--;
+    }
+    
+    [self updateSubmitButton:inputCount];
+    
+    //update input count
+    
+    //return inputCount;
+    
+    //return inputCount;
+}
+
+
 
 -(IBAction)submitAnswer
 {
