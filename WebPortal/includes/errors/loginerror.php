@@ -44,3 +44,7 @@
 
 
 </html>
+<?php
+
+  return "LoginError";
+?>

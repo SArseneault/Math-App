@@ -2,11 +2,11 @@
 	
 	require_once 'core/init.php';
 	
+
 	//Grabbing Variables from the link
 	$username = $_GET["userName"];
 	$password = $_GET["password"];
 
-	Token::generate();
 
 	//Creating a student object and calling the login function
 	$Student = new Student();
@@ -20,5 +20,6 @@
 		echo "0";
 		return 0;
 	}
+
 
 ?>

@@ -6,7 +6,6 @@
 				$_cookieName,
 				$isLoggedIn;
 
-
 		//Default constructor connects to database
 		public function __construct($student = null) {
 			$this->_db = DB::getInstance();
@@ -320,7 +319,7 @@
 
 
 		//Ability to login to data base
-		public function login($username = null, $password = null, $remember = false) {
+		public function login($username = null, $password = null, $remember = true) {
 
 			//Check if a username and password hasn't been defined
 			if(!$username && $password && $this->exists()) {
@@ -373,7 +372,7 @@
 		public function logout() {
 
 			//Delete current login id
-			if(!$this->_db->delete('student_session', array('student_id', '=', $this->data()->id))){
+			if(!$this->_db->delete('student_session', array('student_id', '=', $this->data()->student_id))){
 				Redirect::to("includes/errors/logoutError.php");
 
 			}

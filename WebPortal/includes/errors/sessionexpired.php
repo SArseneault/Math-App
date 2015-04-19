@@ -26,3 +26,7 @@
 	<h2>Please signin</h2><a href="../../login.php">Login Page</a>
 
 </body>
+<?php
+
+  return "SessionExpired";
+?>
