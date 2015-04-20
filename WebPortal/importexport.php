@@ -57,14 +57,16 @@
               //Uploading the level info
               while(($fileop = fgetcsv($handle,1000,",")) !== false)
               {
-               
-                 if($fileop[0] === "NEXT" AND $fileop[1] === "NEXT" AND $fileop[2] === "NEXT"){
+                  
+                  //Skip over headers
+                 if($fileop[0] === "Level Name:" AND $fileop[1] === "Question Name:" AND $fileop[2] === "Operand1:"){
                   break;
+                 } else if($fileop[0] === "Level Name:" AND $fileop[1] === "Time Limit:"){
+                  continue;
                  }
 
-                //Variable to store failures
-                 
-      
+        
+
                 //Checking if the level count is 42 or below
                 $levelCount = $db->query('SELECT * FROM level WHERE class_id = ?', array($classInfo['class_id']));
                 if($levelCount->count() > 42){
@@ -93,8 +95,7 @@
                   //Inserting the new levelinto the database
                   $user->addLevel(array( 
                     'name' => $fileop[0],
-                    'description' => $fileop[1],
-                    'time_limit' => $fileop[2],
+                    'time_limit' => $fileop[1],
                     'class_id' => $classInfo['class_id']
                     ));
                 }
@@ -109,9 +110,8 @@
               {
 
                //Grabbing level info which the question is linked to
-                $levelInfo = $db->query('SELECT * FROM level WHERE name = ? AND description = ? AND class_id = ?', array(
+                $levelInfo = $db->query('SELECT * FROM level WHERE name = ? AND class_id = ?', array(
                   $fileop[0],
-                  $fileop[1],
                   $classInfo['class_id']
                   ));
                 $levelInfo = $levelInfo->first();
@@ -120,16 +120,14 @@
                 //Setting the level id
                 $levelID = $levelInfo['level_id']; 
 
-    
               //Inserting the new levelinto the database
               $user->addQuestion(array(
-                'name' => $fileop[2],
-                'description' => $fileop[3],
-                'operand1' => $fileop[4],
-                'operand2' => $fileop[5],
-                'operator' => $fileop[6],
-                'question_type' => $fileop[7],
-                'freq' => $fileop[8],
+                'name' => $fileop[1],
+                'operand1' => $fileop[2],
+                'operator' => $fileop[3],
+                'operand2' => $fileop[4],
+                'question_type' => $fileop[5],
+                'freq' => $fileop[6],
                 'level_id' => $levelID,
                 'class_id' => $classInfo['class_id']
                 ));
@@ -190,6 +188,14 @@
 
     if($leveldata){
 
+       //Storing level info title
+      $row = "Level Name:,";
+      #$row = $row . $level['description'] . ",";
+      $row = $row . "Time Limit:";
+             
+      fputs($fp,$row);
+      fputs($fp,"\n");   
+
         //Looping through each level
         foreach($leveldata as $level){
 
@@ -198,17 +204,29 @@
 
               //Storing level info
               $row = $level['name'] . ",";
-              $row = $row . $level['description'] . ",";
+              #$row = $row . $level['description'] . ",";
               $row = $row . $level['time_limit'];
              
               fputs($fp,$row);
               fputs($fp,"\n");   
         }
 
-          //Creating divider
+         /* //Creating divider
         $row = "NEXT,NEXT,NEXT";
         fputs($fp,$row);
+        fputs($fp,"\n");*/
+
+        //Storing question info title
+        $row = "Level Name:,";
+        $row = $row . "Question Name:,";
+        $row = $row . "Operand1:,";
+        $row = $row . "Operator:,";
+        $row = $row . "Operand2:,";
+        $row = $row . "Question Type:,";
+        $row = $row . "Question Frequency:";
+        fputs($fp,$row);
         fputs($fp,"\n");
+
 
         //Looping through each level
         foreach($questiondata as $question){
@@ -224,14 +242,14 @@
         
               //Storingthe level info for the question
               $row = $levelInfo['name'] . ",";
-              $row = $row . $levelInfo['description'] . ",";
+              #$row = $row . $levelInfo['description'] . ",";
 
               //Storing question info
               $row = $row . $question['name'] . ",";
-              $row = $row . $question['description'] . ",";
+              #$row = $row . $question['description'] . ",";
               $row = $row . $question['operand1'] . ",";
-              $row = $row . $question['operand2'] . ",";
               $row = $row . $question['operator'] . ",";
+              $row = $row . $question['operand2'] . ",";
               $row = $row . $question['question_type'] . ",";
               $row = $row . $question['freq'];
              

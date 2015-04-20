@@ -88,9 +88,8 @@
 			}
 
 			//Grabbing the newly created level data
-			$leveldata = $this->_db->query('SELECT * FROM level WHERE name = ? AND description = ? AND time_limit = ? AND class_id = ?', array(
+			$leveldata = $this->_db->query('SELECT * FROM level WHERE name = ? AND time_limit = ? AND class_id = ?', array(
 					$fields['name'],
-					$fields['description'],
 					$fields['time_limit'],
 					$fields['class_id']
 					));
@@ -252,9 +251,8 @@
 			if($fields['question_type'] == 1)
 			{
 				//Grabbing the question id
-				$questionID = $this->_db->query('SELECT * FROM question WHERE name = ? AND description = ? AND question_type = ? AND level_id = ?', array(
+				$questionID = $this->_db->query('SELECT * FROM question WHERE name = ? AND question_type = ? AND level_id = ?', array(
 					$fields['name'],
-					$fields['description'],
 					$fields['question_type'],
 					$fields['level_id']
 					));

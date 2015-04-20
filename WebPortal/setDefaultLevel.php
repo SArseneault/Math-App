@@ -40,9 +40,12 @@
   while(($fileop = fgetcsv($handle,1000,",")) !== false)
   {
    
-	   if($fileop[0] === "NEXT" AND $fileop[1] === "NEXT" AND $fileop[2] === "NEXT"){
-	    break;
-	   }
+	     //Skip over headers
+       if($fileop[0] === "Level Name:" AND $fileop[1] === "Question Name:" AND $fileop[2] === "Operand1:"){
+        break;
+       } else if($fileop[0] === "Level Name:" AND $fileop[1] === "Time Limit:"){
+        continue;
+       }
 
 	  //Variable to store failures
 	   $failure = false;
@@ -73,8 +76,7 @@
 	    //Inserting the new levelinto the database
 	    $user->addLevel(array( 
 	      'name' => $fileop[0],
-	      'description' => $fileop[1],
-	      'time_limit' => $fileop[2],
+	      'time_limit' => $fileop[1],
 	      'class_id' => $classInfo['class_id']
 	      ));
 
@@ -89,9 +91,8 @@
   {
 
    //Grabbing level info which the question is linked to
-    $levelInfo = $db->query('SELECT * FROM level WHERE name = ? AND description = ? AND class_id = ?', array(
+    $levelInfo = $db->query('SELECT * FROM level WHERE name = ? AND class_id = ?', array(
       $fileop[0],
-      $fileop[1],
       $classInfo['class_id']
       ));
     $levelInfo = $levelInfo->first();
@@ -101,18 +102,17 @@
     $levelID = $levelInfo['level_id']; 
 
 
-  //Inserting the new levelinto the database
-  $user->addQuestion(array(
-    'name' => $fileop[2],
-    'description' => $fileop[3],
-    'operand1' => $fileop[4],
-    'operand2' => $fileop[5],
-    'operator' => $fileop[6],
-    'question_type' => $fileop[7],
-    'freq' => $fileop[8],
-    'level_id' => $levelID,
-    'class_id' => $classInfo['class_id']
-    ));
+   //Inserting the new levelinto the database
+    $user->addQuestion(array(
+      'name' => $fileop[1],
+      'operand1' => $fileop[2],
+      'operator' => $fileop[3],
+      'operand2' => $fileop[4],
+      'question_type' => $fileop[5],
+      'freq' => $fileop[6],
+      'level_id' => $levelID,
+      'class_id' => $classInfo['class_id']
+      ));
 
 
   }
