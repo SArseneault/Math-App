@@ -96,7 +96,6 @@ if(Input::exists()) {
               //Inserting the new levelinto the database
               $user->addLevel(array(
                 'name' => Input::get('level_name'),
-                'description' => Input::get('lDescription'),
                 'time_limit' => Input::get('time_limit'),
                 'class_id' => $classInfo['class_id']
                 ));
@@ -154,10 +153,6 @@ if(Input::exists()) {
           'min' => 2,
           'max' => 50
           ),
-        'qDescription' => array(
-          'min' => 2,
-          'max' => 100
-          ),
         'qfrequency' => array(
             'required2' => true,
             'minNum' => 0,
@@ -188,7 +183,6 @@ if(Input::exists()) {
             //Inserting the new question into the database
             $user->addQuestion(array(
               'name' => Input::get('question_name'),
-              'description' => Input::get('qDescription'),
               'freq' => Input::get('qfrequency'),
               'question_type' => $qtype,
               'operator' => Input::get('operator'),
@@ -466,10 +460,6 @@ if($user->classExist()){  ?>
               <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
           </div>
           <div class ="form-group">
-            <label for "labelForLevelDescription">Description</label>
-              <input type ="text" class"form-control" name="lDescription" id ="labelForLevelName" placeholder="Description">
-          </div>
-          <div class ="form-group">
             <label for "labelForLevelTime">Time Limit</label>
               <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
           </div>
@@ -520,11 +510,6 @@ if($user->classExist()){  ?>
           <div class ="form-group">
             <label for "labelForQuestionName">Name</label>
               <input type ="text" class"form-control" name="question_name" id ="labelForQuestionName" placeholder="Question Name">
-          </div>
-
-          <div class ="form-group">
-            <label for "labelForQuestionDescription">Description</label>
-              <input type ="text" class"form-control" name="qDescription" id ="labelForQuestionDescription" placeholder="Question Name">
           </div>
 
           <!-- need to change input type -->
@@ -667,7 +652,6 @@ if($user->classExist()){  ?>
             <thread>
               <tr>
                 <th>Question</th>
-                <th>Description</th>
                 <th>Operand_1</th>
                 <th>Operator</th>
                 <th>Operand_2</th>
@@ -704,12 +688,6 @@ if($user->classExist()){  ?>
                             //Adding new column to question name
                             var newColumn = document.createElement("TD"); 
                             var t = document.createTextNode(Qarr[i]['questionName']);       
-                            newColumn.appendChild(t); 
-                            newRow.appendChild(newColumn); 
-
-                            // Description
-                            var newColumn = document.createElement("TD"); 
-                            var t = document.createTextNode(Qarr[i]['description']);       
                             newColumn.appendChild(t); 
                             newRow.appendChild(newColumn); 
 
