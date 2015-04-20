@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -586,7 +586,9 @@
                             </constraint>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="Mzi-fF-rca" secondAttribute="bottom" constant="-244" id="4eG-b7-7i3"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="leading" secondItem="Mzi-fF-rca" secondAttribute="trailing" constant="-382" id="5Q5-Jd-eOG"/>
-                            <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="20" id="5i9-ZQ-d1Z"/>
+                            <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="20" id="5i9-ZQ-d1Z">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="32H-sz-Uv6" secondAttribute="bottom" constant="-144" id="92i-0Q-f5M"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" constant="-244" id="BOT-QD-OLz"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="DLZ-Ms-VjQ" secondAttribute="bottom" constant="541" id="CjN-Vu-VGg">
@@ -2129,7 +2131,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UvG-ge-XVP"/>
         <segue reference="IgK-zJ-R3d"/>
-        <segue reference="a9G-nF-AGi"/>
     </inferredMetricsTieBreakers>
 </document>
