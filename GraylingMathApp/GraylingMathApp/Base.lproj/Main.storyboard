@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -473,6 +473,9 @@
                                         <exclude reference="yUT-AQ-YJ1"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="BPV-Gj-Ngq"/>
@@ -553,7 +556,7 @@
                                     <constraint firstAttribute="height" constant="110" id="fFo-o6-a6M"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
-                                <state key="normal" title="EXIT" backgroundImage="generic_btn_warn.png">
+                                <state key="normal" title="EXIT" backgroundImage="generic_btn_danger.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -626,6 +629,7 @@
                                 <exclude reference="ShW-eC-ydG"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Nwt-4V-Mvi"/>
                                 <exclude reference="0KE-kn-Ywa"/>
                                 <exclude reference="31s-2F-ajC"/>
                                 <exclude reference="4WR-5b-s3Q"/>
@@ -646,10 +650,9 @@
                                 <exclude reference="rxU-UU-dY8"/>
                                 <exclude reference="lyl-Z9-DFE"/>
                                 <exclude reference="X2z-Oj-hX7"/>
-                                <exclude reference="Nwt-4V-Mvi"/>
-                                <exclude reference="noj-RX-GdV"/>
-                                <exclude reference="ier-Q1-PDi"/>
                                 <exclude reference="XOl-8X-jUJ"/>
+                                <exclude reference="ier-Q1-PDi"/>
+                                <exclude reference="noj-RX-GdV"/>
                                 <exclude reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
@@ -663,6 +666,7 @@
                                 <include reference="ShW-eC-ydG"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Nwt-4V-Mvi"/>
                                 <include reference="0KE-kn-Ywa"/>
                                 <include reference="31s-2F-ajC"/>
                                 <include reference="4WR-5b-s3Q"/>
@@ -683,10 +687,9 @@
                                 <include reference="rxU-UU-dY8"/>
                                 <include reference="lyl-Z9-DFE"/>
                                 <include reference="X2z-Oj-hX7"/>
-                                <include reference="Nwt-4V-Mvi"/>
-                                <include reference="noj-RX-GdV"/>
-                                <include reference="ier-Q1-PDi"/>
                                 <include reference="XOl-8X-jUJ"/>
+                                <include reference="ier-Q1-PDi"/>
+                                <include reference="noj-RX-GdV"/>
                                 <include reference="CjN-Vu-VGg"/>
                             </mask>
                         </variation>
@@ -1663,7 +1666,7 @@
                                         <exclude reference="crJ-Wn-0Ck"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular" misplaced="YES">
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="221" y="206" width="160" height="57"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1767,7 +1770,7 @@
                                         <exclude reference="zEp-iu-i0I"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular" misplaced="YES">
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="256" y="542" width="90" height="52"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
@@ -1928,7 +1931,7 @@
                                     <constraint firstAttribute="height" constant="122" id="g1a-Oi-cgE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="39"/>
-                                <state key="normal" title="EXIT" backgroundImage="generic_btn_warn.png">
+                                <state key="normal" title="EXIT" backgroundImage="generic_btn_danger.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2105,6 +2108,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="generic_btn_danger.png" width="828" height="818"/>
         <image name="generic_btn_danger_home.png" width="200" height="200"/>
         <image name="generic_btn_danger_logout_student.png" width="200" height="200"/>
         <image name="generic_btn_ok_login.png" width="200" height="200"/>
@@ -2125,7 +2129,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a9G-nF-AGi"/>
         <segue reference="IgK-zJ-R3d"/>
+        <segue reference="a9G-nF-AGi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -102,6 +102,7 @@
 		A2800FAC1ACC6A22007C446D /* DestinationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800FAB1ACC6A22007C446D /* DestinationController.m */; };
 		A2B207D81ABB8A1500676DC4 /* level.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D71ABB8A1500676DC4 /* level.json */; };
 		A2B207DA1ABBB5DB00676DC4 /* studentLevel.json in Resources */ = {isa = PBXBuildFile; fileRef = A2B207D91ABBB5DB00676DC4 /* studentLevel.json */; };
+		B2C8C7A61AE4B09600A83CBE /* generic_btn_danger.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C8C7A51AE4B09600A83CBE /* generic_btn_danger.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,7 @@
 		A2800FAB1ACC6A22007C446D /* DestinationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationController.m; path = ../DestinationController.m; sourceTree = "<group>"; };
 		A2B207D71ABB8A1500676DC4 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
 		A2B207D91ABBB5DB00676DC4 /* studentLevel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = studentLevel.json; sourceTree = "<group>"; };
+		B2C8C7A51AE4B09600A83CBE /* generic_btn_danger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = generic_btn_danger.png; path = Assets/generic_btn_danger.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 		200B08011AA4E52A000E404A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2C8C7A51AE4B09600A83CBE /* generic_btn_danger.png */,
 				2077BD071AC8270300CD7BA0 /* Cars */,
 				2077BD121AC8270300CD7BA0 /* Maps */,
 				2068F7831ABE7A4E0074BB25 /* tire-tracks.jpg */,
@@ -598,6 +601,7 @@
 				204E0E371AD62FF300FC37D6 /* home_blank.png in Resources */,
 				204E0E501AD62FF300FC37D6 /* tile_7.png in Resources */,
 				204E0E261AD62FF300FC37D6 /* generic_btn_danger_logout_class.png in Resources */,
+				B2C8C7A61AE4B09600A83CBE /* generic_btn_danger.png in Resources */,
 				204E0E3E1AD62FF300FC37D6 /* login_blank.png in Resources */,
 				20B11D811ACCEC1900EA1431 /* greenArrowR.png in Resources */,
 				200B08391AA4E63A000E404A /* raceCarButton.png in Resources */,
