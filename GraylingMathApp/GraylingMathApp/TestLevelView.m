@@ -433,6 +433,9 @@
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
     NSLog(@"Question Orientaiton: %d",questionOrientation);
+    
+    //Setting the questionOrientaiton to zero to force vertical
+    questionOrientation = 0;
     [self flipOrientaion];
     
     
@@ -453,6 +456,8 @@
     if ([Qoperator isEqualToString:@"/"] && [operand2 isEqualToString:@"0"])
         Qoperator  = @"+";
     
+    if ([Qoperator isEqualToString:@"/"])
+        Qoperator  = @"÷";
     
     //Converting the string to an integer
     valueOne = [operand1 integerValue];
@@ -495,8 +500,10 @@
         correctAnswer =valueOne - valueTwo;
     else if ([Qoperator isEqualToString:@"*"])
         correctAnswer =valueOne * valueTwo;
-    else if ([Qoperator isEqualToString:@"/"])
+    else if ([Qoperator isEqualToString:@"÷"])
         correctAnswer =valueOne / valueTwo;
+
+    
     
     
    
