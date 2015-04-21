@@ -22,6 +22,7 @@
     IBOutlet UILabel *operatorLabelHorz;
     NSInteger questionOrientation;
     
+    IBOutlet UIButton *SubmitButton;
     
     
     IBOutlet UILabel *labelForTimer; //label for timer

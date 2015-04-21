@@ -88,9 +88,11 @@
         
     } else
     {
-
+        //hide the submit button
+            SubmitButton.hidden=YES;
         
         [self setUpLevel];
+
     }
     
     
@@ -230,6 +232,7 @@
     
     //Ceating a new question prog array
     questionProg = [[NSMutableArray alloc]initWithCapacity:questionCount];
+
     
 }
 
@@ -333,7 +336,7 @@
             
             //adds the value of the tile to the array/string used for input
             //[self addinputToArray:_tileModel.value];
-            
+                    SubmitButton.hidden=NO;
  
             [_destionController addModel:_tileModel];
         }
@@ -422,6 +425,8 @@
 
 -(void) generateNumber
 {
+    //hide submit button 
+    SubmitButton.hidden=YES;
     
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
