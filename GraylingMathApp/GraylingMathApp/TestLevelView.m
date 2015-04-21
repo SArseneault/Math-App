@@ -376,6 +376,13 @@
             
 
             [_destionController removeTile:_tileModel];
+            
+            NSInteger numberOfCurrentInputTiles= [inputTileCollectionView numberOfItemsInSection:0];
+            
+            if(numberOfCurrentInputTiles ==0)
+            {
+                SubmitButton.hidden=YES;
+            }
 
             
 
@@ -383,15 +390,10 @@
         else{
             
 
-           // [_destionController reloadData];
         }
     
         
     }
-
-    
-    
-    
     
 }
 
@@ -425,7 +427,7 @@
 
 -(void) generateNumber
 {
-    //hide submit button 
+    //hide submit button
     SubmitButton.hidden=YES;
     
     //generates random number between 0 and 1
