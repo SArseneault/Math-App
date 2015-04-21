@@ -1968,6 +1968,7 @@
                         <constraints>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="leading" secondItem="M2e-om-XVN" secondAttribute="trailing" constant="-341" id="2WY-9Q-voN"/>
                             <constraint firstItem="1XD-6n-tXA" firstAttribute="leading" secondItem="Xhp-0F-tyF" secondAttribute="trailing" constant="-507" id="2dL-N2-QfB"/>
+                            <constraint firstAttribute="centerX" secondItem="M2e-om-XVN" secondAttribute="centerX" id="8pd-ds-2wN"/>
                             <constraint firstItem="eDn-uD-EmX" firstAttribute="leading" secondItem="Xhp-0F-tyF" secondAttribute="trailing" constant="-332" id="Cm6-2T-BIV"/>
                             <constraint firstItem="yfS-cc-3mb" firstAttribute="top" secondItem="EcQ-mC-sF5" secondAttribute="bottom" id="EbN-MV-bKA"/>
                             <constraint firstItem="Xhp-0F-tyF" firstAttribute="leading" secondItem="rhx-Oe-9fe" secondAttribute="trailing" constant="-444" id="FH7-Ly-THE"/>
@@ -2013,11 +2014,9 @@
                                 <exclude reference="EcQ-mC-sF5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2dL-N2-QfB"/>
                                 <exclude reference="WA2-pJ-i2S"/>
                                 <exclude reference="dEV-Ze-ncJ"/>
                                 <exclude reference="qO9-2V-1TI"/>
-                                <exclude reference="Cm6-2T-BIV"/>
                                 <exclude reference="2WY-9Q-voN"/>
                                 <exclude reference="FH7-Ly-THE"/>
                                 <exclude reference="Jvv-x7-FdS"/>
@@ -2035,12 +2034,15 @@
                                 <exclude reference="rI0-LT-wHr"/>
                                 <exclude reference="uAM-ST-7cj"/>
                                 <exclude reference="xYI-pM-qqr"/>
+                                <exclude reference="2dL-N2-QfB"/>
+                                <exclude reference="8pd-ds-2wN"/>
+                                <exclude reference="V2U-Y8-CUP"/>
                                 <exclude reference="hBc-fb-hpf"/>
                                 <exclude reference="Vdt-dc-wz0"/>
+                                <exclude reference="Cm6-2T-BIV"/>
                                 <exclude reference="QCn-ka-G9w"/>
                                 <exclude reference="aw3-cj-87R"/>
                                 <exclude reference="LXE-0K-mg1"/>
-                                <exclude reference="V2U-Y8-CUP"/>
                                 <exclude reference="EbN-MV-bKA"/>
                                 <exclude reference="LAh-KU-MKG"/>
                             </mask>
@@ -2057,11 +2059,9 @@
                                 <include reference="EcQ-mC-sF5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2dL-N2-QfB"/>
                                 <include reference="WA2-pJ-i2S"/>
                                 <include reference="dEV-Ze-ncJ"/>
                                 <include reference="qO9-2V-1TI"/>
-                                <include reference="Cm6-2T-BIV"/>
                                 <include reference="2WY-9Q-voN"/>
                                 <include reference="FH7-Ly-THE"/>
                                 <include reference="Jvv-x7-FdS"/>
@@ -2079,12 +2079,15 @@
                                 <include reference="rI0-LT-wHr"/>
                                 <include reference="uAM-ST-7cj"/>
                                 <include reference="xYI-pM-qqr"/>
+                                <include reference="2dL-N2-QfB"/>
+                                <include reference="8pd-ds-2wN"/>
+                                <include reference="V2U-Y8-CUP"/>
                                 <include reference="hBc-fb-hpf"/>
                                 <include reference="Vdt-dc-wz0"/>
+                                <include reference="Cm6-2T-BIV"/>
                                 <include reference="QCn-ka-G9w"/>
                                 <include reference="aw3-cj-87R"/>
                                 <include reference="LXE-0K-mg1"/>
-                                <include reference="V2U-Y8-CUP"/>
                                 <include reference="EbN-MV-bKA"/>
                                 <include reference="LAh-KU-MKG"/>
                             </mask>
@@ -2131,7 +2134,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UvG-ge-XVP"/>
         <segue reference="IgK-zJ-R3d"/>
+        <segue reference="a9G-nF-AGi"/>
     </inferredMetricsTieBreakers>
 </document>
