@@ -587,7 +587,7 @@
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="Mzi-fF-rca" secondAttribute="bottom" constant="-244" id="4eG-b7-7i3"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="leading" secondItem="Mzi-fF-rca" secondAttribute="trailing" constant="-382" id="5Q5-Jd-eOG"/>
                             <constraint firstItem="om2-xv-IoA" firstAttribute="top" secondItem="gLO-eT-q59" secondAttribute="bottom" constant="20" id="5i9-ZQ-d1Z">
-                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                             </constraint>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="32H-sz-Uv6" secondAttribute="bottom" constant="-144" id="92i-0Q-f5M"/>
                             <constraint firstItem="DLZ-Ms-VjQ" firstAttribute="top" secondItem="rUt-U0-aJd" secondAttribute="bottom" constant="-244" id="BOT-QD-OLz"/>
