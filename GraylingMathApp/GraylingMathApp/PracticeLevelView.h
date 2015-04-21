@@ -21,6 +21,7 @@
     IBOutlet UILabel *operatorLabelHorz;
     NSInteger questionOrientation;
     
+    IBOutlet UIButton *SubmitButtonPractice;
 //    //Horizitonal
 //    IBOutlet UILabel *firstNumberHorz; //label first number generated
 //    IBOutlet UILabel *secondNumberHorz; //label second number generated
@@ -62,8 +63,7 @@
     NSString *studentID;
     NSString *userName;
     
-    //submit button
-    IBOutlet UILabel *submitButton;
+
 }
 
 //method called to set up leve once screen is loaded

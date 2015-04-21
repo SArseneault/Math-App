@@ -2080,6 +2080,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="SubmitButtonPractice" destination="M2e-om-XVN" id="lO6-1w-bJQ"/>
                         <outlet property="firstNumber" destination="5Je-oW-2nX" id="kcx-wG-1xn"/>
                         <outlet property="firstNumberHorz" destination="44k-Jb-Ktb" id="WxV-47-9U4"/>
                         <outlet property="inputTileCollectionView" destination="anQ-E5-jWu" id="fQy-aA-Pxb"/>
@@ -2118,7 +2119,7 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UvG-ge-XVP"/>
         <segue reference="IgK-zJ-R3d"/>
+        <segue reference="a9G-nF-AGi"/>
     </inferredMetricsTieBreakers>
 </document>

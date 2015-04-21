@@ -85,6 +85,8 @@ static int inputCount;
         
     } else
     {
+        //hide button
+        SubmitButtonPractice.hidden=YES;
     
         [self setUpLevel];
     }
@@ -233,6 +235,7 @@ static int inputCount;
             
             //adds the value of the tile to the array/string used for input
             //[self addinputToArray:_tileModel.value];
+            SubmitButtonPractice.hidden=NO;
             
             
             [_destionController addModel:_tileModel];
@@ -273,6 +276,13 @@ static int inputCount;
             
             
             [_destionController removeTile:_tileModel];
+            
+            NSInteger numberOfCurrentPracticeTiles=[inputTileCollectionView numberOfItemsInSection:0];
+            
+            if(numberOfCurrentPracticeTiles==0)
+            {
+                SubmitButtonPractice.hidden=YES;
+            }
             
             
             
@@ -405,6 +415,8 @@ static int inputCount;
 -(void) generateNumber
 {
 
+    //Hide Button
+    SubmitButtonPractice.hidden=YES;
 
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
@@ -443,9 +455,7 @@ static int inputCount;
     secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
     operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
     
-    //set count to 0
-    //count:0;
-    [self count:0];
+ 
   
     
     //clear user input textbox
@@ -458,58 +468,6 @@ static int inputCount;
    
     
     
-}
-
--(void)updateSubmitButton:(int*)number
-{
-    if(number==0)
-    {
-        submitButton.enabled = NO;
-        submitButton.hidden= YES;
-        
-        NSLog(@"Hidding");
-        
-        
-        
-    }
-    else{
-        submitButton.enabled= YES;
-        NSLog(@"Not hidding!!");
-        
-    }
-    
-}
-
--(void) count: (int*) tempValue
-{
-    
- 
-    if(tempValue ==0)
-    {
-        
-           NSLog(@"HIIIIIII-----------------------II");
-        //hide it because new question just started
-        inputCount =0;
-    }
-    else if (tempValue ==1)
-    {
-        //tile is placed
-        inputCount++;
-        
-    }
-    else if(tempValue ==2)
-    {
-        //tile was dragged out of input box
-        inputCount--;
-    }
-    
-    [self updateSubmitButton:inputCount];
-    
-    //update input count
-    
-    //return inputCount;
-    
-    //return inputCount;
 }
 
 
