@@ -44,7 +44,7 @@
   <!-- Connect Bootstrap css -->
   <meta name ="viewport" content="width=deivce-width, initial-scale=1.0">
   <link href="includes/css/bootstrap.min.css" rel="stylesheet">
-  <Title> Grayling Math Racer</title>
+  <Title> Minute Math Racer</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://rawgit.com/nnnick/Chart.js/master/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -65,12 +65,12 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Grayling Math Racer</a>
+    <a class="navbar-brand" href="#">Minute Math Racer</a>
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="register.php">Create Account</a></li>
-      <!-- <li><a href="help1.php">Help</a></li> -->
+      <li><a href="help1.php">Help</a></li>
     </ul>
   </div><!--/.nav-collapse -->
 </div>

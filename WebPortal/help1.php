@@ -21,7 +21,7 @@
   <!-- Connect Bootstrap css -->
   <meta name ="viewport" content="width=deivce-width, initial-scale=1.0">
   <link href="includes/css/bootstrap.min.css" rel="stylesheet">
-  <Title> Grayling Math Racer</title>
+  <Title> Minute Math Racer</title>
   </head>
 
   <!-- Bootstrap js plugins -->
@@ -41,7 +41,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Grayling Math Racer</a>
+      <a class="navbar-brand" href="index.php">Minute Math Racer</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -55,8 +55,8 @@
 </div>
 
 <div class="container">
-  <h2>Welcome to the grayling math racer web portal. </h2>
-  <p>This web portal is used with the grayling math racer iOS application.</p>
+  <h2>Welcome to the Minute math racer web portal. </h2>
+  <p>This web portal is used with the Minute math racer iOS application.</p>
 </div>
 
 

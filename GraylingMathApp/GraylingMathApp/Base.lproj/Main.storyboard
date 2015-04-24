@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1949,6 +1949,7 @@
                                 <exclude reference="nTc-zQ-MWK"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="2dL-N2-QfB"/>
                                 <exclude reference="4bp-wN-Qym"/>
                                 <exclude reference="Amn-Ca-Sbp"/>
                                 <exclude reference="dHc-Yx-gG1"/>
@@ -1963,15 +1964,14 @@
                                 <exclude reference="pz5-zX-awW"/>
                                 <exclude reference="rI0-LT-wHr"/>
                                 <exclude reference="xYI-pM-qqr"/>
-                                <exclude reference="2dL-N2-QfB"/>
-                                <exclude reference="8pd-ds-2wN"/>
                                 <exclude reference="GyO-fS-Elm"/>
                                 <exclude reference="Vdt-dc-wz0"/>
                                 <exclude reference="rtI-sr-Xug"/>
-                                <exclude reference="ogI-Lg-oQS"/>
                                 <exclude reference="QCn-ka-G9w"/>
                                 <exclude reference="aw3-cj-87R"/>
                                 <exclude reference="LXE-0K-mg1"/>
+                                <exclude reference="8pd-ds-2wN"/>
+                                <exclude reference="ogI-Lg-oQS"/>
                                 <exclude reference="Kuz-xK-tWT"/>
                                 <exclude reference="LAh-KU-MKG"/>
                             </mask>
@@ -1985,6 +1985,7 @@
                                 <include reference="nTc-zQ-MWK"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2dL-N2-QfB"/>
                                 <include reference="4bp-wN-Qym"/>
                                 <include reference="Amn-Ca-Sbp"/>
                                 <include reference="dHc-Yx-gG1"/>
@@ -1999,15 +2000,14 @@
                                 <include reference="pz5-zX-awW"/>
                                 <include reference="rI0-LT-wHr"/>
                                 <include reference="xYI-pM-qqr"/>
-                                <include reference="2dL-N2-QfB"/>
-                                <include reference="8pd-ds-2wN"/>
                                 <include reference="GyO-fS-Elm"/>
                                 <include reference="Vdt-dc-wz0"/>
                                 <include reference="rtI-sr-Xug"/>
-                                <include reference="ogI-Lg-oQS"/>
                                 <include reference="QCn-ka-G9w"/>
                                 <include reference="aw3-cj-87R"/>
                                 <include reference="LXE-0K-mg1"/>
+                                <include reference="8pd-ds-2wN"/>
+                                <include reference="ogI-Lg-oQS"/>
                                 <include reference="Kuz-xK-tWT"/>
                                 <include reference="LAh-KU-MKG"/>
                             </mask>

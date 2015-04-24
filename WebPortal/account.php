@@ -149,7 +149,7 @@
   <!-- Connect Bootstrap css -->
   <meta name ="viewport" content="width=deivce-width, initial-scale=1.0">
   <link href="includes/css/bootstrap.min.css" rel="stylesheet">
-  <Title> Grayling Math Racer</title>
+  <Title> Minute Math Racer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://rawgit.com/nnnick/Chart.js/master/Chart.min.js"></script>
  
@@ -181,7 +181,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Grayling Math Racer</a>
+      <a class="navbar-brand" href="index.php">Minute Math Racer</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -189,7 +189,7 @@
         <li><a href="viewclass.php">Class Editor</a></li>
         <li><a href="addlevel.php">Level Editor</a></li>
         <li><a href="importexport.php">Import/Export</a></li>
-        <!-- <li><a href="help.php">Help</a></li> -->
+        <li><a href="help.php">Help</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
