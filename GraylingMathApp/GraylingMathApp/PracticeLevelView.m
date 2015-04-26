@@ -45,8 +45,6 @@
 @synthesize replayLevelNotif;
 //@synthesize submitButton;
 
-static int inputCount;
-
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -68,7 +66,7 @@ static int inputCount;
     //Converting the time limit to an integer in seconds
     timeLimitSeconds = [timeLimit intValue] * 60;
     
-    NSLog(@"%ld",timeLimitSeconds);
+    NSLog(@"%ld",(long)timeLimitSeconds);
     
     //Grabbing the questions from the back end
     [self grabQuestions];
@@ -452,11 +450,11 @@ static int inputCount;
     
 
     //displays the random numbers
-    firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
-    secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    firstNumber.text =[NSString stringWithFormat:@"%ld",(long)valueOne];
+    secondNumber.text =[NSString stringWithFormat:@"%ld",(long)valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
-    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
-    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",(long)valueOne];
+    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",(long)valueTwo];
     operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
     
  
@@ -491,7 +489,7 @@ static int inputCount;
    
     
     NSLog(@"operator After: %@",Qoperator);
-    NSLog(@"Answer: %ld",correctAnswer);
+    NSLog(@"Answer: %ld",(long)correctAnswer);
     
     NSInteger testValue =[_destionController getValue];
     
@@ -558,8 +556,8 @@ static int inputCount;
 //end result method that displays results, right/wrong and time taken to complete
 -(void) endResult
 {
-    NSString *totalTime;
-    
+
+
     //stop timer
     [timer invalidate];
     
@@ -628,12 +626,6 @@ static int inputCount;
     //increment seconds
     seconds++;
     
-    //seconds to minutes
-    if(seconds >=60)
-    {
-        int minutes = seconds/60;
-        int tempSeconds = seconds%60;
-    }
     
 }
 

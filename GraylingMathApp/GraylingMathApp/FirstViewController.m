@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "baseURL.h"
 
 @interface FirstViewController (){
     AVAudioPlayer *_audioPlayer;
@@ -28,6 +29,16 @@
     
     //Create audio player object and initalize with URL to sound
     _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    //Establish connection
+    
+    NSString *strURL = [baseURL stringByAppendingString:[NSString stringWithFormat:@"logclassin.php?userName=%@&password=%@", @"test", @"password"]];
+    strURL = [strURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSLog(@"%@",strURL);
+
+    NSData *dataURL = [NSData dataWithContentsOfURL:[NSURL URLWithString:strURL]];
+    NSLog(@"%@",dataURL);
+
 }
 
 - (void)didReceiveMemoryWarning {

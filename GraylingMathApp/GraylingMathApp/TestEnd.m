@@ -130,7 +130,7 @@
         NSString* operand2 = @"";
         NSString* operator = @"";
         NSString* studentAnswer = @"";
-        NSInteger correctAnswer;
+        NSInteger correctAnswer = 0;
         NSInteger valueOne; //int for first number
         NSInteger valueTwo; //int for second number
         

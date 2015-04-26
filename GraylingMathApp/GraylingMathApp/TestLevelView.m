@@ -465,11 +465,11 @@
     
     
     //displays the random numbers
-    firstNumber.text =[NSString stringWithFormat:@"%ld",valueOne];
-    secondNumber.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    firstNumber.text =[NSString stringWithFormat:@"%ld",(long)valueOne];
+    secondNumber.text =[NSString stringWithFormat:@"%ld",(long)valueTwo];
     operatorLabel.text = [NSString stringWithFormat:@"%@",Qoperator];
-    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",valueOne];
-    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",valueTwo];
+    firstNumberHorz.text =[NSString stringWithFormat:@"%ld",(long)valueOne];
+    secondNumberHorz.text =[NSString stringWithFormat:@"%ld",(long)valueTwo];
     operatorLabelHorz.text = [NSString stringWithFormat:@"%@",Qoperator];
     
     //clear user input textbox
@@ -507,7 +507,7 @@
     
     
    
-    NSLog(@"Answer: %ld",correctAnswer);
+    NSLog(@"Answer: %ld",(long)correctAnswer);
     
     //get user input
     //userAnswer =([userInput.text integerValue]);
