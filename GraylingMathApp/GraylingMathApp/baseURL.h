@@ -10,7 +10,7 @@
 #define GraylingMathApp_baseURL_h
 
 
-#define baseURL @"http://graylingmath.cloudapp.net/WebPortal/"
+#define baseURL @"https://www.minutemathracer.com/"
 
 
 //#define baseURL @"http://localhost/WebPortal/"
