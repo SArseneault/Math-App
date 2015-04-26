@@ -513,22 +513,26 @@ static int inputCount;
         self.resultsBox.text = @"CORRECT!";
         [self performSelector:@selector(fadeOutLabels) withObject:nil afterDelay:0.0f];
         
+        //call method to check for end of practice section
+        [self isEndCheck];
+        
+       
+        
     }
     else
     {
-        
+    
         [resultsBox setHidden:NO];
         self.resultsBox.backgroundColor = [UIColor colorWithRed:(169/255.0) green:(34/255.0) blue:(64/255.0) alpha:1];
-        self.resultsBox.text = @"Incorrect";
+        self.resultsBox.text = @"Try Again";
         [self performSelector:@selector(fadeOutLabels) withObject:nil afterDelay:0.0f];
+        
+        
     }
     
+     [_destionController clearInput];
     
-    
-    //call method to check for end of practice section
-    [self isEndCheck];
-    
-    [_destionController clearInput];
+  
     
     
 }
