@@ -88,14 +88,14 @@
                                 <exclude reference="YnX-kc-uAZ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="USQ-mV-6aR"/>
+                                <exclude reference="7mo-8B-enp"/>
+                                <exclude reference="v4h-wT-7Rq"/>
+                                <exclude reference="26n-16-IDW"/>
                                 <exclude reference="Fc0-qh-C3q"/>
                                 <exclude reference="GlI-xp-rtP"/>
                                 <exclude reference="Jlv-v7-MgJ"/>
                                 <exclude reference="Nrc-oe-gB4"/>
-                                <exclude reference="26n-16-IDW"/>
-                                <exclude reference="USQ-mV-6aR"/>
-                                <exclude reference="7mo-8B-enp"/>
-                                <exclude reference="v4h-wT-7Rq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -105,14 +105,14 @@
                                 <include reference="YnX-kc-uAZ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="USQ-mV-6aR"/>
+                                <include reference="7mo-8B-enp"/>
+                                <include reference="v4h-wT-7Rq"/>
+                                <include reference="26n-16-IDW"/>
                                 <include reference="Fc0-qh-C3q"/>
                                 <include reference="GlI-xp-rtP"/>
                                 <include reference="Jlv-v7-MgJ"/>
                                 <include reference="Nrc-oe-gB4"/>
-                                <include reference="26n-16-IDW"/>
-                                <include reference="USQ-mV-6aR"/>
-                                <include reference="7mo-8B-enp"/>
-                                <include reference="v4h-wT-7Rq"/>
                             </mask>
                         </variation>
                     </view>
