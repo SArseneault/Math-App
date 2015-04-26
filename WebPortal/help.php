@@ -48,7 +48,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
+        <!--<li><a href="index.php">Home</a></li>-->
         <li><a href="viewclass.php">Class Editor</a></li>
         <li><a href="addlevel.php">Level Editor</a></li>
         <li><a href="importexport.php">Import/Export</a></li>
@@ -70,7 +70,7 @@
 <div class="container">
   <h2> Help </h2>
   <p>Here you will seek assistance with the adding classes, students, levels, and questions.</p>
-  <p>If you have any comments, questions or concern, please refer to the user manual. You can download the user manual <a href="uploads/User Manual.docx" download="User Manual.docx">here.</a></p>
+  <p>If you have any comments, questions or concern, please refer to the user manual. You can download the user manual <a href="defaults/User Manual.docx" download="User Manual.docx">here.</a></p>
 
 </div>
 

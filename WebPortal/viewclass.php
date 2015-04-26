@@ -692,6 +692,8 @@ if($user->classExist()){  ?>
         Student Username: <input type="text" id="student_username_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentUser();" class="btn-xs btn-info">Update Username</button>        
         </br>
         Student Password: <input type="text" id="student_password_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
+        </br>
+        Confirm Password: <input type="text" id="confirm_student_password_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
         </br> </pre> 
       <script>
       function updateStudentUser()
