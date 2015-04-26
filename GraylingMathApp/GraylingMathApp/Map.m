@@ -80,7 +80,7 @@
     //UIButton *theButton = (UIButton *)button;
     
     //alert to show that the level is not selectable
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Level Locked!" message:[NSString stringWithFormat:@"Please complete the previous level with ALL of the questions right to move onto the this level."] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Level Locked!" message:[NSString stringWithFormat:@"Please get all of the questions correct on the test mode of the previous level to unlock this level."] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
     
     
     //Show the alert
