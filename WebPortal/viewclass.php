@@ -243,6 +243,7 @@
     //Grabbing Variables from the link
     $studentID = $_POST["studentid"];
     $newPass = $_POST["newpass"];
+    $confirmPass = $_POST['confirmpass'];
 
 
      //Validate fields
@@ -252,6 +253,11 @@
             'newpass' => array(
               'required' => true,
               'min' => 2
+              ),
+             'confirmpass' => array(
+              'required' => true,
+              'min' => 2,
+              'matches' => 'newpass'
               )
             ));
 
@@ -610,22 +616,18 @@ if($user->classExist()){  ?>
 
         <!--forms for input -->
         <form action="" method="post">
-          <div class ="form-group">
-            <label for "labelForTeacherName">Teacher Name</label>
-              <input type ="text" class"form-control" name="teacher_name" id ="labelForTeacherName" placeholder="Teacher Name">
-          </div>
-          <div class ="form-group">
-            <label for "labelForClassName">Class Name</label>
-              <input type ="text" class"form-control" name="class_name" id ="labelForClassName" placeholder="Class Name">
-          </div>
-          <div class ="form-group">
-            <label for "labelForClassPassword">Class Password</label>
-              <input type ="password" class"form-control" name="class_password" id ="labelForClassPassword" placeholder="Class Password">
-          </div>
-          <div class ="form-group">
-            <label for "labelForConfirmClassPassword">Confirm Class Password</label>
-              <input type ="password" class"form-control" name="class_password_again" id ="labelForConfirmClassPassword" placeholder="Confirm Password">
-          </div>
+
+        <pre>
+                  Teacher Name: <input type ="text" class"form-control" name="teacher_name" id ="labelForTeacherName" placeholder="Teacher Name">
+        </br>
+                    Class Name: <input type ="text" class"form-control" name="class_name" id ="labelForClassName" placeholder="Class Name">
+        </br>
+                Class Password: <input type ="password" class"form-control" name="class_password" id ="labelForClassPassword" placeholder="Class Password">
+        </br>
+        Confirm Class Password: <input type ="password" class"form-control" name="class_password_again" id ="labelForConfirmClassPassword" placeholder="Confirm Password">
+        </br>
+
+        </pre>
         
           </div>
           <div class="modal-footer">
@@ -648,31 +650,23 @@ if($user->classExist()){  ?>
       </div>
       <div class="modal-body">
        
-          <div class ="form-group">
-            <label for "labelForStudentName">First Name</label>
-              <input type ="text" class"form-control" name="first_name" id ="labelForStudentName" placeholder="First Name">
-          </div>
-          <div class ="form-group">
-            <label for "labelForStudentName">Last Name</label>
-              <input type ="text" class"form-control" name="last_name" id ="labelForStudentName" placeholder="Last Name">
-          </div>
-          <div class ="form-group">
-            <label for "labelForStudentUserName">Username</label>
-              <input type ="text" class"form-control" name="username" id ="labelForStudentUserName" placeholder="Username">
-          </div>
-          <div class ="form-group">
-            <label for "labelForStudentPassword">Password</label>
-              <input type ="password" class"form-control" name="password" id ="labelForStudentPassword" placeholder="Password">
-          </div>
-          <div class ="form-group">
-            <label for "labelForConfirmStudentPassword">Confirm Student Password</label>
-              <input type ="password" class"form-control" name="password_again"id ="labelForConfirmStudentPassword" placeholder="Confirm Password">
-          </div>
+        <pre>
+                      First Name: <input type ="text" class"form-control" name="first_name" id ="labelForStudentName" placeholder="First Name">
+          </br>
+                       Last Name: <input type ="text" class"form-control" name="last_name" id ="labelForStudentName" placeholder="Last Name">
+          </br>
+                        Username: <input type ="text" class"form-control" name="username" id ="labelForStudentUserName" placeholder="Username">
+          </br>
+                        Password: <input type ="password" class"form-control" name="password" id ="labelForStudentPassword" placeholder="Password">
+          </br>
+        Confirm Student Password: <input type ="password" class"form-control" name="password_again"id ="labelForConfirmStudentPassword" placeholder="Confirm Password">
+        </pre>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="submit" name="addStudent" class="btn btn-primary">Add Student</button>
-        
+    
       </div>
     </div>
   </form>
@@ -691,7 +685,7 @@ if($user->classExist()){  ?>
         <pre>
         Student Username: <input type="text" id="student_username_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentUser();" class="btn-xs btn-info">Update Username</button>        
         </br>
-        Student Password: <input type="text" id="student_password_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
+        Student Password: <input type="text" id="student_password_ID" class"form-control input-sm"/> 
         </br>
         Confirm Password: <input type="text" id="confirm_student_password_ID" class"form-control input-sm"/>      <button type="submit" onclick="updateStudentPass();" class="btn-xs btn-info">Update Password</button>
         </br> </pre> 
@@ -712,7 +706,9 @@ if($user->classExist()){  ?>
       {
 
         newPass = document.getElementById('student_password_ID').value;
-        $.post('viewclass.php',{studentid:SID, newpass:newPass},function(data){ 
+        confirmPass = document.getElementById('confirm_student_password_ID').value;
+
+        $.post('viewclass.php',{studentid:SID, newpass:newPass, confirmpass:confirmPass},function(data){ 
           //document.getElementById('student_password_ID').value = data;
           
          location.reload();

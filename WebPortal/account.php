@@ -14,6 +14,36 @@
   }
 
 
+  //Decides when to display the success messages
+  if(Session::exists('success')) {
+   
+      
+
+      //Displaying the flash message
+      ?><div class="alert alert-success">
+                  <a href="viewclass.php" class="close" data-dismiss="alert">&times;</a>
+                  <strong><?php print_r(Session::get('success') );?></strong> 
+        </div> <?php
+
+        //Removing the flash instance
+        Session::flash('success');
+
+    } else if(Session::exists('fail')) {
+   
+      
+
+      //Displaying the flash message
+      ?><div class="alert alert-danger">
+                  <a href="viewclass.php" class="close" data-dismiss="alert">&times;</a>
+                  <strong><?php print_r(Session::get('fail') );?></strong> 
+        </div> <?php
+
+        //Removing the flash instance
+        Session::flash('fail');
+
+    }
+
+
   if(Input::exists()) {
       if (isset($_POST['ChangeName'])) {//////////////////////////
       
@@ -41,7 +71,7 @@
             ));
 
             //Flash message
-            //Session::flash('success', 'Name has been updated.');
+            Session::flash('success', 'Name has been updated.');
             //Redirect::to("account.php");
             //Refresh the page to show the update
            header("Refresh:0");
@@ -85,38 +115,38 @@
             'matches' => 'password_new'
           )
         ));
-      
+      //Creating an error string
+      $errorString = "</br>";
 
       if($validation->passed()) {
 
         try {
           
-            //trim the hash before check
-            $trimHash = Hash::make(Input::get('password_current'), $user->data()->salt);
-            $trimHash = substr ($trimHash ,0,-14);
-      
-            if($trimHash !== $user->data()->password){
-              echo "Current password is wrong";
+            if(Hash::make(Input::get('password_current'), $user->data()->salt) !== $user->data()->password){
+              $errorString = "Current password is wrong </br>";
+              Session::flash('fail', $errorString);
+              header("Refresh:0");
             }else {
               $salt = Hash::salt(32);
               $user->update(array(
                 'password' => Hash::make(Input::get('password_new'), $salt),
                 'salt' => $salt
                 ));
-            }
-        
-            //Flash message
-            //Session::flash('success', 'password has been changed.');
+
+              //Flash message
+            Session::flash('success', 'password has been changed.');
             //Redirect::to("account.php");
             //Refresh the page to show the update
-           //header("Refresh:0");
+           header("Refresh:0");
+            }
+        
         } catch(Execption $e) {
           die($e->getMessage());
         }
 
       } else {
       
-              $errorString = "</br>";
+             
               foreach($validation->errors() as $error) {
                 $errorString = $errorString . $error . "</br>";
                
@@ -244,10 +274,10 @@
 
         <!--forms for input -->
         <form action="" method="post">
-          <div class ="field">
-            <label for="name">New Name</label>
-              <input type="text" class"field" id ="name" name="name" value="<?php echo escape($user->data()->name); ?>">
-          </div>
+          <pre>
+          New Name: <input type="text" class"field" id ="name" name="name" value="<?php echo escape($user->data()->name); ?>">
+          </br>
+        </pre>
 
       
           </div>
@@ -275,22 +305,15 @@
 
          <!--forms for input -->
        <!-- <form action="" method="post">-->
-          <div class ="field">
-            <label for="password_current">Current Password</label>
-              <input type="password" name="password_current" id="password_current">
-          </div>
-
-          <div class ="field">
-            <label for="password_new">New Password</label>
-              <input type="password" name="password_new" id="password_new">
-          </div>
-
-          <div class ="field">
-            <label for="password_new_again">Confirm Password</label>
-              <input type="password" name="password_new_again" id="password_new_again">
-          </div>
+       <pre>
+            Current Password: <input type="password" name="password_current" id="password_current">
+          </br>
+                New Password: <input type="password" name="password_new" id="password_new">
+          </br>
+            Confirm Password: <input type="password" name="password_new_again" id="password_new_again">
+          </br>
          
-      
+      </pre>
 
           </div>
             <div class="modal-footer">

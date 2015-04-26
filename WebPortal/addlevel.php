@@ -455,15 +455,13 @@ if($user->classExist()){  ?>
 
         <!--forms for input -->
         <form action="" method="post">
-          <div class ="form-group">
-            <label for "labelForLevelName">Name</label>
-              <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
-          </div>
-          <div class ="form-group">
-            <label for "labelForLevelTime">Time Limit</label>
-              <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
-          </div>
-  
+          
+        <pre>
+              Name: <input type ="text" class"form-control" name="level_name" id ="labelForLevelName" placeholder="Level Name">
+        </br>
+        Time limit: <input type ="text" class"form-control" name="time_limit" id ="labelForLevelTime" placeholder="in minutes">
+        </br>
+        </pre>
 
         
           </div>
@@ -505,8 +503,7 @@ if($user->classExist()){  ?>
             </select>
           </div>
 
-          
-
+        
           <div class ="form-group">
             <label for "labelForQuestionName">Name</label>
               <input type ="text" class"form-control" name="question_name" id ="labelForQuestionName" placeholder="Question Name">
@@ -544,8 +541,6 @@ if($user->classExist()){  ?>
               <option>/</option>
             </select>
           </div>
-
-
 
       </div>
       <div class="modal-footer">
