@@ -45,12 +45,25 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnX-kc-uAZ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="8Gn-K4-BKt"/>
+                                    <constraint firstAttribute="width" constant="86" id="vlm-xG-3z4"/>
+                                </constraints>
                                 <state key="normal" title="About" backgroundImage="generic_btn_warn.png">
                                     <color key="titleColor" red="0.027450980390000001" green="0.19215686269999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="698" y="673" width="86" height="90"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Gn-K4-BKt"/>
+                                        <exclude reference="vlm-xG-3z4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="8Gn-K4-BKt"/>
+                                        <include reference="vlm-xG-3z4"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <segue destination="1wy-vT-ame" kind="show" id="BPo-5K-t86"/>
@@ -60,11 +73,13 @@
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qVu-Jc-QM6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="26n-16-IDW"/>
+                            <constraint firstItem="YnX-kc-uAZ" firstAttribute="top" secondItem="39b-4c-Kma" secondAttribute="bottom" constant="-132" id="7mo-8B-enp"/>
                             <constraint firstItem="39b-4c-Kma" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-41" id="Fc0-qh-C3q"/>
                             <constraint firstItem="39b-4c-Kma" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-5" id="GlI-xp-rtP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="39b-4c-Kma" secondAttribute="trailing" constant="-41" id="Jlv-v7-MgJ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="39b-4c-Kma" secondAttribute="bottom" constant="-5" id="Nrc-oe-gB4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qVu-Jc-QM6" secondAttribute="bottom" constant="37" id="USQ-mV-6aR"/>
+                            <constraint firstItem="YnX-kc-uAZ" firstAttribute="leading" secondItem="39b-4c-Kma" secondAttribute="trailing" constant="-127" id="v4h-wT-7Rq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -73,12 +88,14 @@
                                 <exclude reference="YnX-kc-uAZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="USQ-mV-6aR"/>
-                                <exclude reference="26n-16-IDW"/>
                                 <exclude reference="Fc0-qh-C3q"/>
                                 <exclude reference="GlI-xp-rtP"/>
                                 <exclude reference="Jlv-v7-MgJ"/>
                                 <exclude reference="Nrc-oe-gB4"/>
+                                <exclude reference="26n-16-IDW"/>
+                                <exclude reference="USQ-mV-6aR"/>
+                                <exclude reference="7mo-8B-enp"/>
+                                <exclude reference="v4h-wT-7Rq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -88,12 +105,14 @@
                                 <include reference="YnX-kc-uAZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="USQ-mV-6aR"/>
-                                <include reference="26n-16-IDW"/>
                                 <include reference="Fc0-qh-C3q"/>
                                 <include reference="GlI-xp-rtP"/>
                                 <include reference="Jlv-v7-MgJ"/>
                                 <include reference="Nrc-oe-gB4"/>
+                                <include reference="26n-16-IDW"/>
+                                <include reference="USQ-mV-6aR"/>
+                                <include reference="7mo-8B-enp"/>
+                                <include reference="v4h-wT-7Rq"/>
                             </mask>
                         </variation>
                     </view>
@@ -120,7 +139,7 @@
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="330" y="152" width="140" height="50"/>
@@ -142,7 +161,7 @@
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="330" y="300" width="140" height="21"/>
@@ -165,7 +184,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12O-Pt-xfW">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="330" y="473" width="140" height="21"/>
