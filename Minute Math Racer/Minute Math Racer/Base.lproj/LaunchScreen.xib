@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tread.png" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-Qy-b8F">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QtM-Qy-b8F" secondAttribute="trailing" id="D0k-4T-QwY"/>
+                <constraint firstAttribute="bottom" secondItem="QtM-Qy-b8F" secondAttribute="bottom" id="Tvz-Fs-idT"/>
+                <constraint firstItem="QtM-Qy-b8F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YUs-RL-2ja"/>
+                <constraint firstItem="QtM-Qy-b8F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iZE-sC-UvX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="QtM-Qy-b8F"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="D0k-4T-QwY"/>
+                    <exclude reference="Tvz-Fs-idT"/>
+                    <exclude reference="YUs-RL-2ja"/>
+                    <exclude reference="iZE-sC-UvX"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="subviews">
+                    <include reference="QtM-Qy-b8F"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="D0k-4T-QwY"/>
+                    <include reference="Tvz-Fs-idT"/>
+                    <include reference="YUs-RL-2ja"/>
+                    <include reference="iZE-sC-UvX"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="tread.png" width="600" height="600"/>
+    </resources>
+</document>
