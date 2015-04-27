@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -46,8 +46,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnX-kc-uAZ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="8Gn-K4-BKt"/>
-                                    <constraint firstAttribute="width" constant="86" id="vlm-xG-3z4"/>
+                                    <constraint firstAttribute="height" constant="120" id="8Gn-K4-BKt"/>
+                                    <constraint firstAttribute="width" constant="120" id="vlm-xG-3z4"/>
                                 </constraints>
                                 <state key="normal" title="About" backgroundImage="generic_btn_warn.png">
                                     <color key="titleColor" red="0.027450980390000001" green="0.19215686269999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,13 +73,13 @@
                         <color key="backgroundColor" red="0.84891887629999996" green="0.84891887629999996" blue="0.84891887629999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qVu-Jc-QM6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="26n-16-IDW"/>
-                            <constraint firstItem="YnX-kc-uAZ" firstAttribute="top" secondItem="39b-4c-Kma" secondAttribute="bottom" constant="-132" id="7mo-8B-enp"/>
+                            <constraint firstItem="YnX-kc-uAZ" firstAttribute="top" secondItem="39b-4c-Kma" secondAttribute="bottom" constant="-180" id="7mo-8B-enp"/>
                             <constraint firstItem="39b-4c-Kma" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-41" id="Fc0-qh-C3q"/>
                             <constraint firstItem="39b-4c-Kma" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-5" id="GlI-xp-rtP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="39b-4c-Kma" secondAttribute="trailing" constant="-41" id="Jlv-v7-MgJ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="39b-4c-Kma" secondAttribute="bottom" constant="-5" id="Nrc-oe-gB4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qVu-Jc-QM6" secondAttribute="bottom" constant="37" id="USQ-mV-6aR"/>
-                            <constraint firstItem="YnX-kc-uAZ" firstAttribute="leading" secondItem="39b-4c-Kma" secondAttribute="trailing" constant="-127" id="v4h-wT-7Rq"/>
+                            <constraint firstItem="YnX-kc-uAZ" firstAttribute="leading" secondItem="39b-4c-Kma" secondAttribute="trailing" constant="-180" id="v4h-wT-7Rq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1664,8 +1664,8 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-cj-ScN">
                                 <rect key="frame" x="377" y="356" width="90" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="7Sc-PQ-coT"/>
-                                    <constraint firstAttribute="width" constant="86" id="wCE-H8-xbz"/>
+                                    <constraint firstAttribute="height" constant="120" id="7Sc-PQ-coT"/>
+                                    <constraint firstAttribute="width" constant="120" id="wCE-H8-xbz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
                                 <state key="normal" image="generic_btn_ok_login.png">
@@ -1691,8 +1691,8 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-gb-gpz">
                                 <rect key="frame" x="224" y="358" width="41" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="09j-Ao-0xw"/>
-                                    <constraint firstAttribute="height" constant="90" id="BP9-5l-2i4"/>
+                                    <constraint firstAttribute="width" constant="120" id="09j-Ao-0xw"/>
+                                    <constraint firstAttribute="height" constant="120" id="BP9-5l-2i4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
                                 <state key="normal" image="generic_btn_warn_back.png">
@@ -1728,8 +1728,8 @@
                             <constraint firstItem="Dof-JQ-qFz" firstAttribute="top" secondItem="JGb-v3-4S3" secondAttribute="bottom" constant="-415" id="HrI-Jo-yLm">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-650"/>
                             </constraint>
-                            <constraint firstItem="JGb-v3-4S3" firstAttribute="top" secondItem="vB8-cj-ScN" secondAttribute="bottom" constant="-299" id="N0Q-Nq-v8I"/>
-                            <constraint firstItem="JGb-v3-4S3" firstAttribute="top" secondItem="rSM-gb-gpz" secondAttribute="bottom" constant="-299" id="OVr-nB-8WW"/>
+                            <constraint firstItem="JGb-v3-4S3" firstAttribute="top" secondItem="vB8-cj-ScN" secondAttribute="bottom" constant="-330" id="N0Q-Nq-v8I"/>
+                            <constraint firstItem="JGb-v3-4S3" firstAttribute="top" secondItem="rSM-gb-gpz" secondAttribute="bottom" constant="-330" id="OVr-nB-8WW"/>
                             <constraint firstAttribute="centerX" secondItem="XLk-q1-YiO" secondAttribute="centerX" id="S5h-wc-uaZ"/>
                             <constraint firstItem="BPU-De-6sb" firstAttribute="top" secondItem="Dof-JQ-qFz" secondAttribute="bottom" constant="8" id="Tzs-Qa-CZP">
                                 <variation key="heightClass=regular-widthClass=regular" constant="10"/>
@@ -1739,7 +1739,7 @@
                             <constraint firstItem="M7T-uy-Bgy" firstAttribute="top" secondItem="Dof-JQ-qFz" secondAttribute="bottom" constant="19" id="mjq-Uo-XNd">
                                 <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                             </constraint>
-                            <constraint firstItem="JGb-v3-4S3" firstAttribute="leading" secondItem="rSM-gb-gpz" secondAttribute="trailing" constant="-147" id="s0r-N6-Esl"/>
+                            <constraint firstItem="JGb-v3-4S3" firstAttribute="leading" secondItem="rSM-gb-gpz" secondAttribute="trailing" constant="-180" id="s0r-N6-Esl"/>
                             <constraint firstItem="qn7-4i-LBe" firstAttribute="top" secondItem="JGb-v3-4S3" secondAttribute="bottom" id="sx2-4R-aE1"/>
                             <constraint firstItem="JGb-v3-4S3" firstAttribute="leading" secondItem="hXd-DD-iO6" secondAttribute="leadingMargin" constant="-23" id="zOg-Ao-rK7"/>
                         </constraints>
@@ -2211,8 +2211,8 @@
         <image name="welcome_messaeg_box.png" width="780" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="alt-6y-Ymb"/>
-        <segue reference="8Ng-X1-fm5"/>
         <segue reference="P4d-91-MRb"/>
+        <segue reference="LrK-8x-AS6"/>
+        <segue reference="8Ng-X1-fm5"/>
     </inferredMetricsTieBreakers>
 </document>
