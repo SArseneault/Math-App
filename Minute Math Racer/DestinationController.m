@@ -133,7 +133,7 @@
     //[self AddInputToArray:(int)model.value];
     
     
-     NSLog(@"Size is beforeeeee   %d", [_userInputArray count]);
+     NSLog(@"Size is beforeeeee   %lu", (unsigned long)[_userInputArray count]);
     NSLog(@"Added thissssss %i", insertNumber);
      [_models addObject:model];
     //NSLog(@"modelllllllll %i", _models.value);
@@ -141,7 +141,7 @@
     
     [_collectionView reloadData];
     
-        NSLog(@"Size is afterreeeee  %d", [_userInputArray count]);
+        NSLog(@"Size is afterreeeee  %lu", (unsigned long)[_userInputArray count]);
     
 }
 
@@ -166,9 +166,9 @@
     
     NSInteger size = [_userInputArray count];
     
-    NSLog(@"Size is of array in remove is _______________________%d", size);
+    NSLog(@"Size is of array in remove is _______________________%ld", (long)size);
     
-    NSLog(@"NSINT INDEX IS %d", index);
+    NSLog(@"NSINT INDEX IS %ld", (long)index);
     NSLog(@"NSINT INDEXPATH IS %@", indexPath);
     
     int removeInt = model.value;
@@ -191,7 +191,7 @@
     
     NSInteger size = [_models count];
     
-    NSLog(@"Size of model is %i", size);
+    NSLog(@"Size of model is %li", (long)size);
     
     if(size ==0)
     {
@@ -236,7 +236,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    NSLog(@"Number of items in section %d", _models.count);
+    NSLog(@"Number of items in section %lu", (unsigned long)_models.count);
     return _models.count;
 }
 
