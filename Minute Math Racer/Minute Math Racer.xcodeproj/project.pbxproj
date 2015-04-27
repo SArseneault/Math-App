@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2009DAE81AEDDBFA00FDC134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2009DAE71AEDDBFA00FDC134 /* Images.xcassets */; };
 		204ACB351AEDD6B900C521FA /* ClassLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB171AEDD6B900C521FA /* ClassLogin.m */; };
 		204ACB361AEDD6B900C521FA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB191AEDD6B900C521FA /* FirstViewController.m */; };
 		204ACB371AEDD6B900C521FA /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB1B1AEDD6B900C521FA /* HomeView.m */; };
@@ -26,7 +27,6 @@
 		204ACB4A1AEDD73300C521FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB491AEDD73300C521FA /* AppDelegate.m */; };
 		20FA84DC1AEDD63C0007CAF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FA84DB1AEDD63C0007CAF3 /* main.m */; };
 		20FA84E51AEDD63C0007CAF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20FA84E31AEDD63C0007CAF3 /* Main.storyboard */; };
-		20FA84E71AEDD63C0007CAF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20FA84E61AEDD63C0007CAF3 /* Images.xcassets */; };
 		20FA84EA1AEDD63C0007CAF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20FA84E81AEDD63C0007CAF3 /* LaunchScreen.xib */; };
 		20FA84F61AEDD63C0007CAF3 /* Minute_Math_RacerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FA84F51AEDD63C0007CAF3 /* Minute_Math_RacerTests.m */; };
 		20FA85511AEDD6640007CAF3 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 20FA85011AEDD6640007CAF3 /* Contents.json */; };
@@ -119,6 +119,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2009DAE71AEDDBFA00FDC134 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		204ACB151AEDD6B900C521FA /* baseURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseURL.h; sourceTree = "<group>"; };
 		204ACB161AEDD6B900C521FA /* ClassLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLogin.h; sourceTree = "<group>"; };
 		204ACB171AEDD6B900C521FA /* ClassLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassLogin.m; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		20FA84DA1AEDD63C0007CAF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20FA84DB1AEDD63C0007CAF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		20FA84E41AEDD63C0007CAF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		20FA84E61AEDD63C0007CAF3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		20FA84E91AEDD63C0007CAF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		20FA84EF1AEDD63C0007CAF3 /* Minute Math RacerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Minute Math RacerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FA84F41AEDD63C0007CAF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -313,8 +313,8 @@
 				204ACB301AEDD6B900C521FA /* TypeSelect.h */,
 				204ACB311AEDD6B900C521FA /* TypeSelect.m */,
 				20FA84E31AEDD63C0007CAF3 /* Main.storyboard */,
-				20FA84E61AEDD63C0007CAF3 /* Images.xcassets */,
 				20FA84E81AEDD63C0007CAF3 /* LaunchScreen.xib */,
+				2009DAE71AEDDBFA00FDC134 /* Images.xcassets */,
 				20FA84FF1AEDD6640007CAF3 /* Assets */,
 				20FA84D91AEDD63C0007CAF3 /* Supporting Files */,
 			);
@@ -512,6 +512,7 @@
 				TargetAttributes = {
 					20FA84D51AEDD63C0007CAF3 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = S6ZV2CSBU3;
 					};
 					20FA84EE1AEDD63C0007CAF3 = {
 						CreatedOnToolsVersion = 6.2;
@@ -554,7 +555,6 @@
 				20FA859B1AEDD6640007CAF3 /* Thumbs.db in Resources */,
 				20FA84EA1AEDD63C0007CAF3 /* LaunchScreen.xib in Resources */,
 				20FA85661AEDD6640007CAF3 /* Icon-Small@3x.png in Resources */,
-				20FA84E71AEDD63C0007CAF3 /* Images.xcassets in Resources */,
 				20FA857D1AEDD6640007CAF3 /* generic_btn_danger_logout_student.png in Resources */,
 				20FA85861AEDD6640007CAF3 /* generic_btn_warn.jpg in Resources */,
 				20FA855F1AEDD6640007CAF3 /* Icon-40@3x.png in Resources */,
@@ -577,6 +577,7 @@
 				20FA85891AEDD6640007CAF3 /* generic_btn_warn_clear.png in Resources */,
 				20FA856B1AEDD6640007CAF3 /* car_greenR.png in Resources */,
 				20FA85581AEDD6640007CAF3 /* Icon-76@2x.png in Resources */,
+				2009DAE81AEDDBFA00FDC134 /* Images.xcassets in Resources */,
 				20FA85771AEDD6640007CAF3 /* car_yellowR.png in Resources */,
 				20FA857A1AEDD6640007CAF3 /* generic_btn_danger_home.png in Resources */,
 				20FA856F1AEDD6640007CAF3 /* car_orangeR.png in Resources */,
@@ -780,22 +781,26 @@
 		20FA84FA1AEDD63C0007CAF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Samuel Arseneault (ZHVGA87AFQ)";
 				INFOPLIST_FILE = "Minute Math Racer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5b92c177-90d4-4454-b921-9de442924a81";
 			};
 			name = Debug;
 		};
 		20FA84FB1AEDD63C0007CAF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Samuel Arseneault (ZHVGA87AFQ)";
 				INFOPLIST_FILE = "Minute Math Racer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5b92c177-90d4-4454-b921-9de442924a81";
 			};
 			name = Release;
 		};

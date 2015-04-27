@@ -141,7 +141,6 @@
     </div>
 </div>
 <!-- This script will check to see if the caps lock is on when entering a password -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script language="Javascript">
         $(document).ready(function(){
             $('input').keypress(function(e) { 
