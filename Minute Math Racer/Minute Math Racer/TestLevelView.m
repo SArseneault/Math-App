@@ -432,7 +432,7 @@
     
     //generates random number between 0 and 1
     questionOrientation =arc4random()%2;
-    NSLog(@"Question Orientaiton: %d",questionOrientation);
+    NSLog(@"Question Orientaiton: %ld",(long)questionOrientation);
     
     //Setting the questionOrientaiton to zero to force vertical
     questionOrientation = 0;
@@ -522,7 +522,7 @@
     
     userAnswer = (testValue);
     
-    NSLog(@"FINAL NUMBER ISSSSSS %d", testValue);
+    NSLog(@"FINAL NUMBER ISSSSSS %ld", (long)testValue);
     
     //check is users answers are correct
     if(correctAnswer == userAnswer)

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2009DAE81AEDDBFA00FDC134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2009DAE71AEDDBFA00FDC134 /* Images.xcassets */; };
 		204ACB351AEDD6B900C521FA /* ClassLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB171AEDD6B900C521FA /* ClassLogin.m */; };
 		204ACB361AEDD6B900C521FA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB191AEDD6B900C521FA /* FirstViewController.m */; };
 		204ACB371AEDD6B900C521FA /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB1B1AEDD6B900C521FA /* HomeView.m */; };
@@ -25,6 +24,7 @@
 		204ACB431AEDD6B900C521FA /* TypeSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB311AEDD6B900C521FA /* TypeSelect.m */; };
 		204ACB471AEDD6E600C521FA /* DestinationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB461AEDD6E600C521FA /* DestinationController.m */; };
 		204ACB4A1AEDD73300C521FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ACB491AEDD73300C521FA /* AppDelegate.m */; };
+		20C1FBCA1AEDE8FE00FA4A6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C1FBC91AEDE8FE00FA4A6C /* Images.xcassets */; };
 		20FA84DC1AEDD63C0007CAF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FA84DB1AEDD63C0007CAF3 /* main.m */; };
 		20FA84E51AEDD63C0007CAF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20FA84E31AEDD63C0007CAF3 /* Main.storyboard */; };
 		20FA84EA1AEDD63C0007CAF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20FA84E81AEDD63C0007CAF3 /* LaunchScreen.xib */; };
@@ -119,7 +119,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2009DAE71AEDDBFA00FDC134 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		204ACB151AEDD6B900C521FA /* baseURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseURL.h; sourceTree = "<group>"; };
 		204ACB161AEDD6B900C521FA /* ClassLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLogin.h; sourceTree = "<group>"; };
 		204ACB171AEDD6B900C521FA /* ClassLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassLogin.m; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 		204ACB461AEDD6E600C521FA /* DestinationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationController.m; sourceTree = SOURCE_ROOT; };
 		204ACB481AEDD73300C521FA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		204ACB491AEDD73300C521FA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		20C1FBC91AEDE8FE00FA4A6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		20FA84D61AEDD63C0007CAF3 /* Minute Math Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minute Math Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FA84DA1AEDD63C0007CAF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20FA84DB1AEDD63C0007CAF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 				204ACB311AEDD6B900C521FA /* TypeSelect.m */,
 				20FA84E31AEDD63C0007CAF3 /* Main.storyboard */,
 				20FA84E81AEDD63C0007CAF3 /* LaunchScreen.xib */,
-				2009DAE71AEDDBFA00FDC134 /* Images.xcassets */,
+				20C1FBC91AEDE8FE00FA4A6C /* Images.xcassets */,
 				20FA84FF1AEDD6640007CAF3 /* Assets */,
 				20FA84D91AEDD63C0007CAF3 /* Supporting Files */,
 			);
@@ -577,7 +577,7 @@
 				20FA85891AEDD6640007CAF3 /* generic_btn_warn_clear.png in Resources */,
 				20FA856B1AEDD6640007CAF3 /* car_greenR.png in Resources */,
 				20FA85581AEDD6640007CAF3 /* Icon-76@2x.png in Resources */,
-				2009DAE81AEDDBFA00FDC134 /* Images.xcassets in Resources */,
+				20C1FBCA1AEDE8FE00FA4A6C /* Images.xcassets in Resources */,
 				20FA85771AEDD6640007CAF3 /* car_yellowR.png in Resources */,
 				20FA857A1AEDD6640007CAF3 /* generic_btn_danger_home.png in Resources */,
 				20FA856F1AEDD6640007CAF3 /* car_orangeR.png in Resources */,
