@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
@@ -11,51 +10,45 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright (c) 2015 Samuel Arseneault. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tire-tracks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sky-hg-Cxl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tread.png" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-Qy-b8F">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="sky-hg-Cxl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="54" id="1eN-1A-HN0"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstAttribute="trailing" secondItem="sky-hg-Cxl" secondAttribute="trailing" constant="-25" id="gCn-FS-iXV"/>
-                <constraint firstItem="sky-hg-Cxl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-24" id="kor-He-Ggj"/>
+                <constraint firstAttribute="trailing" secondItem="QtM-Qy-b8F" secondAttribute="trailing" id="D0k-4T-QwY"/>
+                <constraint firstAttribute="bottom" secondItem="QtM-Qy-b8F" secondAttribute="bottom" id="Tvz-Fs-idT"/>
+                <constraint firstItem="QtM-Qy-b8F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YUs-RL-2ja"/>
+                <constraint firstItem="QtM-Qy-b8F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iZE-sC-UvX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="sky-hg-Cxl"/>
+                    <exclude reference="QtM-Qy-b8F"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="1eN-1A-HN0"/>
-                    <exclude reference="gCn-FS-iXV"/>
-                    <exclude reference="kor-He-Ggj"/>
+                    <exclude reference="D0k-4T-QwY"/>
+                    <exclude reference="Tvz-Fs-idT"/>
+                    <exclude reference="YUs-RL-2ja"/>
+                    <exclude reference="iZE-sC-UvX"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="subviews">
-                    <include reference="sky-hg-Cxl"/>
+                    <include reference="QtM-Qy-b8F"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="1eN-1A-HN0"/>
-                    <include reference="gCn-FS-iXV"/>
-                    <include reference="kor-He-Ggj"/>
+                    <include reference="D0k-4T-QwY"/>
+                    <include reference="Tvz-Fs-idT"/>
+                    <include reference="YUs-RL-2ja"/>
+                    <include reference="iZE-sC-UvX"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="tire-tracks.jpg" width="610" height="458"/>
+        <image name="tread.png" width="600" height="600"/>
     </resources>
 </document>
